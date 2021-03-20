@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="Merge branch 'master' of https://github.com/Csizmy/ProjLab&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="Empty Classes or not">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/bency.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Coal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Coal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Iron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Iron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Steppable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Steppable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Materials/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Uranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Uranium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Water.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Objects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Asteroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Spacething.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Spacething.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Teleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Teleport.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,9 +30,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -115,70 +109,44 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main" />
       <module name="ProjLab" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
+    <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -270,8 +238,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Base" />

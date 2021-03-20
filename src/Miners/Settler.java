@@ -1,4 +1,6 @@
 package Miners;
 
-public class Settler {
+public class Settler extends Miner {
+
+
 }

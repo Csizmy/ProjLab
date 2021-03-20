@@ -5,18 +5,18 @@ import Miners.Miner;
 
 import java.util.ArrayList;
 
-public class Asteroid {
-    private int layer;
-    private boolean digged;
-    private boolean perihelion;
+public class Asteroid extends Spacething {
+    private int layer;              //Maximum layers.
+    private int digged;             // Removed layers.
+    private boolean perihelion;     //Close to Sun or not.
     private Material material;
     private ArrayList<Miner> miners;
     
     public Asteroid() {
         //Set layer number
-        layer = (int) Math.random()%7+3; //Min: 3 layer, Max: 10 layer
+        layer = (int) Math.random()%7+3;    //Min: 3 layer, Max: 10 layer
 
-        digged = false; //Not digged
+        digged = 0;     //0 layers dug yet.
 
         miners = new ArrayList<Miner>();
 
@@ -33,17 +33,18 @@ public class Asteroid {
     }
 
     public void removeLayer(){
-        layer--;
+        digged++;               //layer--;
     }
 
     public void RemoveMaterial() {
-        digged = true;
+        digged = layer;
         material = null;
     }
 
     public void removeMiner(Miner m){
         miners.remove(m);
     }
+
 
     public void addMiner(Miner m){
         miners.add(m);
