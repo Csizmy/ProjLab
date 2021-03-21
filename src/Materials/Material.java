@@ -1,12 +1,14 @@
 package Materials;
 
-import Objects.*;
+import Objects.Asteroid;
 
 public abstract class Material {
     protected String name;
     protected Asteroid asteroid;        //(?)The asteroid this material is in.
 
-
+    public String getName(){
+        return name;
+    }
 
     void setName(String n){
         name = n;
@@ -18,9 +20,5 @@ public abstract class Material {
 
     //Virtual
     public void PeriMining(){          //water and uranium behave differently perihelion
-    }
-
-    public String getName() {
-        return name;
     }
 }

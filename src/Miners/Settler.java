@@ -35,7 +35,7 @@ public class Settler extends Miner{
         if(asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial()!=null){
 
             if(asteroid.getPerihelion()){
-                asteroid.getMaterial().periMining();
+                asteroid.getMaterial().PeriMining();
             }
 
             else{

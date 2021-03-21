@@ -1,3 +1,4 @@
+
 package Materials;
 
 import Objects.Asteroid;
@@ -9,7 +10,7 @@ public class Water extends Material{
     }
 
     @Override
-    void periMining(){
+    void PeriMining(){
         asteroid.RemoveMaterial();      //water evaporates perihelion
     }
 }

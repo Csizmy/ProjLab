@@ -9,7 +9,4 @@ public class Coal extends Material{
         setName("Coal");
         setAsteroid(a);
     }
-
-    @Override
-    public void PeriMining() {}
 }

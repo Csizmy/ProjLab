@@ -1,3 +1,4 @@
+
 package Materials;
 
 import Objects.Asteroid;
@@ -7,7 +8,4 @@ public class Iron extends Material{
         setName("Iron");
         setAsteroid(a);
     }
-
-    @Override
-    public void PeriMining() {}
 }
