@@ -1,44 +1,42 @@
 package Miners;
 
-import Materials.Material;
-import Objects.Asteroid;
-import Objects.Spacething;
+import Materials.*;
+import Objects.*;
 
 import java.util.ArrayList;
 
-public class Miner {
-    private ArrayList<Material> backpack;
-    private Spacething spacething;
-    private String type;    //Type of miner (Robot or Settler)
+public abstract class Miner {
 
-    public void setName(String t){
-        type = t;
+    // tárolja, hogy melyik aszteroidán van éppen a játékos
+    protected Asteroid asteroid;
+
+    //Miner konstruktor
+    public Miner(Asteroid a){
+        asteroid = a;
     }
 
-    public String getName(){
-        return type;
-    }
-
-    //Miner constructor
-    Miner(){
-        backpack = new ArrayList<Material>();
-    }
-
-    //Miner moves
+    //Miner mozgás függvénye
     public void Move(Spacething s){
-        spacething = s;
+
     }
 
-    //Miner dies
-    public void die(){
+    //Miner meghal
+    public void Die(){
         System.out.println("Meghalt");
+        asteroid.removeMiner(this);
+        asteroid=null;
     };
 
-    //Miner drills
-    public void drill(){
+    //Miner fúr
+    public boolean Drill(){
         System.out.println("Fúr");
-        if(this.spacething.getName() == "Asteroid"){
-            spacething.
+        if(asteroid.getLayer() > 0){
+            asteroid.removeLayer();
+            return true;
         }
+        return false;
     }
+
+    // aszteroida robbanásnál a Minerek máshogy viselkednek
+    public abstract void Explode();
 }

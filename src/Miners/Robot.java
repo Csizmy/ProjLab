@@ -1,12 +1,20 @@
 package Miners;
 
-import Game_parts.Steppable;
+import Game_parts.*;
+import Objects.*;
 
 public class Robot extends Miner /*implements Steppable*/ {
 
-    //When an asteroid explodes he flies to a neighbouring asteroid.
+    // Robot konstuktor
+    public Robot(Asteroid a) {
+        super(a);
+    }
+
+    // ha felrobban az aszteroida (radioaktív anyag bányászásánál) a robot egy véletlenszerű szomszédos aszteroidásra kerül
     public void Explode() {
-        //TODO
+        int i = (int) (Math.random()%(asteroid.getNeighbours().size()));
+        Spacething s = asteroid.getNeighbours().get(i);
+        Move(s);
     }
 
     //@Override

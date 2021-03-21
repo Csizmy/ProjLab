@@ -58,7 +58,7 @@ public class Asteroid extends Spacething {
     public void Explode(){
         System.out.println("Explode start.");
         for (Miner m: miners) {
-            m.die();
+            m.Explode();
         }
         System.out.println("Explode done.");
     }
@@ -92,6 +92,11 @@ public class Asteroid extends Spacething {
         System.out.println("setupteleport");
     }
 
+    public int getLayer() {
+        return layer;
+    }
 
-
+    public Material getMaterial() {
+        return material;
+    }
 }
