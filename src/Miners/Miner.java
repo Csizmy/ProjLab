@@ -56,7 +56,7 @@ public abstract class Miner {
         if(spacething.getAsteroid()){
             System.out.println("Fúrni próbál");
             Asteroid a = (Asteroid) spacething;
-            if(a.getLayer() > 0){
+            if(a.getLayer()-a.getDigged()!= 0){
                 a.removeLayer();
                 System.out.println("Eggyel kisebb lett a réteg");
                 return true;

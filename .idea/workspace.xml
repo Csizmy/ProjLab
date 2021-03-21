@@ -1,34 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="kéééész">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__19_48__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__19_48__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__20_23__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__20_23__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__20_46__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__20_46__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__19_49__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__19_49__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__19_53__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__19_53__Default_.xml" afterDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="asztramozog kész">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Steppable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Teleport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Tests/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Asteroid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -523,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616362014823</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="asztramozog kész">
+      <created>1616363811145</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1616363811145</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -590,7 +575,8 @@
     <MESSAGE value="sout-ok kiegészítése" />
     <MESSAGE value="thx csizmy" />
     <MESSAGE value="kéééész" />
-    <option name="LAST_COMMIT_MESSAGE" value="kéééész" />
+    <MESSAGE value="asztramozog kész" />
+    <option name="LAST_COMMIT_MESSAGE" value="asztramozog kész" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Miners/Robot.java">

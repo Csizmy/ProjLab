@@ -40,6 +40,7 @@ public class Settler extends Miner{
                 } else {
                     AddMaterial(asteroid.getMaterial());
                     System.out.println("Nincs baj, bekerült a táskába a " + asteroid.getMaterial().getName());
+                    asteroid.setMaterial(null);
                 }
                 System.out.println("Sikerült a bányászás");
                 return true;

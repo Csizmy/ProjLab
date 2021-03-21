@@ -78,6 +78,7 @@ public class Asteroid extends Spacething {
     //Egy játékost "eltávolít" a rajta tartózkodók közül
     public void removeMiner(Miner m){
         miners.remove(m);
+        System.out.println("digged " +this.getDigged()+   " layer" +this.getLayer());
         System.out.println("Miner eltávolítva " + this.getId() + " aszteroidáról.");
     }
 

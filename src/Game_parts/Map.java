@@ -81,7 +81,7 @@ public class Map implements Steppable {
         for (int i = 0; i < asteroids.size(); i++) {
             if (asteroids.get(i).getLayer() != asteroids.get(i).getDigged() || asteroids.get(i).getMaterial() != null) {
                 for (int j = 0; j < asteroids.get(i).getMiners().size(); j++) {
-                    asteroids.get(i).getMiners().get(i).Die();
+                    asteroids.get(i).getMiners().get(j).Die();
 
                 }
             }
