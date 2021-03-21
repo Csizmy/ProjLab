@@ -14,7 +14,26 @@ public class Test {
 
     }
 
-    public void tpre_mozog(){}//Telepes teleportkapura mozog
+    public void tpre_mozog(){
+        Asteroid planet = new Asteroid(12);
+        Settler builder = new Settler(planet);
+        Iron iron = new Iron(null);
+        Water water = new Water(null);
+        Uranium uranium = new Uranium(null);             //A kellő nyersanyagok létrehozva.
+
+        builder.getBackpack().add(iron);
+        builder.getBackpack().add(iron);
+        builder.getBackpack().add(water);
+        builder.getBackpack().add(uranium);                 //A nyersanyagok a táskához adva.
+
+        builder.BuildTp();                                  //Most még 1 tp lerakásánál aktív már...
+        Teleport tp = builder.getTP();
+        builder.PlaceTp(tp);                                //A telepes az aszteroidán elhelyezett egy Teleportkaput.
+
+        builder.Move(tp.getId());
+
+
+    }//Telepes teleportkapura mozog
 
     public void asztra_mozog(){//Telepes aszteroidára mozog
         Asteroid a = new Asteroid(0, 0, true, null);  //Létrehozok 2 aszteroidát

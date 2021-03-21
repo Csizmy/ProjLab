@@ -9,9 +9,9 @@ public class Uranium extends Material{
     }
 
     @Override
-    public void PeriMining(){
-        asteroid.Explode();
+    public void PeriMining(){                           //uranium explodes perihelion
         System.out.println("Felrobban az uránium");
-        //uranium explodes perihelion
+        asteroid.Explode();
+
     }
 }
