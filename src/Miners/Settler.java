@@ -128,16 +128,22 @@ public class Settler extends Miner{
     }
 
     //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
-    /*public boolean PlaceTp(Teleport t) {
-        if (t.getPair().IsNeigbour(t)) {
-            t.AddNeighbor(asteroid);
-            asteroid.AddNeighbor(t);
-            System.out.println("Leraktam a teleportkaput");
-            return true;
+    public boolean PlaceTp(Teleport t) {
+
+        if(spacething.getAsteroid()) {
+            Asteroid a = (Asteroid) spacething;
+            if (!t.getPair().isNeigbour(a.getId())) {
+                t.AddNeighbor(spacething);
+                spacething.AddNeighbor(t);
+                System.out.println("Leraktam a teleportkaput");
+                return true;
+            }
+            System.out.println("Itt van a teleportkapu párja is, nem lehet ide lerakni");
+            return false;
         }
-        System.out.println("Itt van a teleportkapu párja is, nem lehet ide lerakni");
+        System.out.println("Ide nem tudsz teleportot kapni");
         return false;
-    }*/
+    }
 
     //  ellenőzi a nyersanyagokat és megépíti a robotot
     public boolean BuildRobot(){

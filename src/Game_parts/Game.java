@@ -90,10 +90,6 @@ public class Game {
                     break;
 
                 case 14:
-                    t.napkitores();
-                    break;
-
-                case 15:
                     t.robot_lep();
                     break;
 
