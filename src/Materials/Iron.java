@@ -7,4 +7,9 @@ public class Iron extends Material{
         setName("Iron");
         setAsteroid(a);
     }
+
+    @Override
+    public Material PeriMining() {
+        return this;
+    }
 }
