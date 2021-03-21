@@ -11,8 +11,8 @@ public class Map extends Steppable {
 
     private List<Settler> settlers;         //List of Settlers.
     private List<Robot> robots;             //List of Robots.
-    private List<Asteroid> asteroids;
-    private List<Teleport> teleports;   //List of Asteroids and teleports.
+    private List<Asteroid> asteroids;       //List of Asteroids.
+    private List<Teleport> teleports;       //List of teleports.
     private int diffMat;                    //Count of the different materials.
 
     //Felveszi a telepesek (10) és az aszteroidák (10) listáját.
