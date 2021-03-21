@@ -23,6 +23,8 @@ public abstract class Miner {
 
     }
 
+
+
     //Miner meghal
     public void Die(){
         System.out.println("Meghalt");
