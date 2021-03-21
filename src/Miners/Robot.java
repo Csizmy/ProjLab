@@ -31,7 +31,7 @@ public class Robot extends Miner implements Steppable {
                 Move(s.getId());
                 break;
             case 1:
-                Drill(new Asteroid(-2));
+                Drill();
                 break;
         }
     }

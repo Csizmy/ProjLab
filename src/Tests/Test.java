@@ -87,9 +87,28 @@ public class Test {
 
     }
 
-    public void tp_epit_i(){}  // Telepes teleportkaput épít van elég anyag
+    public void tp_epit_i(){
+        Asteroid planet = new Asteroid(17);        //A teszt aszteroida, ahol épít a telepes.
+        Settler builder = new Settler(planet);              //Az építő telepes.
+        Iron iron = new Iron(null);
+        Water water = new Water(null);
+        Uranium uranium = new Uranium(null);             //A kellő nyersanyagok létrehozva.
 
-    public void tp_epit_h(){}  // Telepes teleportkaput épít nincs elég anyag
+        builder.getBackpack().add(iron);
+        builder.getBackpack().add(water);
+        builder.getBackpack().add(uranium);                 //A nyersanyagok a táskához adva.
+
+        builder.BuildTp();
+
+    }  // Telepes teleportkaput épít van elég anyag
+
+    public void tp_epit_h(){
+        Asteroid planet = new Asteroid(23);        //A teszt aszteroida, ahol épít a telepes.
+        Settler builder = new Settler(planet);              //Az építő telepes.
+
+        builder.BuildTp();
+        
+    }  // Telepes teleportkaput épít nincs elég anyag
 
     public void robot_epit_i(){
         Asteroid planet = new Asteroid(12);        //A teszt aszteroida, ahol épít a telepes.
@@ -102,11 +121,7 @@ public class Test {
         builder.getBackpack().add(coal);
         builder.getBackpack().add(uranium);                 //A nyersanyagok a táskához adva.
 
-        //builder.BuildRobot() == false;
-
-        System.out.println("Nyersanyagok a táskában.");                             //Ha lesz a BuildRobotban komment ez a 3 sor nem kell.
-        if (builder.BuildRobot() == true) System.out.println("Robot megépítve.");
-        else System.out.println("Hibás teszt.");
+        builder.BuildRobot();
 
     }  // Telepes robotot épít van elég anyag.
 
@@ -115,10 +130,7 @@ public class Test {
         Asteroid planet = new Asteroid(42);        //A teszt aszteroida, ahol épít a telepes.
         Settler builder = new Settler(planet);              //Az építő telepes.
 
-        //builder.BuildRobot() == false;
-
-        if (builder.BuildRobot() == false) System.out.println("Nincs elég nyersanyag.");        //Ha lesz a BuildRobotban komment ez a 2 sor nem kell.
-        else System.out.println("Hibás teszt.");
+        //builder.BuildRobot();
 
     }  // Telepes robotot épít nincs elég anyag.
 
