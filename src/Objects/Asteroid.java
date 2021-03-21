@@ -17,7 +17,7 @@ public class Asteroid extends Spacething {
 
     private Random rand = new Random();
     
-    public Asteroid(int asteroidID) {//
+    public Asteroid(int asteroidID) {
         super(asteroidID);
         //Set layer number
         layer = (int) rand.nextInt(7)+3;    //Min: 3 layer, Max: 10 layer
