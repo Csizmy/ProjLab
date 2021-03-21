@@ -13,6 +13,7 @@ public class Asteroid extends Spacething {
     private boolean perihelion;     //Close to Sun or not.
     private Material material;
     private ArrayList<Miner> miners;
+    private int id;                 //ID
 
     private Random rand = new Random();
     
@@ -25,6 +26,8 @@ public class Asteroid extends Spacething {
 
         miners = new ArrayList<Miner>();
 
+        id = asteroidID;
+
         //Random anyag kerül az aszteroida közepébe
         int mat = (int) rand.nextInt(5);
         switch (mat){
@@ -36,9 +39,9 @@ public class Asteroid extends Spacething {
         }
 
         if(material!=null)
-            System.out.println(this.getId() + ". Asteroida létrehozva, nyersanyag: " + material.getName() + " : " + digged + " : " + layer);
+            System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
         else
-            System.out.println(this.getId() + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
+            System.out.println(id + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
         
     }
 
@@ -118,6 +121,10 @@ public class Asteroid extends Spacething {
 
     public int getDigged() {
         return digged;
+    }
+
+    public int getId(){
+        return id;
     }
 
     public ArrayList<Miner> getMiners(){
