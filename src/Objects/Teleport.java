@@ -17,6 +17,10 @@ public class Teleport extends Spacething {
         //TODO
     }
 
+    public void disable(){
+        enable = false;
+    }
+
     //Explode both Teleports connected.
     public void OnExplode() {
         System.out.println("OnExplode");
