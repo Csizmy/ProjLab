@@ -9,7 +9,5 @@ public class Iron extends Material{
     }
 
     @Override
-    public Material PeriMining() {
-        return this;
-    }
+    public void PeriMining() {}
 }

@@ -11,7 +11,5 @@ public class Coal extends Material{
     }
 
     @Override
-    public Material PeriMining() {
-        return this;
-    }
+    public void PeriMining() {}
 }
