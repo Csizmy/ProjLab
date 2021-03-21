@@ -95,6 +95,7 @@ public class Test {
         Uranium uranium = new Uranium(null);             //A kellő nyersanyagok létrehozva.
 
         builder.getBackpack().add(iron);
+        builder.getBackpack().add(iron);
         builder.getBackpack().add(water);
         builder.getBackpack().add(uranium);                 //A nyersanyagok a táskához adva.
 
