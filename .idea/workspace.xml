@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="mainban is teszt">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="2 teszt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Asteroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tests/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -448,7 +443,28 @@
       <option name="project" value="LOCAL" />
       <updated>1616356065915</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="2 teszt">
+      <created>1616358431809</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1616358431809</updated>
+    </task>
+    <task id="LOCAL-00015" summary="2 teszt">
+      <created>1616358486847</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616358486847</updated>
+    </task>
+    <task id="LOCAL-00016" summary="2 teszt">
+      <created>1616358656049</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1616358656049</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -511,7 +527,8 @@
     <MESSAGE value="Így jóóó hahaha" />
     <MESSAGE value="gettersetter" />
     <MESSAGE value="mainban is teszt" />
-    <option name="LAST_COMMIT_MESSAGE" value="mainban is teszt" />
+    <MESSAGE value="2 teszt" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 teszt" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Miners/Robot.java">
