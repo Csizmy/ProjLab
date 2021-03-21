@@ -1,11 +1,17 @@
 package Objects;
 
+import Miners.Miner;
+
 import java.util.ArrayList;
 
 public abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).
 
     protected ArrayList<Spacething> neighbours = new ArrayList<Spacething>();
     private int id;                 //ID
+
+    public Spacething(){
+
+    }
 
     public Spacething(int asteroidID){
         id = asteroidID;
@@ -30,4 +36,7 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
     public int getId(){
         return id;
     }
+
+    public abstract void removeMiner(Miner m);
+    public abstract void  addMiner(Miner m);
 }

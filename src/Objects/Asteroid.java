@@ -16,7 +16,7 @@ public class Asteroid extends Spacething {
     private int id;                 //ID
 
     private Random rand = new Random();
-    
+
     public Asteroid(int asteroidID) {
         super(asteroidID);
         //Set layer number
@@ -42,7 +42,7 @@ public class Asteroid extends Spacething {
             System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
         else
             System.out.println(id + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
-        
+
     }
 
     public Asteroid(int asteroidID, int layer, boolean perihelion, Material material) {
@@ -75,13 +75,14 @@ public class Asteroid extends Spacething {
     //Egy játékost "eltávolít" a rajta tartózkodók közül
     public void removeMiner(Miner m){
         miners.remove(m);
-        System.out.println("Töröltem a minert.");
+        System.out.println("Miner eltávolítva " + this.getId() + " aszteroidáról.");
     }
 
 
     //Egy játékost "hozzáad" a rajta tartózkodókhoz
-    public void addMiner(Miner m){ miners.add(m);
-    System.out.println("Addoltam a minert.");
+    public void addMiner(Miner m){
+        miners.add(m);
+        System.out.println("Miner hozzáadva " + this.getId() + " aszteroidához.");
     }
 
     //Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat

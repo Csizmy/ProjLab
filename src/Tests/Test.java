@@ -11,7 +11,10 @@ public class Test {
 
     public void tpre_mozog(){}//Telepes teleportkapura mozog
 
-    public void asztra_mozog(){} //Telepes aszteroidára mozog
+    public void asztra_mozog(){
+        Map m = new Map(5, 1);
+        m.getSettlers().get(0).Move(m.getSettlers().get(0).getSpacething().getNeighbours().get(0).getId());
+    } //Telepes aszteroidára mozog
 
     public void napvihar_elbujas(){
 
