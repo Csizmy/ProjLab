@@ -23,11 +23,11 @@ public class Robot extends Miner implements Steppable {
 
     //@Override
     public void Step() {
-        int mat = (int) Math.random()%2;
+        int mat = (int) Math.random();
         switch (mat){
             case 0:
                 int i = (int) (Math.random()%(spacething.getNeighbours().size()));
-                Spacething s =spacething.getNeighbours().get(i);
+                Spacething s = spacething.getNeighbours().get(i);
                 Move(s.getId());
                 break;
             case 1:

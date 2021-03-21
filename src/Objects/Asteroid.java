@@ -57,6 +57,8 @@ public class Asteroid extends Spacething {
         this.id = asteroidID;
         this.perihelion = perihelion;
 
+        asteroid = true;
+
         if(material!=null)
             System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
         else
@@ -78,6 +80,7 @@ public class Asteroid extends Spacething {
     //Egy játékost "eltávolít" a rajta tartózkodók közül
     public void removeMiner(Miner m){
         miners.remove(m);
+        System.out.println("digged " +this.getDigged()+   " layer" +this.getLayer());
         System.out.println("Miner eltávolítva " + this.getId() + " aszteroidáról.");
     }
 

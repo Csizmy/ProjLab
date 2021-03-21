@@ -40,8 +40,9 @@ public class Settler extends Miner{
                 } else {
                     AddMaterial(asteroid.getMaterial());
                     System.out.println("Nincs baj, bekerült a táskába a " + asteroid.getMaterial().getName());
+                    asteroid.setMaterial(null);
                 }
-                System.out.println("Sikerült a bányászás");
+                System.out.println("Bányászás megtörtént");
                 return true;
             }
             System.out.println("Ki van bányászva vagy nincs benne semmi.");
@@ -166,6 +167,7 @@ public class Settler extends Miner{
         }
 
         if(iron>0 && coal>0 && uranium>0){
+            System.out.println("Van hozzá elég anyag");
 
             for (int i = 0; i < backpack.size(); i++){ // kiveszi
 
@@ -191,10 +193,11 @@ public class Settler extends Miner{
 
             Robot r = new Robot(spacething);
             spacething.addMiner(r);
-
+            System.out.println("Kész a robot");
             return true;
         }
 
+        System.out.println("Nem sikerült a robot építés");
         return false;
     }
 
