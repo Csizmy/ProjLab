@@ -21,6 +21,6 @@ public class Game {
     // A játék maga.
     public static void main(String[] args) {
 
-        map = new Map();    //Játék indítása szekvencia
+        map = new Map(10, 4);    //Játék indítása szekvencia
     }//kk
 }

@@ -99,8 +99,8 @@ public class Settler extends Miner{
                     }
                 }
 
-                Teleport t1 = new Teleport();
-                Teleport t2 = new Teleport();
+                Teleport t1 = new Teleport(0);
+                Teleport t2 = new Teleport(0);
 
                 t1.setPair(t2);
                 t2.setPair(t1);
