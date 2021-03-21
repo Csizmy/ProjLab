@@ -57,6 +57,8 @@ public class Asteroid extends Spacething {
         this.id = asteroidID;
         this.perihelion = perihelion;
 
+        asteroid = true;
+
         if(material!=null)
             System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
         else
