@@ -3,6 +3,7 @@ package Game_parts;
 import Miners.Robot;
 import Miners.Settler;
 import Objects.Asteroid;
+import Objects.Spacething;
 import Objects.Teleport;
 
 import java.util.List;
@@ -11,25 +12,28 @@ public class Map extends Steppable {
 
     private List<Settler> settlers;         //List of Settlers.
     private List<Robot> robots;             //List of Robots.
-    private List<Asteroid> asteroids;       //List of Asteroids.
-    private List<Teleport> teleports;       //List of teleports.
+    private List<Spacething> spacethings;       //List of Asteroids and teleports.
     private int diffMat;                    //Count of the different materials.
 
     //Felveszi a telepesek (10) és az aszteroidák (10) listáját.
     public Map() {
         for (int i = 0; i < 10; i++) {
             Asteroid ball = new Asteroid();
-            asteroids.add(ball);
-            Settler born = new Settler(asteroids.get(i));
+            spacethings.add(ball);
+            Settler born = new Settler(ball);
             settlers.add(born);
         }
         diffMat = 4;
     }
 
-    //A napvihar működése.
+    //A napvihar működése.                      //!!!!!         for ciklus feltételek és tartalmai (getterek is lehet kellenek még)  !!!!!
     public void SolarStorm() {
-        //TODO
-        for (int i = 0; i < miners.size(); i++){
+        //List of
+        for (int i = 0; i < settlers.size(); i++){
+            if (miners.get(i).getAsteroid().getMaterial() == miners.get(i).getAsteroid().getLayer())
+                miners.get(i).die();
+        }
+        for (int i = 0; i < robots.size(); i++){
             if (miners.get(i).getAsteroid().getMaterial() == miners.get(i).getAsteroid().getLayer())
                 miners.get(i).die();
         }
