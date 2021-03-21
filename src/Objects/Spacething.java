@@ -11,10 +11,10 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
         id = asteroidID;
     }
     //ha a megadott égitest az adott égitest szomszédja, akkor igaz értéket vesz fel, ha nem, akkor hamis
-    public boolean IsNeigbour(Spacething s){
+    public boolean isNeigbour(int spacethingID){
         System.out.println("isNeighbour végrehajtodik.");
         for (Spacething n: neighbours) {
-            if(n == s) return true;
+            if(n.getId() == spacethingID) return true;
         }
         return false;
     }

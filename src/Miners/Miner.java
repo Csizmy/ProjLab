@@ -18,10 +18,22 @@ public abstract class Miner {
         backpack = new ArrayList<Material>();
     }
 
-    //Miner mozgás függvénye
-    public void Move(Spacething s){
+    //Miner mozgás függvénye aszteroidára
+    public void Move(int asteroidID){
+        if(asteroid.isNeigbour(asteroidID)){
+            Spacething to;
+            for (Spacething s: asteroid.getNeighbours()) {
+                if(s.getId() == asteroid.getId()){
+                    to = s;
+                }
+            }
+            asteroid.removeMiner(this);
+            to.
 
+
+        }
     }
+
 
 
 
