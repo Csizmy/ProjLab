@@ -49,10 +49,10 @@ public abstract class Miner {
     };
 
     //Miner fúr
-    public boolean Drill(Spacething s){
-        if(s.getAsteroid()){
+    public boolean Drill(){
+        if(spacething.getAsteroid()){
             System.out.println("Fúrni próbál");
-            Asteroid a = (Asteroid) s;
+            Asteroid a = (Asteroid) spacething;
             if(a.getLayer() > 0){
                 a.removeLayer();
                 System.out.println("Eggyel kisebb lett a réteg");
