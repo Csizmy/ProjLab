@@ -62,7 +62,9 @@ public class Asteroid extends Spacething {
 
 
     //Egy játékost "hozzáad" a rajta tartózkodókhoz
-    public void addMiner(Miner m){ miners.add(m);}
+    public void addMiner(Miner m){ miners.add(m);
+    System.out.println("Addoltam a minert.");
+    }
 
     //Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat
     public void Explode(){
