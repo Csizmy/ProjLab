@@ -26,7 +26,7 @@ public class Map extends Steppable {
         diffMat = 4;
     }
 
-    //A napvihar működése.                      //!!!!!         for ciklus feltételek és tartalmai (getterek is lehet kellenek még)  !!!!!
+    //A napvihar működése.                      //!!!!!    for ciklus feltételek és tartalmai (getterek is lehet kellenek még)  !!!!!
     public void SolarStorm() {
         //List of
         for (int i = 0; i < settlers.size(); i++){
