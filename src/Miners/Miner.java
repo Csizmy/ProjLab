@@ -20,7 +20,7 @@ public class Miner {
     }
 
     //Miner constructor
-    Miner(){
+    public Miner(){
         backpack = new ArrayList<Material>();
     }
 
