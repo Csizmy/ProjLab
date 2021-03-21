@@ -18,7 +18,6 @@ public class Settler extends Miner{
         teleports = new ArrayList<Teleport>();
 
         //asteroid.addMiner(this);
-        System.out.println("Settler létrehozva: " + this.asteroid.getId() + ". aszteroidán" );
     }
 
     // ha felrobban az aszteroida (radioaktív anyag bányászásánál) a telepes meghal
@@ -28,7 +27,7 @@ public class Settler extends Miner{
     }
 
     // ha nincs még kiásva az aszteroida, akkor egy rétegnyit ás rajta
-    public boolean Mine(){
+    public boolean Mine(Asteroid asteroid){
 
         System.out.println("Bányászás elkezdése");
 
@@ -125,7 +124,7 @@ public class Settler extends Miner{
     }
 
     //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
-    public boolean PlaceTp(Teleport t) {
+    /*public boolean PlaceTp(Teleport t) {
         if (t.getPair().IsNeigbour(t)) {
             t.AddNeighbor(asteroid);
             asteroid.AddNeighbor(t);
@@ -134,7 +133,7 @@ public class Settler extends Miner{
         }
         System.out.println("Itt van a teleportkapu párja is, nem lehet ide lerakni");
         return false;
-    }
+    }*/
 
     //  ellenőzi a nyersanyagokat és megépíti a robotot
     public boolean BuildRobot(){
@@ -180,8 +179,8 @@ public class Settler extends Miner{
                 }
             }
 
-            Robot r = new Robot(asteroid);
-            asteroid.addMiner(r);
+            Robot r = new Robot(spacething);
+            spacething.addMiner(r);
 
             return true;
         }

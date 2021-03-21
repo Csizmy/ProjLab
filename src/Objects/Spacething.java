@@ -1,5 +1,7 @@
 package Objects;
 
+import Miners.Miner;
+
 import java.util.ArrayList;
 
 public abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).
@@ -7,14 +9,18 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
     protected ArrayList<Spacething> neighbours = new ArrayList<Spacething>();
     private int id;                 //ID
 
+    public Spacething(){
+
+    }
+
     public Spacething(int asteroidID){
         id = asteroidID;
     }
     //ha a megadott égitest az adott égitest szomszédja, akkor igaz értéket vesz fel, ha nem, akkor hamis
-    public boolean IsNeigbour(Spacething s){
+    public boolean isNeigbour(int spacethingID){
         System.out.println("isNeighbour végrehajtodik.");
         for (Spacething n: neighbours) {
-            if(n == s) return true;
+            if(n.getId() == spacethingID) return true;
         }
         return false;
     }
@@ -30,4 +36,7 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
     public int getId(){
         return id;
     }
+
+    public abstract void removeMiner(Miner m);
+    public abstract void  addMiner(Miner m);
 }
