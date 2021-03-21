@@ -159,6 +159,13 @@ public class Test {
 
     }  // Telepes robotot épít nincs elég anyag.
 
-    public void robot_lep(){}  //  Robot műveletet hajt végre - mozog/fur
+    public void robot_lep(){
+        Map map = new Map(2, 0);
+        Robot robot = new Robot(map.getAsteroids().get(0));
+
+        robot.Step();
+
+
+    }  //  Robot műveletet hajt végre - mozog/fur
 
 }
