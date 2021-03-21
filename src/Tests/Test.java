@@ -23,10 +23,10 @@ public class Test {
         Robot r2 = new Robot(m.getAsteroids().get(1));      //plusz egy robot a másik aszteroidára
                                                             //valamelyik majd meghal
                                                             //
-        for (int i = 0; i < 10; i++)                         //
+        /*for (int i = 0; i < 10; i++)                         //
             m.getSettlers().get(0).Drill();                 //a settler fúr 10-szer, hogy ne legyen layer az aszteroidán
                                                             //
-        m.getSettlers().get(0).Mine();                      //majd kibányássza a belsejét
+        m.getSettlers().get(0).Mine();   */                   //majd kibányássza a belsejét
                                                             //
         m.SolarStorm();                                     //napvihar elvárt outputja, hogy a settler és az egyik robot túléli, a másik robot meghal
 
