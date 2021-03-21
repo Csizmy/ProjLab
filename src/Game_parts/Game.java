@@ -54,72 +54,72 @@ public class Game {
 
             switch(choice){
                 case 1:
-                    System.out.println("Játék indítás + Aszteroidák létrehozása");
+                    System.out.println("Játék indítás + Aszteroidák létrehozása\n");
                     t.jatek_inditas();
                     break;
 
                 case 2:
-                    System.out.println("Telepes teleportkapura mozog");
+                    System.out.println("Telepes teleportkapura mozog\n");
                     t.tpre_mozog();
                     break;
 
                 case 3:
-                    System.out.println("Telepes aszteroidára mozog");
+                    System.out.println("Telepes aszteroidára mozog\n");
                     t.asztra_mozog();
                     break;
 
                 case 4:
-                    System.out.println("Telepes megfúrt aszteroidán van (automatikus az elbújás)");
+                    System.out.println("Telepes megfúrt aszteroidán van (automatikus az elbújás)\n");
                     t.napvihar_elbujas();
                     break;
 
                 case 5:
-                    System.out.println("Telepes nem megfúrt aszteroidán van (meghal)");
+                    System.out.println("Telepes nem megfúrt aszteroidán van (meghal)\n");
                     t.napvihar_meghal();
                     break;
 
                 case 6:
-                    System.out.println("Telepes aszteroidát fúr");
+                    System.out.println("Telepes aszteroidát fúr\n");
                     t.utolso_furas();
                     break;
 
                 case 7:
-                    System.out.println("Telepes aszteroidát fúr : napközelben vizet");
+                    System.out.println("Telepes aszteroidát fúr : napközelben vizet\n");
                     t.furas_napkozel_viz();
                     break;
 
                 case 8:
-                    System.out.println("Telepes aszteroidát fúr : napközelben uránt");
+                    System.out.println("Telepes aszteroidát fúr : napközelben uránt\n");
                     t.furas_napkozel_uran();
                     break;
 
                 case 9:
-                    System.out.println("Telepes banyaszik (itt nem néz napközelt csak fúrásnál)");
+                    System.out.println("Telepes banyaszik (itt nem néz napközelt csak fúrásnál)\n");
                     t.banyaszas();
                     break;
 
                 case 10:
-                    System.out.println("Telepes teleportkaput épít van elég anyag");
+                    System.out.println("Telepes teleportkaput épít van elég anyag\n");
                     t.tp_epit_i();
                     break;
 
                 case 11:
-                    System.out.println("Telepes teleportkaput épít nincs elég anyag");
+                    System.out.println("Telepes teleportkaput épít nincs elég anyag\n");
                     t.tp_epit_h();
                     break;
 
                 case 12:
-                    System.out.println("Telepes robotot épít van elég anyag");
+                    System.out.println("Telepes robotot épít van elég anyag\n");
                     t.robot_epit_i();
                     break;
 
                 case 13:
-                    System.out.println("Telepes robotot épít nincs elég anyag");
+                    System.out.println("Telepes robotot épít nincs elég anyag\n");
                     t.robot_epit_h();
                     break;
 
                 case 14:
-                    System.out.println("Robot műveletet hajt végre - mozog/fur");
+                    System.out.println("Robot műveletet hajt végre - mozog/fur\n");
                     t.robot_lep();
                     break;
 
