@@ -10,6 +10,7 @@ public class Teleport extends Spacething {
 
     public Teleport(int teleportID){
         super(teleportID);
+        asteroid = false;
     }
 
     @Override

@@ -38,6 +38,8 @@ public class Asteroid extends Spacething {
             case 4: material = null;
         }
 
+        asteroid = true;
+
         if(material!=null)
             System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
         else

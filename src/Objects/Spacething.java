@@ -7,7 +7,9 @@ import java.util.ArrayList;
 public abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).
 
     protected ArrayList<Spacething> neighbours = new ArrayList<Spacething>();
-    private int id;                 //ID
+    protected int id;                 //ID
+    protected boolean asteroid;
+
 
     public Spacething(){
 
@@ -39,4 +41,6 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
 
     public abstract void removeMiner(Miner m);
     public abstract void  addMiner(Miner m);
+
+    public boolean getAsteroid(){return asteroid;};
 }

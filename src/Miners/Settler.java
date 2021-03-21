@@ -27,23 +27,27 @@ public class Settler extends Miner{
     }
 
     // ha nincs még kiásva az aszteroida, akkor egy rétegnyit ás rajta
-    public boolean Mine(Asteroid asteroid){
+    public boolean Mine(){
+        if(spacething.getAsteroid()) {
+            Asteroid asteroid = (Asteroid) spacething;
+            System.out.println("Bányászás elkezdése");
 
-        System.out.println("Bányászás elkezdése");
+            if (asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial() != null) {
 
-        if(asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial()!=null){
-
-            if(asteroid.getPerihelion()){
-                asteroid.getMaterial().PeriMining();
-                System.out.println("Valami baj van a napközelség miatt\n");
+                if (asteroid.getPerihelion()) {
+                    asteroid.getMaterial().PeriMining();
+                    System.out.println("Valami baj van a napközelség miatt\n");
+                } else {
+                    AddMaterial(asteroid.getMaterial());
+                    System.out.println("Nincs baj, bekerült a táskába a " + asteroid.getMaterial().getName());
+                }
+                System.out.println("Sikerült a bányászás");
+                return true;
             }
-
-            else{
-                AddMaterial(asteroid.getMaterial());
-                System.out.println("Nincs baj, bekerült a táskába a " + asteroid.getMaterial().getName());
-            }
-            return true;
+            System.out.println("Ki van bányászva vagy nincs benne semmi.");
+            return false;
         }
+        System.out.println("Itt nem lehet bányászni");
         return false;
     }
 
