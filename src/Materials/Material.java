@@ -3,9 +3,10 @@ package Materials;
 import Objects.Asteroid;
 
 public abstract class Material {
-    protected String name;
-    protected Asteroid asteroid;        //(?)The asteroid this material is in.
+    protected String name;              // a nyersanyag neve
+    protected Asteroid asteroid;        //tárolja melyik aszteroidán van a nyersanyag
 
+    // getterek és setterek a megfelelő értékekhez
     public String getName(){
         return name;
     }
@@ -18,7 +19,7 @@ public abstract class Material {
 
     void setAsteroid(Asteroid a){asteroid = a;}
 
-    //Virtual
-    public void PeriMining(){          //water and uranium behave differently perihelion
+    //Virtuális függvény, ami a víznél és az urániumnál fontos
+    public void PeriMining(){
     }
 }

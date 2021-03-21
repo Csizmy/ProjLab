@@ -8,24 +8,26 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    private static Test t = new Test();
+
     public Random rand = new Random();
     private static Map map;                //A játék pálya.
 
+    // A tesztesetekhet tartozó osztály
+    private static Test t = new Test();
+
     //"Init" Beállítja a játék kezdésénél az értékeket.
     public void StartGame() {
-
+        System.out.println("A játék elkezdődik");
+        map = new Map(100, 3);
     }
 
     //Körönként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.
     public void EndGame() {
-        //TODO
+        System.out.println("A játék vége");
     }
 
     // A játék maga.
     public static void main(String[] args) {
-
-        boolean testing = true;
 
         System.out.println("1. Játék indítás + Aszteroidák létrehozása\n" +
                 "2. Telepes teleportkapura mozog\n" +
@@ -46,8 +48,9 @@ public class Game {
         System.out.println("Teszteset száma: ");
         Scanner input=new Scanner(System.in);
         int choice = input.nextInt();
+        boolean testing = true;
 
-        while(testing){
+        while(testing){  // a tesztesetek megtekintéséhez be kell írni a megfelelő számot
 
             switch(choice){
                 case 1:
@@ -123,10 +126,13 @@ public class Game {
                 case 0:
                     testing = false;
                     break;
+
+                default:
+                    break;
             }
 
             System.out.println("Teszteset száma: ");
-            choice = input.nextInt(); // add this
+            choice = input.nextInt();
         }
     }
 }

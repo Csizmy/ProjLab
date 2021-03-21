@@ -8,21 +8,21 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Asteroid extends Spacething {
-    private int layer;              //Maximum layers.
-    private int digged;             // Removed layers.
-    private boolean perihelion;     //Close to Sun or not.
+    private int layer;              // Sziklaréteg
+    private int digged;             // Kiásott rétegek
+    private boolean perihelion;     // napközelség
     private Material material;
     private ArrayList<Miner> miners;
     private int id;                 //ID
 
     private Random rand = new Random();
 
+    // Asteroid konstruktor
     public Asteroid(int asteroidID) {
         super(asteroidID);
-        //Set layer number
-        layer = (int) rand.nextInt(7)+3;    //Min: 3 layer, Max: 10 layer
+        layer = (int) rand.nextInt(7)+3;    //Min: 3, Max: 9
 
-        digged = 0;     //0 layers dug yet.
+        digged = 0;     //0 réteg van eddig ásva
 
         miners = new ArrayList<Miner>();
 
@@ -47,6 +47,7 @@ public class Asteroid extends Spacething {
 
     }
 
+    // Asteroid konstruktor
     public Asteroid(int asteroidID, int layer, boolean perihelion, Material material) {
         super(asteroidID);
 
@@ -93,16 +94,16 @@ public class Asteroid extends Spacething {
 
     //Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat
     public void Explode(){
-        System.out.println("Explode start.");
+        System.out.println("Robbanás kezdődik");
         for (Miner m: miners) {
             m.Explode();
         }
-        System.out.println("Explode done.");
+        System.out.println("Robbanás vége");
     }
 
     //Visszatér a bolygón lévő telepesek nyersanyag listájával.
     public ArrayList<Material> CountDiffMat(){
-        System.out.println("Countdifmat start.");
+        System.out.println("Countdifmat kezdődik.");
         ArrayList<Material> materials = new ArrayList<Material>();
         for(int i = 0; i < miners.size(); i++) {
             ArrayList<Material> backpack = miners.get(i).getBackpack();
@@ -110,7 +111,7 @@ public class Asteroid extends Spacething {
                 materials.add(backpack.get(j));
             }
         }
-        System.out.println("Countdifmat done.");
+        System.out.println("Countdifmat kész.");
         return materials;
     }
 
@@ -129,6 +130,8 @@ public class Asteroid extends Spacething {
         System.out.println("setupteleport");
     }
 
+
+    // getterek és setterek a megadott változókhoz
     public int getLayer() {
         return layer;
     }

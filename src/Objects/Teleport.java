@@ -5,49 +5,46 @@ import Miners.Settler;
 
 public class Teleport extends Spacething {
 
-    private boolean enable;         //True when the Teleport can be used.
-    private Teleport pair;          //The other part of this Teleport
+    private boolean enable;         //igaz, ha használható
+    private Teleport pair;          //a teleport párja
 
+    // Teleport konstruktor
     public Teleport(int teleportID){
         super(teleportID);
         asteroid = false;
     }
 
     @Override
-    public void removeMiner(Miner m) {
-
-    }
+    public void removeMiner(Miner m) {}
 
     @Override
-    public void addMiner(Miner m) {
+    public void addMiner(Miner m) {}
 
-    }
-
-    //Teleports to the other side.
+    //Teleport továbbküldi az embert
     public void MoveForward() {
         System.out.println("MoveForward");
-        //TODO
     }
 
     public void disable(){
         enable = false;
     }
 
-    //Explode both Teleports connected.
+    //Felrobban a teleport 2 párja
     public void OnExplode() {
         System.out.println("OnExplode");
-        //TODO
     }
 
+    // egy telepes táskájához adja
     public void AddToSettler(Settler s) {
         System.out.println("AddToSettler");
-        //TODO
     }
 
+    // pair settere
     public void setPair(Teleport pair) {
         this.pair = pair;
     }
 
+    // pair gettere
     public Teleport getPair() {
         return pair;
     }

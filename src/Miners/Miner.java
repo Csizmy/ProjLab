@@ -7,21 +7,21 @@ import java.util.ArrayList;
 
 public abstract class Miner {
 
-    // tárolja, hogy melyik aszteroidán van éppen a játékos
-    protected Spacething spacething;
-    // ez a raktár
-    protected ArrayList<Material> backpack;
+            // tárolja, hogy melyik aszteroidán van éppen a játékos
+            protected Spacething spacething;
+            // ez a raktár
+            protected ArrayList<Material> backpack;
 
-    //Miner konstruktor
-    public Miner(Spacething s){
-        spacething = s;
-        backpack = new ArrayList<Material>();
-        s.addMiner(this);
+            //Miner konstruktor
+            public Miner(Spacething s){
+                spacething = s;
+                backpack = new ArrayList<Material>();
+                s.addMiner(this);
     }
 
     //Miner mozgás függvénye aszteroidára
     public void Move(int asteroidID){
-        System.out.println("Move start");
+        System.out.println("Mozgás elkezdődik");
         if(spacething.isNeigbour(asteroidID)){
             Spacething to = null;
             for (Spacething s: spacething.getNeighbours()) {
@@ -33,16 +33,11 @@ public abstract class Miner {
                 spacething.removeMiner(this);
                 to.addMiner(this);
                 spacething = to;
-                System.out.println("Move successfull");
+                System.out.println("Sikeres mozgás");
             }
         }
-        System.out.println("Move end");
+        System.out.println("Mozgás vége");
     }
-
-    public Spacething getSpacething(){
-        return spacething;
-    }
-
 
     //Miner meghal
     public void Die(){
@@ -64,7 +59,7 @@ public abstract class Miner {
             System.out.println("Ez már ki van fúrva");
             return false;
         }
-        System.out.println("Itt nem lehet fúrni");
+        System.out.println("Itt nem lehet fúrni, nem aszteroida");
         return false;
     }
 
@@ -75,4 +70,10 @@ public abstract class Miner {
     public ArrayList<Material> getBackpack() {
         return backpack;
     }
+
+    // spacething getter-e
+    public Spacething getSpacething(){
+        return spacething;
+    }
+
 }

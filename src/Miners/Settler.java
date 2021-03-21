@@ -1,6 +1,5 @@
 package Miners;
 
-import Game_parts.*;
 import Materials.*;
 import Objects.*;
 
@@ -14,10 +13,7 @@ public class Settler extends Miner{
     // Settler konstruktor
     public Settler(Asteroid a){
         super(a);
-
         teleports = new ArrayList<Teleport>();
-
-        //asteroid.addMiner(this);
     }
 
     // ha felrobban az aszteroida (radioaktív anyag bányászásánál) a telepes meghal
@@ -32,12 +28,14 @@ public class Settler extends Miner{
             Asteroid asteroid = (Asteroid) spacething;
             System.out.println("Bányászás elkezdése");
 
+            //ha nincs kibányászva és nem üres
             if (asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial() != null) {
 
-                if (asteroid.getPerihelion()) {
+                if (asteroid.getPerihelion()) {  // napközelben van
                     asteroid.getMaterial().PeriMining();
                     System.out.println("Valami baj van a napközelség miatt\n");
-                } else {
+                }
+                else {
                     AddMaterial(asteroid.getMaterial());
                     System.out.println("Nincs baj, bekerült a táskába a " + asteroid.getMaterial().getName());
                     asteroid.setMaterial(null);
@@ -55,7 +53,7 @@ public class Settler extends Miner{
     //ellenőrzi a teleport építéséhez szükséges nyersanyagot, és ha tudja, megépíti
     public boolean BuildTp(){
 
-        if(teleports.size()==0){
+        if(teleports.size()==0){  // csak akkor tud építeni, ha üres a táskájában a tartó
             int iron = 0;
             int water = 0;
             int uranium = 0;
@@ -73,7 +71,7 @@ public class Settler extends Miner{
                 }
             }
 
-            if(iron>=2 && water>=1 && uranium>=1){
+            if(iron>=2 && water>=1 && uranium>=1){  // ha megvan az anyagmennyiség
 
                 System.out.println("Van elég nyersanyag");
                 for (int i = 0; i < backpack.size(); i++){ // kiveszi
@@ -84,7 +82,7 @@ public class Settler extends Miner{
                     }
                 }
 
-                for (int i = 0; i < backpack.size(); i++){ // kiveszi
+                for (int i = 0; i < backpack.size(); i++){
 
                     if(backpack.get(i).getName()=="Uranium"){
                         backpack.remove(i);
@@ -92,7 +90,7 @@ public class Settler extends Miner{
                     }
                 }
 
-                for (int i = 0; i < backpack.size(); i++){ // kiveszi
+                for (int i = 0; i < backpack.size(); i++){
 
                     if(backpack.get(i).getName()=="Water"){
                         backpack.remove(i);
@@ -100,7 +98,7 @@ public class Settler extends Miner{
                     }
                 }
 
-                for (int i = 0; i < backpack.size(); i++){ // kiveszi
+                for (int i = 0; i < backpack.size(); i++){
 
                     if(backpack.get(i).getName()=="Iron"){
                         backpack.remove(i);
@@ -111,10 +109,10 @@ public class Settler extends Miner{
                 Teleport t1 = new Teleport(0);
                 Teleport t2 = new Teleport(0);
 
-                t1.setPair(t2);
+                t1.setPair(t2); // egymmás párjai lesznek
                 t2.setPair(t1);
 
-                teleports.add(t1);
+                teleports.add(t1); //bekerül a táskába
                 teleports.add(t2);
 
                 System.out.println("A táskába került a teleportkapu-pár.");
@@ -131,9 +129,9 @@ public class Settler extends Miner{
     //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
     public boolean PlaceTp(Teleport t) {
 
-        if(spacething.getAsteroid()) {
+        if(spacething.getAsteroid()) {  // ha aszteroidán van
             Asteroid a = (Asteroid) spacething;
-            if (!t.getPair().isNeigbour(a.getId())) {
+            if (!t.getPair().isNeigbour(a.getId())) {  // ha a párja nincs az adott aszteroidán
                 t.AddNeighbor(spacething);
                 spacething.AddNeighbor(t);
                 System.out.println("Leraktam a teleportkaput");
@@ -176,14 +174,14 @@ public class Settler extends Miner{
                     break;
                 }
             }
-            for (int i = 0; i < backpack.size(); i++){ // kiveszi
+            for (int i = 0; i < backpack.size(); i++){
 
                 if(backpack.get(i).getName()=="Coal"){
                     backpack.remove(i);
                     break;
                 }
             }
-            for (int i = 0; i < backpack.size(); i++){ // kiveszi
+            for (int i = 0; i < backpack.size(); i++){
 
                 if(backpack.get(i).getName()=="Iron"){
                     backpack.remove(i);
@@ -192,7 +190,7 @@ public class Settler extends Miner{
             }
 
             Robot r = new Robot(spacething);
-            spacething.addMiner(r);
+            spacething.addMiner(r); // lerakja az adott aszteroidára a robotot
             System.out.println("Kész a robot");
             return true;
         }
@@ -204,7 +202,7 @@ public class Settler extends Miner{
     // ha kap be valódi anyagot, akkor hozzáadja a táskához
     public boolean AddMaterial(Material m){
 
-        if(backpack.size()<10 && m != null) {
+        if(backpack.size()<10 && m != null) {  // csak akkor adja be, ha van hely még neki
             backpack.add(m);
             System.out.println("Van elég hely a táskában, bele lett rakva az anyag");
             return true;

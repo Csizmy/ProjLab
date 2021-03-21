@@ -1,10 +1,6 @@
 package Miners;
 
 import Game_parts.*;
-import Materials.Coal;
-import Materials.Iron;
-import Materials.Uranium;
-import Materials.Water;
 import Objects.*;
 
 public class Robot extends Miner implements Steppable {
@@ -21,16 +17,18 @@ public class Robot extends Miner implements Steppable {
         Move(s.getId());
     }
 
-    //@Override
-    public void Step() {
+    @Override
+    public void Step() {  // a robot lépése, vagy lép, vagy fúr
         int mat = (int) Math.random();
         switch (mat){
-            case 0:
+            case 0:  // mozgás
+                System.out.println("Robot mozogni akar");
                 int i = (int) (Math.random()%(spacething.getNeighbours().size()));
                 Spacething s = spacething.getNeighbours().get(i);
                 Move(s.getId());
                 break;
-            case 1:
+            case 1:  // fúrás
+                System.out.println("Robor fúrni akar");
                 Drill();
                 break;
         }
