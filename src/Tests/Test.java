@@ -76,7 +76,7 @@ public class Test {
         if (builder.BuildRobot() == false) System.out.println("Nincs elég nyersanyag.");        //Ha lesz a BuildRobotban komment ez a 2 sor nem kell.
         else System.out.println("Hibás teszt.");
 
-    }  // Telepes robotot épít nincs elég anyag
+    }  // Telepes robotot épít nincs elég anyag.
 
     public void napkitores(){}  // Véletlenszerű napkitörés megjelenik
 
