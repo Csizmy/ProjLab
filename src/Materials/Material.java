@@ -17,7 +17,7 @@ public abstract class Material {
     void setAsteroid(Asteroid a){asteroid = a;}
 
     //Virtual
-    public void periMining(){          //water and uranium behave differently perihelion
+    public void PeriMining(){          //water and uranium behave differently perihelion
     }
 
     public String getName() {
