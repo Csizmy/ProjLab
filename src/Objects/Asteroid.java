@@ -1,9 +1,11 @@
 package Objects;
 
+import Game_parts.Game;
 import Materials.*;
 import Miners.Miner;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Asteroid extends Spacething {
     private int layer;              //Maximum layers.
@@ -11,24 +13,34 @@ public class Asteroid extends Spacething {
     private boolean perihelion;     //Close to Sun or not.
     private Material material;
     private ArrayList<Miner> miners;
+    private int id;                 //ID
+
+    private Random rand = new Random();
     
-    public Asteroid() {
+    public Asteroid(int asteroidID) {
         //Set layer number
-        layer = (int) Math.random()%7+3;    //Min: 3 layer, Max: 10 layer
+        layer = (int) rand.nextInt(7)+3;    //Min: 3 layer, Max: 10 layer
 
         digged = 0;     //0 layers dug yet.
 
         miners = new ArrayList<Miner>();
 
+        id = asteroidID;
+
         //Random anyag kerül az aszteroida közepébe
-        int mat = (int) Math.random()%5;
+        int mat = (int) rand.nextInt(5);
         switch (mat){
-            case 0: material = new Coal(this);
-            case 1: material = new Iron(this);
-            case 2: material = new Uranium(this);
-            case 3: material = new Water(this);
+            case 0: material = new Coal(this); break;
+            case 1: material = new Iron(this); break;
+            case 2: material = new Uranium(this); break;
+            case 3: material = new Water(this); break;
             case 4: material = null;
         }
+
+        if(material!=null)
+            System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
+        else
+            System.out.println(id + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
         
     }
 
@@ -100,9 +112,15 @@ public class Asteroid extends Spacething {
         return material;
     }
 
-    public boolean getPerihelion(){return perihelion;}
+    public boolean getPerihelion(){
+        return perihelion;
+    }
 
     public int getDigged() {
         return digged;
+    }
+
+    public int getId(){
+        return id;
     }
 }

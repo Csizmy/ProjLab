@@ -1,12 +1,16 @@
 package Game_parts;
 
-public class Game {
+import Objects.Asteroid;
 
-    private Map map;                //A játék pálya.
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Game {
+    public Random rand = new Random();
+    private static Map map;                //A játék pálya.
 
     //"Init" Beállítja a játék kezdésénél az értékeket.
     public void StartGame() {
-        map = new Map();
     }
 
     //Körönként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.
@@ -16,7 +20,7 @@ public class Game {
 
     // A játék maga.
     public static void main(String[] args) {
-        System.out.println("GitHub try"); // Display the string.
-        System.out.println("GitHub try2"); // Display the string.
+
+        map = new Map();    //Játék indítása szekvencia
     }//kk
 }

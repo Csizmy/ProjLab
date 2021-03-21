@@ -14,8 +14,11 @@ public class Settler extends Miner{
     // Settler konstruktor
     public Settler(Asteroid a){
         super(a);
-        backpack = new ArrayList<Material>();
+
         teleports = new ArrayList<Teleport>();
+
+        //asteroid.addMiner(this);
+        System.out.println("Settler létrehozva: " + this.asteroid.getId() + ". aszteroidán" );
     }
 
     // ha felrobban az aszteroida (radioaktív anyag bányászásánál) a telepes meghal

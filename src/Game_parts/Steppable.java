@@ -1,9 +1,7 @@
 package Game_parts;
 
-public class Steppable {
+public interface Steppable {
 
     //Kezeli a nem játékos által vezérelt dolgokat.
-    public void Step() {
-        //TODO
-    }
+    public void Step();
 }

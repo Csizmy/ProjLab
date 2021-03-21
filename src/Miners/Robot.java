@@ -7,7 +7,7 @@ import Materials.Uranium;
 import Materials.Water;
 import Objects.*;
 
-public class Robot extends Miner /*implements Steppable*/ {
+public class Robot extends Miner implements Steppable {
 
     // Robot konstuktor
     public Robot(Asteroid a) {
