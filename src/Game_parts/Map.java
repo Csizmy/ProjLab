@@ -46,22 +46,21 @@ public class Map implements Steppable {
         diffMat = 4;
     }
 
-    //A napvihar működése.                      //!!!!!    for ciklus feltételek és tartalmai (getterek is lehet kellenek még)  !!!!!
+    //A napvihar működése.
     public void SolarStorm() {
-        //List of
-        /*for (int i = 0; i < settlers.size(); i++){
-            if (miners.get(i).getAsteroid().getMaterial() == miners.get(i).getAsteroid().getLayer())
-                miners.get(i).die();
-        }
-        for (int i = 0; i < robots.size(); i++){
-            if (miners.get(i).getAsteroid().getMaterial() == miners.get(i).getAsteroid().getLayer())
-                miners.get(i).die();
-        }
 
-        for (int i = 0; i < spacethings.size(); i++){
-            spacethings.get(i).SolarStormHappens();
-        }*/
+        System.out.println("napvihar");
 
+        for (int i = 0; i < asteroids.size(); i++) {
+            if (asteroids.get(i).getLayer() != asteroids.get(i).getDigged() || asteroids.get(i).getMaterial() != null) {
+                for (int j = 0; j < asteroids.get(i).getMiners().size(); j++) {
+                    asteroids.get(i).getMiners().get(i).Die();
+
+                }
+            }
+        }
+        for (int i = 0; i < teleports.size(); i++)
+            teleports.get(i).disable();
     }
 
     //Az AI elindít véletlenszerűen egy napvihart.
