@@ -9,15 +9,18 @@ public class Teleport extends  Spacething {
 
     //Teleports to the other side.
     public void MoveForward() {
+        System.out.println("MoveForward");
         //TODO
     }
 
     //Explode both Teleports connected.
     public void OnExplode() {
+        System.out.println("OnExplode");
         //TODO
     }
 
     public void AddToSettler(Settler s) {
+        System.out.println("AddToSettler");
         //TODO
     }
 }

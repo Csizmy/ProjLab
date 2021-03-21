@@ -32,28 +32,66 @@ public class Asteroid extends Spacething {
         
     }
 
+    //csökkenti a sziklarétegek számát az adott aszteroidán
     public void removeLayer(){
-        digged++;               //layer--;
+        digged++;
+        System.out.println("Csökkent a rétegem.");          //layer--;
     }
 
+    // Ha nem üres az aszteroida (és a napközelség nem zavar bele a műveletbe), kiveszi belőle az adott nyersanyagot
     public void RemoveMaterial() {
         digged = layer;
         material = null;
     }
 
+    //Egy játékost "eltávolít" a rajta tartózkodók közül
     public void removeMiner(Miner m){
         miners.remove(m);
+        System.out.println("Töröltem a minert.");
     }
 
 
-    public void addMiner(Miner m){
-        miners.add(m);
-    }
+    //Egy játékost "hozzáad" a rajta tartózkodókhoz
+    public void addMiner(Miner m){ miners.add(m);}
 
+    //Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat
     public void Explode(){
+        System.out.println("Explode start.");
         for (Miner m: miners) {
             m.Explode();
         }
+        System.out.println("Explode done.");
     }
+
+    //Visszatér a bolygón lévő telepesek nyersanyag listájával.
+    public ArrayList<Material> CountDiffMat(){
+        System.out.println("Countdifmat start.");
+        ArrayList<Material> materials = new ArrayList<Material>();
+        for(int i = 0; i < miners.size(); i++) {
+            ArrayList<Material> backpack = miners.get(i).getBackpack();
+            for (int j = 0; j < backpack.size(); j++) {
+                materials.add(backpack.get(j));
+            }
+        }
+        System.out.println("Countdifmat done.");
+        return materials;
+    }
+
+    //A játék elején, beállítja az aktuális szomszédokat és a napközelség értékét.
+    public void Init(){
+        System.out.println("Init végrehajtodik.");
+    }
+
+    //A napközelséget vizsgálom és irom felül.
+    public void Step(){
+        System.out.println("Step végrehajtodik.");
+    }
+
+    // a megadott teleportot az aszteroidához köti
+    public void SetUpTeleport(Teleport t){
+        System.out.println("setupteleport");
+    }
+
+
 
 }

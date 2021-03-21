@@ -2,20 +2,14 @@ package Objects;
 
 import java.util.ArrayList;
 
-public class Spacething {
-    private String type;    //Type of spacething (Asteroid or Teleport)
-    private ArrayList<Spacething> neighbors;
+public abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).
+    protected ArrayList<Spacething> neighbours;
 
-    public void setName(String t){
-        type = t;
-    }
 
-    public String getName(){
-        return type;
-    }
-
-    public boolean IsNeigbor(Spacething s){
-        for (Spacething n: neighbors) {
+    //ha a megadott égitest az adott égitest szomszédja, akkor igaz értéket vesz fel, ha nem, akkor hamis
+    public boolean isNeigbour(Spacething s){
+        System.out.println("isNeighbour végrehajtodik.");
+        for (Spacething n: neighbours) {
             if(n == s) return true;
         }
         return false;
