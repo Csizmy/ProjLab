@@ -4,11 +4,12 @@ import Objects.Asteroid;
 
 public class Water extends Material{
     public Water(Asteroid a){
-        this.setName("Water");
+        setName("Water");
+        setAsteroid(a);
     }
 
     @Override
-    public Material PeriMining() {
-        return null;
+    void periMining(){
+        asteroid.RemoveMaterial();      //water evaporates perihelion
     }
 }

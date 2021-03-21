@@ -6,6 +6,7 @@ public class Coal extends Material{
 
     //Coal constructor
     public Coal(Asteroid a){
-        this.setName("Coal");
+        setName("Coal");
+        setAsteroid(a);
     }
 }

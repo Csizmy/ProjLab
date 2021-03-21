@@ -4,11 +4,12 @@ import Objects.Asteroid;
 
 public class Uranium extends Material{
     public Uranium(Asteroid a){
-        this.setName("Uranium");
+        setName("Uranium");
+        setAsteroid(a);
     }
 
     @Override
-    public Material PeriMining() {
-        return null;
+    void periMining(){
+        asteroid.Explode();             //uranium explodes perihelion
     }
 }

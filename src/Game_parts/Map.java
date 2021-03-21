@@ -29,6 +29,15 @@ public class Map extends Steppable {
     //A napvihar működése.
     public void SolarStorm() {
         //TODO
+        for (int i = 0; i < miners.size(); i++){
+            if (miners.get(i).getAsteroid().getMaterial() == miners.get(i).getAsteroid().getLayer())
+                miners.get(i).die();
+        }
+
+        for (int i = 0; i < spacethings.size(); i++){
+            spacethings.get(i).SolarStormHappens();
+        }
+
     }
 
     //Az AI elindít véletlenszerűen egy napvihart.

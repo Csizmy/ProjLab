@@ -1,0 +1,108 @@
+Index: src/Materials/Iron.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Materials;\r\n\r\nimport Objects.Asteroid;\r\n\r\npublic class Iron extends Material{\r\n    public Iron(Asteroid a){\r\n        this.setName(\"Iron\");\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Materials/Iron.java b/src/Materials/Iron.java
+--- a/src/Materials/Iron.java	
++++ b/src/Materials/Iron.java	
+@@ -4,6 +4,7 @@
+ 
+ public class Iron extends Material{
+     public Iron(Asteroid a){
+-        this.setName("Iron");
++        setName("Iron");
++        setAsteroid(a);
+     }
+ }
+\ No newline at end of file
+Index: src/Materials/Material.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Materials;\r\n\r\nimport Objects.Asteroid;\r\n\r\npublic class Material {\r\n    private String name;\r\n    private Asteroid asteroid;      //(?)The asteroid this material is in.\r\n\r\n    String getName(){\r\n        return name;\r\n    }\r\n\r\n    void setName(String n){\r\n        name = n;\r\n    }\r\n\r\n    //Virtual\r\n    void periMining(){\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Materials/Material.java b/src/Materials/Material.java
+--- a/src/Materials/Material.java	
++++ b/src/Materials/Material.java	
+@@ -2,9 +2,9 @@
+ 
+ import Objects.Asteroid;
+ 
+-public class Material {
+-    private String name;
+-    private Asteroid asteroid;      //(?)The asteroid this material is in.
++public abstract class Material {
++    protected String name;
++    protected Asteroid asteroid;        //(?)The asteroid this material is in.
+ 
+     String getName(){
+         return name;
+@@ -14,7 +14,11 @@
+         name = n;
+     }
+ 
++    Asteroid getAsteroid(){return asteroid;}
++
++    void setAsteroid(Asteroid a){asteroid = a;}
++
+     //Virtual
+-    void periMining(){
++    void periMining(){          //water and uranium behave differently perihelion
+     }
+ }
+Index: src/Materials/Uranium.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Materials;\r\n\r\nimport Objects.Asteroid;\r\n\r\npublic class Uranium extends Material{\r\n    public Uranium(Asteroid a){\r\n        this.setName(\"Uranium\");\r\n    }\r\n\r\n    @Override\r\n    void periMining(){\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Materials/Uranium.java b/src/Materials/Uranium.java
+--- a/src/Materials/Uranium.java	
++++ b/src/Materials/Uranium.java	
+@@ -4,11 +4,12 @@
+ 
+ public class Uranium extends Material{
+     public Uranium(Asteroid a){
+-        this.setName("Uranium");
++        setName("Uranium");
++        setAsteroid(a);
+     }
+ 
+     @Override
+     void periMining(){
+-
++        asteroid.Explode();             //uranium explodes perihelion
+     }
+ }
+\ No newline at end of file
+Index: src/Materials/Water.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Materials;\r\n\r\nimport Objects.Asteroid;\r\n\r\npublic class Water extends Material{\r\n    public Water(Asteroid a){\r\n        this.setName(\"Water\");\r\n    }\r\n\r\n    @Override\r\n    void periMining(){\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Materials/Water.java b/src/Materials/Water.java
+--- a/src/Materials/Water.java	
++++ b/src/Materials/Water.java	
+@@ -4,11 +4,12 @@
+ 
+ public class Water extends Material{
+     public Water(Asteroid a){
+-        this.setName("Water");
++        setName("Water");
++        setAsteroid(a);
+     }
+ 
+     @Override
+     void periMining(){
+-
++        asteroid.RemoveMaterial();      //water evaporates perihelion
+     }
+ }
+\ No newline at end of file
