@@ -88,7 +88,7 @@ public class Map implements Steppable {
         }
         for (int i = 0; i < teleports.size(); i++)
             teleports.get(i).disable();
-    }
+    }//
 
     //Az AI elindít véletlenszerűen egy napvihart.
     @Override
