@@ -48,6 +48,7 @@ public class Asteroid extends Spacething {
     public Asteroid(int asteroidID, int layer, boolean perihelion, Material material) {
         super(asteroidID);
 
+        this.material = material;
         this.layer = layer;
         this.digged = 0;
         this.miners = new ArrayList<Miner>();
@@ -145,5 +146,9 @@ public class Asteroid extends Spacething {
 
     public ArrayList<Miner> getMiners(){
         return  miners;
+    }
+
+    public void setLayer(int layer) {
+        this.layer = layer;
     }
 }
