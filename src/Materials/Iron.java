@@ -4,6 +4,7 @@ import Objects.Asteroid;
 
 public class Iron extends Material{
     public Iron(Asteroid a){
-        this.setName("Iron");
+        setName("Iron");
+        setAsteroid(a);
     }
 }
