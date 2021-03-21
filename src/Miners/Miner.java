@@ -9,10 +9,13 @@ public abstract class Miner {
 
     // tárolja, hogy melyik aszteroidán van éppen a játékos
     protected Asteroid asteroid;
+    // ez a raktár
+    protected ArrayList<Material> backpack;
 
     //Miner konstruktor
     public Miner(Asteroid a){
         asteroid = a;
+        backpack = new ArrayList<Material>();
     }
 
     //Miner mozgás függvénye
@@ -39,4 +42,9 @@ public abstract class Miner {
 
     // aszteroida robbanásnál a Minerek máshogy viselkednek
     public abstract void Explode();
+
+    // backpack getter-e
+    public ArrayList<Material> getBackpack() {
+        return backpack;
+    }
 }

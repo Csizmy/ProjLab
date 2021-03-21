@@ -8,8 +8,6 @@ import java.util.ArrayList;
 
 public class Settler extends Miner{
 
-    // ez a telepes raktára, max 10 nyersanyag lehet benne
-    private ArrayList<Material> backpack;
     // a telepesnél lévő telepotokat tárolja
     private ArrayList<Teleport> teleports;
 
@@ -25,9 +23,6 @@ public class Settler extends Miner{
     public void Explode() {
         Die();
     }
-
-    // backpack getter-e
-    public ArrayList<Material> getBackpack(){return backpack;}
 
     // ha nincs még kiásva az aszteroida, akkor egy rétegnyit ás rajta
     public boolean Mine(){
