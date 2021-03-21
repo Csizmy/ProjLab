@@ -130,4 +130,8 @@ public class Asteroid extends Spacething {
     public ArrayList<Miner> getMiners(){
         return  miners;
     }
+
+    public void setLayer(int layer) {
+        this.layer = layer;
+    }
 }

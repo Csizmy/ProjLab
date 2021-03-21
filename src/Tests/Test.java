@@ -1,8 +1,18 @@
 package Tests;
 
+import Game_parts.*;
+import Materials.Iron;
+import Materials.Material;
+import Miners.*;
+import Objects.*;
+
 public class Test {
 
-    public void jatek_inditas(){} //Játék indítás + Aszteroidák létrehozása
+    public void jatek_inditas(){ //Játék indítás + Aszteroidák létrehozása
+
+        Map m = new Map(3,2);
+
+    }
 
     public void tpre_mozog(){}//Telepes teleportkapura mozog
 
@@ -18,7 +28,15 @@ public class Test {
 
     public void furas_napkozel_uran(){} // Telepes aszteroidát fúr napközelben uránt
 
-    public void banyaszas(){}  // Telepes banyaszik (itt nem néz napközelt csak fúrásnál)
+    public void banyaszas(){ // 9. Telepes banyaszik (itt nem néz napközelt csak fúrásnál)
+
+        Asteroid a = new Asteroid(0);
+        a.setLayer(0);
+        Iron i = new Iron(a);
+        Settler s = new Settler(a);
+        s.Mine();
+
+    }
 
     public void tp_epit_i(){}  // Telepes teleportkaput épít van elég anyag
 
