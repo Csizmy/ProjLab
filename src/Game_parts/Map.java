@@ -1,16 +1,11 @@
 package Game_parts;
 
-import Miners.Miner;
 import Miners.Robot;
 import Miners.Settler;
 import Objects.Asteroid;
-import Objects.Spacething;
 import Objects.Teleport;
 
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class Map extends Steppable {
 
