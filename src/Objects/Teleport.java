@@ -23,4 +23,12 @@ public class Teleport extends  Spacething {
         System.out.println("AddToSettler");
         //TODO
     }
+
+    public void setPair(Teleport pair) {
+        this.pair = pair;
+    }
+
+    public Teleport getPair() {
+        return pair;
+    }
 }

@@ -92,6 +92,11 @@ public class Asteroid extends Spacething {
         System.out.println("setupteleport");
     }
 
+    public int getLayer() {
+        return layer;
+    }
 
-
+    public Material getMaterial() {
+        return material;
+    }
 }

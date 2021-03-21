@@ -8,7 +8,7 @@ public class Water extends Material{
     }
 
     @Override
-    void periMining(){
-
+    public Material PeriMining() {
+        return null;
     }
 }

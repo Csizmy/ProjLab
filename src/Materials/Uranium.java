@@ -8,7 +8,7 @@ public class Uranium extends Material{
     }
 
     @Override
-    void periMining(){
-
+    public Material PeriMining() {
+        return null;
     }
 }
