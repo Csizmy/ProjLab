@@ -9,12 +9,11 @@ public class Test {
 
     public void jatek_inditas(){ //Játék indítás + Aszteroidák létrehozása
 
-        Map m = new Map(3,2);  //létrehoz 3 aszteroidát (körkörösen szomszédos), és rajtuk 2 settlert
-        //elvárt kimenet: aszteroidák konstruktora, telepesek konstruktora, szomszédok kiírása
-
+        Game g = new Game();
+        g.StartGame();  // elkezd egy játékot 5 aszteroidával, 3 telepessel
     }
 
-    public void tpre_mozog(){
+    public void tpre_mozog(){  //Telepes teleportkapura mozog
         Asteroid planet = new Asteroid(12);
         Settler builder = new Settler(planet);
         Iron iron = new Iron(null);
@@ -33,16 +32,16 @@ public class Test {
         builder.Move(tp.getId());
 
 
-    }//Telepes teleportkapura mozog
+    }
 
-    public void asztra_mozog(){//Telepes aszteroidára mozog
+    public void asztra_mozog(){  //Telepes aszteroidára mozog
         Asteroid a = new Asteroid(0, 0, true, null);  //Létrehozok 2 aszteroidát
         Asteroid a2 = new Asteroid(1, 0, true, null);
         Settler s = new Settler(a);         //egy telepes az első aszteroidán van
         s.Move(a2.getId());             //a telepes átlép a 2. aszteroidára
     }
 
-    public void napvihar_elbujas(){ // Telepes megfúrt aszteroidán van (automatikus az elbújás)
+    public void napvihar_elbujas(){  // Telepes megfúrt aszteroidán van (automatikus az elbújás)
 
         Map m = new Map(2, 1);            //új random map 2 aszteroidával, 1 settlerrel (azért 2 mert a konstruktor nem tud 1-et)
         Robot r1 = new Robot(m.getAsteroids().get(0));      //plusz egy robot az egyik aszteroidára
@@ -58,24 +57,24 @@ public class Test {
 
     }
 
-    public void napvihar_meghal(){
+    public void napvihar_meghal(){ // Telepes nem megfúrt aszteroidán van (meghal)
 
         Map m = new Map(2, 1);            //új aszteroidamező 1 settlerrel
 
         m.SolarStorm();                                     //elvárt output: a settler meghal
 
-    } // Telepes nem megfúrt aszteroidán van (meghal)
+    }
 
-    public void utolso_furas(){
+    public void utolso_furas(){  // Telepes aszteroidát fúr
 
         Map m = new Map(2, 1);            //új aszteroidamező 1 settlerrel
 
         for (int i = 0; i < 10; i++)                        //10 fúrással lejut az aljra
             m.getSettlers().get(0).Drill();
 
-    } // Telepes aszteroidát fúr
+    }
 
-    public void furas_napkozel_viz(){
+    public void furas_napkozel_viz(){ // Telepes aszteroidát fúr napközelben vizet
 
         Asteroid a = new Asteroid(0, 0, true, null);
         Water w = new Water(a);
@@ -86,9 +85,9 @@ public class Test {
 
         s.Mine();                                           //bányászat
 
-    } // Telepes aszteroidát fúr napközelben vizet
+    }
 
-    public void furas_napkozel_uran(){
+    public void furas_napkozel_uran(){  // Telepes aszteroidát fúr napközelben uránt
 
         Asteroid a = new Asteroid(8, 0, true, null);
         Uranium u = new Uranium(a);                          //
@@ -99,7 +98,7 @@ public class Test {
 
         s.Mine();                                           //bányászat
 
-    } // Telepes aszteroidát fúr napközelben uránt
+    }
 
     public void banyaszas(){ // Telepes banyaszik (itt nem néz napközelt csak fúrásnál)
 
@@ -111,7 +110,7 @@ public class Test {
 
     }
 
-    public void tp_epit_i(){
+    public void tp_epit_i(){  // Telepes teleportkaput épít van elég anyag
         Asteroid planet = new Asteroid(17);        //A teszt aszteroida, ahol épít a telepes.
         Settler builder = new Settler(planet);              //Az építő telepes.
         Iron iron = new Iron(null);
@@ -125,17 +124,17 @@ public class Test {
 
         builder.BuildTp();
 
-    }  // Telepes teleportkaput épít van elég anyag
+    }
 
-    public void tp_epit_h(){
+    public void tp_epit_h(){  // Telepes teleportkaput épít nincs elég anyag
         Asteroid planet = new Asteroid(23);        //A teszt aszteroida, ahol épít a telepes.
         Settler builder = new Settler(planet);              //Az építő telepes.
 
         builder.BuildTp();
         
-    }  // Telepes teleportkaput épít nincs elég anyag
+    }
 
-    public void robot_epit_i(){
+    public void robot_epit_i(){  // Telepes robotot épít van elég anyag.
         Asteroid planet = new Asteroid(12);        //A teszt aszteroida, ahol épít a telepes.
         Settler builder = new Settler(planet);              //Az építő telepes.
         Iron iron = new Iron(null);
@@ -148,24 +147,20 @@ public class Test {
 
         builder.BuildRobot();
 
-    }  // Telepes robotot épít van elég anyag.
+    }
 
-    public void robot_epit_h(){
+    public void robot_epit_h(){  // Telepes robotot épít nincs elég anyag.
 
         Asteroid planet = new Asteroid(42);        //A teszt aszteroida, ahol épít a telepes.
         Settler builder = new Settler(planet);              //Az építő telepes.
 
         builder.BuildRobot();
+    }
 
-    }  // Telepes robotot épít nincs elég anyag.
-
-    public void robot_lep(){
+    public void robot_lep(){  //  Robot műveletet hajt végre - mozog/fur
         Map map = new Map(2, 0);
         Robot robot = new Robot(map.getAsteroids().get(0));
 
         robot.Step();
-
-
-    }  //  Robot műveletet hajt végre - mozog/fur
-
+    }
 }

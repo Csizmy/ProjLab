@@ -18,7 +18,7 @@ public class Game {
     //"Init" Beállítja a játék kezdésénél az értékeket.
     public void StartGame() {
         System.out.println("A játék elkezdődik");
-        map = new Map(100, 3);
+        map = new Map(5, 2);
     }
 
     //Körönként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.

@@ -19,7 +19,7 @@ public class Robot extends Miner implements Steppable {
 
     @Override
     public void Step() {  // a robot lépése, vagy lép, vagy fúr
-        int mat = (int) Math.random();
+        int mat = (int) (Math.random()*2);
         switch (mat){
             case 0:  // mozgás
                 System.out.println("Robot mozogni akar");
