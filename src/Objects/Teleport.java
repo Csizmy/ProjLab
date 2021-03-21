@@ -2,10 +2,14 @@ package Objects;
 
 import Miners.Settler;
 
-public class Teleport extends  Spacething {
+public class Teleport extends Spacething {
 
     private boolean enable;         //True when the Teleport can be used.
     private Teleport pair;          //The other part of this Teleport
+
+    public Teleport(int teleportID){
+        super(teleportID);
+    }
 
     //Teleports to the other side.
     public void MoveForward() {

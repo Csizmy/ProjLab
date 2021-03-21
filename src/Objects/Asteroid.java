@@ -13,19 +13,17 @@ public class Asteroid extends Spacething {
     private boolean perihelion;     //Close to Sun or not.
     private Material material;
     private ArrayList<Miner> miners;
-    private int id;                 //ID
 
     private Random rand = new Random();
     
     public Asteroid(int asteroidID) {
+        super(asteroidID);
         //Set layer number
         layer = (int) rand.nextInt(7)+3;    //Min: 3 layer, Max: 10 layer
 
         digged = 0;     //0 layers dug yet.
 
         miners = new ArrayList<Miner>();
-
-        id = asteroidID;
 
         //Random anyag kerül az aszteroida közepébe
         int mat = (int) rand.nextInt(5);
@@ -38,9 +36,9 @@ public class Asteroid extends Spacething {
         }
 
         if(material!=null)
-            System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
+            System.out.println(this.getId() + ". Asteroida létrehozva, nyersanyag: " + material.getName() + " : " + digged + " : " + layer);
         else
-            System.out.println(id + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
+            System.out.println(this.getId() + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
         
     }
 
@@ -118,10 +116,6 @@ public class Asteroid extends Spacething {
 
     public int getDigged() {
         return digged;
-    }
-
-    public int getId(){
-        return id;
     }
 
     public ArrayList<Miner> getMiners(){

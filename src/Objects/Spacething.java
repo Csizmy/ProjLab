@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).
 
-    protected ArrayList<Spacething> neighbours;
+    protected ArrayList<Spacething> neighbours = new ArrayList<Spacething>();
+    private int id;                 //ID
 
-
+    public Spacething(int asteroidID){
+        id = asteroidID;
+    }
     //ha a megadott égitest az adott égitest szomszédja, akkor igaz értéket vesz fel, ha nem, akkor hamis
     public boolean IsNeigbour(Spacething s){
         System.out.println("isNeighbour végrehajtodik.");
@@ -23,4 +26,8 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
     public void AddNeighbor(Spacething s){neighbours.add(s);}
 
     public void RemoveNeighbor(){};
+
+    public int getId(){
+        return id;
+    }
 }

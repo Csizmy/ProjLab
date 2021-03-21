@@ -22,25 +22,52 @@ public class Map implements Steppable {
     private Random rand = new Random();
 
     //Felveszi a telepesek (3) és az aszteroidák (3) listáját.
-    public Map() {
+    public Map(int noAsteroids, int noSettler) {
         asteroids = new ArrayList<Asteroid>();
         settlers = new ArrayList<Settler>();
         robots = new ArrayList<Robot>();
         teleports = new ArrayList<Teleport>();
 
-        //Teszteléshez
-        int noAsteroids = 10;
-        int noSettler = 5;
 
+        //Aszteroidák létrehozása
+        System.out.println("Aszteroidák:");
         for (int i = 0; i < noAsteroids; i++) {
+            System.out.print("\t");
             Asteroid ball = new Asteroid(i);
             asteroids.add(ball);
         }
 
+        //Telepesek létrehozása
+        System.out.println("Telepesek:");
         for (int i = 0; i < noSettler; i++){
+            System.out.print("\t");
             int r = rand.nextInt(noAsteroids);
             Settler s = new Settler(asteroids.get(r));
             settlers.add(s);
+        }
+
+        //Szomszédok feltöltése
+        for (int i = 0;i < noAsteroids; i++){
+            if(i!=0&&i!=noAsteroids-1){
+                asteroids.get(i).AddNeighbor(asteroids.get(i-1));
+                asteroids.get(i).AddNeighbor(asteroids.get(i+1));
+            }else if(i == noAsteroids-1){
+                asteroids.get(i).AddNeighbor(asteroids.get(i-1));
+                asteroids.get(i).AddNeighbor(asteroids.get(0));
+                asteroids.get(0).AddNeighbor(asteroids.get(i));
+                asteroids.get(0).AddNeighbor(asteroids.get(1));
+            }
+        }
+
+        //Szomszédok kiíratása
+        System.out.println("Szomszédok:");
+        for (Asteroid a: asteroids) {
+            System.out.print("\t");
+            System.out.print(a.getId() + ". aszteroida somszédjai: ");
+            for (Spacething n: a.getNeighbours()){
+                System.out.print(n.getId() + ", ");
+            }
+            System.out.println();
         }
 
         diffMat = 4;
