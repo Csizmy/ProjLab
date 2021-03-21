@@ -95,8 +95,6 @@ public class Test {
 
     public void robot_epit_h(){}  // Telepes robotot épít nincs elég anyag
 
-    public void napkitores(){}  // Véletlenszerű napkitörés megjelenik
-
     public void robot_lep(){}  //  Robot műveletet hajt végre - mozog/fur
 
 }
