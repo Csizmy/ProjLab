@@ -71,7 +71,7 @@ public class Test {
 
     public void furas_napkozel_uran(){
 
-        Asteroid a = new Asteroid(0, 0, true, null);
+        Asteroid a = new Asteroid(8, 0, true, null);
         Uranium u = new Uranium(a);                          //
         Settler s = new Settler(a);
 
@@ -136,7 +136,7 @@ public class Test {
         Asteroid planet = new Asteroid(42);        //A teszt aszteroida, ahol épít a telepes.
         Settler builder = new Settler(planet);              //Az építő telepes.
 
-        //builder.BuildRobot();
+        builder.BuildRobot();
 
     }  // Telepes robotot épít nincs elég anyag.
 

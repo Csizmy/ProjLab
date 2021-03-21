@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="kéééész">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="Build tests">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__19_48__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__19_48__Default_.xml" afterDir="false" />
@@ -12,22 +12,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__19_49__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__19_49__Default_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__19_53__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__19_53__Default_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Steppable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Teleport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Tests/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Steppable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Steppable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Teleport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Teleport.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tests/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +55,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -516,12 +514,12 @@
       <option name="project" value="LOCAL" />
       <updated>1616361900989</updated>
     </task>
-    <task id="LOCAL-00021" summary="kéééész">
-      <created>1616362014823</created>
+    <task id="LOCAL-00021" summary="Build tests">
+      <created>1616363103139</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1616362014823</updated>
+      <updated>1616363103139</updated>
     </task>
     <option name="localTasksCounter" value="22" />
     <servers />
@@ -589,8 +587,8 @@
     <MESSAGE value="2 teszt" />
     <MESSAGE value="sout-ok kiegészítése" />
     <MESSAGE value="thx csizmy" />
-    <MESSAGE value="kéééész" />
-    <option name="LAST_COMMIT_MESSAGE" value="kéééész" />
+    <MESSAGE value="Build tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build tests" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Miners/Robot.java">
