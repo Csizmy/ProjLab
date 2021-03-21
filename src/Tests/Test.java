@@ -16,7 +16,12 @@ public class Test {
 
     public void tpre_mozog(){}//Telepes teleportkapura mozog
 
-    public void asztra_mozog(){} //Telepes aszteroidára mozog
+    public void asztra_mozog(){//Telepes aszteroidára mozog
+        Asteroid a = new Asteroid(0, 0, true, null);  //Létrehozok 2 aszteroidát
+        Asteroid a2 = new Asteroid(1, 0, true, null);
+        Settler s = new Settler(a);         //egy telepes az első aszteroidán van
+        s.Move(a2.getId());             //a telepes átlép a 2. aszteroidára
+    }
 
     public void napvihar_elbujas(){ // Telepes megfúrt aszteroidán van (automatikus az elbújás)
 

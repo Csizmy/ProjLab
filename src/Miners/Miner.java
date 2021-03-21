@@ -21,6 +21,7 @@ public abstract class Miner {
 
     //Miner mozgás függvénye aszteroidára
     public void Move(int asteroidID){
+        System.out.println("Move start");
         if(spacething.isNeigbour(asteroidID)){
             Spacething to = null;
             for (Spacething s: spacething.getNeighbours()) {
@@ -32,8 +33,10 @@ public abstract class Miner {
                 spacething.removeMiner(this);
                 to.addMiner(this);
                 spacething = to;
+                System.out.println("Move successfull");
             }
         }
+        System.out.println("Move end");
     }
 
     public Spacething getSpacething(){
