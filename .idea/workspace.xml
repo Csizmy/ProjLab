@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="Empty Classes or not">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/bency.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Steppable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Steppable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Steppable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Steppable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Teleport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Teleport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miners/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Objects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Asteroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Teleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Teleport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Spacething.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Spacething.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +84,7 @@
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
+  <component name="ProjectId" id="1q1XD5GL1mLTCX2Mhfy6yGxKIIG" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -108,7 +120,13 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -117,7 +135,21 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game_parts.Game" />
+      <module name="ProjLab" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Game_parts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -128,6 +160,17 @@
       <option name="MAIN_CLASS_NAME" value="main" />
       <module name="ProjLab" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,10 +193,12 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game" />
         <item itemvalue="Application.main" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -167,6 +212,11 @@
       <workItem from="1615501787034" duration="156000" />
       <workItem from="1615532041060" duration="310000" />
       <workItem from="1616181877716" duration="240000" />
+      <workItem from="1616247947679" duration="2861000" />
+      <workItem from="1616256331010" duration="1068000" />
+      <workItem from="1616257742268" duration="174000" />
+      <workItem from="1616257974057" duration="790000" />
+      <workItem from="1616324121423" duration="11163000" />
     </task>
     <task id="LOCAL-00001" summary="Base">
       <created>1615501919495</created>
@@ -236,9 +286,18 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">

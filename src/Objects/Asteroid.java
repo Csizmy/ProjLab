@@ -52,7 +52,7 @@ public class Asteroid extends Spacething {
 
     public void Explode(){
         for (Miner m: miners) {
-            m.die();
+            m.Explode();
         }
     }
 
