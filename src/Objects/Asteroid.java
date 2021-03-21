@@ -45,6 +45,21 @@ public class Asteroid extends Spacething {
         
     }
 
+    public Asteroid(int asteroidID, int layer, boolean perihelion, Material material) {
+        super(asteroidID);
+
+        this.layer = layer;
+        this.digged = 0;
+        this.miners = new ArrayList<Miner>();
+        this.id = asteroidID;
+        this.perihelion = perihelion;
+
+        if(material!=null)
+            System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
+        else
+            System.out.println(id + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
+    }
+
     //csökkenti a sziklarétegek számát az adott aszteroidán
     public void removeLayer(){
         digged++;

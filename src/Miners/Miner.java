@@ -16,6 +16,7 @@ public abstract class Miner {
     public Miner(Asteroid a){
         asteroid = a;
         backpack = new ArrayList<Material>();
+        a.addMiner(this);
     }
 
     //Miner mozgás függvénye aszteroidára
