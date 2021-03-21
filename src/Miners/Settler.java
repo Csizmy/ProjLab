@@ -30,14 +30,18 @@ public class Settler extends Miner{
     // ha nincs még kiásva az aszteroida, akkor egy rétegnyit ás rajta
     public boolean Mine(){
 
+        System.out.println("Bányászás elkezdése");
+
         if(asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial()!=null){
 
             if(asteroid.getPerihelion()){
                 asteroid.getMaterial().PeriMining();
+                System.out.println("Valami baj van a napközelség miatt\n");
             }
 
             else{
                 AddMaterial(asteroid.getMaterial());
+                System.out.println("Nincs baj, bekerült a táskába a " + asteroid.getMaterial().getName());
             }
             return true;
         }

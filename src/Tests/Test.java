@@ -20,7 +20,7 @@ public class Test {
         Robot r2 = new Robot(m.getAsteroids().get(1));      //plusz egy robot a másik aszteroidára
                                                             //valamelyik majd meghal
                                                             //
-        for (int i = 0; i < 10; i++)                        //
+        for (int i = 0; i < 10; i++)                         //
             m.getSettlers().get(0).Drill();                 //a settler fúr 10-szer, hogy ne legyen layer az aszteroidán
                                                             //
         m.getSettlers().get(0).Mine();                      //majd kibányássza a belsejét
@@ -31,29 +31,13 @@ public class Test {
 
     public void napvihar_meghal(){
 
-        Map m = new Map(2, 1);            //új aszteroidamező 1 settlerrel
 
-        m.SolarStorm();                                     //elvárt output: a settler meghal
 
     } // Telepes nem megfúrt aszteroidán van (meghal)
 
-    public void utolso_furas(){
+    public void utolso_furas(){} // Telepes aszteroidát fúr
 
-        Map m = new Map(2, 1);            //új aszteroidamező 1 settlerrel
-
-        for (int i = 0; i < 10; i++)                        //ez biztos fúr annyit, hogy leérjen az aljára
-            m.getSettlers().get(0).Drill();
-
-    } // Telepes aszteroidát fúr
-
-    public void furas_napkozel_viz(){
-
-        Asteroid a = new Asteroid(0, 0, true, null);
-        Water w = new Water(a);
-
-
-
-    } // Telepes aszteroidát fúr napközelben vizet
+    public void furas_napkozel_viz(){} // Telepes aszteroidát fúr napközelben vizet
 
     public void furas_napkozel_uran(){} // Telepes aszteroidát fúr napközelben uránt
 
