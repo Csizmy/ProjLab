@@ -1,11 +1,5 @@
 package Tests;
 
-import Game_parts.*;
-import Materials.Iron;
-import Materials.Material;
-import Miners.*;
-import Objects.*;
-
 public class Test {
 
     public void jatek_inditas(){ //Játék indítás + Aszteroidák létrehozása
@@ -20,7 +14,13 @@ public class Test {
 
     public void napvihar_elbujas(){} // Telepes megfúrt aszteroidán van (automatikus az elbújás)
 
-    public void napvihar_meghal(){} // Telepes nem megfúrt aszteroidán van (meghal)
+    } // Telepes megfúrt aszteroidán van (automatikus az elbújás)
+
+    public void napvihar_meghal(){
+
+
+
+    } // Telepes nem megfúrt aszteroidán van (meghal)
 
     public void utolso_furas(){} // Telepes aszteroidát fúr
 
