@@ -11,6 +11,8 @@ public class Water extends Material{
 
     @Override
     public void PeriMining(){
-        asteroid.RemoveMaterial();      //water evaporates perihelion
+        asteroid.RemoveMaterial();
+        System.out.println("Elpárolog a víz");
+        //water evaporates perihelion
     }
 }

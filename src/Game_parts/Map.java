@@ -21,7 +21,7 @@ public class Map implements Steppable {
 
     private Random rand = new Random();
 
-    //Felveszi a telepesek (3) és az aszteroidák (3) listáját.
+    //Felveszi a telepesek és az aszteroidák listáját.
     public Map(int noAsteroids, int noSettler) {
         asteroids = new ArrayList<Asteroid>();
         settlers = new ArrayList<Settler>();
@@ -63,7 +63,7 @@ public class Map implements Steppable {
         System.out.println("Szomszédok:");
         for (Asteroid a: asteroids) {
             System.out.print("\t");
-            System.out.print(a.getId() + ". aszteroida somszédjai: ");
+            System.out.print(a.getId() + ". aszteroida szomszédjai: ");
             for (Spacething n: a.getNeighbours()){
                 System.out.print(n.getId() + ", ");
             }
@@ -79,9 +79,9 @@ public class Map implements Steppable {
         System.out.println("napvihar");
 
         for (int i = 0; i < asteroids.size(); i++) {
-            if (asteroids.get(i).getLayer() >= asteroids.get(i).getDigged() || asteroids.get(i).getMaterial() != null) {
+            if (asteroids.get(i).getLayer() != asteroids.get(i).getDigged() || asteroids.get(i).getMaterial() != null) {
                 for (int j = 0; j < asteroids.get(i).getMiners().size(); j++) {
-                    asteroids.get(i).getMiners().get(j).Die();
+                    asteroids.get(i).getMiners().get(i).Die();
 
                 }
             }

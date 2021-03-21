@@ -1,5 +1,6 @@
 package Objects;
 
+import Miners.Miner;
 import Miners.Settler;
 
 public class Teleport extends Spacething {
@@ -9,6 +10,17 @@ public class Teleport extends Spacething {
 
     public Teleport(int teleportID){
         super(teleportID);
+        asteroid = false;
+    }
+
+    @Override
+    public void removeMiner(Miner m) {
+
+    }
+
+    @Override
+    public void addMiner(Miner m) {
+
     }
 
     //Teleports to the other side.

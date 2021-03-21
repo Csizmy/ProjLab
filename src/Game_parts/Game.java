@@ -27,6 +27,7 @@ public class Game {
 
         map = new Map(10, 4);    //Játék indítása szekvencia
 
+        map.getSettlers().get(0).Move(map.getSettlers().get(0).getSpacething().getNeighbours().get(0).getId());
         boolean testing = true;
 
         System.out.println("Teszteset száma: ");

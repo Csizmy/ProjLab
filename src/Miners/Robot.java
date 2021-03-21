@@ -10,28 +10,28 @@ import Objects.*;
 public class Robot extends Miner implements Steppable {
 
     // Robot konstuktor
-    public Robot(Asteroid a) {
-        super(a);
+    public Robot(Spacething s) {
+        super(s);
     }
 
     // ha felrobban az aszteroida (radioaktív anyag bányászásánál) a robot egy véletlenszerű szomszédos aszteroidásra kerül
     public void Explode() {
-        int i = (int) (Math.random()%(asteroid.getNeighbours().size()));
-        Spacething s = asteroid.getNeighbours().get(i);
-        Move(s);
+        int i = (int) (Math.random()%(spacething.getNeighbours().size()));
+        Spacething s = spacething.getNeighbours().get(i);
+        Move(s.getId());
     }
 
     //@Override
     public void Step() {
-        int mat = (int) Math.random()%5;
+        int mat = (int) Math.random()%2;
         switch (mat){
             case 0:
-                int i = (int) (Math.random()%(asteroid.getNeighbours().size()));
-                Spacething s = asteroid.getNeighbours().get(i);
-                Move(s);
+                int i = (int) (Math.random()%(spacething.getNeighbours().size()));
+                Spacething s =spacething.getNeighbours().get(i);
+                Move(s.getId());
                 break;
             case 1:
-                Drill();
+                Drill(new Asteroid(-2));
                 break;
         }
     }

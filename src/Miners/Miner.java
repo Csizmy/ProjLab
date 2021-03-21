@@ -8,38 +8,60 @@ import java.util.ArrayList;
 public abstract class Miner {
 
     // tárolja, hogy melyik aszteroidán van éppen a játékos
-    protected Asteroid asteroid;
+    protected Spacething spacething;
     // ez a raktár
     protected ArrayList<Material> backpack;
 
     //Miner konstruktor
-    public Miner(Asteroid a){
-        asteroid = a;
+    public Miner(Spacething s){
+        spacething = s;
         backpack = new ArrayList<Material>();
-        a.addMiner(this);
+        s.addMiner(this);
     }
 
-    //Miner mozgás függvénye
-    public void Move(Spacething s){
-
+    //Miner mozgás függvénye aszteroidára
+    public void Move(int asteroidID){
+        if(spacething.isNeigbour(asteroidID)){
+            Spacething to = null;
+            for (Spacething s: spacething.getNeighbours()) {
+                if(s.getId() == asteroidID){
+                    to = s;
+                }
+            }
+            if(to.getId()!=-1){
+                spacething.removeMiner(this);
+                to.addMiner(this);
+                spacething = to;
+            }
+        }
     }
 
+    public Spacething getSpacething(){
+        return spacething;
+    }
 
 
     //Miner meghal
     public void Die(){
         System.out.println("Meghalt");
-        asteroid.removeMiner(this);
-        asteroid=null;
+        spacething.removeMiner(this);
+        spacething=null;
     };
 
     //Miner fúr
     public boolean Drill(){
-        System.out.println("Fúr");
-        if(asteroid.getLayer() > 0){
-            asteroid.removeLayer();
-            return true;
+        if(spacething.getAsteroid()){
+            System.out.println("Fúrni próbál");
+            Asteroid a = (Asteroid) spacething;
+            if(a.getLayer() > 0){
+                a.removeLayer();
+                System.out.println("Eggyel kisebb lett a réteg");
+                return true;
+            }
+            System.out.println("Ez már ki van fúrva");
+            return false;
         }
+        System.out.println("Itt nem lehet fúrni");
         return false;
     }
 
