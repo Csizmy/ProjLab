@@ -1,25 +1,32 @@
 package Game_parts;
 
 import Miners.Miner;
+import Miners.Robot;
 import Miners.Settler;
 import Objects.Asteroid;
 import Objects.Spacething;
+import Objects.Teleport;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Map extends Steppable {
 
-    private List<Miner> miners;             //List of Settlers and Robots.
-    private List<Spacething> spacethings;   //List of Asteroids and teleports.
+    private List<Settler> settlers;         //List of Settlers.
+    private List<Robot> robots;             //List of Robots.
+    private List<Asteroid> asteroids;
+    private List<Teleport> teleports;   //List of Asteroids and teleports.
     private int diffMat;                    //Count of the different materials.
 
     //Felveszi a telepesek (10) és az aszteroidák (10) listáját.
     public Map() {
         for (int i = 0; i < 10; i++) {
-            Settler born = new Settler();
-            miners.add(born);
             Asteroid ball = new Asteroid();
-            spacethings.add(ball);
+            asteroids.add(ball);
+            Settler born = new Settler(asteroids.get(i));
+            settlers.add(born);
         }
         diffMat = 4;
     }

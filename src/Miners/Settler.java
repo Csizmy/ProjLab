@@ -14,7 +14,7 @@ public class Settler extends Miner implements Steppable {
     private ArrayList<Teleport> teleports;
 
     // Settler konstruktor
-    Settler(Asteroid a){
+    public Settler(Asteroid a){
         super(a);
         backpack = new ArrayList<Material>();
         teleports = new ArrayList<Teleport>();

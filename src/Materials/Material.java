@@ -6,7 +6,7 @@ public class Material {
     private String name;
     private Asteroid asteroid;      //(?)The asteroid this material is in.
 
-    String getName(){
+    public String getName(){
         return name;
     }
 
