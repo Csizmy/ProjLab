@@ -150,4 +150,8 @@ public class Asteroid extends Spacething {
     public void setLayer(int layer) {
         this.layer = layer;
     }
+
+    public void setMaterial(Material m){
+        this.material = m;
+    }
 }

@@ -31,15 +31,46 @@ public class Test {
 
     public void napvihar_meghal(){
 
+        Map m = new Map(2, 1);            //új aszteroidamező 1 settlerrel
 
+        m.SolarStorm();                                     //elvárt output: a settler meghal
 
     } // Telepes nem megfúrt aszteroidán van (meghal)
 
-    public void utolso_furas(){} // Telepes aszteroidát fúr
+    public void utolso_furas(){
 
-    public void furas_napkozel_viz(){} // Telepes aszteroidát fúr napközelben vizet
+        Map m = new Map(2, 1);            //új aszteroidamező 1 settlerrel
 
-    public void furas_napkozel_uran(){} // Telepes aszteroidát fúr napközelben uránt
+        for (int i = 0; i < 10; i++)                        //10 fúrással lejut az aljra
+            m.getSettlers().get(0).Drill();
+
+    } // Telepes aszteroidát fúr
+
+    public void furas_napkozel_viz(){
+
+        Asteroid a = new Asteroid(0, 0, true, null);
+        Water w = new Water(a);
+        Settler s = new Settler(a);
+
+        a.setMaterial(w);
+        a.addMiner(s);                                      //aszteroida napközelben, rá víz meg egy settler
+
+        s.Mine();                                           //bányászat
+
+    } // Telepes aszteroidát fúr napközelben vizet
+
+    public void furas_napkozel_uran(){
+
+        Asteroid a = new Asteroid(0, 0, true, null);
+        Uranium u = new Uranium(a);                          //
+        Settler s = new Settler(a);
+
+        a.setMaterial(u);
+        a.addMiner(s);                                      //aszteroida napközelben, rá uránium meg egy settler
+
+        s.Mine();                                           //bányászat
+
+    } // Telepes aszteroidát fúr napközelben uránt
 
     public void banyaszas(){}  // Telepes banyaszik (itt nem néz napközelt csak fúrásnál)
 
