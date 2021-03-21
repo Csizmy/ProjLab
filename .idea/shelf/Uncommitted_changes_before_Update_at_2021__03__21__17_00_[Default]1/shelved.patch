@@ -1,0 +1,93 @@
+Index: src/Objects/Spacething.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Objects;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).\r\n    protected ArrayList<Spacething> neighbours;\r\n\r\n\r\n    //ha a megadott égitest az adott égitest szomszédja, akkor igaz értéket vesz fel, ha nem, akkor hamis\r\n    public boolean IsNeigbour(Spacething s){\r\n        System.out.println(\"isNeighbour végrehajtodik.\");\r\n        for (Spacething n: neighbours) {\r\n            if(n == s) return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public ArrayList<Spacething> getNeighbours() {\r\n        return neighbours;\r\n    }\r\n\r\n    public void AddNeighbor(Spacething s){neighbours.add(s);}\r\n\r\n    public void RemoveNeighbor(){};\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Objects/Spacething.java b/src/Objects/Spacething.java
+--- a/src/Objects/Spacething.java	
++++ b/src/Objects/Spacething.java	
+@@ -3,6 +3,7 @@
+ import java.util.ArrayList;
+ 
+ public abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).
++
+     protected ArrayList<Spacething> neighbours;
+ 
+ 
+Index: src/Objects/Asteroid.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Objects;\r\n\r\nimport Materials.*;\r\nimport Miners.Miner;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class Asteroid extends Spacething {\r\n    private int layer;              //Maximum layers.\r\n    private int digged;             // Removed layers.\r\n    private boolean perihelion;     //Close to Sun or not.\r\n    private Material material;\r\n    private ArrayList<Miner> miners;\r\n    \r\n    public Asteroid() {\r\n        //Set layer number\r\n        layer = (int) Math.random()%7+3;    //Min: 3 layer, Max: 10 layer\r\n\r\n        digged = 0;     //0 layers dug yet.\r\n\r\n        miners = new ArrayList<Miner>();\r\n\r\n        //Random anyag kerül az aszteroida közepébe\r\n        int mat = (int) Math.random()%5;\r\n        switch (mat){\r\n            case 0: material = new Coal(this);\r\n            case 1: material = new Iron(this);\r\n            case 2: material = new Uranium(this);\r\n            case 3: material = new Water(this);\r\n            case 4: material = null;\r\n        }\r\n        \r\n    }\r\n\r\n    //csökkenti a sziklarétegek számát az adott aszteroidán\r\n    public void removeLayer(){\r\n        digged++;\r\n        System.out.println(\"Csökkent a rétegem.\");          //layer--;\r\n    }\r\n\r\n    // Ha nem üres az aszteroida (és a napközelség nem zavar bele a műveletbe), kiveszi belőle az adott nyersanyagot\r\n    public void RemoveMaterial() {\r\n        digged = layer;\r\n        material = null;\r\n    }\r\n\r\n    //Egy játékost \"eltávolít\" a rajta tartózkodók közül\r\n    public void removeMiner(Miner m){\r\n        miners.remove(m);\r\n        System.out.println(\"Töröltem a minert.\");\r\n    }\r\n\r\n\r\n    //Egy játékost \"hozzáad\" a rajta tartózkodókhoz\r\n    public void addMiner(Miner m){ miners.add(m);}\r\n\r\n    //Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat\r\n    public void Explode(){\r\n        System.out.println(\"Explode start.\");\r\n        for (Miner m: miners) {\r\n            m.Explode();\r\n        }\r\n        System.out.println(\"Explode done.\");\r\n    }\r\n\r\n    //Visszatér a bolygón lévő telepesek nyersanyag listájával.\r\n    public ArrayList<Material> CountDiffMat(){\r\n        System.out.println(\"Countdifmat start.\");\r\n        ArrayList<Material> materials = new ArrayList<Material>();\r\n        for(int i = 0; i < miners.size(); i++) {\r\n            ArrayList<Material> backpack = miners.get(i).getBackpack();\r\n            for (int j = 0; j < backpack.size(); j++) {\r\n                materials.add(backpack.get(j));\r\n            }\r\n        }\r\n        System.out.println(\"Countdifmat done.\");\r\n        return materials;\r\n    }\r\n\r\n    //A játék elején, beállítja az aktuális szomszédokat és a napközelség értékét.\r\n    public void Init(){\r\n        System.out.println(\"Init végrehajtodik.\");\r\n    }\r\n\r\n    //A napközelséget vizsgálom és irom felül.\r\n    public void Step(){\r\n        System.out.println(\"Step végrehajtodik.\");\r\n    }\r\n\r\n    // a megadott teleportot az aszteroidához köti\r\n    public void SetUpTeleport(Teleport t){\r\n        System.out.println(\"setupteleport\");\r\n    }\r\n\r\n    public int getLayer() {\r\n        return layer;\r\n    }\r\n\r\n    public Material getMaterial() {\r\n        return material;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Objects/Asteroid.java b/src/Objects/Asteroid.java
+--- a/src/Objects/Asteroid.java	
++++ b/src/Objects/Asteroid.java	
+@@ -99,4 +99,7 @@
+     public Material getMaterial() {
+         return material;
+     }
++
++    public boolean getPerihelion(){return perihelion;}
++
+ }
+Index: src/Materials/Coal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Materials;\r\n\r\nimport Objects.Asteroid;\r\n\r\npublic class Coal extends Material{\r\n\r\n    //Coal constructor\r\n    public Coal(Asteroid a){\r\n        this.setName(\"Coal\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Materials/Coal.java b/src/Materials/Coal.java
+--- a/src/Materials/Coal.java	
++++ b/src/Materials/Coal.java	
+@@ -8,4 +8,9 @@
+     public Coal(Asteroid a){
+         this.setName("Coal");
+     }
++
++    @Override
++    public Material PeriMining() {
++        return this;
++    }
+ }
+Index: src/Materials/Iron.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Materials;\r\n\r\nimport Objects.Asteroid;\r\n\r\npublic class Iron extends Material{\r\n    public Iron(Asteroid a){\r\n        this.setName(\"Iron\");\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Materials/Iron.java b/src/Materials/Iron.java
+--- a/src/Materials/Iron.java	
++++ b/src/Materials/Iron.java	
+@@ -6,4 +6,9 @@
+     public Iron(Asteroid a){
+         this.setName("Iron");
+     }
++
++    @Override
++    public Material PeriMining() {
++        return this;
++    }
+ }
+\ No newline at end of file
+Index: src/Game_parts/Map.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Game_parts;\r\n\r\nimport Miners.Miner;\r\nimport Miners.Settler;\r\nimport Objects.Asteroid;\r\nimport Objects.Spacething;\r\n\r\nimport java.util.List;\r\n\r\npublic class Map extends Steppable {\r\n\r\n    private List<Miner> miners;             //List of Settlers and Robots.\r\n    private List<Spacething> spacethings;   //List of Asteroids and teleports.\r\n    private int diffMat;                    //Count of the different materials.\r\n\r\n    //Felveszi a telepesek (10) és az aszteroidák (10) listáját.\r\n    public Map() {\r\n        for (int i = 0; i < 10; i++) {\r\n            Settler born = new Settler();\r\n            miners.add(born);\r\n            Asteroid ball = new Asteroid();\r\n            spacethings.add(ball);\r\n        }\r\n        diffMat = 4;\r\n    }\r\n\r\n    //A napvihar működése.\r\n    public void SolarStorm() {\r\n        //TODO\r\n    }\r\n\r\n    //Az AI elindít véletlenszerűen egy napvihart.\r\n    @Override\r\n    public void Step() {\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Game_parts/Map.java b/src/Game_parts/Map.java
+--- a/src/Game_parts/Map.java	
++++ b/src/Game_parts/Map.java	
+@@ -34,5 +34,4 @@
+     public void Step() {
+ 
+     }
+-
+ }

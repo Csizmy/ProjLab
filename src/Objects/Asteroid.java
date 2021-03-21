@@ -99,4 +99,10 @@ public class Asteroid extends Spacething {
     public Material getMaterial() {
         return material;
     }
+
+    public boolean getPerihelion(){return perihelion;}
+
+    public int getDigged() {
+        return digged;
+    }
 }

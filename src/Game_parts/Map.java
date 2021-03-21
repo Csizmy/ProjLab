@@ -49,5 +49,4 @@ public class Map extends Steppable {
     public void Step() {
 
     }
-
 }

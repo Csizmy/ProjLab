@@ -6,7 +6,7 @@ public abstract class Material {
     protected String name;
     protected Asteroid asteroid;        //(?)The asteroid this material is in.
 
-    String getName(){
+    public String getName(){
         return name;
     }
 
@@ -19,6 +19,6 @@ public abstract class Material {
     void setAsteroid(Asteroid a){asteroid = a;}
 
     //Virtual
-    void periMining(){          //water and uranium behave differently perihelion
+    public void PeriMining(){          //water and uranium behave differently perihelion
     }
 }

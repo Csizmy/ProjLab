@@ -3,6 +3,7 @@ package Objects;
 import java.util.ArrayList;
 
 public abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).
+
     protected ArrayList<Spacething> neighbours;
 
 
