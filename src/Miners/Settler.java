@@ -211,5 +211,8 @@ public class Settler extends Miner{
         return false;
     }
 
+    public Teleport getTP () {
+        return teleports.get(0);
+    }
 
 }
