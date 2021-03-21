@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="2 teszt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Tests/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Tests/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tests/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Test.java" afterDir="false" />
     </list>
@@ -464,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616358656049</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="2 teszt">
+      <created>1616359186592</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1616359186592</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

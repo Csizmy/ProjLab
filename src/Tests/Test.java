@@ -10,6 +10,8 @@ public class Test {
     public void jatek_inditas(){ //Játék indítás + Aszteroidák létrehozása
 
         Map m = new Map(3,2);  //létrehoz 3 aszteroidát (körkörösen szomszédos), és rajtuk 2 settlert
+        //elvárt kimenet: aszteroidák konstruktora, telepesek konstruktora, szomszédok kiírása
+
     }
 
     public void tpre_mozog(){}//Telepes teleportkapura mozog
@@ -46,11 +48,11 @@ public class Test {
 
     public void banyaszas(){ // 9. Telepes banyaszik (itt nem néz napközelt csak fúrásnál)
 
-        Asteroid a = new Asteroid(0);
-        a.setLayer(0);
-        Iron i = new Iron(a);
-        Settler s = new Settler(a);
-        s.Mine();
+        Asteroid a = new Asteroid(0);  // aszteroida konstruktor
+        a.setLayer(0);  // a teszt miatt beállítja kiásottra
+        Iron i = new Iron(a);  // vasat rak az aszteroida nyersanyagának (hgy ne legyen semmiképp robbanás)
+        Settler s = new Settler(a);  // rárak egy telepest az aszteroidára
+        s.Mine();  // bekerül a táskába az anyag, mert nincs probléma
 
     }
 

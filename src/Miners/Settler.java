@@ -71,6 +71,7 @@ public class Settler extends Miner{
 
             if(iron>=2 && water>=1 && uranium>=1){
 
+                System.out.println("Van elég nyersanyag");
                 for (int i = 0; i < backpack.size(); i++){ // kiveszi
 
                     if(backpack.get(i).getName()=="Uranium"){
@@ -112,10 +113,14 @@ public class Settler extends Miner{
                 teleports.add(t1);
                 teleports.add(t2);
 
+                System.out.println("A táskába került a teleportkapu-pár.");
+
                 return true;
             }
+            System.out.println("Hiba, nincs elég anyag.");
             return false;
         }
+        System.out.println("Hiba, nem fér a táskába a teleportkapu-pár.");
         return false;
     }
 
@@ -124,8 +129,10 @@ public class Settler extends Miner{
         if (t.getPair().IsNeigbour(t)) {
             t.AddNeighbor(asteroid);
             asteroid.AddNeighbor(t);
+            System.out.println("Leraktam a teleportkaput");
             return true;
         }
+        System.out.println("Itt van a teleportkapu párja is, nem lehet ide lerakni");
         return false;
     }
 
@@ -187,8 +194,10 @@ public class Settler extends Miner{
 
         if(backpack.size()<10 && m != null) {
             backpack.add(m);
+            System.out.println("Van elég hely a táskában, bele lett rakva az anyag");
             return true;
         }
+        System.out.println("Nincs anyag vagy tele a táska");
         return false;
     }
 
