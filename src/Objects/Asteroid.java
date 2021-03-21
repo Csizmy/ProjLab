@@ -123,4 +123,8 @@ public class Asteroid extends Spacething {
     public int getId(){
         return id;
     }
+
+    public ArrayList<Miner> getMiners(){
+        return  miners;
+    }
 }

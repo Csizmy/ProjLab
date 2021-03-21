@@ -187,4 +187,6 @@ public class Settler extends Miner{
         }
         return false;
     }
+
+
 }
