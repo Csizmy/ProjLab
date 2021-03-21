@@ -6,7 +6,7 @@ import Objects.*;
 
 import java.util.ArrayList;
 
-public class Settler extends Miner implements Steppable {
+public class Settler extends Miner{
 
     // ez a telepes raktára, max 10 nyersanyag lehet benne
     private ArrayList<Material> backpack;
@@ -14,7 +14,7 @@ public class Settler extends Miner implements Steppable {
     private ArrayList<Teleport> teleports;
 
     // Settler konstruktor
-    Settler(Asteroid a){
+    public Settler(Asteroid a){
         super(a);
         backpack = new ArrayList<Material>();
         teleports = new ArrayList<Teleport>();
@@ -114,7 +114,7 @@ public class Settler extends Miner implements Steppable {
 
     //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
     public boolean PlaceTp(Teleport t) {
-        if (t.getPair().IsNeighbor(asteroid)) {
+        if (t.getPair().IsNeigbour(t)) {
             t.AddNeighbor(asteroid);
             asteroid.AddNeighbor(t);
             return true;

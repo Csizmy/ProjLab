@@ -2,19 +2,18 @@ package Materials;
 
 import Objects.Asteroid;
 
-public class Material {
+public abstract class Material {
     private String name;
     private Asteroid asteroid;      //(?)The asteroid this material is in.
 
-    String getName(){
+    public String getName(){
         return name;
     }
 
-    void setName(String n){
+    public void setName(String n){
         name = n;
     }
 
     //Virtual
-    void periMining(){
-    }
+    public abstract Material PeriMining();
 }

@@ -11,7 +11,7 @@ public abstract class Miner {
     protected Asteroid asteroid;
 
     //Miner konstruktor
-    Miner(Asteroid a){
+    public Miner(Asteroid a){
         asteroid = a;
     }
 
