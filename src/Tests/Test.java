@@ -37,7 +37,7 @@ public class Test {
         //
         m.SolarStorm();                                     //napvihar elvárt outputja, hogy a settler és az egyik robot túléli, a másik robot meghal
 
-    } // Telepes megfúrt aszteroidán van (automatikus az elbújás)
+    }
 
     public void napvihar_meghal(){
 
@@ -82,7 +82,7 @@ public class Test {
 
     } // Telepes aszteroidát fúr napközelben uránt
 
-    public void banyaszas(){ // 9. Telepes banyaszik (itt nem néz napközelt csak fúrásnál)
+    public void banyaszas(){ // Telepes banyaszik (itt nem néz napközelt csak fúrásnál)
 
         Asteroid a = new Asteroid(0);  // aszteroida konstruktor
         a.setLayer(0);  // a teszt miatt beállítja kiásottra
@@ -136,7 +136,7 @@ public class Test {
         Asteroid planet = new Asteroid(42);        //A teszt aszteroida, ahol épít a telepes.
         Settler builder = new Settler(planet);              //Az építő telepes.
 
-        //builder.BuildRobot();
+        builder.BuildRobot();
 
     }  // Telepes robotot épít nincs elég anyag.
 
