@@ -33,4 +33,10 @@ public class Robot extends Miner implements Steppable {
                 break;
         }
     }
+
+
+
+
+    //A case0 esetben lehetne ez a fv. ha kell a Moveable fv. felülírása. - Bence
+
 }

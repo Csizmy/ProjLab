@@ -53,7 +53,7 @@ public class Settler extends Miner{
     //ellenőrzi a teleport építéséhez szükséges nyersanyagot, és ha tudja, megépíti
     public boolean BuildTp(){
 
-        if(teleports.size()==0){  // csak akkor tud építeni, ha üres a táskájában a tartó
+        if(teleports.size()<=1){  // csak akkor tud építeni, ha nulla vagy egy teleport van a táskájában
             int iron = 0;
             int water = 0;
             int uranium = 0;

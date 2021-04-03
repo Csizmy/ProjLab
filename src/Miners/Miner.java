@@ -1,11 +1,12 @@
 package Miners;
 
+import Game_parts.Moveable;
 import Materials.*;
 import Objects.*;
 
 import java.util.ArrayList;
 
-public abstract class Miner {
+public abstract class Miner implements Moveable {
 
             // tárolja, hogy melyik aszteroidán van éppen a játékos
             protected Spacething spacething;
@@ -20,6 +21,7 @@ public abstract class Miner {
     }
 
     //Miner mozgás függvénye aszteroidára
+    @Override
     public void Move(int asteroidID){
         System.out.println("Mozgás elkezdődik");
         if(spacething.isNeigbour(asteroidID)){
@@ -44,7 +46,7 @@ public abstract class Miner {
         System.out.println("Meghalt");
         spacething.removeMiner(this);
         spacething=null;
-    };
+    }
 
     //Miner fúr
     public boolean Drill(){
