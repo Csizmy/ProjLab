@@ -106,4 +106,37 @@ public class Map implements Steppable {
     public int getDiffMat(){return diffMat;}
     public void setDiffMat(int mat){this.diffMat=mat;}
 
+
+    //Kilistázza a pályán található dolgokat a beadott string megadja, hogy mit listázzon ki
+    public void list(String n){
+        boolean vandolog=false;
+        if( n.equals("Settlers") || n.equals("Map")){
+            for (Settler s: settlers){
+                System.out.println("Settler "+s.getId()+", "+s.getAsteroid());
+                vandolog=true;
+            }
+        }
+        if( n.equals("Asteroids") || n.equals("Map")){
+            for (Asteroid a: asteroids){
+                System.out.println("Asteroid "+a.getId()+", "+a.getLayer()+"/"+a.getDigged());
+                vandolog=true;
+            }
+        }
+        if( n.equals("Robots") || n.equals("Map")){
+            for (Robot r: robots){
+                System.out.println("Robot "+r.getId()+", "+r.getAsteroid());
+                vandolog=true;
+            }
+        }
+        if( n.equals("Ufos ") || n.equals("Map")){
+            for (Ufo u: ufos){
+                System.out.println("Settler "+u.getId()+", "+u.getAsteroid());
+                vandolog=true;
+            }
+        }
+        if(vandolog==false){
+            System.out.println("Nincs semmi a palyan.");
+        }
+    }
+
 }
