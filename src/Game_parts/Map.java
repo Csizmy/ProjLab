@@ -1,7 +1,7 @@
 package Game_parts;
 
-import Miners.Robot;
-import Miners.Settler;
+
+import Miners.*;
 import Objects.Asteroid;
 import Objects.Spacething;
 import Objects.Teleport;
@@ -15,6 +15,7 @@ public class Map implements Steppable {
 
     private ArrayList<Settler> settlers;         //Settlerek listája
     private ArrayList<Robot> robots;             //Robotok listája
+    private ArrayList<Ufo> ufos;                 //Ufók listája
     private ArrayList<Asteroid> asteroids;       //Aszteroidák listája
     private ArrayList<Teleport> teleports;       //Teleportok listája
     private int diffMat;                    //A pályán lévő különböző anyagok száma
@@ -25,6 +26,7 @@ public class Map implements Steppable {
     public Map(int noAsteroids, int noSettler) {
         asteroids = new ArrayList<Asteroid>();
         settlers = new ArrayList<Settler>();
+        ufos = new ArrayList<Ufo>();
         robots = new ArrayList<Robot>();
         teleports = new ArrayList<Teleport>();
 

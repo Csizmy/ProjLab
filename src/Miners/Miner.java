@@ -12,6 +12,7 @@ public abstract class Miner implements Moveable {
             protected Spacething spacething;
             // ez a raktár
             protected ArrayList<Material> backpack;
+            protected int id;
 
             //Miner konstruktor
             public Miner(Spacething s){
@@ -77,5 +78,9 @@ public abstract class Miner implements Moveable {
     public Spacething getSpacething(){
         return spacething;
     }
+
+    public int getId(){return id;}
+
+    public int getAsteroid(){return spacething.getId();}
 
 }

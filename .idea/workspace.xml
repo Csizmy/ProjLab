@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="7.0 and 7.0.2 implementálva">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" afterDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="Listázás implementálva, kellenek ufok meg ilyenek.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -523,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616368879260</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Listázás implementálva, kellenek ufok meg ilyenek.">
+      <created>1618568089684</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1618568089684</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -593,7 +597,8 @@
     <MESSAGE value="Kommentek zsa ^^" />
     <MESSAGE value="Készkészkész!!!!!" />
     <MESSAGE value="7.0 and 7.0.2 implementálva" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.0 and 7.0.2 implementálva" />
+    <MESSAGE value="Listázás implementálva, kellenek ufok meg ilyenek." />
+    <option name="LAST_COMMIT_MESSAGE" value="Listázás implementálva, kellenek ufok meg ilyenek." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Miners/Robot.java">
