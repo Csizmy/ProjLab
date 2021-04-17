@@ -108,7 +108,9 @@ public class Proto {
             System.out.println("A pálya betölrése sikertelen");
         }
     }
-    public void list(String item){}
+    public void list(String item){ //axelvoltam
+        map.list(item);
+    }
     public void moveSettler(int settler_id, int asteroid_id){}
     public void stepRobot(int robot_id, Optional<String> step){
         if (step.isPresent()){} //ha van beadott 2. argumentum
