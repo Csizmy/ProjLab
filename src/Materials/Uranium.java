@@ -19,7 +19,6 @@ public class Uranium extends Material{
         charged++;
 
         if (charged == 3) {
-            System.out.println("Felrobban az uránium");
             asteroid.Explode();
         }
 

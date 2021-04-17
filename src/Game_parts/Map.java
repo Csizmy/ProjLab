@@ -40,7 +40,6 @@ public class Map implements Steppable {
 
 
         //Aszteroidák létrehozása
-        System.out.println("Aszteroidák:");
         for (int i = 0; i < noAsteroids; i++) {
             System.out.print("\t");
             Asteroid ball = new Asteroid(i);
@@ -48,7 +47,6 @@ public class Map implements Steppable {
         }
 
         //Telepesek létrehozása
-        System.out.println("Telepesek:");
         for (int i = 0; i < noSettler; i++){
             System.out.print("\t");
             int r = rand.nextInt(noAsteroids);
@@ -86,8 +84,6 @@ public class Map implements Steppable {
     //A napvihar működése.
     public void SolarStorm() {
 
-        System.out.println("Napvihar jön");
-
         for (int i = 0; i < asteroids.size(); i++) {  // az aszteroidákon átmenő napvihar nézi ki van elbújva
             if (asteroids.get(i).getLayer() != asteroids.get(i).getDigged() || asteroids.get(i).getMaterial() != null) {
                 for (int j = 0; j < asteroids.get(i).getMiners().size(); j++) {
@@ -98,8 +94,6 @@ public class Map implements Steppable {
         }
         for (int i = 0; i < teleports.size(); i++)  // egy körig nem lehet használni semelyik kaput se
             teleports.get(i).disable();
-
-        System.out.println("Napvihar elmúlik");
     }
 
     //Az AI elindít véletlenszerűen egy napvihart, ennek az algoritmusát később írjuk meg
@@ -138,9 +132,9 @@ public class Map implements Steppable {
                 vandolog=true;
             }
         }
-        if( n.equals("Ufos ") || n.equals("Map")){
+        if( n.equals("Ufos") || n.equals("Map")){
             for (Ufo u: ufos){
-                System.out.println("Settler "+u.getId()+", "+u.getAsteroid());
+                System.out.println("Ufo "+u.getId()+", "+u.getAsteroid());
                 vandolog=true;
             }
         }

@@ -31,7 +31,6 @@ public abstract class Miner implements Moveable {
     //Miner mozgás függvénye aszteroidára
     @Override
     public void Move(int asteroidID){
-        System.out.println("Mozgás elkezdődik");
         if(spacething.isNeigbour(asteroidID)){
             Spacething to = null;
             for (Spacething s: spacething.getNeighbours()) {
@@ -43,15 +42,12 @@ public abstract class Miner implements Moveable {
                 spacething.removeMiner(this);
                 to.addMiner(this);
                 spacething = to;
-                System.out.println("Sikeres mozgás");
             }
         }
-        System.out.println("Mozgás vége");
     }
 
     //Miner meghal
     public void Die(){
-        System.out.println("Meghalt");
         spacething.removeMiner(this);
         spacething=null;
     }
@@ -59,17 +55,13 @@ public abstract class Miner implements Moveable {
     //Miner fúr
     public boolean Drill(){
         if(spacething.getAsteroid()){
-            System.out.println("Fúrni próbál");
             Asteroid a = (Asteroid) spacething;
             if(a.getLayer()-a.getDigged()!= 0){
                 a.removeLayer();
-                System.out.println("Eggyel kisebb lett a réteg");
                 return true;
             }
-            System.out.println("Ez már ki van fúrva");
             return false;
         }
-        System.out.println("Itt nem lehet fúrni, nem aszteroida");
         return false;
     }
 

@@ -30,9 +30,7 @@ public class Teleport extends Spacething implements Moveable, Steppable {
     public void addMiner(Miner m) {}
 
     //Teleport továbbküldi az embert
-    public void MoveForward() {
-        System.out.println("MoveForward");
-    }
+    public void MoveForward() {}
 
     public void disable(){
         enable = false;
@@ -40,14 +38,10 @@ public class Teleport extends Spacething implements Moveable, Steppable {
 
 
     //Felrobban a teleport 2 párja
-    public void OnExplode() {
-        System.out.println("OnExplode");
-    }
+    public void OnExplode() {}
 
     // egy telepes táskájához adja
-    public void AddToSettler(Settler s) {
-        System.out.println("AddToSettler");
-    }
+    public void AddToSettler(Settler s) {}
 
     // pair settere
     public void setPair(Teleport pair) {

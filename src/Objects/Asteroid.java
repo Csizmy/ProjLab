@@ -48,12 +48,6 @@ public class Asteroid extends Spacething {
         }
 
         asteroid = true;
-
-        if(material!=null)
-            System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
-        else
-            System.out.println(id + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
-
     }
 
     // Asteroid konstruktor
@@ -68,17 +62,11 @@ public class Asteroid extends Spacething {
         this.perihelion = perihelion;
 
         asteroid = true;
-
-        if(material!=null)
-            System.out.println(id + ". Asteroida létrehozva, nyersanyag:" + material.getName() + " : " + digged + " : " + layer);
-        else
-            System.out.println(id + ". Asteroida létrehozva, nyersanyag: Üres : " + digged + " : " + layer);
     }
 
     //csökkenti a sziklarétegek számát az adott aszteroidán
     public void removeLayer(){
         digged++;
-        System.out.println("Csökkent a rétegem.");          //layer--;
     }
 
     // Ha nem üres az aszteroida (és a napközelség nem zavar bele a műveletbe), kiveszi belőle az adott nyersanyagot
@@ -90,29 +78,23 @@ public class Asteroid extends Spacething {
     //Egy játékost "eltávolít" a rajta tartózkodók közül
     public void removeMiner(Miner m){
         miners.remove(m);
-        System.out.println("digged " +this.getDigged()+   " layer" +this.getLayer());
-        System.out.println("Miner eltávolítva " + this.getId() + " aszteroidáról.");
     }
 
 
     //Egy játékost "hozzáad" a rajta tartózkodókhoz
     public void addMiner(Miner m){
         miners.add(m);
-        System.out.println("Miner hozzáadva " + this.getId() + " aszteroidához.");
     }
 
     //Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat
     public void Explode(){
-        System.out.println("Robbanás kezdődik");
         for (Miner m: miners) {
             m.Explode();
         }
-        System.out.println("Robbanás vége");
     }
 
     //Visszatér a bolygón lévő telepesek nyersanyag listájával.
     public ArrayList<Material> CountDiffMat(){
-        System.out.println("Countdifmat kezdődik.");
         ArrayList<Material> materials = new ArrayList<Material>();
         for(int i = 0; i < miners.size(); i++) {
             ArrayList<Material> backpack = miners.get(i).getBackpack();
@@ -120,19 +102,14 @@ public class Asteroid extends Spacething {
                 materials.add(backpack.get(j));
             }
         }
-        System.out.println("Countdifmat kész.");
         return materials;
     }
 
     //A napközelséget vizsgálom és irom felül.
-    public void Step(){
-        System.out.println("Step végrehajtodik.");
-    }
+    public void Step(){}
 
     // a megadott teleportot az aszteroidához köti
-    public void SetUpTeleport(Teleport t){
-        System.out.println("setupteleport");
-    }
+    public void SetUpTeleport(Teleport t){}
 
     // getterek és setterek a megadott változókhoz
     public int getLayer() {

@@ -27,20 +27,15 @@ public class Robot extends Miner implements Steppable {
         int mat = (int) (Math.random()*2);
         switch (mat){
             case 0:  // mozgás
-                System.out.println("Robot mozogni akar");
                 int i = (int) (Math.random()%(spacething.getNeighbours().size()));
                 Spacething s = spacething.getNeighbours().get(i);
                 Move(s.getId());
                 break;
             case 1:  // fúrás
-                System.out.println("Robor fúrni akar");
                 Drill();
                 break;
         }
     }
-
-
-
 
     //A case0 esetben lehetne ez a fv. ha kell a Moveable fv. felülírása. - Bence
 

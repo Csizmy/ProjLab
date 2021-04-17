@@ -120,14 +120,10 @@ public class Settler extends Miner{
                 teleports.add(t1); //bekerül a táskába
                 teleports.add(t2);
 
-                System.out.println("A táskába került a teleportkapu-pár.");
-
                 return true;
             }
-            System.out.println("Hiba, nincs elég anyag.");
             return false;
         }
-        System.out.println("Hiba, nem fér a táskába a teleportkapu-pár.");
         return false;
     }
 
@@ -139,13 +135,10 @@ public class Settler extends Miner{
             if (!t.getPair().isNeigbour(a.getId())) {  // ha a párja nincs az adott aszteroidán
                 t.AddNeighbor(spacething);
                 spacething.AddNeighbor(t);
-                System.out.println("Leraktam a teleportkaput");
                 return true;
             }
-            System.out.println("Itt van a teleportkapu párja is, nem lehet ide lerakni");
             return false;
         }
-        System.out.println("Ide nem tudsz teleportot kapni");
         return false;
     }
 
@@ -170,7 +163,6 @@ public class Settler extends Miner{
         }
 
         if(iron>0 && coal>0 && uranium>0){
-            System.out.println("Van hozzá elég anyag");
 
             for (int i = 0; i < backpack.size(); i++){ // kiveszi
 
@@ -196,11 +188,8 @@ public class Settler extends Miner{
 
             Robot r = new Robot(spacething);
             spacething.addMiner(r); // lerakja az adott aszteroidára a robotot
-            System.out.println("Kész a robot");
             return true;
         }
-
-        System.out.println("Nem sikerült a robot építés");
         return false;
     }
 
@@ -209,10 +198,8 @@ public class Settler extends Miner{
 
         if(backpack.size()<10 && m != null) {  // csak akkor adja be, ha van hely még neki
             backpack.add(m);
-            System.out.println("Van elég hely a táskában, bele lett rakva az anyag");
             return true;
         }
-        System.out.println("Nincs anyag vagy tele a táska");
         return false;
     }
 

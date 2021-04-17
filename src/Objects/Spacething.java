@@ -19,7 +19,6 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
     }
     //ha a megadott égitest az adott égitest szomszédja, akkor igaz értéket vesz fel, ha nem, akkor hamis
     public boolean isNeigbour(int spacethingID){
-        System.out.println("isNeighbour végrehajtodik.");
         for (Spacething n: neighbours) {
             if(n.getId() == spacethingID) return true;
         }
