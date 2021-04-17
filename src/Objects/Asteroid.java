@@ -13,10 +13,21 @@ public class Asteroid extends Spacething {
     private boolean perihelion;     // napközelség
     private Material material;
     private ArrayList<Miner> miners;
-    private int id;                 //ID
 
     private Random rand = new Random();
 
+    public Asteroid(int asteroidID, int lay, int d, String mat){
+        super(asteroidID);
+        layer = lay;
+        digged = d;
+        miners = new ArrayList<Miner>();
+        if(mat == "Coal"){material = new Coal(this);}
+        if(mat == "Iron"){material = new Iron(this);}
+        if(mat == "Water"){material = new Water(this);}
+        if(mat == "Uranium"){material = new Uranium(this);}
+        if(mat == "null"){material = null;}
+        asteroid = true;
+    }
     // Asteroid konstruktor
     public Asteroid(int asteroidID) {
         super(asteroidID);
@@ -25,8 +36,6 @@ public class Asteroid extends Spacething {
         digged = 0;     //0 réteg van eddig ásva
 
         miners = new ArrayList<Miner>();
-
-        id = asteroidID;
 
         //Random anyag kerül az aszteroida közepébe
         int mat = (int) rand.nextInt(5);
@@ -115,11 +124,6 @@ public class Asteroid extends Spacething {
         return materials;
     }
 
-    //A játék elején, beállítja az aktuális szomszédokat és a napközelség értékét.
-    public void Init(){
-        System.out.println("Init végrehajtodik.");
-    }
-
     //A napközelséget vizsgálom és irom felül.
     public void Step(){
         System.out.println("Step végrehajtodik.");
@@ -129,7 +133,6 @@ public class Asteroid extends Spacething {
     public void SetUpTeleport(Teleport t){
         System.out.println("setupteleport");
     }
-
 
     // getterek és setterek a megadott változókhoz
     public int getLayer() {
@@ -162,5 +165,10 @@ public class Asteroid extends Spacething {
 
     public void setMaterial(Material m){
         this.material = m;
+    }
+
+    @Override
+    public void AddNeighbor(Spacething s) {
+        super.AddNeighbor(s);
     }
 }

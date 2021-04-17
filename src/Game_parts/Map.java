@@ -22,6 +22,14 @@ public class Map implements Steppable {
 
     private Random rand = new Random();
 
+    //Map konstruktor
+    public Map(){
+        asteroids = new ArrayList<Asteroid>();
+        settlers = new ArrayList<Settler>();
+        ufos = new ArrayList<Ufo>();
+        robots = new ArrayList<Robot>();
+        teleports = new ArrayList<Teleport>();
+    };
     //Map konstruktor, felveszi a telepesek és az aszteroidák listáját.
     public Map(int noAsteroids, int noSettler) {
         asteroids = new ArrayList<Asteroid>();
@@ -141,4 +149,23 @@ public class Map implements Steppable {
         }
     }
 
+    public void setAsteroids(ArrayList<Asteroid> asteroids) {
+        this.asteroids = asteroids;
+    }
+
+    public void setRobots(ArrayList<Robot> robots) {
+        this.robots = robots;
+    }
+
+    public void setSettlers(ArrayList<Settler> settlers) {
+        this.settlers = settlers;
+    }
+
+    public void setTeleports(ArrayList<Teleport> teleports) {
+        this.teleports = teleports;
+    }
+
+    public void setUfos(ArrayList<Ufo> ufos) {
+        this.ufos = ufos;
+    }
 }

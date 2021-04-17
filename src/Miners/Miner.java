@@ -8,17 +8,24 @@ import java.util.ArrayList;
 
 public abstract class Miner implements Moveable {
 
-            // tárolja, hogy melyik aszteroidán van éppen a játékos
-            protected Spacething spacething;
-            // ez a raktár
-            protected ArrayList<Material> backpack;
-            protected int id;
+    // tárolja, hogy melyik aszteroidán van éppen a játékos
+    protected Spacething spacething;
+    // ez a raktár
+    protected ArrayList<Material> backpack;
+    protected int id;
 
-            //Miner konstruktor
-            public Miner(Spacething s){
-                spacething = s;
-                backpack = new ArrayList<Material>();
-                s.addMiner(this);
+    public Miner(Spacething s, int _id){
+        spacething = s;
+        backpack = new ArrayList<Material>();
+        s.addMiner(this);
+        id = _id;
+    }
+
+    //Miner konstruktor
+    public Miner(Spacething s){
+        spacething = s;
+        backpack = new ArrayList<Material>();
+        s.addMiner(this);
     }
 
     //Miner mozgás függvénye aszteroidára

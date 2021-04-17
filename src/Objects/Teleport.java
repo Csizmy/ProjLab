@@ -16,6 +16,13 @@ public class Teleport extends Spacething implements Moveable, Steppable {
         asteroid = false;
     }
 
+    public Teleport(int teleportID, Asteroid a){
+        super(teleportID);
+        asteroid = false;
+        a.AddNeighbor(this);
+        this.AddNeighbor(a);
+    }
+
     @Override
     public void removeMiner(Miner m) {}
 

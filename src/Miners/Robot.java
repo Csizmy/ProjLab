@@ -6,6 +6,11 @@ import Objects.*;
 public class Robot extends Miner implements Steppable {
 
     // Robot konstuktor
+    public Robot(Spacething s, int _id) {
+        super(s,_id);
+    }
+
+    // Robot konstuktor
     public Robot(Spacething s) {
         super(s);
     }

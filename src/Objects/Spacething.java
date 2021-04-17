@@ -42,17 +42,18 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
                 neighbours.remove(i);
             }
         }
-    };
+    }
 
     // id gettere
     public int getId(){
         return id;
     }
-
+    // id settere
+    public void setId(int _id){id= _id;}
     // eltávolít egy minert
     public abstract void removeMiner(Miner m);
     // hozzáad egy minert
     public abstract void  addMiner(Miner m);
     // asteroid gettere
-    public boolean getAsteroid(){return asteroid;};
+    public boolean getAsteroid(){return asteroid;}
 }

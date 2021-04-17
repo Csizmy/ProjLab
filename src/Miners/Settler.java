@@ -10,6 +10,11 @@ public class Settler extends Miner{
     // a telepesnél lévő telepotokat tárolja
     private ArrayList<Teleport> teleports;
 
+    public Settler(Asteroid a, int _id){
+        super(a, _id);
+        teleports = new ArrayList<Teleport>();
+    }
+
     // Settler konstruktor
     public Settler(Asteroid a){
         super(a);

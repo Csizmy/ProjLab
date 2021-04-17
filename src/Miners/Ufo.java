@@ -6,6 +6,10 @@ import Objects.Spacething;
 public class Ufo extends Miner implements Steppable {
 
 
+    public Ufo(Spacething s, int _id) {
+        super(s, _id);
+    }
+
     public Ufo(Spacething s) {
         super(s);
     }
