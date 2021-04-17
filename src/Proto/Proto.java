@@ -128,15 +128,15 @@ public class Proto {
 
     public void mineMiner(int settler_id){}//kristof ezt csinalja
 
-    public void buildTeleport(int settler_id){}
+    public void buildTeleport(int settler_id){} // Panku
 
-    public void placeTeleport(int settler_id, int teleport_id){}
+    public void placeTeleport(int settler_id, int teleport_id){}  // Panku
 
     public void perihelion(int asteroid_id){}
 
     public void sunStorm(String target){} // ha "All",mindet eléri, ha egy szám, akkor át kell alakítani!!
 
-    public void addToBackpack(String material, int settler_id){}
+    public void addToBackpack(String material, int settler_id){} // Panku
 
     public void backPack(int settler_id){}
 
