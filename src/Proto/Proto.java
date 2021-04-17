@@ -118,15 +118,15 @@ public class Proto {
         map.list(item);
     }
 
-    public void moveSettler(int settler_id, int asteroid_id){}
+    public void moveSettler(int settler_id, int asteroid_id){}//kristof ezt csinalja
 
-    public void stepRobot(int robot_id, String step){}
+    public void stepRobot(int robot_id, String step){}//kristof ezt csinalja
 
-    public void stepUfo(int ufo_id, String step){}
+    public void stepUfo(int ufo_id, String step){}//kristof ezt csinalja
 
-    public void drillMiner(int settler_id){}
+    public void drillMiner(int settler_id){}//kristof ezt csinalja
 
-    public void mineMiner(int settler_id){}
+    public void mineMiner(int settler_id){}//kristof ezt csinalja
 
     public void buildTeleport(int settler_id){}
 
