@@ -142,13 +142,62 @@ public class Proto {
 
     public void neighbors(int asteroid_id){}
 
-    public void buildRobot(int settler_id){}
+    //----------------------------- NOT YET SET ROBOT ID!!!!!!!!!! ------------------------------------------
+    public void buildRobot(int settler_id){
+        //Calculate the number of settlers alive on the map.
+        int numOfsettlers = settler_id - 50 - map.getRobots().size() - map.getUfos().size();
+        Settler settler = map.getSettlers().get(numOfsettlers - 1);
 
-    public void addSettler(int asteroid_id){}       // stipi bence
+        if (settler.BuildRobot()) {
 
-    public void addUfo(int asteroid_id){}           //stipi bence
+            //no robot to set its id to this...
+            int robot_id = 50 + map.getSettlers().size() + map.getRobots().size() + map.getUfos().size();
 
-    public void addRobot(int asteroid_id){}         //stipi bence
+            System.out.println("Settler " + settler.getId() + robot_id + " robot megépítve.");             // ROBOT ID ?????????
+        }
+        else {System.out.println("Hiba, nincs elég anyag.");}
+
+    }
+
+    //Add a settler to an existing asteroid.
+    public void addSettler(int asteroid_id){
+
+        //Get the asteroid from map, and get the number of settlers and set his ID to that number + 50
+        int new_id = 50 + map.getSettlers().size() + map.getRobots().size() + map.getUfos().size();
+        Settler settler = new Settler(map.getAsteroids().get(asteroid_id), new_id);
+
+        //if the settler is on the asteroid it was successful!
+        if (map.getAsteroids().get(asteroid_id).getMiners().contains(settler)){
+        System.out.println("Settler " + settler.getId() + " sikeresen létrejött Asteroid" + map.getAsteroids().get(asteroid_id));}
+        else{
+        System.out.println("A Settler ezen az aszteroidán nem tudott létrejönni.");}
+    }
+
+    public void addUfo(int asteroid_id){        //stipi bence
+
+        //Get the asteroid from map, and get the number of settlers and robots and Ufos set his ID to that number + 50
+        int new_id = 50 + map.getSettlers().size() + map.getRobots().size() + map.getUfos().size();
+        Ufo ufo = new Ufo(map.getAsteroids().get(asteroid_id), new_id);
+
+        //if the settler is on the asteroid it was successful!
+        if (map.getAsteroids().get(asteroid_id).getMiners().contains(ufo)){
+            System.out.println("Ufo " + ufo.getId() + " sikeresen létrejött Asteroid" + map.getAsteroids().get(asteroid_id));}
+        else{
+            System.out.println("Az Ufo ezen az aszteroidán nem tudott létrejönni.");}
+    }
+
+    public void addRobot(int asteroid_id){      //stipi bence
+
+        //Get the asteroid from map, and get the number of settlers and set his ID to that number + 50
+        int new_id = 50 + map.getSettlers().size() + map.getRobots().size() + map.getUfos().size();
+        Robot robot = new Robot(map.getAsteroids().get(asteroid_id), new_id);
+
+        //if the settler is on the asteroid it was successful!
+        if (map.getAsteroids().get(asteroid_id).getMiners().contains(robot)){
+            System.out.println("Robot" + robot.getId() + " sikeresen létrejött Asteroid" + map.getAsteroids().get(asteroid_id));}
+        else{
+            System.out.println("A Robot ezen az aszteroidán nem tudott létrejönni.");}
+    }
 
     public void save(){}
 

@@ -107,6 +107,7 @@ public class Map implements Steppable {
     public ArrayList<Robot> getRobots(){return robots;}
     public ArrayList<Asteroid> getAsteroids(){return asteroids;}
     public ArrayList<Teleport> getTeleports(){return teleports;}
+    public ArrayList<Ufo> getUfos() {return ufos;}
     public int getDiffMat(){return diffMat;}
     public void setDiffMat(int mat){this.diffMat=mat;}
 
