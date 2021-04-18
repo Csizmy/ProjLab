@@ -82,20 +82,6 @@ public class Map implements Steppable {
     }
 
     //A napvihar működése.
-    public void SolarStorm1valtozat() { //////ITT A KORÁBBI CSAK HA A KÉSŐBBI NEM LENNE JÓ
-
-        for (int i = 0; i < asteroids.size(); i++) {  // az aszteroidákon átmenő napvihar nézi ki van elbújva
-            if (asteroids.get(i).getLayer() != asteroids.get(i).getDigged() || asteroids.get(i).getMaterial() != null) {
-                for (int j = 0; j < asteroids.get(i).getMiners().size(); j++) {
-                    if(asteroids.get(i).getMiners().get(j).getName().equals("settler"))
-                        asteroids.get(i).getMiners().get(j).Die();
-                }
-            }
-        }
-        for (int i = 0; i < teleports.size(); i++)  // egy körig nem lehet használni semelyik kaput se
-            teleports.get(i).disable();
-    }
-
     public void SolarStorm(int target) {
 
         if (target == -1) {
