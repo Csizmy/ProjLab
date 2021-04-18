@@ -482,6 +482,10 @@ public class Proto {
         for (int i = 0; i < map.getTeleports().size(); i++) {
             map.getTeleports().get(i).Step("");
         }
+        for (int i = 0; i < map.getAsteroids().size(); i++){
+            map.getAsteroids().get(i).Step("");
+        }
+
         map.Step("");
     }
 

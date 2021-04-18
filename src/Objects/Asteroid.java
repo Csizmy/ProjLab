@@ -170,12 +170,12 @@ public class Asteroid extends Spacething implements Steppable {
     public void Step(String step){
         Random r = new Random();
         if (r.nextInt(2) == 0) {
-            if (perihelion != true)
+            if (!perihelion)
                 System.out.println("Asteroid " + id + " napkozelbe kerult");
             perihelion = true;
         }
         else {
-            if (perihelion != true)
+            if (perihelion)
                 System.out.println("Asteroid " + id + " naptavolba kerult");
             perihelion = false;
         }
