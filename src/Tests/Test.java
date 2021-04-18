@@ -54,7 +54,7 @@ public class Test {
         m.getSettlers().get(0).Mine();                      //majd kibányássza a belsejét
         //
         m.SolarStorm1valtozat();                                     //napvihar elvárt outputja, hogy a settler és az egyik robot túléli, a másik robot meghal
-//!!!!!!!!!!!!!!!!!!!!!!!!!itt atirtam a solarstormokat idk hogy szamit e majd!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     }
 
     public void napvihar_meghal(){ // Telepes nem megfúrt aszteroidán van (meghal)
