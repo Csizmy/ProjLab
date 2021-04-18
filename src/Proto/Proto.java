@@ -430,27 +430,39 @@ public class Proto {
         File f = new File("maps\\" + saveName + ".txt");
         try {
             FileWriter fWriter = new FileWriter(f);
-            for (Settler s: map.getSettlers()){
-                fWriter.write("s " + s.getAsteroid()+"\n");
+            for (Settler s: map.getSettlers()){         // Settler;Position;Backpack
+                fWriter.write("s;" + s.getAsteroid());
+                for(Material m: s.getBackpack()){
+                    fWriter.write(" " + m.getName());
+                }
+                fWriter.write("\n");
             }
 
-            for (Robot r: map.getRobots()){
-                fWriter.write("r " + r.getAsteroid()+"\n");
+            for (Robot r: map.getRobots()){             //Robot;Position
+                fWriter.write("r;" + r.getAsteroid()+"\n");
             }
 
-            for (Ufo u: map.getUfos()){
-                fWriter.write("u " + u.getAsteroid()+"\n");
+            for (Ufo u: map.getUfos()){                 //Ufo;Position
+                fWriter.write("u;" + u.getAsteroid()+"\n");
             }
 
-            for (Asteroid a: map.getAsteroids()){
-                fWriter.write("* ");
+            for (Teleport t: map.getTeleports()){                 //Ufo;Position
+                fWriter.write("t;" + t.getNeighbours().get(0).getId());
+                fWriter.write(";" + t.getPair().getId()+"\n");
+            }
+
+            for (Asteroid a: map.getAsteroids()){       //Asteroid;Neighbours;Material;Layer;Digged
+                fWriter.write("*;");
                 for(Spacething s: a.getNeighbours()){
                     fWriter.write(s.getId() + " ");
                 }
                 if(a.getMaterial() != null)
-                    fWriter.write(a.getMaterial().getName() + "\n");
+                    fWriter.write(";" + a.getMaterial().getName());
                 else
-                fWriter.write("null\n");
+                    fWriter.write(";null");
+                fWriter.write(";" + a.getLayer());
+                fWriter.write(";" + a.getDigged());
+                fWriter.write("\n");
             }
 
             fWriter.close();
