@@ -430,7 +430,7 @@ public class Proto {
     }
 
     public void save(String saveName){  //ide elv nem kene string!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! gamet is nézd
-        File f = new File("maps\\" + saveName + ".txt");
+        File f = new File("maps\\" + saveName);
         try {
             FileWriter fWriter = new FileWriter(f);
             for (Settler s: map.getSettlers()){         // Settler;Position;Backpack
@@ -474,7 +474,6 @@ public class Proto {
             System.out.println("Sikertelen mentés");
             e.printStackTrace();
         }
-
     }
 
     public void step(){
