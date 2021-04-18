@@ -1,6 +1,7 @@
 package Proto;
 
 import Game_parts.*;
+import Materials.*;
 import Miners.*;
 import Objects.*;
 
@@ -136,7 +137,42 @@ public class Proto {
 
     public void sunStorm(String target){} // ha "All",mindet eléri, ha egy szám, akkor át kell alakítani!!
 
-    public void addToBackpack(String material, int settler_id){} // Panku
+    public void addToBackpack(String material, int settler_id){  // Panku
+        for (int i = 0; i < map.getSettlers().size(); i++) {
+            if(map.getSettlers().get(i).getId()==settler_id){
+                switch (material){
+                    case "Water":
+                        Water w = new Water(null);
+                        if(map.getSettlers().get(i).AddMaterial(w)){
+                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikeres");
+                        }else{
+                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
+                        }
+                    case "Iron":
+                        Iron ir = new Iron(null);
+                        if(map.getSettlers().get(i).AddMaterial(ir)){
+                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikeres");
+                        }else{
+                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
+                        }
+                    case "Coal":
+                        Coal c = new Coal(null);
+                        if(map.getSettlers().get(i).AddMaterial(c)){
+                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikeres");
+                        }else{
+                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
+                        }
+                    case "Uranium":
+                        Uranium u = new Uranium(null);
+                        if(map.getSettlers().get(i).AddMaterial(u)){
+                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikeres");
+                        }else{
+                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
+                        }
+                }
+            }
+        }
+    }
 
     public void backPack(int settler_id){}  //axel
 
