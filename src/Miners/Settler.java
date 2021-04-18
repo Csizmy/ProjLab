@@ -31,27 +31,21 @@ public class Settler extends Miner{
     public boolean Mine(){
         if(spacething.getAsteroid()) {
             Asteroid asteroid = (Asteroid) spacething;
-            System.out.println("Bányászás elkezdése");
 
             //ha nincs kibányászva és nem üres
             if (asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial() != null) {
 
                 if (asteroid.getPerihelion()) {  // napközelben van
                     asteroid.getMaterial().PeriMining();
-                    System.out.println("Valami baj van a napközelség miatt\n");
                 }
                 else {
                     AddMaterial(asteroid.getMaterial());
-                    System.out.println("Nincs baj, bekerült a táskába a " + asteroid.getMaterial().getName());
                     asteroid.setMaterial(null);
                 }
-                System.out.println("Bányászás megtörtént");
                 return true;
             }
-            System.out.println("Ki van bányászva vagy nincs benne semmi.");
             return false;
         }
-        System.out.println("Itt nem lehet bányászni");
         return false;
     }
 
@@ -78,7 +72,6 @@ public class Settler extends Miner{
 
             if(iron>=2 && water>=1 && uranium>=1){  // ha megvan az anyagmennyiség
 
-                System.out.println("Van elég nyersanyag");
                 for (int i = 0; i < backpack.size(); i++){ // kiveszi
 
                     if(backpack.get(i).getName()=="Uranium"){

@@ -130,20 +130,35 @@ public class Proto {
     public void mineMiner(int settler_id){}//kristof ezt csinalja
 
     public void buildTeleport(int settler_id){ // Panka
-        int _id = map.getTeleports().get(-1).getId();
+        int _id = map.getTeleports().get(map.getTeleports().size()-1).getId();
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
 
                 if(map.getSettlers().get(i).BuildTp(_id, _id+1)){
-                    System.out.println("Settler "+ map.getSettlers().get(i) + "tp azonosító" + " Az építés sikeres");
+                    System.out.println("Settler "+ map.getSettlers().get(i).getId() + " Az építés sikeres");
                 }else{
-                    System.out.println("Settler "+ map.getSettlers().get(i) + " Az építés sikertelen");
+                    System.out.println("Settler "+ map.getSettlers().get(i).getId() + " Az építés sikertelen");
                 }
             }
         }
     }
 
-    public void placeTeleport(int settler_id, int teleport_id){}  // Panku
+    public void placeTeleport(int settler_id, int teleport_id){ // Panku
+        for (int i = 0; i < map.getSettlers().size(); i++) {
+            if(map.getSettlers().get(i).getId()==settler_id){
+                for (int j = 0; j < map.getTeleports().size(); j++) {
+                    if(map.getTeleports().get(j).getId()==teleport_id){
+                        if(map.getSettlers().get(i).PlaceTp(map.getTeleports().get(j))){
+                            System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikeres");
+                        }else{
+                            System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikertelen");
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 
     public void perihelion(int asteroid_id){}
 
