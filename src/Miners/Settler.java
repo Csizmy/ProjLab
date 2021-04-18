@@ -29,7 +29,7 @@ public class Settler extends Miner{
 
     // ha nincs még kiásva az aszteroida, akkor egy rétegnyit ás rajta
     public boolean Mine(){
-        if(spacething.getAsteroid()) {
+        if(spacething.isAsteroid()) {
             Asteroid asteroid = (Asteroid) spacething;
 
             //ha nincs kibányászva és nem üres
@@ -123,7 +123,7 @@ public class Settler extends Miner{
     //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
     public boolean PlaceTp(Teleport t) {
 
-        if(spacething.getAsteroid()) {  // ha aszteroidán van
+        if(spacething.isAsteroid()) {  // ha aszteroidán van
             Asteroid a = (Asteroid) spacething;
             if (!t.getPair().isNeigbour(a.getId())) {  // ha a párja nincs az adott aszteroidán
                 t.AddNeighbor(spacething);
@@ -201,13 +201,17 @@ public class Settler extends Miner{
     }
 
     public void listBackPack(){
-        if(backpack.isEmpty()==true){
+        if(backpack.isEmpty()==true&& teleports.isEmpty()==true){
             System.out.println("-");
             return;
         }
         System.out.print(this.getId()+"Taska tartalma: ");
         for(Material m: backpack){
             System.out.print(m.getName()+" ");
+        }
+
+        for(Teleport t: teleports){
+            System.out.print("Teleport "+t.getId()+" ");
         }
     }
 }

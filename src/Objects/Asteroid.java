@@ -26,7 +26,6 @@ public class Asteroid extends Spacething {
         if(mat == "Water"){material = new Water(this);}
         if(mat == "Uranium"){material = new Uranium(this);}
         if(mat == "null"){material = null;}
-        asteroid = true;
     }
     // Asteroid konstruktor
     public Asteroid(int asteroidID) {
@@ -47,7 +46,6 @@ public class Asteroid extends Spacething {
             case 4: material = null;
         }
 
-        asteroid = true;
     }
 
     // Asteroid konstruktor
@@ -60,8 +58,6 @@ public class Asteroid extends Spacething {
         this.miners = new ArrayList<Miner>();
         this.id = asteroidID;
         this.perihelion = perihelion;
-
-        asteroid = true;
     }
 
     //csökkenti a sziklarétegek számát az adott aszteroidán
@@ -154,8 +150,12 @@ public class Asteroid extends Spacething {
             System.out.println("Hiba: nincs szomszed "+this.getId());
         }
         for(Spacething s: neighbours){
+            if(s.isAsteroid()==true)
             System.out.println(s.getId());
         }
     }
+
+    @Override
+    public boolean isAsteroid(){return true;}
 
 }
