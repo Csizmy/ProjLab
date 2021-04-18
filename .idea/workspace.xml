@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="asteroid step">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -633,7 +636,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618776180732</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="asteroid step">
+      <created>1618777490834</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1618777490834</updated>
+    </task>
+    <task id="LOCAL-00040" summary="asteroid step">
+      <created>1618777675738</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1618777675738</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -689,7 +706,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Kis hibák javítva" />
     <MESSAGE value="Így jóóó hahaha" />
     <MESSAGE value="gettersetter" />
     <MESSAGE value="mainban is teszt" />
@@ -714,7 +730,8 @@
     <MESSAGE value="teleport can move" />
     <MESSAGE value="teleport can move now fr" />
     <MESSAGE value="Végleges elvileg" />
-    <option name="LAST_COMMIT_MESSAGE" value="Végleges elvileg" />
+    <MESSAGE value="asteroid step" />
+    <option name="LAST_COMMIT_MESSAGE" value="asteroid step" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Miners/Robot.java">

@@ -445,7 +445,7 @@ public class Proto {
                 fWriter.write("u;" + u.getAsteroid()+"\n");
             }
 
-            for (Teleport t: map.getTeleports()){                 //Ufo;Position
+            for (Teleport t: map.getTeleports()){       //Ufo;Position
                 fWriter.write("t;" + t.getNeighbours().get(0).getId());
                 fWriter.write(";" + t.getPair().getId()+"\n");
             }
