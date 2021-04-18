@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Proto {
     private Map map = new Map();
 
-    public void loadMap(String mapName){  // Panka
+    public void loadMap(String mapName){
         try{
             File f = new File("maps\\" + mapName);
             Scanner sc = new Scanner(f);
@@ -124,7 +124,7 @@ public class Proto {
         }
     }
 
-    public void list(String item){ //axelvoltam
+    public void list(String item){
         map.list(item);
     }
 
@@ -138,7 +138,7 @@ public class Proto {
                     System.out.println("Settler " + settler_id + " A mozgás sikertelen.");
             }
         }
-    }//kristof ezt csinalja
+    }
 
     public void moveTp(int teleport_id, int asteroid_id){
         for (int i = 0; i < map.getTeleports().size(); i++) {
@@ -154,7 +154,7 @@ public class Proto {
                 map.getRobots().get(i).Step(step);
             }
         }
-    }//kristof ezt csinalja
+    }
 
     public void stepUfo(int ufo_id, String step){
         for (int i = 0; i < map.getUfos().size(); i++) {
@@ -162,7 +162,7 @@ public class Proto {
                 map.getUfos().get(i).Step(step);
             }
         }
-    }//kristof ezt csinalja
+    }
 
     public void drillMiner(int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
@@ -174,7 +174,7 @@ public class Proto {
                     System.out.println("Settler " + settler_id + " A fúrás sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
             }
         }
-    }//kristof ezt csinalja
+    }
 
     public void mineMiner(int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++){
@@ -182,9 +182,9 @@ public class Proto {
                 map.getSettlers().get(i).Mine();
             }
         }
-    }//kristof ezt csinalja
+    }
 
-    public void buildTeleport(int settler_id){ // Panka
+    public void buildTeleport(int settler_id){
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId()+2;
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
@@ -203,7 +203,7 @@ public class Proto {
         }
     }
 
-    public void placeTeleport(int settler_id, int teleport_id){ // Panku
+    public void placeTeleport(int settler_id, int teleport_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
                 for (int j = 0; j < map.getTeleports().size(); j++) {
@@ -231,7 +231,7 @@ public class Proto {
 
     public void sunStorm(String target){
 
-        if(!target.equals("All")){                // If not all than parse to integer
+        if(!target.equals("All")){
             try{
                 int t = Integer.parseInt(target);
                 map.SolarStorm(t);
@@ -248,7 +248,7 @@ public class Proto {
         }
     }
 
-    public void addToBackpack(String material, int settler_id){  // Panku
+    public void addToBackpack(String material, int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
                 switch (material){
@@ -289,7 +289,7 @@ public class Proto {
         }
     }
 
-    public void backPack(int settler_id){ //axel
+    public void backPack(int settler_id){
 
         for (Settler s: map.getSettlers()){
             if(s.getId()==settler_id){
@@ -299,7 +299,7 @@ public class Proto {
 
     }
 
-    public void neighbors(int asteroid_id){ //axel
+    public void neighbors(int asteroid_id){
         for(Asteroid a: map.getAsteroids()){
             if(a.getId()==asteroid_id){
                 a.listNeighbors();
@@ -311,7 +311,6 @@ public class Proto {
 
         Settler settler = map.getSettlers().get(settler_id - 50);
 
-        //The robot's id - one higher than ever before.
         int new_id = 50;
         for (int x = 0; x < map.getUfos().size();x++) {
             int temp = map.getUfos().get(x).getId();
@@ -337,12 +336,8 @@ public class Proto {
 
     }
 
-    //Add a settler to an existing asteroid.
     public void addSettler(int asteroid_id){
 
-        //Get the asteroid from map.
-
-        //Get the highest existing ID number.
         int new_id = 50;
         for (int i = 0; i < map.getUfos().size();i++) {
             int temp = map.getUfos().get(i).getId();
@@ -358,21 +353,17 @@ public class Proto {
         }
         new_id += 1;
 
-        //Giving a new id - one higher than ever before - to the settler.
         Settler settler = new Settler(map.getAsteroids().get(asteroid_id), new_id);
         map.getSettlers().add(settler);
 
-        //if the settler is on the asteroid it was successful!
         if (map.getAsteroids().get(asteroid_id).getMiners().contains(settler)){
         System.out.println("Settler " + settler.getId() + " sikeresen létrejött Asteroid " + map.getAsteroids().get(asteroid_id).getId());}
         else{
         System.out.println("A Settler ezen az aszteroidán nem tudott létrejönni.");}
     }
 
-    //Add an Ufo to an existing asteroid.
     public void addUfo(int asteroid_id){
 
-        //Get the asteroid from map, and get the number of settlers and robots and Ufos set his ID to that number + 50
         int new_id = 50;
         for (int i = 0; i < map.getUfos().size();i++) {
             int temp = map.getUfos().get(i).getId();
@@ -398,10 +389,8 @@ public class Proto {
             System.out.println("Az Ufo ezen az aszteroidán nem tudott létrejönni.");}
     }
 
-    //Add a Robot to an existing asteroid.
     public void addRobot(int asteroid_id){
 
-        //Get the asteroid from map, and get the number of settlers and set his ID to that number + 50
         int new_id = 50;
         for (int i = 0; i < map.getUfos().size();i++) {
             int temp = map.getUfos().get(i).getId();
@@ -420,7 +409,6 @@ public class Proto {
         Robot robot = new Robot(map.getAsteroids().get(asteroid_id), new_id);
         map.getRobots().add(robot);
 
-        //if the settler is on the asteroid it was successful!
         if (map.getAsteroids().get(asteroid_id).getMiners().contains(robot)){
             System.out.println("Robot " + robot.getId() + " sikeresen létrejött Asteroid " + map.getAsteroids().get(asteroid_id).getId());}
         else{
