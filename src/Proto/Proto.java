@@ -432,7 +432,7 @@ public class Proto {
             System.out.println("A Robot ezen az aszteroidán nem tudott létrejönni.");}
     }
 
-    public void save(String saveName){  //ide elv nem kene string!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! gamet is nézd
+    public void save(String saveName){
         File f = new File("maps\\" + saveName + ".txt");
         try {
             FileWriter fWriter = new FileWriter(f);
