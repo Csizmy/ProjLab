@@ -131,6 +131,8 @@ public class Map implements Steppable {
         Random r = new Random();
         if (r.nextInt(10) < 2)
             SolarStorm(-1);
+        else
+            System.out.println("Nem tortent napvihar");
     }
 
     //getterek és setterek a megfelelő értékekhez
