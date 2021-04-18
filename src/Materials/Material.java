@@ -11,13 +11,13 @@ public abstract class Material {
         return name;
     }
 
-    void setName(String n){
+    public void setName(String n){
         name = n;
     }
 
     Asteroid getAsteroid(){return asteroid;}
 
-    void setAsteroid(Asteroid a){asteroid = a;}
+    public void setAsteroid(Asteroid a){asteroid = a;}
 
     //Virtuális függvény, ami a víznél és az urániumnál fontos
     public void PeriMining(){

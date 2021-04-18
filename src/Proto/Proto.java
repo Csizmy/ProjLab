@@ -190,9 +190,14 @@ public class Proto {
         }
     }
 
-    public void backPack(int settler_id){}  //axel
+    public void backPack(int settler_id){ //axel
+        int numOfsettler = settler_id - 50;
+        map.getSettlers().get(numOfsettler).listBackPack();
+    }
 
-    public void neighbors(int asteroid_id){}  //axel
+    public void neighbors(int asteroid_id){ //axel      !!!!!!!!!!!!!!!!!!!itt még nem tudom h akkor h tegyek különbséget aszteroid meg teleport között
+        map.getAsteroids().get(asteroid_id).listNeighbors();
+    }
 
     //----------------------------- NOT YET SET ROBOT ID!!!!!!!!!! ------------------------------------------
     public void buildRobot(int settler_id){
