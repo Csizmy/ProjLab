@@ -133,7 +133,10 @@ public class Proto {
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 map.getSettlers().get(i).Move(asteroid_id);
-                System.out.println("Settler " + settler_id + " A mozgás sikeres ide: Asteroid " + asteroid_id + ".");
+                if (asteroid_id == map.getSettlers().get(i).getAsteroid())
+                    System.out.println("Settler " + settler_id + " A mozgás sikeres ide: Asteroid " + asteroid_id + ".");
+                else
+                    System.out.println("Settler " + settler_id + " A mozgás sikertelen.");
             }
         }
     }//kristof ezt csinalja
