@@ -65,7 +65,7 @@ public class Teleport extends Spacething implements Moveable, Steppable {
 
     //ha megkergült, meghívódik és random mozog.
     @Override
-    public void Step() {
+    public void Step(String step) {
         //TODO
     }
 }

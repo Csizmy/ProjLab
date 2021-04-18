@@ -29,7 +29,7 @@ public class Settler extends Miner{
 
     // ha nincs még kiásva az aszteroida, akkor egy rétegnyit ás rajta
     public boolean Mine(){
-        if(spacething.isAsteroid()) {
+        if(spacething.getAsteroid()) {
             Asteroid asteroid = (Asteroid) spacething;
             System.out.println("Bányászás elkezdése");
 
@@ -130,7 +130,7 @@ public class Settler extends Miner{
     //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
     public boolean PlaceTp(Teleport t) {
 
-        if(spacething.isAsteroid()) {  // ha aszteroidán van
+        if(spacething.getAsteroid()) {  // ha aszteroidán van
             Asteroid a = (Asteroid) spacething;
             if (!t.getPair().isNeigbour(a.getId())) {  // ha a párja nincs az adott aszteroidán
                 t.AddNeighbor(spacething);

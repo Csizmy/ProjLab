@@ -161,6 +161,6 @@ public class Test {
         Map map = new Map(2, 0);
         Robot robot = new Robot(map.getAsteroids().get(0));
 
-        robot.Step();
+        robot.Step("");
     }
 }

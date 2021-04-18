@@ -8,6 +8,7 @@ import Objects.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Proto {
@@ -119,15 +120,54 @@ public class Proto {
         map.list(item);
     }
 
-    public void moveSettler(int settler_id, int asteroid_id){}//kristof ezt csinalja
+    public void moveSettler(int settler_id, int asteroid_id){
+        for (int i = 0; i < map.getSettlers().size(); i++) {
+            if (map.getSettlers().get(i).getId() == settler_id) {
+                map.getSettlers().get(i).Move(asteroid_id);
+                System.out.println("Settler " + settler_id + " A mozgás sikeres ide: Asteroid " + asteroid_id + ".");
+            }
+        }
+    }//kristof ezt csinalja
 
-    public void stepRobot(int robot_id, String step){}//kristof ezt csinalja
+    public void stepRobot(int robot_id, String step){
+        for (int i = 0; i < map.getSettlers().size(); i++) {
+            if (map.getRobots().get(i).getId() == robot_id) {
+                map.getRobots().get(i).Step(step);
+            }
+        }
+    }//kristof ezt csinalja
 
-    public void stepUfo(int ufo_id, String step){}//kristof ezt csinalja
+    public void stepUfo(int ufo_id, String step){
+        for (int i = 0; i < map.getUfos().size(); i++) {
+            if (map.getUfos().get(i).getId() == ufo_id) {
+                map.getUfos().get(i).Step(step);
+            }
+        }
+    }//kristof ezt csinalja
 
-    public void drillMiner(int settler_id){}//kristof ezt csinalja
+    public void drillMiner(int settler_id){
+        for (int i = 0; i < map.getSettlers().size(); i++) {
+            if (map.getSettlers().get(i).getId() == settler_id) {
+                if (map.getSettlers().get(i).Drill()) {
+                    System.out.println("Settler " + settler_id + " A fúrás sikeres " + (map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getLayer() - map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getDigged()) + " réteg maradt Asteroid " + map.getSettlers().get(i).getAsteroid());
+                    System.out.println("This is effing dumb btw kerlek titeket legyen getAsteroidID() meg getAsteroid() kulon mert ez igy cancer");
+                }
+                else
+                    System.out.println("Settler " + settler_id + " A fúrás sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
+            }
+        }
+    }//kristof ezt csinalja
 
-    public void mineMiner(int settler_id){}//kristof ezt csinalja
+    public void mineMiner(int settler_id){
+        for (int i = 0; i < map.getSettlers().size(); i++){
+            if (map.getSettlers().get(i).getId() == settler_id) {
+                if (map.getSettlers().get(i).Mine())
+                    System.out.println("Settler " + settler_id + " A bányászat sikeres Asteroid " + map.getSettlers().get(i).getAsteroid() + map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getMaterial().getName());
+                else
+                    System.out.println("Settler " + settler_id + " A bányászat sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
+            }
+        }
+    }//kristof ezt csinalja
 
     public void buildTeleport(int settler_id){ // Panka
         int _id = map.getTeleports().get(-1).getId();

@@ -98,7 +98,7 @@ public class Map implements Steppable {
 
     //Az AI elindít véletlenszerűen egy napvihart, ennek az algoritmusát később írjuk meg
     @Override
-    public void Step() {
+    public void Step(String step) {
 
     }
 

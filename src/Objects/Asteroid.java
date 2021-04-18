@@ -150,12 +150,12 @@ public class Asteroid extends Spacething {
             System.out.println("Hiba: nincs szomszed "+this.getId());
         }
         for(Spacething s: neighbours){
-            if(s.isAsteroid()==true)
+            if(s.getAsteroid()==true)
             System.out.println(s.getId());
         }
     }
 
     @Override
-    public boolean isAsteroid(){return true;}
+    public boolean getAsteroid(){return true;}
 
 }
