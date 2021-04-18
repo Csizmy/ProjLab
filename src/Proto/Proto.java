@@ -162,7 +162,7 @@ public class Proto {
                 map.getUfos().get(i).Step(step);
             }
         }
-    }//kristof ezt csinalja chacha
+    }//kristof ezt csinalja
 
     public void drillMiner(int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
@@ -182,7 +182,7 @@ public class Proto {
                 map.getSettlers().get(i).Mine();
             }
         }
-    }//kristof ezt csinaljasd
+    }//kristof ezt csinalja
 
     public void buildTeleport(int settler_id){ // Panka
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId()+2;
@@ -213,7 +213,6 @@ public class Proto {
                         }else{
                             System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikertelen");
                         }
-
                     }
                 }
             }
