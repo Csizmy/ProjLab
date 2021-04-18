@@ -121,7 +121,9 @@ public class Map implements Steppable {
     //Az AI elindít véletlenszerűen egy napvihart, ennek az algoritmusát később írjuk meg
     @Override
     public void Step(String step) {
-
+        Random r = new Random();
+        if (r.nextInt(10) < 2)
+            SolarStorm1valtozat();
     }
 
     //getterek és setterek a megfelelő értékekhez

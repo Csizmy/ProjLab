@@ -463,5 +463,16 @@ public class Proto {
 
     }
 
-    public void step(){}
+    public void step(){
+        for (int i = 0; i < map.getRobots().size(); i++) {
+            map.getRobots().get(i).Step("");
+        }
+        for (int i = 0; i < map.getUfos().size(); i++) {
+            map.getUfos().get(i).Step("");
+        }
+        for (int i = 0; i < map.getTeleports().size(); i++) {
+            map.getTeleports().get(i).Step("");
+        }
+        map.Step("");
+    }
 }
