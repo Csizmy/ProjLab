@@ -18,7 +18,7 @@ public class Proto {
 
     public void loadMap(String mapName){  // Panka
         try{
-            File f = new File("maps\\" + mapName);
+            File f = new File("maps\\" + mapName + ".txt");
             Scanner sc = new Scanner(f);
             int space_id = 0;
             int miner_id = 50;
@@ -173,12 +173,12 @@ public class Proto {
         for (int i = 0; i < map.getSettlers().size(); i++){
             if (map.getSettlers().get(i).getId() == settler_id) {
                 if (map.getSettlers().get(i).Mine())
-                    System.out.println("Settler " + settler_id + " A bányászat sikeres Asteroid " + map.getSettlers().get(i).getAsteroid() + map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getMaterial().getName());
+                    System.out.println("Settler " + settler_id + " A bányászat sikeres Asteroid " + map.getSettlers().get(i).getAsteroid() + map.getSettlers().get(i).getBackpack().get(map.getSettlers().get(i).getBackpack().size()-1));
                 else
                     System.out.println("Settler " + settler_id + " A bányászat sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
             }
         }
-    }//kristof ezt csinalja
+    }//kristof ezt csinaljasd
 
     public void buildTeleport(int settler_id){ // Panka
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId();
@@ -433,28 +433,39 @@ public class Proto {
         File f = new File("maps\\" + saveName + ".txt");
         try {
             FileWriter fWriter = new FileWriter(f);
-            for (Settler s: map.getSettlers()){
-                fWriter.write("s " + s.getAsteroid()+"\n");
+            for (Settler s: map.getSettlers()){         // Settler;Position;Backpack
+                fWriter.write("s;" + s.getAsteroid());
+                for(Material m: s.getBackpack()){
+                    fWriter.write(" " + m.getName());
+                }
+                fWriter.write("\n");
             }
 
-            for (Robot r: map.getRobots()){
-                fWriter.write("r " + r.getAsteroid()+"\n");
+            for (Robot r: map.getRobots()){             //Robot;Position
+                fWriter.write("r;" + r.getAsteroid()+"\n");
             }
 
-            for (Ufo u: map.getUfos()){
-                fWriter.write("u " + u.getAsteroid()+"\n");
+            for (Ufo u: map.getUfos()){                 //Ufo;Position
+                fWriter.write("u;" + u.getAsteroid()+"\n");
             }
 
-            for (Asteroid a: map.getAsteroids()){
-                fWriter.write("* ");
+            for (Teleport t: map.getTeleports()){                 //Ufo;Position
+                fWriter.write("t;" + t.getNeighbours().get(0).getId());
+                fWriter.write(";" + t.getPair().getId()+"\n");
+            }
+
+            for (Asteroid a: map.getAsteroids()){       //Asteroid;Neighbours;Material;Layer;Digged
+                fWriter.write("*;");
                 for(Spacething s: a.getNeighbours()){
                     fWriter.write(s.getId() + " ");
                 }
                 if(a.getMaterial() != null)
-                    fWriter.write(a.getMaterial().getName() + "\n");
+                    fWriter.write(";" + a.getMaterial().getName());
                 else
-                    System.out.println("asdasd");
-                fWriter.write("null\n");
+                    fWriter.write(";null");
+                fWriter.write(";" + a.getLayer());
+                fWriter.write(";" + a.getDigged());
+                fWriter.write("\n");
             }
 
             fWriter.close();
@@ -477,5 +488,9 @@ public class Proto {
             map.getTeleports().get(i).Step("");
         }
         map.Step("");
+    }
+
+    public Map getMap() {
+        return map;
     }
 }

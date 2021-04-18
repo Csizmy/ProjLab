@@ -13,6 +13,8 @@ public class Settler extends Miner{
     public Settler(Asteroid a, int _id){
         super(a, _id);
         teleports = new ArrayList<Teleport>();
+        name = "settler";
+
     }
 
     // Settler konstruktor
@@ -246,7 +248,23 @@ public class Settler extends Miner{
         }
         return false;
     }
+    @Override
+    public void Move(int asteroidID){
+        if(spacething.isNeigbour(asteroidID)){
+            Spacething to = null;
+            for (Spacething s: spacething.getNeighbours()) {
+                if(s.getId() == asteroidID){
+                    to = s;
+                }
+            }
+            if(to.getId()!=-1){
+                spacething.removeMiner(this);
+                to.addMiner(this);
+                spacething = to;
+            }
+        }
 
+    }
     public Teleport getTP () {
         return teleports.get(0);
     }

@@ -11,6 +11,7 @@ public class Ufo extends Miner implements Steppable {
 
     public Ufo(Spacething s, int _id) {
         super(s, _id);
+        name = "ufo";
     }
 
     public Ufo(Spacething s) {

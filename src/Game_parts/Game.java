@@ -1,5 +1,6 @@
 package Game_parts;
 
+import Objects.*;
 import Tests.*;
 import  Proto.*;
 
@@ -21,8 +22,17 @@ public class Game {
         map = new Map(5, 2);
     }
     //Körönként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.
-    public void EndGame() {
-        System.out.println("A játék vége");
+    public static boolean EndGame(Map m) {
+
+        for(Asteroid a: m.getAsteroids()){
+            if(a.checkWin()){
+                System.out.println("A játék vége, nyertek a Settlerek!");
+                return true;
+            }
+        }
+
+            System.out.println("A játéknak nincs vége");
+        return false;
     }
 
     // A játék maga.
@@ -118,11 +128,19 @@ public class Game {
                     break;
 
                 case "save":
-                    p.save("test");
+                    p.save(array[1]);
                     break;
 
                 case "step":
                     p.step();
+                    break;
+
+                case "Checkwin":
+                    boolean win=false;
+                    win=EndGame(p.getMap());
+                    if(win==true){
+                        break loop;
+                    }
                     break;
 
                 case "Exit":

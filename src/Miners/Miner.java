@@ -13,6 +13,7 @@ public abstract class Miner implements Moveable {
     // ez a raktár
     protected ArrayList<Material> backpack;
     protected int id;
+    protected String name;
 
     public Miner(Spacething s, int _id){
         spacething = s;
@@ -49,7 +50,6 @@ public abstract class Miner implements Moveable {
     //Miner meghal
     public void Die(){
         spacething.removeMiner(this);
-        spacething=null;
     }
 
     //Miner fúr
@@ -81,5 +81,7 @@ public abstract class Miner implements Moveable {
     public int getId(){return id;}
 
     public int getAsteroid(){return spacething.getId();}
+
+    public String getName(){return name;}
 
 }
