@@ -478,4 +478,8 @@ public class Proto {
         }
         map.Step("");
     }
+
+    public Map getMap() {
+        return map;
+    }
 }

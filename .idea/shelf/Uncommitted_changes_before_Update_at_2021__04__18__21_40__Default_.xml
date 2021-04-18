@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_2021__04__18__21_40_[Default]" date="1618774852058" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40_[Default]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2021. 04. 18. 21:40 [Default]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Proto/Proto.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Proto/Proto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40_[Default]/Proto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Game_parts/Game.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Game_parts/Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40_[Default]/Game.class" />
+  </binary>
+</changelist>
