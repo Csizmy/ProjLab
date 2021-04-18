@@ -173,7 +173,7 @@ public class Proto {
         for (int i = 0; i < map.getSettlers().size(); i++){
             if (map.getSettlers().get(i).getId() == settler_id) {
                 if (map.getSettlers().get(i).Mine())
-                    System.out.println("Settler " + settler_id + " A bányászat sikeres Asteroid " + map.getSettlers().get(i).getAsteroid() + map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getMaterial().getName());
+                    System.out.println("Settler " + settler_id + " A bányászat sikeres Asteroid " + map.getSettlers().get(i).getAsteroid() + map.getSettlers().get(i).getBackpack().get(map.getSettlers().get(i).getBackpack().size()-1));
                 else
                     System.out.println("Settler " + settler_id + " A bányászat sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
             }
