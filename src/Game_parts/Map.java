@@ -130,7 +130,7 @@ public class Map implements Steppable {
     public void Step(String step) {
         Random r = new Random();
         if (r.nextInt(10) < 2)
-            SolarStorm1valtozat();
+            SolarStorm(-1);
     }
 
     //getterek és setterek a megfelelő értékekhez
