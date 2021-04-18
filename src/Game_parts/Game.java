@@ -128,7 +128,7 @@ public class Game {
                     break;
 
                 case "save":
-                    p.save("test");
+                    p.save(array[1]);
                     break;
 
                 case "step":

@@ -87,32 +87,39 @@ public class Map implements Steppable {
         for (int i = 0; i < asteroids.size(); i++) {  // az aszteroidákon átmenő napvihar nézi ki van elbújva
             if (asteroids.get(i).getLayer() != asteroids.get(i).getDigged() || asteroids.get(i).getMaterial() != null) {
                 for (int j = 0; j < asteroids.get(i).getMiners().size(); j++) {
-                    asteroids.get(i).getMiners().get(j).Die();
-
+                    if(asteroids.get(i).getMiners().get(j).getName().equals("settler"))
+                        asteroids.get(i).getMiners().get(j).Die();
                 }
             }
         }
         for (int i = 0; i < teleports.size(); i++)  // egy körig nem lehet használni semelyik kaput se
             teleports.get(i).disable();
     }
+
     public void SolarStorm(int target) {
 
         if (target == -1) {
             for (int i = 0; i < asteroids.size(); i++) {  // az aszteroidákon átmenő napvihar nézi ki van elbújva
-                if (asteroids.get(i).getLayer() != asteroids.get(i).getDigged() || asteroids.get(i).getMaterial() != null) {
-                    for (int j = 0; j < asteroids.get(i).getMiners().size(); j++) {
-                        System.out.println(asteroids.get(j).getMiners().get(j).getId() + " settler died");
-                        asteroids.get(i).getMiners().get(j).Die();
+                if (asteroids.get(i).getLayer() != asteroids.get(i).getDigged() && asteroids.get(i).getMaterial() != null) {
+                        for (int j = 0; j < asteroids.get(i).getMiners().size(); j++) {
+                            if(asteroids.get(i).getMiners().get(j).getName() == "settler"){
+                                System.out.println(asteroids.get(i).getMiners().get(j).getId() + " settler died");
+                                settlers.remove(asteroids.get(i).getMiners().get(j));
+                                asteroids.get(i).getMiners().get(j).Die();
+                            }
                     }
                 }
             }
             for (int i = 0; i < teleports.size(); i++)  // egy körig nem lehet használni semelyik kaput se
                 teleports.get(i).disable();
         }else{
-            if (asteroids.get(target).getLayer() != asteroids.get(target).getDigged() || asteroids.get(target).getMaterial() != null) {
+            if (asteroids.get(target).getLayer() != asteroids.get(target).getDigged() && asteroids.get(target).getMaterial() != null) {
                 for (int j = 0; j < asteroids.get(target).getMiners().size(); j++) {
-                    System.out.println(asteroids.get(target).getMiners().get(j).getId() + " settler died");
-                    asteroids.get(target).getMiners().get(j).Die();
+                    if(asteroids.get(target).getMiners().get(j).getName()=="settler") {
+                        System.out.println(asteroids.get(target).getMiners().get(j).getId() + " settler died");
+                        settlers.remove(asteroids.get(target).getMiners().get(j));
+                        asteroids.get(target).getMiners().get(j).Die();
+                    }
                 }
             }
         }
