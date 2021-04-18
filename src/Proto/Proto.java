@@ -139,7 +139,7 @@ public class Proto {
     }//kristof ezt csinalja
 
     public void stepRobot(int robot_id, String step){
-        for (int i = 0; i < map.getSettlers().size(); i++) {
+        for (int i = 0; i < map.getRobots().size(); i++) {
             if (map.getRobots().get(i).getId() == robot_id) {
                 map.getRobots().get(i).Step(step);
             }
@@ -159,7 +159,6 @@ public class Proto {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 if (map.getSettlers().get(i).Drill()) {
                     System.out.println("Settler " + settler_id + " A fúrás sikeres " + (map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getLayer() - map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getDigged()) + " réteg maradt Asteroid " + map.getSettlers().get(i).getAsteroid());
-                    System.out.println("This is effing dumb btw kerlek titeket legyen getAsteroidID() meg getAsteroid() kulon mert ez igy cancer");
                 }
                 else
                     System.out.println("Settler " + settler_id + " A fúrás sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
