@@ -152,7 +152,7 @@ public class Proto {
                 map.getUfos().get(i).Step(step);
             }
         }
-    }//kristof ezt csinalja
+    }//kristof ezt csinalja chacha
 
     public void drillMiner(int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
