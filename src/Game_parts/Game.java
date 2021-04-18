@@ -52,11 +52,17 @@ public class Game {
                     break;
 
                 case "stepRobot":
-                    p.stepRobot(Integer.parseInt(array[1]), array[2]);
+                    if (array.length < 3)
+                        p.stepRobot(Integer.parseInt(array[1]), "");
+                    else
+                        p.stepRobot(Integer.parseInt(array[1]), array[2]);
                     break;
 
                 case "stepUfo":
-                    p.stepUfo(Integer.parseInt(array[1]), array[2]);
+                    if (array.length < 3)
+                        p.stepUfo(Integer.parseInt(array[1]), "");
+                    else
+                        p.stepUfo(Integer.parseInt(array[1]), array[2]);
                     break;
 
                 case "drillMiner":
