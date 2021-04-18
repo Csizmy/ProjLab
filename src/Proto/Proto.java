@@ -7,6 +7,8 @@ import Objects.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -200,9 +202,34 @@ public class Proto {
         }
     }
 
-    public void perihelion(int asteroid_id){}
+    public void perihelion(int asteroid_id){
+        if(map.getAsteroids().get(asteroid_id).getPerihelion()) {
+            map.getAsteroids().get(asteroid_id).setPerihelion(false);  //!!!!!!!!! itt asumoltam h false?
+            System.out.println(asteroid_id + " Napközelből elvétel sikeres");
+        }else{
+            map.getAsteroids().get(asteroid_id).setPerihelion(true);  //itt assumoltam hogy true?!!!!!!!!!!!!!!!
+            System.out.println(asteroid_id + " Napközel sikeres");
+        }
+    }
 
-    public void sunStorm(String target){} // ha "All",mindet eléri, ha egy szám, akkor át kell alakítani!!
+    public void sunStorm(String target){
+
+        if(!target.equals("All")){                // If not all than parse to integer
+            try{
+                int t = Integer.parseInt(target);
+                map.SolarStorm(t);
+            }catch(NumberFormatException ex){
+                System.out.println("Not set");
+
+            }
+            System.out.println(target + " Napvihar sikeres");
+        }else if(target.equals("All")){
+            map.SolarStorm(-1);
+            System.out.println(target + " Napvihar sikeres");
+        }else{
+            System.out.println(target + " Napvihar sikertelen");
+        }
+    } // ha "All",mindet eléri, ha egy szám, akkor át kell alakítani!!
 
     public void addToBackpack(String material, int settler_id){  // Panku
         for (int i = 0; i < map.getSettlers().size(); i++) {
@@ -246,12 +273,21 @@ public class Proto {
     }
 
     public void backPack(int settler_id){ //axel
-        int numOfsettler = settler_id - 50;
-        map.getSettlers().get(numOfsettler).listBackPack();
+
+        for (Settler s: map.getSettlers()){
+            if(s.getId()==settler_id){
+                s.listBackPack();
+            }
+        }
+
     }
 
-    public void neighbors(int asteroid_id){ //axel      !!!!!!!!!!!!!!!!!!!itt még nem tudom h akkor h tegyek különbséget aszteroid meg teleport között
-        map.getAsteroids().get(asteroid_id).listNeighbors();
+    public void neighbors(int asteroid_id){ //axel
+        for(Asteroid a: map.getAsteroids()){
+            if(a.getId()==asteroid_id){
+                a.listNeighbors();
+            }
+        }
     }
 
     //----------------------------- NOT YET SET ROBOT ID!!!!!!!!!! ------------------------------------------
@@ -384,7 +420,42 @@ public class Proto {
             System.out.println("A Robot ezen az aszteroidán nem tudott létrejönni.");}
     }
 
-    public void save(){}
+    public void save(String saveName){  //ide elv nem kene string!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! gamet is nézd
+        File f = new File("maps\\" + saveName + ".txt");
+        try {
+            FileWriter fWriter = new FileWriter(f);
+            for (Settler s: map.getSettlers()){
+                fWriter.write("s " + s.getAsteroid()+"\n");
+            }
+
+            for (Robot r: map.getRobots()){
+                fWriter.write("r " + r.getAsteroid()+"\n");
+            }
+
+            for (Ufo u: map.getUfos()){
+                fWriter.write("u " + u.getAsteroid()+"\n");
+            }
+
+            for (Asteroid a: map.getAsteroids()){
+                fWriter.write("* ");
+                for(Spacething s: a.getNeighbours()){
+                    fWriter.write(s.getId() + " ");
+                }
+                if(a.getMaterial() != null)
+                    fWriter.write(a.getMaterial().getName() + "\n");
+                else
+                    System.out.println("asdasd");
+                fWriter.write("null\n");
+            }
+
+            fWriter.close();
+            System.out.println("Mentés sikeres");
+        } catch (IOException e) {
+            System.out.println("Sikertelen mentés");
+            e.printStackTrace();
+        }
+
+    }
 
     public void step(){}
 }

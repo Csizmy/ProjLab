@@ -140,6 +140,10 @@ public class Asteroid extends Spacething {
         this.material = m;
     }
 
+    public void setPerihelion(boolean b){
+        this.perihelion = b;
+    }
+
     @Override
     public void AddNeighbor(Spacething s) {
         super.AddNeighbor(s);
@@ -150,12 +154,12 @@ public class Asteroid extends Spacething {
             System.out.println("Hiba: nincs szomszed "+this.getId());
         }
         for(Spacething s: neighbours){
-            if(s.getAsteroid()==true)
+            if(s.isAsteroid()==true)
             System.out.println(s.getId());
         }
     }
 
     @Override
-    public boolean getAsteroid(){return true;}
+    public boolean isAsteroid(){return true;}
 
 }

@@ -8,7 +8,7 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
 
     protected ArrayList<Spacething> neighbours = new ArrayList<Spacething>();
     protected int id;                 //ID
-    protected boolean asteroid;  // ha aszteroida, akkor true (ásás és bányászás miatt)
+
 
     // Spacething konstruktor
     public Spacething(){}
@@ -54,5 +54,5 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
     // hozzáad egy minert
     public abstract void  addMiner(Miner m);
     // asteroid gettere
-    public boolean getAsteroid(){return asteroid;}
+    public boolean isAsteroid(){return false;}
 }

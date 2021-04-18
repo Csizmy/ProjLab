@@ -112,7 +112,7 @@ public class Game {
                     break;
 
                 case "save":
-                    p.save();
+                    p.save("test");
                     break;
 
                 case "step":

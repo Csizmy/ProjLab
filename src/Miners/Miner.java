@@ -38,7 +38,7 @@ public abstract class Miner implements Moveable {
                     to = s;
                 }
             }
-            if(to.getId()!=-1){
+            if(to.getId()!=-1){ /// ezmi? csak kivancsi vagyok-axel !!!!!!!!!
                 spacething.removeMiner(this);
                 to.addMiner(this);
                 spacething = to;
@@ -54,7 +54,7 @@ public abstract class Miner implements Moveable {
 
     //Miner fúr
     public boolean Drill(){
-        if(spacething.getAsteroid()){
+        if(spacething.isAsteroid()){
             Asteroid a = (Asteroid) spacething;
             if(a.getLayer()-a.getDigged()!= 0){
                 a.removeLayer();
