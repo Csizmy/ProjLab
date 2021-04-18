@@ -22,6 +22,7 @@ public class Teleport extends Spacething implements Moveable, Steppable {
         super(teleportID);
         a.AddNeighbor(this);
         this.AddNeighbor(a);
+        megkergult = true;
     }
 
     @Override
@@ -57,6 +58,11 @@ public class Teleport extends Spacething implements Moveable, Steppable {
     //ha megkergült, meghívódik és random mozog.
     @Override
     public void Move(int asteroidID) {
+        if (asteroidID == neighbours.get(0).getId()){
+            System.out.println("Teleport " + id + " nem mozog");
+            return;
+        }
+
         for (int i = 0; i < neighbours.get(0).neighbours.size(); i++)
             if (neighbours.get(0).neighbours.get(i).getId() == asteroidID) {
                 neighbours.get(0).neighbours.get(i).AddNeighbor(this);
@@ -64,7 +70,10 @@ public class Teleport extends Spacething implements Moveable, Steppable {
 
                 neighbours.get(0).RemoveNeighbor(this);
                 this.RemoveNeighbor(neighbours.get(0));
+                System.out.println("Teleport " + id + " A mozgás sikeres ide: Asteroid " + asteroidID + ".");
+                return;
             }
+        System.out.println("Teleport " + id + " nem mozog");
     }
 
     //ha megkergült, meghívódik és random mozog.

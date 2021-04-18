@@ -165,4 +165,33 @@ public class Asteroid extends Spacething {
     @Override
     public boolean isAsteroid(){return true;}
 
+    public boolean checkWin(){
+        ArrayList<Material> bolygon= new ArrayList<>();
+        for(Miner m: miners){
+            for(Material mat: m.getBackpack()){
+                bolygon.add(mat);
+            }
+        }
+        int[] matTomb =new int[]{ 0,0,0,0 };
+        for (Material mat: bolygon){
+            if (mat.getName().equals("Uranium")){
+                matTomb[0]++;
+            }
+            else if(mat.getName().equals("Water")){
+                matTomb[1]++;
+            }
+            else if(mat.getName().equals("Coal")){
+                matTomb[2]++;
+            }
+            else if(mat.getName().equals("Iron")){
+                matTomb[3]++;
+            }
+        }
+        for(int i=0; i<4; i++){
+            if(matTomb[i]<3){
+                return false;
+            }
+        }
+        return true;
+    }
 }

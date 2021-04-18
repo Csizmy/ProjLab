@@ -133,7 +133,10 @@ public class Proto {
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 map.getSettlers().get(i).Move(asteroid_id);
-                System.out.println("Settler " + settler_id + " A mozgás sikeres ide: Asteroid " + asteroid_id + ".");
+                if (asteroid_id == map.getSettlers().get(i).getAsteroid())
+                    System.out.println("Settler " + settler_id + " A mozgás sikeres ide: Asteroid " + asteroid_id + ".");
+                else
+                    System.out.println("Settler " + settler_id + " A mozgás sikertelen.");
             }
         }
     }//kristof ezt csinalja
@@ -170,12 +173,12 @@ public class Proto {
         for (int i = 0; i < map.getSettlers().size(); i++){
             if (map.getSettlers().get(i).getId() == settler_id) {
                 if (map.getSettlers().get(i).Mine())
-                    System.out.println("Settler " + settler_id + " A bányászat sikeres Asteroid " + map.getSettlers().get(i).getAsteroid() + map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getMaterial().getName());
+                    System.out.println("Settler " + settler_id + " A bányászat sikeres Asteroid " + map.getSettlers().get(i).getAsteroid() + map.getSettlers().get(i).getBackpack().get(map.getSettlers().get(i).getBackpack().size()-1));
                 else
                     System.out.println("Settler " + settler_id + " A bányászat sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
             }
         }
-    }//kristof ezt csinalja
+    }//kristof ezt csinaljasd
 
     public void buildTeleport(int settler_id){ // Panka
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId();
@@ -485,5 +488,9 @@ public class Proto {
             map.getTeleports().get(i).Step("");
         }
         map.Step("");
+    }
+
+    public Map getMap() {
+        return map;
     }
 }
