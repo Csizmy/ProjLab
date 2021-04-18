@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Proto {
@@ -18,7 +17,7 @@ public class Proto {
 
     public void loadMap(String mapName){  // Panka
         try{
-            File f = new File("maps\\" + mapName + ".txt");
+            File f = new File("maps\\" + mapName);
             Scanner sc = new Scanner(f);
             int space_id = 0;
             int miner_id = 50;
@@ -430,7 +429,7 @@ public class Proto {
     }
 
     public void save(String saveName){  //ide elv nem kene string!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! gamet is nézd
-        File f = new File("maps\\" + saveName);
+        File f = new File("maps\\" + saveName + ".txt");
         try {
             FileWriter fWriter = new FileWriter(f);
             for (Settler s: map.getSettlers()){         // Settler;Position;Backpack
