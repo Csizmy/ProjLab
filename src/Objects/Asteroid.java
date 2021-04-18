@@ -155,7 +155,10 @@ public class Asteroid extends Spacething {
         }
         for(Spacething s: neighbours){
             if(s.isAsteroid()==true)
-            System.out.println(s.getId());
+            System.out.println("Asteroid "+s.getId());
+            else{
+                System.out.println("Teleport "+s.getId());
+            }
         }
     }
 

@@ -149,6 +149,12 @@ public class Map implements Steppable {
                 vandolog=true;
             }
         }
+        if( n.equals("Teleport") || n.equals("Map")){
+            for (Teleport t: teleports){
+                System.out.println("Teleport "+t.getId());
+                vandolog=true;
+            }
+        }
         if( n.equals("Robots") || n.equals("Map")){
             for (Robot r: robots){
                 System.out.println("Robot "+r.getId()+", "+r.getAsteroid());
