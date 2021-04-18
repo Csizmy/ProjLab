@@ -162,7 +162,7 @@ public class Proto {
                 map.getUfos().get(i).Step(step);
             }
         }
-    }//kristof ezt csinalja chacha
+    }//kristof ezt csinalja
 
     public void drillMiner(int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
@@ -182,7 +182,7 @@ public class Proto {
                 map.getSettlers().get(i).Mine();
             }
         }
-    }//kristof ezt csinaljasd
+    }//kristof ezt csinalja
 
     public void buildTeleport(int settler_id){ // Panka
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId();
@@ -208,7 +208,6 @@ public class Proto {
                         }else{
                             System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikertelen");
                         }
-
                     }
                 }
             }
@@ -217,10 +216,10 @@ public class Proto {
 
     public void perihelion(int asteroid_id){
         if(map.getAsteroids().get(asteroid_id).getPerihelion()) {
-            map.getAsteroids().get(asteroid_id).setPerihelion(false);  //!!!!!!!!! itt asumoltam h false?
+            map.getAsteroids().get(asteroid_id).setPerihelion(false);
             System.out.println(asteroid_id + " Napközelből elvétel sikeres");
         }else{
-            map.getAsteroids().get(asteroid_id).setPerihelion(true);  //itt assumoltam hogy true?!!!!!!!!!!!!!!!
+            map.getAsteroids().get(asteroid_id).setPerihelion(true);
             System.out.println(asteroid_id + " Napközel sikeres");
         }
     }
