@@ -1,13 +1,14 @@
 package Objects;
 
 import Game_parts.Game;
+import Game_parts.Steppable;
 import Materials.*;
 import Miners.Miner;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Asteroid extends Spacething {
+public class Asteroid extends Spacething implements Steppable {
     private int layer;              // Sziklaréteg
     private int digged;             // Kiásott rétegek
     private boolean perihelion;     // napközelség
@@ -164,6 +165,21 @@ public class Asteroid extends Spacething {
 
     @Override
     public boolean isAsteroid(){return true;}
+
+    @Override
+    public void Step(String step){
+        Random r = new Random();
+        if (r.nextInt(2) == 0) {
+            if (perihelion != true)
+                System.out.println("Asteroid " + id + " napkozelbe kerult");
+            perihelion = true;
+        }
+        else {
+            if (perihelion != true)
+                System.out.println("Asteroid " + id + " naptavolba kerult");
+            perihelion = false;
+        }
+    }
 
     public boolean checkWin(){
         ArrayList<Material> bolygon= new ArrayList<>();
