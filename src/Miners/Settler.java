@@ -130,7 +130,7 @@ public class Settler extends Miner{
 
         if(spacething.isAsteroid()) {  // ha aszteroidán van
             Asteroid a = (Asteroid) spacething;
-            if (!t.getPair().isNeigbour(a.getId())) {  // ha a párja nincs az adott aszteroidán
+            if (t.getNeighbours().get(0)!=t.getPair().getNeighbours().get(0)) {  // ha a párja nincs az adott aszteroidán
                 t.AddNeighbor(spacething);
                 spacething.AddNeighbor(t);
                 return true;
