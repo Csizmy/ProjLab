@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="steprobot/stepufo mukodik">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Teleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Teleport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Asteroid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
