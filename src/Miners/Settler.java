@@ -186,6 +186,57 @@ public class Settler extends Miner{
         return false;
     }
 
+    //  ellenőzi a nyersanyagokat és megépíti a robotot megadott ID-val
+    public boolean BuildRobot(int _id){
+
+        int iron = 0;
+        int coal = 0;
+        int uranium = 0;
+
+        for(int i = 0; i < backpack.size(); i++){  //keresi
+
+            if(backpack.get(i).getName()=="Uranium"){
+                uranium++;
+            }
+            else if(backpack.get(i).getName()=="Coal"){
+                coal++;
+            }
+            if(backpack.get(i).getName()=="Iron"){
+                iron++;
+            }
+        }
+
+        if(iron>0 && coal>0 && uranium>0){
+
+            for (int i = 0; i < backpack.size(); i++){ // kiveszi
+
+                if(backpack.get(i).getName()=="Uranium"){
+                    backpack.remove(i);
+                    break;
+                }
+            }
+            for (int i = 0; i < backpack.size(); i++){
+
+                if(backpack.get(i).getName()=="Coal"){
+                    backpack.remove(i);
+                    break;
+                }
+            }
+            for (int i = 0; i < backpack.size(); i++){
+
+                if(backpack.get(i).getName()=="Iron"){
+                    backpack.remove(i);
+                    break;
+                }
+            }
+
+            Robot r = new Robot(spacething, _id);
+            spacething.addMiner(r); // lerakja az adott aszteroidára a robotot
+            return true;
+        }
+        return false;
+    }
+
     // ha kap be valódi anyagot, akkor hozzáadja a táskához
     public boolean AddMaterial(Material m){
 

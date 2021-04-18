@@ -256,16 +256,39 @@ public class Proto {
 
     //----------------------------- NOT YET SET ROBOT ID!!!!!!!!!! ------------------------------------------
     public void buildRobot(int settler_id){
-        //Calculate the number of settlers alive on the map.
-        int numOfsettlers = settler_id - 50 - map.getRobots().size() - map.getUfos().size();
-        Settler settler = map.getSettlers().get(numOfsettlers - 1);
 
-        if (settler.BuildRobot()) {
+        Settler settler = map.getSettlers().get(settler_id - 50);
 
-            //no robot to set its id to this...
-            int robot_id = 50 + map.getSettlers().size() + map.getRobots().size() + map.getUfos().size();
+        //Giving enough material to build a robot to Settler 50.
+        Uranium u = new Uranium(null);
+        map.getSettlers().get(0).AddMaterial(u);
+        Iron ir = new Iron(null);
+        map.getSettlers().get(0).AddMaterial(ir);
+        Coal c = new Coal(null);
+        map.getSettlers().get(0).AddMaterial(c);
 
-            System.out.println("Settler " + settler.getId() + robot_id + " robot megépítve.");             // ROBOT ID ?????????
+        Settler test = new Settler(map.getAsteroids().get(0), 100);
+        map.getSettlers().add(test);
+
+        //The robot's id - one higher than ever before.
+        int new_id = 50;
+        for (int x = 0; x < map.getUfos().size();x++) {
+            int temp = map.getUfos().get(x).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        for (int y = 0; y < map.getSettlers().size();y++) {
+            int temp = map.getSettlers().get(y).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        for (int z = 0; z < map.getRobots().size();z++) {
+            int temp = map.getRobots().get(z).getId();
+            if(temp > new_id) new_id = temp;
+        }
+        new_id += 1;
+        //new_id valamiért mindig 55 a 100as settlert hozzáadva után is... ???
+
+        if (settler.BuildRobot(new_id)) {
+            System.out.println("Settler " + settler.getId() + " " + map.getRobots().get(map.getRobots().size() - 1).getId() + " robot megépítve.");             // ROBOT ID ?????????
         }
         else {System.out.println("Hiba, nincs elég anyag.");}
 
@@ -274,39 +297,89 @@ public class Proto {
     //Add a settler to an existing asteroid.
     public void addSettler(int asteroid_id){
 
-        //Get the asteroid from map, and get the number of settlers and set his ID to that number + 50
-        int new_id = 50 + map.getSettlers().size() + map.getRobots().size() + map.getUfos().size();
+        //Get the asteroid from map.
+
+        //Get the highest existing ID number.
+        int new_id = 50;
+        for (int i = 0; i < map.getUfos().size();i++) {
+            int temp = map.getUfos().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        for (int i = 0; i < map.getSettlers().size();i++) {
+            int temp = map.getSettlers().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        for (int i = 0; i < map.getRobots().size();i++) {
+            int temp = map.getRobots().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        new_id += 1;
+
+        //Giving a new id - one higher than ever before - to the settler.
         Settler settler = new Settler(map.getAsteroids().get(asteroid_id), new_id);
+        map.getSettlers().add(settler);
 
         //if the settler is on the asteroid it was successful!
         if (map.getAsteroids().get(asteroid_id).getMiners().contains(settler)){
-        System.out.println("Settler " + settler.getId() + " sikeresen létrejött Asteroid" + map.getAsteroids().get(asteroid_id));}
+        System.out.println("Settler " + settler.getId() + " sikeresen létrejött Asteroid " + map.getAsteroids().get(asteroid_id).getId());}
         else{
         System.out.println("A Settler ezen az aszteroidán nem tudott létrejönni.");}
     }
 
-    public void addUfo(int asteroid_id){        //stipi bence
+    //Add an Ufo to an existing asteroid.
+    public void addUfo(int asteroid_id){
 
         //Get the asteroid from map, and get the number of settlers and robots and Ufos set his ID to that number + 50
-        int new_id = 50 + map.getSettlers().size() + map.getRobots().size() + map.getUfos().size();
+        int new_id = 50;
+        for (int i = 0; i < map.getUfos().size();i++) {
+            int temp = map.getUfos().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        for (int i = 0; i < map.getSettlers().size();i++) {
+            int temp = map.getSettlers().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        for (int i = 0; i < map.getRobots().size();i++) {
+            int temp = map.getRobots().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        new_id += 1;
+
         Ufo ufo = new Ufo(map.getAsteroids().get(asteroid_id), new_id);
+        map.getUfos().add(ufo);
 
         //if the settler is on the asteroid it was successful!
         if (map.getAsteroids().get(asteroid_id).getMiners().contains(ufo)){
-            System.out.println("Ufo " + ufo.getId() + " sikeresen létrejött Asteroid" + map.getAsteroids().get(asteroid_id));}
+            System.out.println("Ufo " + ufo.getId() + " sikeresen létrejött Asteroid " + map.getAsteroids().get(asteroid_id).getId());}
         else{
             System.out.println("Az Ufo ezen az aszteroidán nem tudott létrejönni.");}
     }
 
-    public void addRobot(int asteroid_id){      //stipi bence
+    //Add a Robot to an existing asteroid.
+    public void addRobot(int asteroid_id){
 
         //Get the asteroid from map, and get the number of settlers and set his ID to that number + 50
-        int new_id = 50 + map.getSettlers().size() + map.getRobots().size() + map.getUfos().size();
+        int new_id = 50;
+        for (int i = 0; i < map.getUfos().size();i++) {
+            int temp = map.getUfos().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        for (int i = 0; i < map.getSettlers().size();i++) {
+            int temp = map.getSettlers().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        for (int i = 0; i < map.getRobots().size();i++) {
+            int temp = map.getRobots().get(i).getId();
+            if(temp >new_id) new_id = temp;
+        }
+        new_id += 1;
+
         Robot robot = new Robot(map.getAsteroids().get(asteroid_id), new_id);
+        map.getRobots().add(robot);
 
         //if the settler is on the asteroid it was successful!
         if (map.getAsteroids().get(asteroid_id).getMiners().contains(robot)){
-            System.out.println("Robot" + robot.getId() + " sikeresen létrejött Asteroid" + map.getAsteroids().get(asteroid_id));}
+            System.out.println("Robot " + robot.getId() + " sikeresen létrejött Asteroid " + map.getAsteroids().get(asteroid_id).getId());}
         else{
             System.out.println("A Robot ezen az aszteroidán nem tudott létrejönni.");}
     }
