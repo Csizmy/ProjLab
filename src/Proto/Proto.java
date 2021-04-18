@@ -297,7 +297,7 @@ public class Proto {
         }
     }
 
-    //----------------------------- NOT YET SET ROBOT ID!!!!!!!!!! ------------------------------------------
+    //----------------------------- NEW ROBOT NOT ADDED TO THE LIST IN THE BUILDROBOT!!!!!!!!!! ------------------------------------------
     public void buildRobot(int settler_id){
 
         Settler settler = map.getSettlers().get(settler_id - 50);
@@ -309,9 +309,6 @@ public class Proto {
         map.getSettlers().get(0).AddMaterial(ir);
         Coal c = new Coal(null);
         map.getSettlers().get(0).AddMaterial(c);
-
-        Settler test = new Settler(map.getAsteroids().get(0), 100);
-        map.getSettlers().add(test);
 
         //The robot's id - one higher than ever before.
         int new_id = 50;
@@ -328,10 +325,13 @@ public class Proto {
             if(temp > new_id) new_id = temp;
         }
         new_id += 1;
-        //new_id valamiért mindig 55 a 100as settlert hozzáadva után is... ???
 
         if (settler.BuildRobot(new_id)) {
-            System.out.println("Settler " + settler.getId() + " " + map.getRobots().get(map.getRobots().size() - 1).getId() + " robot megépítve.");             // ROBOT ID ?????????
+            //a BuildRobot nem adja hozzá magától, kell egy add most !!!!!!!!!!!!!!!!!!
+            Miner robot = map.getAsteroids().get(settler.getAsteroid()).getMiners().get(map.getAsteroids().get(settler.getAsteroid()).getMiners().size() - 1);
+            map.getRobots().add((Robot) robot);
+
+            System.out.println("Settler " + settler.getId() + " " + map.getRobots().get(map.getRobots().size() - 1).getId() + " robot megépítve.");
         }
         else {System.out.println("Hiba, nincs elég anyag.");}
 
