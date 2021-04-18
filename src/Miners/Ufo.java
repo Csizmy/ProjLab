@@ -28,7 +28,6 @@ public class Ufo extends Miner implements Steppable {
         //remove material, ha felvesz valamit.
         if(spacething.isAsteroid()) {
             Asteroid asteroid = (Asteroid) spacething;
-            System.out.println("Lopas elkezdése");
 
             //ha nincs kibányászva és nem üres
             if (asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial() != null) {
@@ -36,7 +35,7 @@ public class Ufo extends Miner implements Steppable {
                 System.out.println("Lopas megtörtént");
                 return true;
             }
-            System.out.println("Ki van bányászva vagy nincs benne semmi.");
+
             return false;
         }
         System.out.println("Itt nem lehet bányászni");
