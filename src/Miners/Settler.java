@@ -42,10 +42,13 @@ public class Settler extends Miner{
                     AddMaterial(asteroid.getMaterial());
                     asteroid.setMaterial(null);
                 }
+                System.out.println("Settler " + id + " A bányászat sikeres Asteroid " + getAsteroid() + " " + getBackpack().get(getBackpack().size()-1).getName());
                 return true;
             }
+            System.out.println("Settler " + id + " A bányászat sikertelen Asteroid " + getAsteroid());
             return false;
         }
+        System.out.println("Settler " + id + " A bányászat sikertelen Asteroid " + getAsteroid());
         return false;
     }
 
