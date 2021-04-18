@@ -148,6 +148,7 @@ public class Proto {
                         }else{
                             System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
                         }
+                        break;
                     case "Iron":
                         Iron ir = new Iron(null);
                         if(map.getSettlers().get(i).AddMaterial(ir)){
@@ -155,6 +156,7 @@ public class Proto {
                         }else{
                             System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
                         }
+                        break;
                     case "Coal":
                         Coal c = new Coal(null);
                         if(map.getSettlers().get(i).AddMaterial(c)){
@@ -162,6 +164,7 @@ public class Proto {
                         }else{
                             System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
                         }
+                        break;
                     case "Uranium":
                         Uranium u = new Uranium(null);
                         if(map.getSettlers().get(i).AddMaterial(u)){
@@ -169,6 +172,7 @@ public class Proto {
                         }else{
                             System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
                         }
+                        break;
                 }
             }
         }
