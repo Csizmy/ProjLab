@@ -39,6 +39,7 @@ public class Proto {
                 switch(array[0]){
                     case "*":
                         Asteroid a = new Asteroid(space_id, Integer.parseInt(array[1]), Integer.parseInt(array[2]), array[3]);
+                        System.out.println("Aszteroida: " + space_id);
                         space_id++;
                         asteroids.add(a);
                         break;
@@ -47,10 +48,12 @@ public class Proto {
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
                                 t1 = new Teleport(space_id, asteroids.get(i));
+                                System.out.println("Teleport t1: " + space_id);
                                 space_id++;
                             }
                             if (Integer.parseInt(array[2]) == asteroids.get(i).getId()) {
                                 t2 = new Teleport(space_id, asteroids.get(i));
+                                System.out.println("Teleport t2: " + space_id);
                                 space_id++;
                             }
                         }
@@ -71,11 +74,13 @@ public class Proto {
                         }
                         asteroids.get(egyik).AddNeighbor(asteroids.get(masik));
                         asteroids.get(masik).AddNeighbor(asteroids.get(egyik));
+                        System.out.println("Asteroid " + asteroids.get(masik).getId() + " es Asteroid " + asteroids.get(egyik).getId() + " szomszedok");
                         break;
                     case "s":
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
                                 Settler s = new Settler(asteroids.get(i), miner_id);
+                                System.out.println("Settler: " + miner_id);
                                 miner_id++;
                                 settlers.add(s);
                                 break;
@@ -86,6 +91,7 @@ public class Proto {
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
                                 Robot r = new Robot(asteroids.get(i), miner_id);
+                                System.out.println("Robot: " + miner_id);
                                 miner_id++;
                                 robots.add(r);
                                 break;
@@ -96,6 +102,7 @@ public class Proto {
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
                                 Ufo u = new Ufo(asteroids.get(i), miner_id);
+                                System.out.println("Ufo: " + miner_id);
                                 miner_id++;
                                 ufos.add(u);
                                 break;
