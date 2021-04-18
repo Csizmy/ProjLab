@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="move teleport" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="itta asteroid step">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_51__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_51__Default_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_57__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_57__Default_.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -666,7 +669,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618779173185</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="itta asteroid step">
+      <created>1618779604820</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1618779604820</updated>
+    </task>
+    <task id="LOCAL-00045" summary="itta asteroid step">
+      <created>1618779651281</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1618779651281</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -722,7 +739,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mainban is teszt" />
     <MESSAGE value="2 teszt" />
     <MESSAGE value="sout-ok kiegészítése" />
     <MESSAGE value="thx csizmy" />
@@ -747,7 +763,8 @@
     <MESSAGE value="asteroid step" />
     <MESSAGE value="map step" />
     <MESSAGE value="move teleport" />
-    <option name="LAST_COMMIT_MESSAGE" value="move teleport" />
+    <MESSAGE value="itta asteroid step" />
+    <option name="LAST_COMMIT_MESSAGE" value="itta asteroid step" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Miners/Robot.java">

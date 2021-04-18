@@ -179,7 +179,7 @@ public class Asteroid extends Spacething implements Steppable {
                 System.out.println("Asteroid " + id + " naptavolba kerult");
             perihelion = false;
         }
-    }//egg
+    }//egg samdwich
 
     public boolean checkWin(){
         ArrayList<Material> bolygon= new ArrayList<>();
