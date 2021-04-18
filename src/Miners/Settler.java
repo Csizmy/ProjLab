@@ -13,6 +13,8 @@ public class Settler extends Miner{
     public Settler(Asteroid a, int _id){
         super(a, _id);
         teleports = new ArrayList<Teleport>();
+        name = "settler";
+
     }
 
     // Settler konstruktor

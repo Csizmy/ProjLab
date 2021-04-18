@@ -15,6 +15,7 @@ public class Robot extends Miner implements Steppable {
     // Robot konstuktor
     public Robot(Spacething s) {
         super(s);
+        name = "robot";
     }
 
     // ha felrobban az aszteroida (radioaktív anyag bányászásánál) a robot egy véletlenszerű szomszédos aszteroidásra kerül
