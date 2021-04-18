@@ -21,11 +21,11 @@ public class Asteroid extends Spacething {
         layer = lay;
         digged = d;
         miners = new ArrayList<Miner>();
-        if(mat == "Coal"){material = new Coal(this);}
-        if(mat == "Iron"){material = new Iron(this);}
-        if(mat == "Water"){material = new Water(this);}
-        if(mat == "Uranium"){material = new Uranium(this);}
-        if(mat == "null"){material = null;}
+        if(mat.equals( "Coal")){material = new Coal(this);}
+        if(mat.equals("Iron")){material = new Iron(this);}
+        if(mat.equals("Water")){material = new Water(this);}
+        if(mat.equals("Uranium")){material = new Uranium(this);}
+        if(mat.equals("null")){material = null;}
     }
     // Asteroid konstruktor
     public Asteroid(int asteroidID) {
