@@ -18,7 +18,7 @@ public class Proto {
 
     public void loadMap(String mapName){  // Panka
         try{
-            File f = new File("maps\\" + mapName);
+            File f = new File("maps\\" + mapName + ".txt");
             Scanner sc = new Scanner(f);
             int space_id = 0;
             int miner_id = 50;
@@ -450,7 +450,6 @@ public class Proto {
                 if(a.getMaterial() != null)
                     fWriter.write(a.getMaterial().getName() + "\n");
                 else
-                    System.out.println("asdasd");
                 fWriter.write("null\n");
             }
 
