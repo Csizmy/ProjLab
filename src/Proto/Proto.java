@@ -185,11 +185,16 @@ public class Proto {
     }//kristof ezt csinaljasd
 
     public void buildTeleport(int settler_id){ // Panka
-        int _id = map.getTeleports().get(map.getTeleports().size()-1).getId();
+        int _id = map.getTeleports().get(map.getTeleports().size()-1).getId()+2;
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
-
                 if(map.getSettlers().get(i).BuildTp(_id, _id+1)){
+                    Teleport t = new Teleport(_id);
+                    Teleport t2 = new Teleport(_id+1);
+                    t.setPair(t2);
+                    t2.setPair(t);
+                    map.AddTeleport(t);
+                    map.AddTeleport(t2);
                     System.out.println("Settler "+ map.getSettlers().get(i).getId() + " Az építés sikeres");
                 }else{
                     System.out.println("Settler "+ map.getSettlers().get(i).getId() + " Az építés sikertelen");
@@ -203,7 +208,7 @@ public class Proto {
             if(map.getSettlers().get(i).getId()==settler_id){
                 for (int j = 0; j < map.getTeleports().size(); j++) {
                     if(map.getTeleports().get(j).getId()==teleport_id){
-                        if(map.getSettlers().get(i).PlaceTp(map.getTeleports().get(j))){
+                        if(map.getSettlers().get(i).PlaceTp(map.getTeleports().get(j), map.getSettlers().get(i).getAsteroid())){
                             System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikeres");
                         }else{
                             System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikertelen");
@@ -217,10 +222,10 @@ public class Proto {
 
     public void perihelion(int asteroid_id){
         if(map.getAsteroids().get(asteroid_id).getPerihelion()) {
-            map.getAsteroids().get(asteroid_id).setPerihelion(false);  //!!!!!!!!! itt asumoltam h false?
+            map.getAsteroids().get(asteroid_id).setPerihelion(false);
             System.out.println(asteroid_id + " Napközelből elvétel sikeres");
         }else{
-            map.getAsteroids().get(asteroid_id).setPerihelion(true);  //itt assumoltam hogy true?!!!!!!!!!!!!!!!
+            map.getAsteroids().get(asteroid_id).setPerihelion(true);
             System.out.println(asteroid_id + " Napközel sikeres");
         }
     }
@@ -242,7 +247,7 @@ public class Proto {
         }else{
             System.out.println(target + " Napvihar sikertelen");
         }
-    } // ha "All",mindet eléri, ha egy szám, akkor át kell alakítani!!
+    }
 
     public void addToBackpack(String material, int settler_id){  // Panku
         for (int i = 0; i < map.getSettlers().size(); i++) {
@@ -303,18 +308,9 @@ public class Proto {
         }
     }
 
-    //----------------------------- NEW ROBOT NOT ADDED TO THE LIST IN THE BUILDROBOT!!!!!!!!!! ------------------------------------------
     public void buildRobot(int settler_id){
 
         Settler settler = map.getSettlers().get(settler_id - 50);
-
-        //Giving enough material to build a robot to Settler 50.
-        Uranium u = new Uranium(null);
-        map.getSettlers().get(0).AddMaterial(u);
-        Iron ir = new Iron(null);
-        map.getSettlers().get(0).AddMaterial(ir);
-        Coal c = new Coal(null);
-        map.getSettlers().get(0).AddMaterial(c);
 
         //The robot's id - one higher than ever before.
         int new_id = 50;
@@ -333,7 +329,6 @@ public class Proto {
         new_id += 1;
 
         if (settler.BuildRobot(new_id)) {
-            //a BuildRobot nem adja hozzá magától, kell egy add most !!!!!!!!!!!!!!!!!!
             Miner robot = map.getAsteroids().get(settler.getAsteroid()).getMiners().get(map.getAsteroids().get(settler.getAsteroid()).getMiners().size() - 1);
             map.getRobots().add((Robot) robot);
 

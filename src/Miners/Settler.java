@@ -126,11 +126,11 @@ public class Settler extends Miner{
     }
 
     //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
-    public boolean PlaceTp(Teleport t) {
+    public boolean PlaceTp(Teleport t, int asteroid_id) {
 
         if(spacething.isAsteroid()) {  // ha aszteroidán van
             Asteroid a = (Asteroid) spacething;
-            if (t.getNeighbours().get(0)!=t.getPair().getNeighbours().get(0)) {  // ha a párja nincs az adott aszteroidán
+            if (t.getPair().getNeighbours().size()==0 || asteroid_id!=t.getPair().getNeighbours().get(0).getId()) {  // ha a párja nincs az adott aszteroidán
                 t.AddNeighbor(spacething);
                 spacething.AddNeighbor(t);
                 return true;

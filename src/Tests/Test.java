@@ -27,7 +27,7 @@ public class Test {
 
         //builder.BuildTp();                                  //Most még 1 tp lerakásánál aktív már...
         Teleport tp = builder.getTP();
-        builder.PlaceTp(tp);                                //A telepes az aszteroidán elhelyezett egy Teleportkaput.
+        //builder.PlaceTp(tp);                                //A telepes az aszteroidán elhelyezett egy Teleportkaput.
 
         builder.Move(tp.getId());
 

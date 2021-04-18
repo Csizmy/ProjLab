@@ -141,6 +141,7 @@ public class Map implements Steppable {
     public ArrayList<Ufo> getUfos() {return ufos;}
     public int getDiffMat(){return diffMat;}
     public void setDiffMat(int mat){this.diffMat=mat;}
+    public void AddTeleport(Teleport t){teleports.add(t);}
 
 
     //Kilistázza a pályán található dolgokat a beadott string megadja, hogy mit listázzon ki
