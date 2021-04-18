@@ -178,7 +178,7 @@ public class Proto {
                     System.out.println("Settler " + settler_id + " A bányászat sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
             }
         }
-    }//kristof ezt csinalja
+    }//kristof ezt csinaljasd
 
     public void buildTeleport(int settler_id){ // Panka
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId();
