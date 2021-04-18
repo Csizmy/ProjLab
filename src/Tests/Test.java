@@ -53,15 +53,15 @@ public class Test {
         //
         m.getSettlers().get(0).Mine();                      //majd kibányássza a belsejét
         //
-        m.SolarStorm();                                     //napvihar elvárt outputja, hogy a settler és az egyik robot túléli, a másik robot meghal
-
+        m.SolarStorm1valtozat();                                     //napvihar elvárt outputja, hogy a settler és az egyik robot túléli, a másik robot meghal
+//!!!!!!!!!!!!!!!!!!!!!!!!!itt atirtam a solarstormokat idk hogy szamit e majd!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     public void napvihar_meghal(){ // Telepes nem megfúrt aszteroidán van (meghal)
 
         Map m = new Map(2, 1);            //új aszteroidamező 1 settlerrel
 
-        m.SolarStorm();                                     //elvárt output: a settler meghal
+        m.SolarStorm1valtozat();                                     //elvárt output: a settler meghal
 
     }
 
