@@ -25,7 +25,7 @@ public class Ufo extends Miner implements Steppable {
     //Az ufó ellopja a nyersanyagot a  kibányászatlan aszteroidáról, ha nincs felette köpeny.
     public boolean Steal() {
         //remove material, ha felvesz valamit.
-        if(spacething.getAsteroid()) {
+        if(spacething.isAsteroid()) {
             Asteroid asteroid = (Asteroid) spacething;
             System.out.println("Lopas elkezdése");
 

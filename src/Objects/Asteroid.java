@@ -21,11 +21,11 @@ public class Asteroid extends Spacething {
         layer = lay;
         digged = d;
         miners = new ArrayList<Miner>();
-        if(mat == "Coal"){material = new Coal(this);}
-        if(mat == "Iron"){material = new Iron(this);}
-        if(mat == "Water"){material = new Water(this);}
-        if(mat == "Uranium"){material = new Uranium(this);}
-        if(mat == "null"){material = null;}
+        if(mat.equals( "Coal")){material = new Coal(this);}
+        if(mat.equals("Iron")){material = new Iron(this);}
+        if(mat.equals("Water")){material = new Water(this);}
+        if(mat.equals("Uranium")){material = new Uranium(this);}
+        if(mat.equals("null")){material = null;}
     }
     // Asteroid konstruktor
     public Asteroid(int asteroidID) {
@@ -140,6 +140,10 @@ public class Asteroid extends Spacething {
         this.material = m;
     }
 
+    public void setPerihelion(boolean b){
+        this.perihelion = b;
+    }
+
     @Override
     public void AddNeighbor(Spacething s) {
         super.AddNeighbor(s);
@@ -150,12 +154,15 @@ public class Asteroid extends Spacething {
             System.out.println("Hiba: nincs szomszed "+this.getId());
         }
         for(Spacething s: neighbours){
-            if(s.getAsteroid()==true)
-            System.out.println(s.getId());
+            if(s.isAsteroid()==true)
+            System.out.println("Asteroid "+s.getId());
+            else{
+                System.out.println("Teleport "+s.getId());
+            }
         }
     }
 
     @Override
-    public boolean getAsteroid(){return true;}
+    public boolean isAsteroid(){return true;}
 
 }
