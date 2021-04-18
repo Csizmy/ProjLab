@@ -148,4 +148,14 @@ public class Asteroid extends Spacething {
     public void AddNeighbor(Spacething s) {
         super.AddNeighbor(s);
     }
+
+    public void listNeighbors(){
+        if(neighbours.isEmpty()==true){
+            System.out.println("Hiba: nincs szomszed "+this.getId());
+        }
+        for(Spacething s: neighbours){
+            System.out.println(s.getId());
+        }
+    }
+
 }

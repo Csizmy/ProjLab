@@ -207,4 +207,14 @@ public class Settler extends Miner{
         return teleports.get(0);
     }
 
+    public void listBackPack(){
+        if(backpack.isEmpty()==true){
+            System.out.println("-");
+            return;
+        }
+        System.out.print(this.getId()+"Taska tartalma: ");
+        for(Material m: backpack){
+            System.out.print(m.getName()+" ");
+        }
+    }
 }
