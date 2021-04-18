@@ -138,9 +138,9 @@ public class Proto {
 
     public void addToBackpack(String material, int settler_id){} // Panku
 
-    public void backPack(int settler_id){}
+    public void backPack(int settler_id){}  //axel
 
-    public void neighbors(int asteroid_id){}
+    public void neighbors(int asteroid_id){}  //axel
 
     //----------------------------- NOT YET SET ROBOT ID!!!!!!!!!! ------------------------------------------
     public void buildRobot(int settler_id){
