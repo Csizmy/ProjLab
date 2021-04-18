@@ -140,6 +140,14 @@ public class Proto {
         }
     }//kristof ezt csinalja
 
+    public void moveTp(int teleport_id, int asteroid_id){
+        for (int i = 0; i < map.getTeleports().size(); i++) {
+            if (map.getTeleports().get(i).getId() == teleport_id) {
+                map.getTeleports().get(i).Move(asteroid_id);
+            }
+        }
+    }
+
     public void stepRobot(int robot_id, String step){
         for (int i = 0; i < map.getRobots().size(); i++) {
             if (map.getRobots().get(i).getId() == robot_id) {

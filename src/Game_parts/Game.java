@@ -68,6 +68,9 @@ public class Game {
                         p.stepRobot(Integer.parseInt(array[1]), array[2]);
                     break;
 
+                case "moveTp":
+                    p.moveTp(Integer.parseInt(array[1]), Integer.parseInt(array[2]));
+
                 case "stepUfo":
                     if (array.length < 3)
                         p.stepUfo(Integer.parseInt(array[1]), "");
