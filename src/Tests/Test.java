@@ -25,7 +25,7 @@ public class Test {
         builder.getBackpack().add(water);
         builder.getBackpack().add(uranium);                 //A nyersanyagok a táskához adva.
 
-        builder.BuildTp();                                  //Most még 1 tp lerakásánál aktív már...
+        //builder.BuildTp();                                  //Most még 1 tp lerakásánál aktív már...
         Teleport tp = builder.getTP();
         builder.PlaceTp(tp);                                //A telepes az aszteroidán elhelyezett egy Teleportkaput.
 
@@ -122,7 +122,7 @@ public class Test {
         builder.getBackpack().add(water);
         builder.getBackpack().add(uranium);                 //A nyersanyagok a táskához adva.
 
-        builder.BuildTp();
+        //builder.BuildTp();
 
     }
 
@@ -130,7 +130,7 @@ public class Test {
         Asteroid planet = new Asteroid(23);        //A teszt aszteroida, ahol épít a telepes.
         Settler builder = new Settler(planet);              //Az építő telepes.
 
-        builder.BuildTp();
+        //builder.BuildTp();
         
     }
 

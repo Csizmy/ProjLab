@@ -56,7 +56,7 @@ public class Settler extends Miner{
     }
 
     //ellenőrzi a teleport építéséhez szükséges nyersanyagot, és ha tudja, megépíti
-    public boolean BuildTp(){
+    public boolean BuildTp(int id1, int id2){
 
         if(teleports.size()<=1){  // csak akkor tud építeni, ha nulla vagy egy teleport van a táskájában
             int iron = 0;
@@ -111,8 +111,8 @@ public class Settler extends Miner{
                     }
                 }
 
-                Teleport t1 = new Teleport(0);
-                Teleport t2 = new Teleport(0);
+                Teleport t1 = new Teleport(id1);
+                Teleport t2 = new Teleport(id2);
 
                 t1.setPair(t2); // egymmás párjai lesznek
                 t2.setPair(t1);

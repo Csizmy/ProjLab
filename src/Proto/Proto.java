@@ -129,7 +129,19 @@ public class Proto {
 
     public void mineMiner(int settler_id){}//kristof ezt csinalja
 
-    public void buildTeleport(int settler_id){} // Panku
+    public void buildTeleport(int settler_id){ // Panka
+        int _id = map.getTeleports().get(-1).getId();
+        for (int i = 0; i < map.getSettlers().size(); i++) {
+            if(map.getSettlers().get(i).getId()==settler_id){
+
+                if(map.getSettlers().get(i).BuildTp(_id, _id+1)){
+                    System.out.println("Settler "+ map.getSettlers().get(i) + "tp azonosító" + " Az építés sikeres");
+                }else{
+                    System.out.println("Settler "+ map.getSettlers().get(i) + " Az építés sikertelen");
+                }
+            }
+        }
+    }
 
     public void placeTeleport(int settler_id, int teleport_id){}  // Panku
 
