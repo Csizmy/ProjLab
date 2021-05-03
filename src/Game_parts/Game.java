@@ -1,6 +1,7 @@
 package Game_parts;
 
 import Objects.*;
+import Graphics.*;
 import Tests.*;
 import  Proto.*;
 
@@ -39,7 +40,7 @@ public class Game {
     public static void main(String[] args) throws FileNotFoundException {
 
         System.out.println("Indulhat a játék:");
-
+        new MainFrame();
         Scanner input=new Scanner(System.in);
 
         loop: while(true){
