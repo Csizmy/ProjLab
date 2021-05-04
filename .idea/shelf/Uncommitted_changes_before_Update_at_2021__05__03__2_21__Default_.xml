@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_2021__05__03__2_21_[Default]" date="1620001341548" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__03__2_21_[Default]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2021. 05. 03. 2:21 [Default]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Game_parts/Game.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Game_parts/Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__03__2_21_[Default]/Game.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_51_[Default]/Asteroid.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>
