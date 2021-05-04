@@ -13,29 +13,31 @@ public class Menu extends JPanel { //axelfoglaltahihi
     private JButton play,help,exit,back;
     private Clicklistener click;
     private BufferedImage image;
+    private OnPlayListener playListener;
 
-    public Menu(){
+    public Menu(OnPlayListener act){
+        playListener=act;
         Clicklistener click= new Clicklistener();
         play= new JButton("");
         help= new JButton("");
         exit= new JButton("");
 
-        play.setIcon(new ImageIcon("pictures\\play3.png" ));
+        play.setIcon(new ImageIcon("pictures\\playcropped.png" ));
         play.setOpaque(false);
         play.setContentAreaFilled(false);
         //play.setBorderPainted(false);
 
-        help.setIcon(new ImageIcon("pictures\\help3.png" ));
+        help.setIcon(new ImageIcon("pictures\\helpcropped.png" ));
         help.setOpaque(false);
         help.setContentAreaFilled(false);
 
-        exit.setIcon(new ImageIcon("pictures\\exit3.png" ));
+        exit.setIcon(new ImageIcon("pictures\\exitcropped.png" ));
         exit.setOpaque(false);
         exit.setContentAreaFilled(false);
         this.setLayout(null);
-        play.setBounds(500,100,240,180);
-        help.setBounds(500,300,240,180);
-        exit.setBounds(500,500,240,180);
+        play.setBounds(200,100,800,123);
+        help.setBounds(200,300,800,123);
+        exit.setBounds(200,500,800,123);
         play.setFocusable(false);
         help.setFocusable(false);
         exit.setFocusable(false);
@@ -67,7 +69,7 @@ public class Menu extends JPanel { //axelfoglaltahihi
 
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == play){
-                System.out.println("play");
+                playListener.ChangeToGame();
             }
             else if (e.getSource() == help){
                 System.out.println("help");
