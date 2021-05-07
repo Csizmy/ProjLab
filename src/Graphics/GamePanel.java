@@ -17,14 +17,12 @@ public class GamePanel extends JPanel {
     private JLabel resourceInventory,tpInventory,asteroid;
     private Clicklistener click;
     private BufferedImage image;
-    private OnPlayListener playListener;
 
     private Game game;
     private Controller controller; //ez így van itt?
 
 
     public GamePanel(OnPlayListener act){
-        playListener = act;
         Clicklistener click = new Clicklistener();
         tp = new JButton("");
         robot = new JButton("");
