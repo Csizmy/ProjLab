@@ -164,27 +164,32 @@ public class Proto {
         }
     }
 
-    public void drillMiner(int settler_id){
+    public boolean drillMiner(int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 if (map.getSettlers().get(i).Drill()) {
                     System.out.println("Settler " + settler_id + " A fúrás sikeres " + (map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getLayer() - map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getDigged()) + " réteg maradt Asteroid " + map.getSettlers().get(i).getAsteroid());
+                    return true;
                 }
-                else
+                else {
                     System.out.println("Settler " + settler_id + " A fúrás sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
+                    return false;
+                }
             }
         }
+        return false;
     }
 
-    public void mineMiner(int settler_id){
+    public boolean mineMiner(int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++){
             if (map.getSettlers().get(i).getId() == settler_id) {
-                map.getSettlers().get(i).Mine();
+                return map.getSettlers().get(i).Mine();
             }
         }
+        return false;
     }
 
-    public void buildTeleport(int settler_id){
+    public boolean buildTeleport(int settler_id){
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId()+2;
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
@@ -196,11 +201,15 @@ public class Proto {
                     map.AddTeleport(t);
                     map.AddTeleport(t2);
                     System.out.println("Settler "+ map.getSettlers().get(i).getId() + " Az építés sikeres");
+                    return true;
                 }else{
                     System.out.println("Settler "+ map.getSettlers().get(i).getId() + " Az építés sikertelen");
+                    return false;
                 }
             }
         }
+        System.out.println("Itt nem kéne lennem buildtp proto btw."); //ezt majd kiszedni
+        return false;
     }
 
     public void placeTeleport(int settler_id, int teleport_id){
@@ -307,7 +316,7 @@ public class Proto {
         }
     }
 
-    public void buildRobot(int settler_id){
+    public boolean buildRobot(int settler_id){
 
         Settler settler = map.getSettlers().get(settler_id - 50);
 
@@ -331,8 +340,9 @@ public class Proto {
             map.getRobots().add((Robot) robot);
 
             System.out.println("Settler " + settler.getId() + " " + map.getRobots().get(map.getRobots().size() - 1).getId() + " robot megépítve.");
+            return true;
         }
-        else {System.out.println("Hiba, nincs elég anyag.");}
+        else {System.out.println("Hiba, nincs elég anyag."); return false;}
 
     }
 

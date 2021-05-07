@@ -1,6 +1,8 @@
 package Graphics;
 
 import Game_parts.Game;
+import Miners.Settler;
+import Proto.Proto;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -10,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
@@ -18,12 +19,17 @@ public class GamePanel extends JPanel {
     private JLabel resourceInventory,tpInventory,asteroid;
     private Clicklistener click;
     private BufferedImage image;
+    private Proto p;
+    private Settler currentPlayer;  /// ezt még meg kéne vhogy kapnia.........
 
     private Game game;
     private Controller controller; //ez így van itt?
 
 
     public GamePanel(OnPlayListener act){
+        p = new Proto();
+        p.loadMap("test.txt");  // pálya betöltése
+        currentPlayer = p.getMap().getSettlers().get(0);
         Clicklistener click = new Clicklistener();
         tp = new JButton("");
         robot = new JButton("");
@@ -124,7 +130,7 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(game.imgRes.resize(image, 100, 100), 0, 0, this); // see javadoc for more info on the parameters
+        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
     }
 
     public void exit() {
@@ -139,20 +145,46 @@ public class GamePanel extends JPanel {
         //TODO
     }
 
+    public void nextPlayer(){
+        for (int i = 0; i < p.getMap().getSettlers().size(); i++) {
+            if(i== p.getMap().getSettlers().size()-1){
+                p.step(); // léptet mindenkit ha az utolso player lelépte a lépését
+                currentPlayer = p.getMap().getSettlers().get(0);
+                return;
+            }
+            if(p.getMap().getSettlers().get(i)==currentPlayer){
+                currentPlayer = p.getMap().getSettlers().get(i+1);
+                return;
+            }
+        }
+    }
+
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
 
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == tp){
                 System.out.println("tp");
+                if(p.buildTeleport(currentPlayer.getId())==true){
+                    nextPlayer();
+                }
             }
             else if (e.getSource() == robot){
                 System.out.println("robot");
+                if(p.buildRobot(currentPlayer.getId())==true){
+                    nextPlayer();
+                }
             }
             else if (e.getSource() == dig){
                 System.out.println("dig");
+                if(p.drillMiner(currentPlayer.getId())==true){
+                    nextPlayer();
+                }
             }
             else if (e.getSource() == mine){
                 System.out.println("mine");
+                if(p.mineMiner(currentPlayer.getId())==true){
+                    nextPlayer();
+                }
             }
             else if (e.getSource() == move){
                 System.out.println("move");
