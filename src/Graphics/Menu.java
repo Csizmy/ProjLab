@@ -76,6 +76,9 @@ public class Menu extends JPanel { //axelfoglaltahihi
             }
             else if (e.getSource() == exit){
                 System.out.println("exit");
+                //close the window
+                System.exit(0);
+
             }
         }
     }
