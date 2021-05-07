@@ -1,6 +1,8 @@
 package Graphics;
 
 import Game_parts.Game;
+import Miners.Settler;
+import Proto.Proto;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -17,12 +19,15 @@ public class GamePanel extends JPanel {
     private JLabel resourceInventory,tpInventory;
     private Clicklistener click;
     private BufferedImage image;
+    private Proto p;
+    private Settler currentPlayer;  /// ezt még meg kéne vhogy kapnia.........
 
     private Game game;
     private Controller controller; //ez így van itt?
 
 
     public GamePanel(OnPlayListener act){
+        p = new Proto();
         Clicklistener click = new Clicklistener();
         tp = new JButton("");
         robot = new JButton("");
@@ -138,15 +143,19 @@ public class GamePanel extends JPanel {
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == tp){
                 System.out.println("tp");
+                p.buildRobot(currentPlayer.getId());
             }
             else if (e.getSource() == robot){
                 System.out.println("robot");
+                p.buildRobot(currentPlayer.getId());
             }
             else if (e.getSource() == dig){
                 System.out.println("dig");
+                p.drillMiner(currentPlayer.getId());
             }
             else if (e.getSource() == mine){
                 System.out.println("mine");
+                p.mineMiner(currentPlayer.getId());
             }
             else if (e.getSource() == move){
                 System.out.println("move");
