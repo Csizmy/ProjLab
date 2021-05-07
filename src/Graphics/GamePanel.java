@@ -14,7 +14,7 @@ import java.io.IOException;
 public class GamePanel extends JPanel {
 
     private JButton tp,robot,dig,mine,move,zoomin,zoomout;
-    private JLabel resourceInventory,tpInventory,asteroid;
+    private JLabel resourceInventory,tpInventory;
     private Clicklistener click;
     private BufferedImage image;
 
@@ -34,7 +34,6 @@ public class GamePanel extends JPanel {
 
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory289x586.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory280x83.png"));
-        asteroid = new JLabel(new ImageIcon("pictures\\asteroid414x405.png"));
 
         tp.setIcon(new ImageIcon("pictures\\tp248x65.png" ));
         tp.setOpaque(false);
@@ -80,7 +79,6 @@ public class GamePanel extends JPanel {
         zoomin.setBounds(1132,13,54,54);
         resourceInventory.setBounds(41,22,289,586);
         tpInventory.setBounds(45,639,280,83);
-        asteroid.setBounds(588,260,414,405);
         tp.setFocusable(false);
         robot.setFocusable(false);
         dig.setFocusable(false);
@@ -90,8 +88,6 @@ public class GamePanel extends JPanel {
         zoomin.setFocusable(false);
         resourceInventory.setFocusable(false);
         tpInventory.setFocusable(false);
-        asteroid.setFocusable(false);
-
 
         tp.addActionListener(click);
         robot.addActionListener(click);
@@ -111,7 +107,6 @@ public class GamePanel extends JPanel {
         this.add(zoomin);
         this.add(resourceInventory);
         this.add(tpInventory);
-        this.add(asteroid);
 
         try {
             image = ImageIO.read(new File("pictures\\background.png"));
