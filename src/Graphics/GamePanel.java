@@ -1,8 +1,6 @@
 package Graphics;
 
 import Game_parts.Game;
-import Miners.Settler;
-import Proto.Proto;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -12,22 +10,20 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
     private JButton tp,robot,dig,mine,move,zoomin,zoomout;
-    private JLabel resourceInventory,tpInventory;
+    private JLabel resourceInventory,tpInventory,asteroid;
     private Clicklistener click;
     private BufferedImage image;
-    private Proto p;
-    private Settler currentPlayer;  /// ezt még meg kéne vhogy kapnia.........
 
     private Game game;
     private Controller controller; //ez így van itt?
 
 
     public GamePanel(OnPlayListener act){
-        p = new Proto();
         Clicklistener click = new Clicklistener();
         tp = new JButton("");
         robot = new JButton("");
@@ -39,6 +35,7 @@ public class GamePanel extends JPanel {
 
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory289x586.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory280x83.png"));
+        asteroid = new JLabel(new ImageIcon("pictures\\asteroid414x405.png"));
 
         tp.setIcon(new ImageIcon("pictures\\tp248x65.png" ));
         tp.setOpaque(false);
@@ -84,6 +81,7 @@ public class GamePanel extends JPanel {
         zoomin.setBounds(1132,13,54,54);
         resourceInventory.setBounds(41,22,289,586);
         tpInventory.setBounds(45,639,280,83);
+        asteroid.setBounds(588,260,414,405);
         tp.setFocusable(false);
         robot.setFocusable(false);
         dig.setFocusable(false);
@@ -93,6 +91,8 @@ public class GamePanel extends JPanel {
         zoomin.setFocusable(false);
         resourceInventory.setFocusable(false);
         tpInventory.setFocusable(false);
+        asteroid.setFocusable(false);
+
 
         tp.addActionListener(click);
         robot.addActionListener(click);
@@ -112,6 +112,7 @@ public class GamePanel extends JPanel {
         this.add(zoomin);
         this.add(resourceInventory);
         this.add(tpInventory);
+        this.add(asteroid);
 
         try {
             image = ImageIO.read(new File("pictures\\background.png"));
@@ -123,7 +124,7 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
+        g.drawImage(game.imgRes.resize(image, 100, 100), 0, 0, this); // see javadoc for more info on the parameters
     }
 
     public void exit() {
@@ -143,19 +144,15 @@ public class GamePanel extends JPanel {
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == tp){
                 System.out.println("tp");
-                p.buildRobot(currentPlayer.getId());
             }
             else if (e.getSource() == robot){
                 System.out.println("robot");
-                p.buildRobot(currentPlayer.getId());
             }
             else if (e.getSource() == dig){
                 System.out.println("dig");
-                p.drillMiner(currentPlayer.getId());
             }
             else if (e.getSource() == mine){
                 System.out.println("mine");
-                p.mineMiner(currentPlayer.getId());
             }
             else if (e.getSource() == move){
                 System.out.println("move");
