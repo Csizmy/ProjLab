@@ -2,12 +2,16 @@ package Graphics;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.nio.Buffer;
 
 public class ImageResizer {
 
-    public BufferedImage resize(BufferedImage img, int scaledWidth, int scaledHeight) {
+    public static BufferedImage resize(BufferedImage img, double percent) {
 
         BufferedImage inputImage = img;
+
+        int scaledWidth = (int) (inputImage.getWidth() * percent);
+        int scaledHeight = (int) (inputImage.getHeight() * percent);
 
         BufferedImage outputImage = new BufferedImage(scaledWidth,
                 scaledHeight, inputImage.getType());

@@ -69,7 +69,11 @@ public class Menu extends JPanel { //axelfoglaltahihi
 
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == play){
-                playListener.ChangeToGame();
+                try {
+                    playListener.ChangeToGame();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
             else if (e.getSource() == help){
                 System.out.println("help");

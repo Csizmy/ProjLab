@@ -1,5 +1,6 @@
 package Graphics;
 
+import GObjects.*;
 import Game_parts.Game;
 import Miners.Settler;
 import Proto.Proto;
@@ -12,21 +13,23 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
     private JButton tp,robot,dig,mine,move,zoomin,zoomout;
-    private JLabel resourceInventory,tpInventory,asteroid;
+    private JLabel resourceInventory, tpInventory;
     private Clicklistener click;
     private BufferedImage image;
     private Proto p;
     private Settler currentPlayer;  /// ezt még meg kéne vhogy kapnia.........
+    private ArrayList<JButton> gfxTest = new ArrayList<>();
 
     private Game game;
     private Controller controller; //ez így van itt?
 
 
-    public GamePanel(OnPlayListener act){
+    public GamePanel(OnPlayListener act) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
         currentPlayer = p.getMap().getSettlers().get(0);
@@ -41,7 +44,6 @@ public class GamePanel extends JPanel {
 
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory289x586.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory280x83.png"));
-        asteroid = new JLabel(new ImageIcon("pictures\\asteroid414x405.png"));
 
         tp.setIcon(new ImageIcon("pictures\\tp248x65.png" ));
         tp.setOpaque(false);
@@ -74,7 +76,7 @@ public class GamePanel extends JPanel {
 
         resourceInventory.setOpaque(false);
         tpInventory.setOpaque(false);
-        asteroid.setOpaque(false);
+
 
         this.setLayout(null);
 
@@ -87,7 +89,7 @@ public class GamePanel extends JPanel {
         zoomin.setBounds(1132,13,54,54);
         resourceInventory.setBounds(41,22,289,586);
         tpInventory.setBounds(45,639,280,83);
-        asteroid.setBounds(588,260,414,405);
+
         tp.setFocusable(false);
         robot.setFocusable(false);
         dig.setFocusable(false);
@@ -97,8 +99,6 @@ public class GamePanel extends JPanel {
         zoomin.setFocusable(false);
         resourceInventory.setFocusable(false);
         tpInventory.setFocusable(false);
-        asteroid.setFocusable(false);
-
 
         tp.addActionListener(click);
         robot.addActionListener(click);
@@ -108,6 +108,71 @@ public class GamePanel extends JPanel {
         zoomout.addActionListener(click);
         zoomin.addActionListener(click);
 
+        for(int i = 0; i < 2;i++){
+            for(int j = 0; i < 5; i++){
+                JButton btnTmp = new JButton();
+
+                switch (j){
+                   case 0:{
+                       if(i == 0){
+                           GAsteroid tmp = new GAsteroid(400 + i*150, 100 + j*150);
+                           btnTmp = tmp.getButton();
+                       }else{
+                           GWater tmp = new GWater(400 + i*150, 100 + j*150);
+                           btnTmp = tmp.getButton();
+                       }
+                   }break;
+
+                    case 1:{
+                        if(i == 0){
+                            GUfo tmp = new GUfo(400 + i*150, 100 + j*150);
+                            btnTmp = tmp.getButton();
+                        }else{
+                            GCoal tmp = new GCoal(400 + i*150, 100 + j*150);
+                            btnTmp = tmp.getButton();
+                        }
+                    }break;
+
+                    case 2:{
+                        if(i == 0){
+                            GSettler tmp = new GSettler(400 + i*150, 100 + j*150);
+                            btnTmp = tmp.getButton();
+                        }else{
+                            GIron tmp = new GIron(400 + i*150, 100 + j*150);
+                            btnTmp = tmp.getButton();
+                        }
+                    }break;
+
+                    case 3:{
+                        if(i == 0){
+                            GRobot tmp = new GRobot(400 + i*150, 100 + j*150);
+                            btnTmp = tmp.getButton();
+                        }else{
+                            GUranium tmp = new GUranium(400 + i*150, 100 + j*150);
+                            btnTmp = tmp.getButton();
+                        }
+                    }break;
+
+                    case 4:{
+                        if(i == 0){
+                            GTeleport tmp = new GTeleport(400 + i*150, 100 + j*150);
+                            btnTmp = tmp.getButton();
+                        }else{
+                            GTeleport tmp = new GTeleport(400 + i*150, 100 + j*150);
+                            btnTmp = tmp.getButton();
+                        }
+                    }break;
+                }
+                btnTmp.addActionListener(click);
+                gfxTest.add(btnTmp);
+            }
+        }
+
+
+
+        for (JButton jb: gfxTest) {
+            this.add(jb);
+        }
 
         this.add(tp);
         this.add(robot);
@@ -118,7 +183,6 @@ public class GamePanel extends JPanel {
         this.add(zoomin);
         this.add(resourceInventory);
         this.add(tpInventory);
-        this.add(asteroid);
 
         try {
             image = ImageIO.read(new File("pictures\\background.png"));
@@ -130,7 +194,7 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
+        g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
     }
 
     public void exit() {

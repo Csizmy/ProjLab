@@ -3,10 +3,12 @@ package Graphics;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+
 interface OnPlayListener {
 
-    void ChangeToMenu();
-    void ChangeToGame();
+    void ChangeToMenu() throws IOException;
+    void ChangeToGame() throws IOException;
 }
 public class MainFrame extends JFrame implements OnPlayListener{
     private Menu menu;
@@ -27,10 +29,9 @@ public class MainFrame extends JFrame implements OnPlayListener{
 
 
     @Override
-    public void ChangeToGame(){ changePanel(1); }
+    public void ChangeToGame() throws IOException { changePanel(1); }
 
-    public void ChangeToMenu()
-    {
+    public void ChangeToMenu() throws IOException {
         changePanel(2);
     }
 
@@ -38,7 +39,7 @@ public class MainFrame extends JFrame implements OnPlayListener{
         //TODO
     }
 
-    public void changePanel(int x) {
+    public void changePanel(int x) throws IOException {
         this.getContentPane().removeAll();
         if(x==1){
             this.getContentPane().add(new GamePanel(this));

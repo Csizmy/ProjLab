@@ -1,18 +1,17 @@
 package GObjects;
 
-import javax.swing.*;
-import java.awt.*;
+import java.io.IOException;
 
 public class GAsteroid extends GObject{
-    private JButton asteroid;
 
-    public GAsteroid(int x, int y){
-        asteroid = new JButton(new ImageIcon("pictures\\asteroid414x405.png"));
-        asteroid.setFocusable(false);
-        asteroid.setBounds(x,y,414,405);
+    public double scale = 0.05;
+
+    public GAsteroid(int x, int y) throws IOException {
+        loadImage("pictures\\a_teli_tavol.png", scale, x, y);
     }
 
-    public JButton getGAsteroid(){
-        return asteroid;
+    public GAsteroid(int x, int y, int s) throws IOException {
+        loadImage("pictures\\a_teli_tavol.png", s, x, y);
     }
+
 }
