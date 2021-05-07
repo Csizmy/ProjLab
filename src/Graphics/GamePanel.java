@@ -28,6 +28,8 @@ public class GamePanel extends JPanel {
 
     public GamePanel(OnPlayListener act){
         p = new Proto();
+        p.loadMap("test.txt");  // pálya betöltése
+        currentPlayer = p.getMap().getSettlers().get(0);
         Clicklistener click = new Clicklistener();
         tp = new JButton("");
         robot = new JButton("");
@@ -143,24 +145,46 @@ public class GamePanel extends JPanel {
         //TODO
     }
 
+    public void nextPlayer(){
+        for (int i = 0; i < p.getMap().getSettlers().size(); i++) {
+            if(i== p.getMap().getSettlers().size()-1){
+                p.step(); // léptet mindenkit ha az utolso player lelépte a lépését
+                currentPlayer = p.getMap().getSettlers().get(0);
+                return;
+            }
+            if(p.getMap().getSettlers().get(i)==currentPlayer){
+                currentPlayer = p.getMap().getSettlers().get(i+1);
+                return;
+            }
+        }
+    }
+
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
 
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == tp){
                 System.out.println("tp");
-                p.buildRobot(currentPlayer.getId());
+                if(p.buildTeleport(currentPlayer.getId())==true){
+                    nextPlayer();
+                }
             }
             else if (e.getSource() == robot){
                 System.out.println("robot");
-                p.buildRobot(currentPlayer.getId());
+                if(p.buildRobot(currentPlayer.getId())==true){
+                    nextPlayer();
+                }
             }
             else if (e.getSource() == dig){
                 System.out.println("dig");
-                p.drillMiner(currentPlayer.getId());
+                if(p.drillMiner(currentPlayer.getId())==true){
+                    nextPlayer();
+                }
             }
             else if (e.getSource() == mine){
                 System.out.println("mine");
-                p.mineMiner(currentPlayer.getId());
+                if(p.mineMiner(currentPlayer.getId())==true){
+                    nextPlayer();
+                }
             }
             else if (e.getSource() == move){
                 System.out.println("move");
