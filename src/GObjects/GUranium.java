@@ -5,11 +5,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class GUranium extends GObject{
-    public double scale = 0.05;
+    public double scale = 1;
 
-    public GUranium()throws IOException {
-        texture= ImageIO.read(new File("pictures\\uranium70x70.png"));
-    }
     public GUranium(int x, int y) throws IOException {
         loadImage("pictures\\uranium70x70.png", scale, x, y);
     }

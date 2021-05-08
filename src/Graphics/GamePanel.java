@@ -25,6 +25,7 @@ public class GamePanel extends JPanel {
     private Proto p;            //A játék lépéseit valositja meg
     private Settler currentPlayer;  // A jelenlegi játékos
     private ArrayList<JButton> Things = new ArrayList<>();
+    private ArrayList<JButton> gfxTest = new ArrayList<>();
 
     public void InitButton(JButton btn){
         btn.setOpaque(false);
@@ -62,6 +63,8 @@ public class GamePanel extends JPanel {
         mine.setIcon(new ImageIcon("pictures\\mine200x53.png" ));
         move.setIcon(new ImageIcon("pictures\\move200x53.png" ));
 
+
+
         zoomout.setBounds(770,20,54,54);
         zoomin.setBounds(700,20,54,54);
         tp.setBounds(50,570,200,53);
@@ -92,7 +95,7 @@ public class GamePanel extends JPanel {
 
         this.setLayout(null);
 
-        this.add(resourceInventory);
+        //this.add(resourceInventory);
         this.add(tpInventory);
 
         try {
@@ -111,16 +114,27 @@ public class GamePanel extends JPanel {
         int x = 0;
         int y = 0;
 
+        GIron iron = null;
+        try {
+            iron = new GIron(x, y);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         for(Material m :currentPlayer.getBackpack()){  ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             if(x==5){   ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 y=1;  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             }  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ok itt a backpacket akarom kirajzolni nem megy vkinek hajrá fent a konstruktorban az
             System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
-            m.rajzoljkocsog(g,x*70 + 200, y*70 + 200, this);
+            try {
+                this.add(m.drawMaterial(x*70 + 200, y*70 + 100, this, m));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             x++;
-            invalidate();
+
         }
 
 

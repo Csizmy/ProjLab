@@ -41,12 +41,6 @@ public class GObject implements IDrawable {
         return object;
     }
 
-
-    public void rajzolok(Graphics g, int x, int y, GamePanel panel){
-        g.drawImage(texture , 0, 0, panel); // see javadoc for more info on the parameters
-
-
-    }
     public BufferedImage getTexture(){
         return texture;
     }
