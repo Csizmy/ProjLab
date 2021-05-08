@@ -24,19 +24,8 @@ public class Game {
         System.out.println("A játék elkezdődik");
         map = new Map(5, 2);
     }
-    //Körönként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.
-    public static boolean EndGame(Map m) {
 
-        for(Asteroid a: m.getAsteroids()){
-            if(a.checkWin()){
-                System.out.println("A játék vége, nyertek a Settlerek!");
-                return true;
-            }
-        }
 
-            System.out.println("A játéknak nincs vége");
-        return false;
-    }
 
     // A játék maga.
     public static void main(String[] args) throws FileNotFoundException {
@@ -143,7 +132,7 @@ public class Game {
 
                 case "Checkwin":
                     boolean win=false;
-                    win=EndGame(p.getMap());
+                    win=p.EndGame();
                     if(win==true){
                         break loop;
                     }

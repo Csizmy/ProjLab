@@ -492,4 +492,18 @@ public class Proto {
     public Map getMap() {
         return map;
     }
+
+    //lépésenként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.
+    public boolean EndGame() {
+
+        for(Asteroid a: map.getAsteroids()){
+            if(a.checkWin()){
+                System.out.println("A játék vége, nyertek a Settlerek!");
+                return true;
+            }
+        }
+
+        System.out.println("A játéknak nincs vége");
+        return false;
+    }
 }

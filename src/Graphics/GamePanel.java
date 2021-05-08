@@ -210,6 +210,9 @@ public class GamePanel extends JPanel {
     }
 
     public void nextPlayer(){
+        if(p.EndGame()==true){  //ellenőrzi hogy nyertek e a telepesek.
+            //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy
+        }
         for (int i = 0; i < p.getMap().getSettlers().size(); i++) {
             if(i== p.getMap().getSettlers().size()-1){
                 p.step(); // léptet mindenkit ha az utolso player lelépte a lépését
