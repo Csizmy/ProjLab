@@ -255,25 +255,25 @@ public class GamePanel extends JPanel {
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == tp){   //teleportot probál épiteni
                 System.out.println("tp");
-                if(p.buildTeleport(currentPlayer.getId())==true){
+                if(p.buildTeleport(currentPlayer.getId())){
                     nextPlayer();
                 }
             }
             else if (e.getSource() == robot){ //robotot probnál épiteni
                 System.out.println("robot");
-                if(p.buildRobot(currentPlayer.getId())==true){
+                if(p.buildRobot(currentPlayer.getId())){
                     nextPlayer();
                 }
             }
             else if (e.getSource() == dig){  //furni probál
                 System.out.println("dig");
-                if(p.drillMiner(currentPlayer.getId())==true){
+                if(p.drillMiner(currentPlayer.getId())){
                     nextPlayer();
                 }
             }
             else if (e.getSource() == mine){  //ásni probál
                 System.out.println("mine");
-                if(p.mineMiner(currentPlayer.getId())==true){
+                if(p.mineMiner(currentPlayer.getId())){
                     nextPlayer();
                 }
             }
