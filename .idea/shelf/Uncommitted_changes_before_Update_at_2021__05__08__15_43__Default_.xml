@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_2021__05__08__15_43_[Default]" date="1620481388002" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43_[Default]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2021. 05. 08. 15:43 [Default]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43_[Default]/GamePanel$Clicklistener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GObject.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GObject.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43_[Default]/GObject.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Graphics/GamePanel.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Graphics/GamePanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43_[Default]/GamePanel.class" />
+  </binary>
+</changelist>

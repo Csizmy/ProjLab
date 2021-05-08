@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="kommentek">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="beraktamvmit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -4959,34 +4958,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00001" summary="Base">
-      <created>1615501919495</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1615501919495</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Base">
-      <created>1615532120951</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1615532120951</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Base">
-      <created>1615532249477</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1615532249477</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Merge branch 'master' of https://github.com/Csizmy/ProjLab&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1616171099477</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1616171099477</updated>
-    </task>
     <task id="LOCAL-00005" summary="vannak materialok + solarstorm">
       <created>1616330324164</created>
       <option name="number" value="00005" />
@@ -5302,7 +5273,35 @@
       <option name="project" value="LOCAL" />
       <updated>1620473040363</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="zoomin,outot ujraimplementáltam kekw">
+      <created>1620473491455</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1620473491455</updated>
+    </task>
+    <task id="LOCAL-00051" summary="átirtam mindent is soz evvan">
+      <created>1620476181397</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1620476181397</updated>
+    </task>
+    <task id="LOCAL-00052" summary="panka képét beraktam">
+      <created>1620481507714</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1620481507714</updated>
+    </task>
+    <task id="LOCAL-00053" summary="beraktamvmit">
+      <created>1620484551898</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1620484551898</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5358,10 +5357,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Készkészkész!!!!!" />
-    <MESSAGE value="7.0 and 7.0.2 implementálva" />
-    <MESSAGE value="Listázás implementálva, kellenek ufok meg ilyenek." />
-    <MESSAGE value="Proto osztályok elkezdése, új konstruktorok" />
     <MESSAGE value="bence stipi" />
     <MESSAGE value="Panku addToBackpack" />
     <MESSAGE value="Panku addToBackpack javítva" />
@@ -5383,7 +5378,11 @@
     <MESSAGE value="fixálva az ablak mérete" />
     <MESSAGE value="idk ezmi" />
     <MESSAGE value="kommentek" />
-    <option name="LAST_COMMIT_MESSAGE" value="kommentek" />
+    <MESSAGE value="zoomin,outot ujraimplementáltam kekw" />
+    <MESSAGE value="átirtam mindent is soz evvan" />
+    <MESSAGE value="panka képét beraktam" />
+    <MESSAGE value="beraktamvmit" />
+    <option name="LAST_COMMIT_MESSAGE" value="beraktamvmit" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">

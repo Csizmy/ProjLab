@@ -18,15 +18,23 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
-    private JButton tp,robot,dig,mine,move,zoomin, zoomout;    //gombok
+    private JButton tp,robot,dig,mine,move,zoomin, zoomout, skip;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
     private Proto p;            //A játék lépéseit valositja meg
     private Settler currentPlayer;  // A jelenlegi játékos
-    private ArrayList<JButton> gfxTest = new ArrayList<>();
+    private ArrayList<JButton> Things = new ArrayList<>();
 
-    public GamePanel(OnPlayListener act) throws IOException {
+    public void InitButton(JButton btn){
+        btn.setOpaque(false);
+        btn.setContentAreaFilled(false);
+        btn.setBorderPainted(false);
+        btn.addActionListener(click);
+        btn.setFocusable(false);
+    }
+
+    public GamePanel(OnPlayListener act ) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
         p.addToBackpack("Water",51);
@@ -34,6 +42,7 @@ public class GamePanel extends JPanel {
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
         zoomout = new JButton("");
+        skip= new JButton("");
         zoomin = new JButton("");
         tp = new JButton("");
         robot = new JButton("");
@@ -44,41 +53,14 @@ public class GamePanel extends JPanel {
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory191x386.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory210x63.png"));
 
+        skip.setIcon(new ImageIcon("pictures\\skip200x53.png" ));
         zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png" ));
-        zoomout.setOpaque(false);
-        zoomout.setContentAreaFilled(false);
-
         zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png" ));
-        zoomin.setOpaque(false);
-        zoomin.setContentAreaFilled(false);
-
         tp.setIcon(new ImageIcon("pictures\\tp200x53.png" ));
-        tp.setOpaque(false);
-        tp.setContentAreaFilled(false);
-
         robot.setIcon(new ImageIcon("pictures\\robot200x53.png" ));
-        robot.setOpaque(false);
-        robot.setContentAreaFilled(false);
-
         dig.setIcon(new ImageIcon("pictures\\dig200x53.png" ));
-        dig.setOpaque(false);
-        dig.setContentAreaFilled(false);
-
         mine.setIcon(new ImageIcon("pictures\\mine200x53.png" ));
-        mine.setOpaque(false);
-        mine.setContentAreaFilled(false);
-
         move.setIcon(new ImageIcon("pictures\\move200x53.png" ));
-        move.setOpaque(false);
-        move.setContentAreaFilled(false);
-
-
-
-        resourceInventory.setOpaque(false);
-        tpInventory.setOpaque(false);
-
-
-        this.setLayout(null);
 
         zoomout.setBounds(770,20,54,54);
         zoomin.setBounds(700,20,54,54);
@@ -89,98 +71,27 @@ public class GamePanel extends JPanel {
         move.setBounds(550,500,200,53);
         resourceInventory.setBounds(50,20,191,386);
         tpInventory.setBounds(40,420,210,63);
+        skip.setBounds(550,570,200,53);
 
-        zoomout.setFocusable(false);
-        zoomin.setFocusable(false);
-        tp.setFocusable(false);
-        robot.setFocusable(false);
-        dig.setFocusable(false);
-        mine.setFocusable(false);
-        move.setFocusable(false);
-        resourceInventory.setFocusable(false);
-        tpInventory.setFocusable(false);
+        Things.add(zoomout);
+        Things.add(zoomin);
+        Things.add(tp);
+        Things.add(robot);
+        Things.add(dig);
+        Things.add(mine);
+        Things.add(move);
+        Things.add(skip);
 
-        zoomout.addActionListener(click);
-        zoomin.addActionListener(click);
-        tp.addActionListener(click);
-        robot.addActionListener(click);
-        dig.addActionListener(click);
-        mine.addActionListener(click);
-        move.addActionListener(click);
-
-        for(int i = 0; i < 2;i++){
-            for(int j = 0; i < 5; i++){
-                JButton btnTmp = new JButton();
-
-                switch (j){
-                   case 0:{
-                       if(i == 0){
-                           GAsteroid tmp = new GAsteroid(400 + i*150, 100 + j*150);
-                           btnTmp = tmp.getButton();
-                       }else{
-                           GWater tmp = new GWater(400 + i*150, 100 + j*150);
-                           btnTmp = tmp.getButton();
-                       }
-                   }break;
-
-                    case 1:{
-                        if(i == 0){
-                            GUfo tmp = new GUfo(400 + i*150, 100 + j*150);
-                            btnTmp = tmp.getButton();
-                        }else{
-                            GCoal tmp = new GCoal(400 + i*150, 100 + j*150);
-                            btnTmp = tmp.getButton();
-                        }
-                    }break;
-
-                    case 2:{
-                        if(i == 0){
-                            GSettler tmp = new GSettler(400 + i*150, 100 + j*150);
-                            btnTmp = tmp.getButton();
-                        }else{
-                            GIron tmp = new GIron(400 + i*150, 100 + j*150);
-                            btnTmp = tmp.getButton();
-                        }
-                    }break;
-
-                    case 3:{
-                        if(i == 0){
-                            GRobot tmp = new GRobot(400 + i*150, 100 + j*150);
-                            btnTmp = tmp.getButton();
-                        }else{
-                            GUranium tmp = new GUranium(400 + i*150, 100 + j*150);
-                            btnTmp = tmp.getButton();
-                        }
-                    }break;
-
-                    case 4:{
-                        if(i == 0){
-                            GTeleport tmp = new GTeleport(400 + i*150, 100 + j*150);
-                            btnTmp = tmp.getButton();
-                        }else{
-                            GTeleport tmp = new GTeleport(400 + i*150, 100 + j*150);
-                            btnTmp = tmp.getButton();
-                        }
-                    }break;
-                }
-                btnTmp.addActionListener(click);
-                gfxTest.add(btnTmp);
-            }
-        }
-
-
-
-        for (JButton jb: gfxTest) {
+        for (JButton jb: Things) {
+            InitButton(jb);
             this.add(jb);
         }
 
-        this.add(zoomout);
-        this.add(zoomin);
-        this.add(tp);
-        this.add(robot);
-        this.add(dig);
-        this.add(mine);
-        this.add(move);
+        resourceInventory.setOpaque(false);
+        tpInventory.setOpaque(false);
+
+        this.setLayout(null);
+
         this.add(resourceInventory);
         this.add(tpInventory);
 
@@ -282,8 +193,14 @@ public class GamePanel extends JPanel {
             else if (e.getSource() == zoomout){
                 System.out.println("zoomout");
             }
+
             else if (e.getSource() == zoomin){
                 System.out.println("zoomin");
+            }
+
+            else if (e.getSource() == skip){
+                System.out.println("skip");
+                nextPlayer();
             }
 
         }
