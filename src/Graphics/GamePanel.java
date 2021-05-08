@@ -138,6 +138,9 @@ public class GamePanel extends JPanel {
     }
 
     public void refreshBp(){
+        for(JButton b: gfxTest){
+            this.remove(b);
+        }
         int y = 0;
         int x = 0;
 
@@ -148,7 +151,9 @@ public class GamePanel extends JPanel {
             }  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ok itt a backpacket akarom kirajzolni nem megy vkinek hajrá fent a konstruktorban az
             System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
             try {
-                this.add(m.drawMaterial(x*90 + 70, y*75 + 30, this, m));
+                JButton b=m.drawMaterial(x*90 + 70, y*75 + 30, this, m);
+                gfxTest.add(b);
+                this.add(b);
             } catch (IOException e) {
                 e.printStackTrace();
             }
