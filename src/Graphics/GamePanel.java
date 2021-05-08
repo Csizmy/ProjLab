@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
-    private JButton tp,robot,dig,mine,move;    //gombok
+    private JButton tp,robot,dig,mine,move,zoomin, zoomout;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
@@ -30,6 +30,8 @@ public class GamePanel extends JPanel {
         p.loadMap("test.txt");  // pálya betöltése
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
+        zoomout = new JButton("");
+        zoomin = new JButton("");
         tp = new JButton("");
         robot = new JButton("");
         dig = new JButton("");
@@ -38,6 +40,14 @@ public class GamePanel extends JPanel {
 
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory191x386.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory210x63.png"));
+
+        zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png" ));
+        zoomout.setOpaque(false);
+        zoomout.setContentAreaFilled(false);
+
+        zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png" ));
+        zoomin.setOpaque(false);
+        zoomin.setContentAreaFilled(false);
 
         tp.setIcon(new ImageIcon("pictures\\tp200x53.png" ));
         tp.setOpaque(false);
@@ -67,6 +77,8 @@ public class GamePanel extends JPanel {
 
         this.setLayout(null);
 
+        zoomout.setBounds(770,20,54,54);
+        zoomin.setBounds(700,20,54,54);
         tp.setBounds(50,570,200,53);
         robot.setBounds(300,570,200,53);
         dig.setBounds(50,500,200,53);
@@ -75,6 +87,8 @@ public class GamePanel extends JPanel {
         resourceInventory.setBounds(50,20,191,386);
         tpInventory.setBounds(40,420,210,63);
 
+        zoomout.setFocusable(false);
+        zoomin.setFocusable(false);
         tp.setFocusable(false);
         robot.setFocusable(false);
         dig.setFocusable(false);
@@ -83,6 +97,8 @@ public class GamePanel extends JPanel {
         resourceInventory.setFocusable(false);
         tpInventory.setFocusable(false);
 
+        zoomout.addActionListener(click);
+        zoomin.addActionListener(click);
         tp.addActionListener(click);
         robot.addActionListener(click);
         dig.addActionListener(click);
@@ -155,6 +171,8 @@ public class GamePanel extends JPanel {
             this.add(jb);
         }
 
+        this.add(zoomout);
+        this.add(zoomin);
         this.add(tp);
         this.add(robot);
         this.add(dig);
@@ -234,6 +252,13 @@ public class GamePanel extends JPanel {
             }
             else if (e.getSource() == move){  //mozogni probál itt át kéne váltani a map nézetre
                 System.out.println("move");
+            }
+
+            else if (e.getSource() == zoomout){
+                System.out.println("zoomout");
+            }
+            else if (e.getSource() == zoomin){
+                System.out.println("zoomin");
             }
 
         }
