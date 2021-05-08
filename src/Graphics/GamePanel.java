@@ -2,6 +2,7 @@ package Graphics;
 
 import GObjects.*;
 import Game_parts.Game;
+import Materials.Material;
 import Miners.Settler;
 import Proto.Proto;
 
@@ -21,6 +22,7 @@ public class GamePanel extends JPanel {
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
+    private BufferedImage texture;
     private Proto p;            //A játék lépéseit valositja meg
     private Settler currentPlayer;  // A jelenlegi játékos
     private ArrayList<JButton> gfxTest = new ArrayList<>();
@@ -28,6 +30,7 @@ public class GamePanel extends JPanel {
     public GamePanel(OnPlayListener act) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
+        p.addToBackpack("Water",51);
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
         zoomout = new JButton("");
@@ -191,7 +194,11 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
+
+        //g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
+        backPackDraw(g);
+        invalidate();
+
     }
 
     public void exit() {
@@ -204,6 +211,29 @@ public class GamePanel extends JPanel {
 
     public void drawAll() {
         //TODO
+    }
+
+    public void backPackDraw(Graphics g){
+        int x = 0;
+        int y = 0;
+
+
+        for(Material m :currentPlayer.getBackpack()){
+            if(x==5){
+                y=1;
+            }
+            System.out.println("Beleptem"+m.getName());
+            g.drawImage( m.getGobject().getTexture(),x*70 + 20, y*70 + 20,this);
+
+            try {
+                texture=  ImageIO.read(new File("pictures\\uranium70x70.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            g.drawImage(texture, 400, 400,this);
+
+            x++;
+        }
     }
 
     public void nextPlayer(){

@@ -1,10 +1,12 @@
 package Materials;
 
+import GObjects.GObject;
 import Objects.Asteroid;
 
 public abstract class Material {
     protected String name;              // a nyersanyag neve
     protected Asteroid asteroid;        //tárolja melyik aszteroidán van a nyersanyag
+    protected GObject gObject;
 
     // getterek és setterek a megfelelő értékekhez
     public String getName(){
@@ -21,5 +23,8 @@ public abstract class Material {
 
     //Virtuális függvény, ami a víznél és az urániumnál fontos
     public void PeriMining(){
+    }
+    public GObject getGobject(){
+        return gObject;
     }
 }

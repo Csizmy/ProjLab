@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class GObject implements IDrawable {
 
-    private BufferedImage texture;
+    protected BufferedImage texture;
     private int x, y;
     protected ImageResizer imgRes;
     protected JButton object;
@@ -37,6 +37,10 @@ public class GObject implements IDrawable {
 
     public JButton getButton(){
         return object;
+    }
+
+    public BufferedImage getTexture(){
+        return texture;
     }
 
 }
