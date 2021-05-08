@@ -33,7 +33,7 @@ public class GamePanel extends JPanel {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
         currentPlayer = p.getMap().getSettlers().get(0);
-        Clicklistener click = new Clicklistener();
+        click = new Clicklistener();
         tp = new JButton("");
         robot = new JButton("");
         dig = new JButton("");

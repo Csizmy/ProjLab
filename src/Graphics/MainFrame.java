@@ -7,7 +7,6 @@ import java.io.IOException;
 
 interface OnPlayListener {
 
-    void ChangeToMenu() throws IOException;
     void ChangeToGame() throws IOException;
 }
 public class MainFrame extends JFrame implements OnPlayListener{
