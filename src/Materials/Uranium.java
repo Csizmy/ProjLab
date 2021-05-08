@@ -1,6 +1,10 @@
 package Materials;
 
+
+import GObjects.GUranium;
 import Objects.Asteroid;
+
+import java.io.IOException;
 
 public class Uranium extends Material{
     //3ig számol, majd 3nál felrobban napközelben.
@@ -11,6 +15,11 @@ public class Uranium extends Material{
         setName("Uranium");
         setAsteroid(a);
         charged = 0;
+        try {
+            gObject= new GUranium();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     //uranium explodes perihelion at the 3rd time

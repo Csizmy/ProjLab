@@ -2,6 +2,7 @@ package Graphics;
 
 import GObjects.*;
 import Game_parts.Game;
+import Materials.Material;
 import Miners.Settler;
 import Proto.Proto;
 
@@ -28,6 +29,8 @@ public class GamePanel extends JPanel {
     public GamePanel(OnPlayListener act) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
+        p.addToBackpack("Water",51);
+        p.addToBackpack("Iron",51);
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
         zoomout = new JButton("");
@@ -191,7 +194,25 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+
         g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
+
+        int x = 0;
+        int y = 0;
+
+
+        for(Material m :currentPlayer.getBackpack()){  ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if(x==5){   ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                y=1;  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            }  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ok itt a backpacket akarom kirajzolni nem megy vkinek hajrá fent a konstruktorban az
+            System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
+            m.rajzoljkocsog(g,x*70 + 200, y*70 + 200, this);
+
+            x++;
+            invalidate();
+        }
+
+
     }
 
     public void exit() {
@@ -204,6 +225,10 @@ public class GamePanel extends JPanel {
 
     public void drawAll() {
         //TODO
+    }
+
+    public void backPackDraw(Graphics g){
+
     }
 
     public void nextPlayer(){

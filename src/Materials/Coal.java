@@ -1,12 +1,20 @@
 package Materials;
 
+import GObjects.GCoal;
 import Objects.Asteroid;
+
+import java.io.IOException;
 
 public class Coal extends Material{
 
     //Coal constructor
-    public Coal(Asteroid a){
+    public Coal(Asteroid a)  {
         setName("Coal");
         setAsteroid(a);
+        try {
+            gObject= new GCoal();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
