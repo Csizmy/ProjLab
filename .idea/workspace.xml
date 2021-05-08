@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="beraktamvmit">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="csizmy dolgait feltöltöm xd2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GCoal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GCoal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GIron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GIron.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUranium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GWater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GWater.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/resourceinventory191x386.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/resourceinventory191x386.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/tpinventory210x63.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/tpinventory210x63.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4958,20 +4971,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00005" summary="vannak materialok + solarstorm">
-      <created>1616330324164</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1616330324164</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Kis hibák javítva">
-      <created>1616343128590</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1616343128590</updated>
-    </task>
     <task id="LOCAL-00007" summary="Kis hibák javítva">
       <created>1616343289613</created>
       <option name="number" value="00007" />
@@ -5301,7 +5300,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620484551898</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="csizmy dolgait feltöltöm xd">
+      <created>1620485150063</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1620485150063</updated>
+    </task>
+    <task id="LOCAL-00055" summary="csizmy dolgait feltöltöm xd2.0">
+      <created>1620488186671</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1620488186671</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5357,8 +5370,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bence stipi" />
-    <MESSAGE value="Panku addToBackpack" />
     <MESSAGE value="Panku addToBackpack javítva" />
     <MESSAGE value="csizmy dolgai feltoltve" />
     <MESSAGE value="csizmy dolgai feltoltve+ javitgatva 1-2 dolog amit irtam-axel" />
@@ -5382,7 +5393,9 @@
     <MESSAGE value="átirtam mindent is soz evvan" />
     <MESSAGE value="panka képét beraktam" />
     <MESSAGE value="beraktamvmit" />
-    <option name="LAST_COMMIT_MESSAGE" value="beraktamvmit" />
+    <MESSAGE value="csizmy dolgait feltöltöm xd" />
+    <MESSAGE value="csizmy dolgait feltöltöm xd2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="csizmy dolgait feltöltöm xd2.0" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">

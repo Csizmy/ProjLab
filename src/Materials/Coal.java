@@ -11,10 +11,5 @@ public class Coal extends Material{
     public Coal(Asteroid a)  {
         setName("Coal");
         setAsteroid(a);
-        try {
-            gObject= new GCoal();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

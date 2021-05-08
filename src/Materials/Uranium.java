@@ -15,11 +15,6 @@ public class Uranium extends Material{
         setName("Uranium");
         setAsteroid(a);
         charged = 0;
-        try {
-            gObject= new GUranium();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     //uranium explodes perihelion at the 3rd time
