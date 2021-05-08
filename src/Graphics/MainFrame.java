@@ -1,18 +1,21 @@
 package Graphics;
 
 
+import Proto.Proto;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
 interface OnPlayListener {
 
-    void ChangeToGame() throws IOException;
+    void ChangeToGame(int i) throws IOException;
 }
 public class MainFrame extends JFrame implements OnPlayListener{
     private Menu menu;
     private GamePanel gamePanel;            //or game ?
-    private Menu map;
+    private MapView map;
+    private Proto p;
 
 
     public MainFrame() {
@@ -23,17 +26,16 @@ public class MainFrame extends JFrame implements OnPlayListener{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        p = new Proto();
+        p.loadMap("test.txt");  // pálya betöltése
     }
 
 
 
 
     @Override
-    public void ChangeToGame() throws IOException { changePanel(1); }
+    public void ChangeToGame(int x) throws IOException { changePanel(x); }
 
-    public void ChangeToMenu() throws IOException {
-        changePanel(2);
-    }
 
     public void runGame() {
         //TODO
@@ -42,9 +44,12 @@ public class MainFrame extends JFrame implements OnPlayListener{
     public void changePanel(int x) throws IOException {
         this.getContentPane().removeAll();
         if(x==1){
-            this.getContentPane().add(new GamePanel(this));
+            this.getContentPane().add(new GamePanel(this,p));
         }
-        else{
+        else if(x==2){
+            this.getContentPane().add(new MapView(this,p));
+        }
+        else if(x==3){
             this.getContentPane().add(new Menu(this));
         }
         this.revalidate();

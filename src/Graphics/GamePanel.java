@@ -27,7 +27,8 @@ public class GamePanel extends JPanel {
     private BufferedImage image;    //háttér
     private Proto p;            //A játék lépéseit valositja meg
     private ArrayList<JButton> Things = new ArrayList<>();
-    private ArrayList<JButton> gfxTest = new ArrayList<>();
+    private ArrayList<JButton> inventory = new ArrayList<>();
+    private OnPlayListener toMapView;
 
     public void InitButton(JButton btn) {
         btn.setOpaque(false);
@@ -37,9 +38,10 @@ public class GamePanel extends JPanel {
         btn.setFocusable(false);
     }
 
-    public GamePanel(OnPlayListener act) throws IOException {
-        p = new Proto();
-        p.loadMap("test.txt");  // pálya betöltése
+    public GamePanel(OnPlayListener act,Proto val) throws IOException {
+        p=val;
+        toMapView=act;
+
         p.addToBackpack("Water", 51);
         p.addToBackpack("Water", 51);
         p.addToBackpack("Iron", 51);
@@ -201,7 +203,7 @@ public class GamePanel extends JPanel {
     }
 
     public void refreshBp() {  //A hátitáskát refresheli a képernyőn, hogy a jelenlegi játékost lássuk mindig :3
-        for (JButton b : gfxTest) {
+        for (JButton b : inventory) {
             this.remove(b);
         }
         int y = 0;
@@ -215,7 +217,7 @@ public class GamePanel extends JPanel {
             // 51-es idhez adtam sok anyagot  a gamepanel konstruktorban
             try {
                 JButton b = m.drawMaterial(x * 90 + 70, y * 75 + 30, this, m);
-                gfxTest.add(b);
+                inventory.add(b);
                 this.add(b);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -284,6 +286,11 @@ public class GamePanel extends JPanel {
                 System.out.println("move");
             } else if (e.getSource() == zoomout) {
                 System.out.println("zoomout");
+                try {
+                    toMapView.ChangeToGame(2);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             } else if (e.getSource() == zoomin) {
                 System.out.println("zoomin");
             } else if (e.getSource() == skip) {

@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="kész az inventory mats">
-      <change afterPath="$PROJECT_DIR$/src/Graphics/BadMovement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Graphics/MapPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_39__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_39__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_42__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_42__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_51__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_51__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_59__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_21__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_21__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_52__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_52__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_45__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_59__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__17_00__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__17_00__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_02__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_02__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_10__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_10__Default_.xml" afterDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="kész a popup, átirtam a protoba acurrentplayert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView$Clicklistener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu$Clicklistener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/OnPlayListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/OnPlayListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/MapPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4977,20 +4968,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00007" summary="Kis hibák javítva">
-      <created>1616343289613</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1616343289613</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Kis hibák javítva">
-      <created>1616343362327</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1616343362327</updated>
-    </task>
     <task id="LOCAL-00009" summary="Kis hibák javítva">
       <created>1616343387767</created>
       <option name="number" value="00009" />
@@ -5320,7 +5297,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620488186671</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="kész a popup, átirtam a protoba acurrentplayert">
+      <created>1620511005375</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1620511005375</updated>
+    </task>
+    <task id="LOCAL-00057" summary="kész a popup, átirtam a protoba acurrentplayert">
+      <created>1620511016060</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1620511016060</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5376,7 +5367,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Panku addToBackpack javítva" />
     <MESSAGE value="csizmy dolgai feltoltve" />
     <MESSAGE value="csizmy dolgai feltoltve+ javitgatva 1-2 dolog amit irtam-axel" />
     <MESSAGE value="a loadmap tobb infot ir ki" />
@@ -5401,7 +5391,8 @@
     <MESSAGE value="beraktamvmit" />
     <MESSAGE value="csizmy dolgait feltöltöm xd" />
     <MESSAGE value="csizmy dolgait feltöltöm xd2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="csizmy dolgait feltöltöm xd2.0" />
+    <MESSAGE value="kész a popup, átirtam a protoba acurrentplayert" />
+    <option name="LAST_COMMIT_MESSAGE" value="kész a popup, átirtam a protoba acurrentplayert" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">

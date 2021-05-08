@@ -20,6 +20,7 @@ public class MapView extends JPanel {
     private BufferedImage image;                //háttér
     private Proto p;                            //A játék lépéseit valositja meg
     private Settler currentPlayer;              // A jelenlegi játékos
+    private OnPlayListener backToGameView;
 
     // A szomszédos aszteroidák/teleportok gombjai, amire kattintva oda mozog a telepes.
     private ArrayList<JButton> Neighbours = new ArrayList<>();
@@ -33,9 +34,11 @@ public class MapView extends JPanel {
         btn.setFocusable(false);
     }
 
-    public MapView(Proto val) {
+    public MapView(OnPlayListener act,Proto val) {
         p = val;
+        backToGameView=act;
 
+        click = new Clicklistener();
         back = new JButton("");             //hogy legyen???
         zoomin = new JButton("");
         zoomout = new JButton("");
@@ -81,14 +84,8 @@ public class MapView extends JPanel {
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
 
         public void actionPerformed(ActionEvent e){
-            if (e.getSource() == back){   //teleportot probál épiteni
-                System.out.println("tp");
-                if(true){
 
-                }
-            }
-
-            else if (e.getSource() == back){  //mozogni probál itt át kéne váltani a map nézetre
+            if (e.getSource() == back){  //mozogni probál itt át kéne váltani a map nézetre
                 System.out.println("move");
             }
 
@@ -98,6 +95,11 @@ public class MapView extends JPanel {
 
             else if (e.getSource() == zoomin){
                 System.out.println("zoomin");
+                try {
+                    backToGameView.ChangeToGame(1);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
 
 
