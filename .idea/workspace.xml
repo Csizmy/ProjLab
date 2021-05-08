@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="elvileg összekötöttem">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="idk ezmi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -5282,7 +5278,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620416184038</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fixálva az ablak mérete">
+      <created>1620472808235</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1620472808235</updated>
+    </task>
+    <task id="LOCAL-00048" summary="idk ezmi">
+      <created>1620472846742</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1620472846742</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5338,8 +5348,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="thx csizmy" />
-    <MESSAGE value="kéééész" />
     <MESSAGE value="Kommentek zsa ^^" />
     <MESSAGE value="Készkészkész!!!!!" />
     <MESSAGE value="7.0 and 7.0.2 implementálva" />
@@ -5363,7 +5371,9 @@
     <MESSAGE value="kitöröltem 1 aproságot" />
     <MESSAGE value="update" />
     <MESSAGE value="Gombok grafika kész xddddd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gombok grafika kész xddddd" />
+    <MESSAGE value="fixálva az ablak mérete" />
+    <MESSAGE value="idk ezmi" />
+    <option name="LAST_COMMIT_MESSAGE" value="idk ezmi" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">

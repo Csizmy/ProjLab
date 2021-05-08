@@ -9,15 +9,15 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Menu extends JPanel { //axelfoglaltahihi
-    private JButton play,help,exit,back;
-    private Clicklistener click;
-    private BufferedImage image;
-    private OnPlayListener playListener;
+public class Menu extends JPanel {  //Menu osztálya
+    private JButton play,help,exit,back;  //gombok
+    private Clicklistener click;    //gomb figyelo
+    private BufferedImage image;    // háttér
+    private OnPlayListener playListener;  // azért kell hogy a mainframeben váltson a gamepanelre
 
     public Menu(OnPlayListener act){
         playListener=act;
-        Clicklistener click= new Clicklistener();
+        click= new Clicklistener();
         play= new JButton("");
         help= new JButton("");
         exit= new JButton("");
@@ -68,17 +68,17 @@ public class Menu extends JPanel { //axelfoglaltahihi
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
 
         public void actionPerformed(ActionEvent e){
-            if (e.getSource() == play){
+            if (e.getSource() == play){  //ha a playre kattintanak elindul a játék
                 try {
                     playListener.ChangeToGame();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             }
-            else if (e.getSource() == help){
+            else if (e.getSource() == help){ //ha a helpre kattintanak akkor kiir pár dolgot a játékrol
                 System.out.println("help");
             }
-            else if (e.getSource() == exit){
+            else if (e.getSource() == exit){ //ha az exitre kattintanak akkor bezárul az ablak
                 System.out.println("exit");
                 //close the window
                 System.exit(0);
