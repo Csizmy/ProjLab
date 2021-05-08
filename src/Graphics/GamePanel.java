@@ -26,7 +26,7 @@ public class GamePanel extends JPanel {
     private Settler currentPlayer;  // A jelenlegi játékos
     private ArrayList<JButton> gfxTest = new ArrayList<>();
 
-    public GamePanel(OnPlayListener act) throws IOException {
+    public GamePanel(OnPlayListener act ) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
         p.addToBackpack("Water",51);
