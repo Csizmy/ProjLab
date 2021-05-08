@@ -11,10 +11,5 @@ public class Iron extends Material{
     public Iron(Asteroid a){
         setName("Iron");
         setAsteroid(a);
-        try {
-            gObject= new GIron();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

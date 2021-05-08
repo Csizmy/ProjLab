@@ -1,10 +1,12 @@
 package Materials;
 
-import GObjects.GObject;
+import GObjects.*;
 import Objects.Asteroid;
 import Graphics.GamePanel;
 
+import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public abstract class Material {
     protected String name;              // a nyersanyag neve
@@ -31,7 +33,32 @@ public abstract class Material {
         return gObject;
     }
 
-    public void rajzoljkocsog(Graphics g, int x, int y, GamePanel panel) {
-        gObject.rajzolok(g,x,y,panel);
+    public JButton drawMaterial(int x, int y, GamePanel panel, Material mat) throws IOException {
+
+        JButton toDraw = new JButton();
+
+        switch(mat.getName()){
+            case("Iron"):{
+                GIron iron = new GIron(x, y);
+                toDraw = iron.getButton();
+            }break;
+
+            case("Uranium"):{
+                GUranium uranium = new GUranium(x, y);
+                toDraw = uranium.getButton();
+            }break;
+
+            case("Water"):{
+                GWater water = new GWater(x, y);
+                toDraw = water.getButton();
+            }break;
+
+            case("Coal"):{
+                GCoal coal = new GCoal(x, y);
+                toDraw = coal.getButton();
+            }break;
+        }
+
+        return toDraw;
     }
 }
