@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="axel munka yes">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="icipici változtatás">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -5286,7 +5287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620471005661</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="icipici változtatás">
+      <created>1620471265459</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1620471265459</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5342,7 +5350,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="kéééész" />
     <MESSAGE value="Kommentek zsa ^^" />
     <MESSAGE value="Készkészkész!!!!!" />
     <MESSAGE value="7.0 and 7.0.2 implementálva" />
@@ -5367,7 +5374,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="Gombok grafika kész xddddd" />
     <MESSAGE value="axel munka yes" />
-    <option name="LAST_COMMIT_MESSAGE" value="axel munka yes" />
+    <MESSAGE value="icipici változtatás" />
+    <option name="LAST_COMMIT_MESSAGE" value="icipici változtatás" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">
