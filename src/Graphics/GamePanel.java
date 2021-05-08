@@ -24,7 +24,7 @@ public class GamePanel extends JPanel {
     private JLabel a_teli_kozel, a_teli_tavol, a_ures_kozel, a_ures_tavol;    //Aszteroida fajták
     private JLabel water, coal, iron, uranium;    //Aszteroidák anyagai, ha azok ki vannak fúrva
     private Clicklistener click;  // A gombokat kezeli
-    private BufferedImage image;    //háttér
+    private BufferedImage image,robotImage,settlerImage,ufoImage;    //háttér
     private Proto p;            //A játék lépéseit valositja meg
     private ArrayList<JButton> Things = new ArrayList<>();
     private ArrayList<JButton> inventory = new ArrayList<>();
@@ -144,6 +144,9 @@ public class GamePanel extends JPanel {
 
         try {
             image = ImageIO.read(new File("pictures\\background.png"));
+            settlerImage = ImageIO.read(new File("pictures\\settler45x75.png"));
+            ufoImage = ImageIO.read(new File("pictures\\ufo139x75.png"));
+            robotImage = ImageIO.read(new File("pictures\\robot112x75.png"));
         } catch (IOException ex) {
 
         }
@@ -154,6 +157,15 @@ public class GamePanel extends JPanel {
         super.paintComponent(g);
 
         g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
+        g.drawImage(settlerImage, 710, 150, this);
+        g.drawImage(ufoImage, 650, 230, this);
+        g.drawImage(robotImage, 660, 310, this);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 60));
+        g.setColor(Color.BLUE);
+        g.drawString(String.valueOf(p.getPlayerCount()) , 790, 210);
+        g.drawString(String.valueOf(p.getUfoCount()) , 790, 290);
+        g.drawString(String.valueOf(p.getRobotCount()) , 790, 370);
+        g.drawString(String.valueOf(p.getCurrent().getId()) , 450, 160);
 
         a_teli_kozel.setVisible(false);
         a_teli_tavol.setVisible(false);

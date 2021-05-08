@@ -518,4 +518,38 @@ public class Proto {
     public void setCurrent(Settler s) {
         currentPlayer=s;
     }
+
+    public int getPlayerCount(){  //visszaadja a current player aszteroidáján tartozkodo játékos számot
+        int count = 0;
+        for(Settler s: map.getSettlers()) {
+            if (s.getAsteroid()==currentPlayer.getAsteroid()){
+                count++;
+            }
+
+        }
+        return count;
+    }
+
+    public int getRobotCount(){  //visszaadja a current player aszteroidáján tartozkodo robot számot
+        int count = 0;
+        for(Robot r: map.getRobots()) {
+            if (r.getAsteroid()==currentPlayer.getAsteroid()){
+                count++;
+            }
+
+        }
+        return count;
+    }
+
+    public int getUfoCount(){  //visszaadja a current player aszteroidáján tartozkodo ufo számot
+        int count = 0;
+        for(Ufo u: map.getUfos()) {
+            if (u.getAsteroid()==currentPlayer.getAsteroid()){
+                count++;
+            }
+
+        }
+        return count;
+    }
+
 }

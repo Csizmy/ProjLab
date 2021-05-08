@@ -210,4 +210,8 @@ public class Asteroid extends Spacething implements Steppable {
         }
         return true;
     }
+
+    public int getPlayerCount(){
+        return miners.size();
+    }
 }
