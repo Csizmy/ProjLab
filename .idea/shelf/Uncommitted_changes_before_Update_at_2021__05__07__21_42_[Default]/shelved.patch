@@ -1,0 +1,1623 @@
+Index: src/Graphics/MainFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Graphics;\r\n\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.io.IOException;\r\n\r\ninterface OnPlayListener {\r\n\r\n    void ChangeToMenu() throws IOException;\r\n    void ChangeToGame() throws IOException;\r\n}\r\npublic class MainFrame extends JFrame implements OnPlayListener{\r\n    private Menu menu;\r\n    private GamePanel gamePanel;            //or game ?\r\n\r\n\r\n    public MainFrame() {\r\n        this.add(new Menu(this));\r\n        this.setTitle(\"Asteroid Game\");\r\n        this.setSize(new Dimension(1216,939));//kristof thing:igy lett 1200x900 a benne levo megjelenitett cucc mert ez beleszamolja a szurke savokat\r\n        this.setVisible(true);\r\n        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        this.setResizable(false);\r\n        this.setLocationRelativeTo(null);\r\n    }\r\n\r\n\r\n\r\n\r\n    @Override\r\n    public void ChangeToGame() throws IOException { changePanel(1); }\r\n\r\n    public void ChangeToMenu() throws IOException {\r\n        changePanel(2);\r\n    }\r\n\r\n    public void runGame() {\r\n        //TODO\r\n    }\r\n\r\n    public void changePanel(int x) throws IOException {\r\n        this.getContentPane().removeAll();\r\n        if(x==1){\r\n            this.getContentPane().add(new GamePanel(this));\r\n        }\r\n        else{\r\n            this.getContentPane().add(new Menu(this));\r\n        }\r\n        this.revalidate();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Graphics/MainFrame.java b/src/Graphics/MainFrame.java
+--- a/src/Graphics/MainFrame.java	(revision 0d74be979675b728963efa84019d9b7adf2b1e94)
++++ b/src/Graphics/MainFrame.java	(date 1620416399817)
+@@ -49,5 +49,4 @@
+         }
+         this.revalidate();
+     }
+-
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BookmarkManager\">\r\n    <bookmark url=\"file://$PROJECT_DIR$/src/GObjects/GRobot.java\" line=\"11\" />\r\n    <bookmark url=\"file://$PROJECT_DIR$/src/GObjects/GRobot.java\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"703bf8a6-3cfe-4d07-aea6-c46f48fd5021\" name=\"Default\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/Game_parts/ClickListener.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/ImageResizer.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/ImageResizer.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu$Clicklistener.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu$Clicklistener.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/OnPlayListener.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/Graphics/OnPlayListener.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/exit másolata.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/exit3.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/help másolata.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/help3.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/play2.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/play3.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/proba.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/proba1200x900.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/settler.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pictures/settler.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/tp.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pictures/tp.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pictures/ufo.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pictures/ufo.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GAsteroid.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GAsteroid.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GCoal.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GCoal.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GIron.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GIron.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GObject.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GObject.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GRobot.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GRobot.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GSettler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GSettler.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GTeleport.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GTeleport.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GUfo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GUfo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GUranium.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GUranium.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GObjects/GWater.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GObjects/GWater.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Graphics/GamePanel.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Graphics/GamePanel.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Graphics/ImageResizer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Graphics/ImageResizer.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Graphics/MainFrame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Graphics/MainFrame.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Graphics/Menu.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Graphics/Menu.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"TRACKING_ENABLED\" value=\"true\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DatabaseView\">\r\n    <option name=\"SHOW_INTERMEDIATE\" value=\"true\" />\r\n    <option name=\"GROUP_DATA_SOURCES\" value=\"true\" />\r\n    <option name=\"GROUP_SCHEMA\" value=\"true\" />\r\n    <option name=\"GROUP_CONTENTS\" value=\"false\" />\r\n    <option name=\"SORT_POSITIONED\" value=\"false\" />\r\n    <option name=\"SHOW_EMPTY_GROUPS\" value=\"false\" />\r\n    <option name=\"AUTO_SCROLL_FROM_SOURCE\" value=\"false\" />\r\n    <option name=\"HIDDEN_KINDS\">\r\n      <set />\r\n    </option>\r\n    <expand />\r\n    <select />\r\n  </component>\r\n  <component name=\"FileEditorManager\">\r\n    <leaf>\r\n      <file leaf-file-name=\"GSettler.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GSettler.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"85\">\r\n              <caret line=\"5\" column=\"30\" selection-start-line=\"5\" selection-start-column=\"30\" selection-end-line=\"5\" selection-end-column=\"30\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GUfo.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GUfo.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"85\">\r\n              <caret line=\"5\" column=\"4\" selection-start-line=\"5\" selection-start-column=\"4\" selection-end-line=\"13\" selection-end-column=\"5\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GTeleport.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GTeleport.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"85\">\r\n              <caret line=\"5\" column=\"30\" selection-start-line=\"5\" selection-start-column=\"30\" selection-end-line=\"5\" selection-end-column=\"30\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GCoal.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GCoal.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"204\">\r\n              <caret line=\"12\" column=\"34\" selection-start-line=\"12\" selection-start-column=\"34\" selection-end-line=\"12\" selection-end-column=\"34\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GamePanel.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/Graphics/GamePanel.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"32\">\r\n              <caret line=\"121\" column=\"52\" lean-forward=\"true\" selection-start-line=\"120\" selection-start-column=\"26\" selection-end-line=\"121\" selection-end-column=\"52\" />\r\n              <folding>\r\n                <element signature=\"imports\" expanded=\"true\" />\r\n              </folding>\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GUranium.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GUranium.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"221\">\r\n              <caret line=\"13\" column=\"5\" lean-forward=\"true\" selection-start-line=\"13\" selection-start-column=\"5\" selection-end-line=\"13\" selection-end-column=\"5\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GWater.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GWater.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"153\">\r\n              <caret line=\"9\" column=\"5\" lean-forward=\"true\" selection-start-line=\"9\" selection-start-column=\"5\" selection-end-line=\"9\" selection-end-column=\"5\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GIron.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GIron.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"204\">\r\n              <caret line=\"12\" column=\"33\" selection-start-line=\"12\" selection-start-column=\"33\" selection-end-line=\"12\" selection-end-column=\"33\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GObject.java\" pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GObject.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"435\">\r\n              <caret line=\"32\" column=\"43\" lean-forward=\"true\" selection-start-line=\"32\" selection-start-column=\"43\" selection-end-line=\"32\" selection-end-column=\"43\" />\r\n              <folding>\r\n                <element signature=\"imports\" expanded=\"true\" />\r\n              </folding>\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file leaf-file-name=\"GRobot.java\" pinned=\"false\" current-in-tab=\"true\">\r\n        <entry file=\"file://$PROJECT_DIR$/src/GObjects/GRobot.java\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"136\">\r\n              <caret line=\"8\" column=\"34\" selection-start-line=\"8\" selection-start-column=\"34\" selection-end-line=\"8\" selection-end-column=\"34\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n    </leaf>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FindInProjectRecents\">\r\n    <findStrings>\r\n      <find>GUFo</find>\r\n    </findStrings>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/Proto/Proto.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"IdeDocumentHistory\">\r\n    <option name=\"CHANGED_PATHS\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/src/demo.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/main.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Materials/Material.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Materials/Iron.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Materials/Coal.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Materials/Water.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Materials/Uranium.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Miners/Miner.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Game_parts/Steppable.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Miners/Robot.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Objects/Teleport.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Objects/Spacething.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Objects/Asteroid.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Miners/Settler.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Game_parts/Game.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Game_parts/Map.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Game_parts/ClickListener.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Graphics/MainFrame.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Graphics/Menu.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GObject.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Graphics/ImageResizer.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GUfo.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GTeleport.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GSettler.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GAsteroid.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GWater.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GCoal.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GIron.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GUranium.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/Graphics/GamePanel.java\" />\r\n        <option value=\"$PROJECT_DIR$/src/GObjects/GRobot.java\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"JsBuildToolGruntFileManager\" detection-done=\"true\" sorting=\"DEFINITION_ORDER\" />\r\n  <component name=\"JsBuildToolPackageJson\" detection-done=\"true\" sorting=\"DEFINITION_ORDER\" />\r\n  <component name=\"JsGulpfileManager\">\r\n    <detection-done>true</detection-done>\r\n    <sorting>DEFINITION_ORDER</sorting>\r\n  </component>\r\n  <component name=\"NodePackageJsonFileManager\">\r\n    <packageJsonPaths />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <hideBySeverity>\r\n      <option value=\"15\" />\r\n    </hideBySeverity>\r\n  </component>\r\n  <component name=\"ProjectFrameBounds\" extendedState=\"6\">\r\n    <option name=\"x\" value=\"-8\" />\r\n    <option name=\"y\" value=\"-8\" />\r\n    <option name=\"width\" value=\"1936\" />\r\n    <option name=\"height\" value=\"1056\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1q1rU1tsMwDyw5zIAM9YV8yCutE\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectView\">\r\n    <navigator proportions=\"\" version=\"1\">\r\n      <foldersAlwaysOnTop value=\"true\" />\r\n    </navigator>\r\n    <panes>\r\n      <pane id=\"PackagesPane\" />\r\n      <pane id=\"AndroidView\" />\r\n      <pane id=\"Scope\" />\r\n      <pane id=\"ProjectPane\">\r\n        <subPane>\r\n          <expand>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"pictures\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"Game_parts\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"GObjects\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"Graphics\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"Materials\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"Miners\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"Objects\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"Proto\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"pl2\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"pl2\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"Tests\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n          </expand>\r\n          <select />\r\n        </subPane>\r\n      </pane>\r\n    </panes>\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\r\n    <property name=\"create.test.in.the.same.root\" value=\"true\" />\r\n    <property name=\"nodejs_interpreter_path.stuck_in_default_project\" value=\"undefined stuck path\" />\r\n    <property name=\"nodejs_npm_path_reset_for_default_project\" value=\"true\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"settings.github\" />\r\n  </component>\r\n  <component name=\"RestoreUpdateTree\" date=\"Moments ago\" ActionInfo=\"_Update\">\r\n    <UpdatedFiles>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Updated from server\" />\r\n        <option name=\"myStatusName\" value=\"Changed on server\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"CHANGED_ON_SERVER\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Updated\" />\r\n          <option name=\"myStatusName\" value=\"Changed\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"UPDATED\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Created\" />\r\n          <option name=\"myStatusName\" value=\"Created\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"CREATED\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Deleted\" />\r\n          <option name=\"myStatusName\" value=\"Deleted\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"true\" />\r\n          <option name=\"myId\" value=\"REMOVED_FROM_REPOSITORY\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Restored\" />\r\n          <option name=\"myStatusName\" value=\"Will be restored\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"RESTORED\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Modified\" />\r\n        <option name=\"myStatusName\" value=\"Modified\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MODIFIED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Skipped\" />\r\n        <option name=\"myStatusName\" value=\"Skipped\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"SKIPPED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged with conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_CONFLICTS\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with tree conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Merged with tree conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_TREE_CONFLICT\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with property conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged with property conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_PROPERTY_CONFLICT\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Not in repository\" />\r\n        <option name=\"myStatusName\" value=\"Not in repository\" />\r\n        <option name=\"mySupportsDeletion\" value=\"true\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"UNKNOWN\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Locally added\" />\r\n        <option name=\"myStatusName\" value=\"Locally added\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"LOCALLY_ADDED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Locally removed\" />\r\n        <option name=\"myStatusName\" value=\"Locally removed\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"LOCALLY_REMOVED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Switched\" />\r\n        <option name=\"myStatusName\" value=\"Switched\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"SWITCHED\" />\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Updated from server\" />\r\n        <option name=\"myStatusName\" value=\"Changed on server\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"CHANGED_ON_SERVER\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Updated\" />\r\n          <option name=\"myStatusName\" value=\"Changed\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"UPDATED\" />\r\n          <PATH vcs=\"Git\" revision=\"\">$PROJECT_DIR$/.idea/workspace.xml</PATH>\r\n          <PATH vcs=\"Git\" revision=\"\">$PROJECT_DIR$/src/Game_parts/Map.java</PATH>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Created\" />\r\n          <option name=\"myStatusName\" value=\"Created\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"CREATED\" />\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Deleted\" />\r\n          <option name=\"myStatusName\" value=\"Deleted\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"true\" />\r\n          <option name=\"myId\" value=\"REMOVED_FROM_REPOSITORY\" />\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" value=\"Restored\" />\r\n          <option name=\"myStatusName\" value=\"Will be restored\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" value=\"RESTORED\" />\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n          <FILE-GROUP>\r\n            <option name=\"myUpdateName\" />\r\n            <option name=\"myStatusName\" />\r\n            <option name=\"mySupportsDeletion\" value=\"false\" />\r\n            <option name=\"myCanBeAbsent\" value=\"false\" />\r\n            <option name=\"myId\" />\r\n          </FILE-GROUP>\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Modified\" />\r\n        <option name=\"myStatusName\" value=\"Modified\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MODIFIED\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Skipped\" />\r\n        <option name=\"myStatusName\" value=\"Skipped\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"SKIPPED\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged with conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_CONFLICTS\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with tree conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Merged with tree conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_TREE_CONFLICT\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged with property conflicts\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged with property conflicts\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED_WITH_PROPERTY_CONFLICT\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Merged\" />\r\n        <option name=\"myStatusName\" value=\"Will be merged\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"MERGED\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Not in repository\" />\r\n        <option name=\"myStatusName\" value=\"Not in repository\" />\r\n        <option name=\"mySupportsDeletion\" value=\"true\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"UNKNOWN\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Locally added\" />\r\n        <option name=\"myStatusName\" value=\"Locally added\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"LOCALLY_ADDED\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Locally removed\" />\r\n        <option name=\"myStatusName\" value=\"Locally removed\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"LOCALLY_REMOVED\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n      <FILE-GROUP>\r\n        <option name=\"myUpdateName\" value=\"Switched\" />\r\n        <option name=\"myStatusName\" value=\"Switched\" />\r\n        <option name=\"mySupportsDeletion\" value=\"false\" />\r\n        <option name=\"myCanBeAbsent\" value=\"false\" />\r\n        <option name=\"myId\" value=\"SWITCHED\" />\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n        <FILE-GROUP>\r\n          <option name=\"myUpdateName\" />\r\n          <option name=\"myStatusName\" />\r\n          <option name=\"mySupportsDeletion\" value=\"false\" />\r\n          <option name=\"myCanBeAbsent\" value=\"false\" />\r\n          <option name=\"myId\" />\r\n        </FILE-GROUP>\r\n      </FILE-GROUP>\r\n    </UpdatedFiles>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"ruleStates\">\r\n      <list>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"ConfigurationTypeDashboardGroupingRule\" />\r\n        </RuleState>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"StatusDashboardGroupingRule\" />\r\n        </RuleState>\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Game\">\r\n    <configuration name=\"Game\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Game_parts.Game\" />\r\n      <module name=\"ProjLab\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Game_parts.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <method>\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"main\" />\r\n      <module name=\"ProjLab\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"ArquillianJUnit\" factoryName=\"\" nameIsGenerated=\"true\">\r\n      <option name=\"arquillianRunConfiguration\">\r\n        <value>\r\n          <option name=\"containerStateName\" value=\"\" />\r\n        </value>\r\n      </option>\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"false\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" />\r\n      <option name=\"PACKAGE_NAME\" />\r\n      <option name=\"MAIN_CLASS_NAME\" />\r\n      <option name=\"METHOD_NAME\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <option name=\"VM_PARAMETERS\" />\r\n      <option name=\"PARAMETERS\" />\r\n      <option name=\"WORKING_DIRECTORY\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"singleModule\" />\r\n      </option>\r\n      <patterns />\r\n      <method>\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"ArquillianTestNG\" factoryName=\"\" nameIsGenerated=\"true\">\r\n      <option name=\"arquillianRunConfiguration\">\r\n        <value>\r\n          <option name=\"containerStateName\" value=\"\" />\r\n        </value>\r\n      </option>\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"false\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" />\r\n      <option name=\"SUITE_NAME\" />\r\n      <option name=\"PACKAGE_NAME\" />\r\n      <option name=\"MAIN_CLASS_NAME\" />\r\n      <option name=\"METHOD_NAME\" />\r\n      <option name=\"GROUP_NAME\" />\r\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\r\n      <option name=\"VM_PARAMETERS\" />\r\n      <option name=\"PARAMETERS\" />\r\n      <option name=\"WORKING_DIRECTORY\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"singleModule\" />\r\n      </option>\r\n      <option name=\"USE_DEFAULT_REPORTERS\" value=\"false\" />\r\n      <option name=\"PROPERTIES_FILE\" />\r\n      <properties />\r\n      <listeners />\r\n      <method>\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JUnit\" factoryName=\"JUnit\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"false\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" />\r\n      <option name=\"PACKAGE_NAME\" />\r\n      <option name=\"MAIN_CLASS_NAME\" />\r\n      <option name=\"METHOD_NAME\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <option name=\"VM_PARAMETERS\" />\r\n      <option name=\"PARAMETERS\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"%MODULE_WORKING_DIR%\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"singleModule\" />\r\n      </option>\r\n      <patterns />\r\n      <method>\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"TestNG\" factoryName=\"TestNG\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"false\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" />\r\n      <option name=\"SUITE_NAME\" />\r\n      <option name=\"PACKAGE_NAME\" />\r\n      <option name=\"MAIN_CLASS_NAME\" />\r\n      <option name=\"METHOD_NAME\" />\r\n      <option name=\"GROUP_NAME\" />\r\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\r\n      <option name=\"VM_PARAMETERS\" />\r\n      <option name=\"PARAMETERS\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"%MODULE_WORKING_DIR%\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"singleModule\" />\r\n      </option>\r\n      <option name=\"USE_DEFAULT_REPORTERS\" value=\"false\" />\r\n      <option name=\"PROPERTIES_FILE\" />\r\n      <properties />\r\n      <listeners />\r\n      <method>\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.main\" />\r\n      <item itemvalue=\"Application.Game\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Game\" />\r\n        <item itemvalue=\"Application.main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"project-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"703bf8a6-3cfe-4d07-aea6-c46f48fd5021\" name=\"Default\" comment=\"\" />\r\n      <created>1615501780181</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1615501780181</updated>\r\n      <workItem from=\"1615501787034\" duration=\"156000\" />\r\n      <workItem from=\"1615532041060\" duration=\"310000\" />\r\n      <workItem from=\"1616181877716\" duration=\"240000\" />\r\n      <workItem from=\"1616345058520\" duration=\"7574000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Base\">\r\n      <created>1615501919495</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1615501919495</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Base\">\r\n      <created>1615532120951</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1615532120951</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Base\">\r\n      <created>1615532249477</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1615532249477</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Merge branch 'master' of https://github.com/Csizmy/ProjLab&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\">\r\n      <created>1616171099477</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616171099477</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"vannak materialok + solarstorm\">\r\n      <created>1616330324164</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616330324164</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Kis hibák javítva\">\r\n      <created>1616343128590</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616343128590</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Kis hibák javítva\">\r\n      <created>1616343289613</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616343289613</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Kis hibák javítva\">\r\n      <created>1616343362327</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616343362327</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Kis hibák javítva\">\r\n      <created>1616343387767</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616343387767</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Így jóóó hahaha\">\r\n      <created>1616343938073</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616343938073</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Így jóóó hahaha\">\r\n      <created>1616348947246</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616348947246</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"gettersetter\">\r\n      <created>1616350067591</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616350067591</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"mainban is teszt\">\r\n      <created>1616356065914</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616356065915</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"2 teszt\">\r\n      <created>1616358431809</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616358431809</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"2 teszt\">\r\n      <created>1616358486847</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616358486847</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"2 teszt\">\r\n      <created>1616358656049</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616358656049</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"2 teszt\">\r\n      <created>1616359186592</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616359186592</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"sout-ok kiegészítése\">\r\n      <created>1616360095012</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616360095012</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"thx csizmy\">\r\n      <created>1616361802504</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616361802504</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"thx csizmy\">\r\n      <created>1616361900989</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616361900989</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"kéééész\">\r\n      <created>1616362014823</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616362014823</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"Kommentek zsa ^^\">\r\n      <created>1616368395956</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616368395956</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"Készkészkész!!!!!\">\r\n      <created>1616368879260</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616368879260</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"Listázás implementálva, kellenek ufok meg ilyenek.\">\r\n      <created>1618568089684</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618568089684</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\"bence stipi\">\r\n      <created>1618693202741</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618693202742</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\"Panku addToBackpack\">\r\n      <created>1618740904124</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618740904124</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00027\" summary=\"Panku addToBackpack javítva\">\r\n      <created>1618741097373</created>\r\n      <option name=\"number\" value=\"00027\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618741097373</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00028\" summary=\"csizmy dolgai feltoltve+ javitgatva 1-2 dolog amit irtam-axel\">\r\n      <created>1618761106455</created>\r\n      <option name=\"number\" value=\"00028\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618761106455</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00029\" summary=\"a loadmap tobb infot ir ki\">\r\n      <created>1618762718503</created>\r\n      <option name=\"number\" value=\"00029\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00029\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618762718503</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00030\" summary=\"a loadmap tobb infot ir ki\">\r\n      <created>1618762772848</created>\r\n      <option name=\"number\" value=\"00030\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00030\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618762772848</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00031\" summary=\"semmi\">\r\n      <created>1618763029990</created>\r\n      <option name=\"number\" value=\"00031\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00031\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618763029990</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00032\" summary=\"steprobotot javitottam\">\r\n      <created>1618765218629</created>\r\n      <option name=\"number\" value=\"00032\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00032\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618765218629</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00033\" summary=\"steprobotot javitottam\">\r\n      <created>1618765380990</created>\r\n      <option name=\"number\" value=\"00033\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00033\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618765380990</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00034\" summary=\"steprobot/stepufo mukodik\">\r\n      <created>1618767396358</created>\r\n      <option name=\"number\" value=\"00034\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00034\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618767396358</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00035\" summary=\"teleport can move\">\r\n      <created>1618768862830</created>\r\n      <option name=\"number\" value=\"00035\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00035\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618768862830</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00036\" summary=\"teleport can move now fr\">\r\n      <created>1618770764741</created>\r\n      <option name=\"number\" value=\"00036\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00036\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618770764741</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00037\" summary=\"teleport can move now fr\">\r\n      <created>1618770792968</created>\r\n      <option name=\"number\" value=\"00037\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00037\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618770792968</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00038\" summary=\"Végleges elvileg\">\r\n      <created>1618776180732</created>\r\n      <option name=\"number\" value=\"00038\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00038\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618776180732</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00039\" summary=\"asteroid step\">\r\n      <created>1618777490834</created>\r\n      <option name=\"number\" value=\"00039\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00039\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618777490834</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00040\" summary=\"asteroid step\">\r\n      <created>1618777675738</created>\r\n      <option name=\"number\" value=\"00040\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00040\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618777675738</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00041\" summary=\"idegbajtkapok\">\r\n      <created>1618779244851</created>\r\n      <option name=\"number\" value=\"00041\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00041\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618779244851</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00042\" summary=\"menu kinda kész\">\r\n      <created>1620001390050</created>\r\n      <option name=\"number\" value=\"00042\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00042\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620001390050</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00043\" summary=\"kitöröltem 1 aproságot\">\r\n      <created>1620403800420</created>\r\n      <option name=\"number\" value=\"00043\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00043\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620403800420</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00044\" summary=\"update\">\r\n      <created>1620407376633</created>\r\n      <option name=\"number\" value=\"00044\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00044\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620407376633</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00045\" summary=\"update\">\r\n      <created>1620410314236</created>\r\n      <option name=\"number\" value=\"00045\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00045\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620410314236</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"46\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TimeTrackingManager\">\r\n    <option name=\"totallyTimeSpent\" value=\"19633000\" />\r\n  </component>\r\n  <component name=\"ToolWindowManager\">\r\n    <frame x=\"-8\" y=\"-8\" width=\"1936\" height=\"1056\" extended-state=\"6\" />\r\n    <editor active=\"true\" />\r\n    <layout>\r\n      <window_info anchor=\"right\" id=\"Palette\" order=\"3\" />\r\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\r\n      <window_info anchor=\"bottom\" id=\"Messages\" order=\"8\" weight=\"0.32897604\" />\r\n      <window_info anchor=\"right\" id=\"Palette&#9;\" order=\"3\" />\r\n      <window_info id=\"Image Layers\" order=\"2\" />\r\n      <window_info anchor=\"right\" id=\"Capture Analysis\" order=\"3\" />\r\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"7\" side_tool=\"true\" />\r\n      <window_info anchor=\"right\" id=\"Maven Projects\" order=\"3\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"7\" show_stripe_button=\"false\" />\r\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"2\" visible=\"true\" weight=\"0.23965141\" />\r\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"7\" weight=\"0.32897604\" />\r\n      <window_info anchor=\"bottom\" id=\"Terminal\" order=\"7\" weight=\"0.32900432\" />\r\n      <window_info id=\"Capture Tool\" order=\"2\" />\r\n      <window_info id=\"Designer\" order=\"2\" />\r\n      <window_info active=\"true\" content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.20842217\" />\r\n      <window_info anchor=\"right\" id=\"Database\" order=\"3\" weight=\"0.32995737\" />\r\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\r\n      <window_info id=\"UI Designer\" order=\"2\" />\r\n      <window_info anchor=\"right\" id=\"Theme Preview\" order=\"3\" />\r\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.39869282\" />\r\n      <window_info id=\"Favorites\" order=\"2\" side_tool=\"true\" />\r\n      <window_info anchor=\"right\" id=\"Palette\" order=\"3\" />\r\n      <window_info id=\"Designer\" order=\"2\" />\r\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" id=\"Capture Analysis\" order=\"3\" />\r\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\r\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" id=\"Terminal\" order=\"7\" weight=\"0.32900432\" />\r\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"7\" show_stripe_button=\"false\" />\r\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"7\" weight=\"0.32900432\" />\r\n      <window_info active=\"true\" anchor=\"bottom\" id=\"Run\" order=\"2\" visible=\"true\" weight=\"0.24025974\" />\r\n      <window_info id=\"Image Layers\" order=\"2\" />\r\n      <window_info id=\"Capture Tool\" order=\"2\" />\r\n      <window_info id=\"UI Designer\" order=\"2\" />\r\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.39935064\" />\r\n      <window_info anchor=\"right\" id=\"Theme Preview\" order=\"3\" />\r\n      <window_info anchor=\"right\" id=\"Database\" order=\"3\" weight=\"0.32995737\" />\r\n      <window_info anchor=\"right\" id=\"Palette&#9;\" order=\"3\" />\r\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"0\" />\r\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"7\" side_tool=\"true\" />\r\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\r\n      <window_info id=\"Favorites\" order=\"2\" side_tool=\"true\" />\r\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"1\" />\r\n      <window_info anchor=\"bottom\" id=\"Messages\" order=\"8\" weight=\"0.32900432\" />\r\n      <window_info anchor=\"right\" id=\"Maven Projects\" order=\"3\" />\r\n      <window_info content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.20628998\" />\r\n    </layout>\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"1\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"RECENTLY_FILTERED_USER_GROUPS\">\r\n                <collection />\r\n              </option>\r\n              <option name=\"RECENTLY_FILTERED_BRANCH_GROUPS\">\r\n                <collection />\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsContentAnnotationSettings\">\r\n    <option name=\"myLimit\" value=\"2678400000\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"sout-ok kiegészítése\" />\r\n    <MESSAGE value=\"thx csizmy\" />\r\n    <MESSAGE value=\"kéééész\" />\r\n    <MESSAGE value=\"Kommentek zsa ^^\" />\r\n    <MESSAGE value=\"Készkészkész!!!!!\" />\r\n    <MESSAGE value=\"7.0 and 7.0.2 implementálva\" />\r\n    <MESSAGE value=\"Listázás implementálva, kellenek ufok meg ilyenek.\" />\r\n    <MESSAGE value=\"Proto osztályok elkezdése, új konstruktorok\" />\r\n    <MESSAGE value=\"bence stipi\" />\r\n    <MESSAGE value=\"Panku addToBackpack\" />\r\n    <MESSAGE value=\"Panku addToBackpack javítva\" />\r\n    <MESSAGE value=\"csizmy dolgai feltoltve\" />\r\n    <MESSAGE value=\"csizmy dolgai feltoltve+ javitgatva 1-2 dolog amit irtam-axel\" />\r\n    <MESSAGE value=\"a loadmap tobb infot ir ki\" />\r\n    <MESSAGE value=\"semmi\" />\r\n    <MESSAGE value=\"steprobotot javitottam\" />\r\n    <MESSAGE value=\"steprobot/stepufo mukodik\" />\r\n    <MESSAGE value=\"teleport can move\" />\r\n    <MESSAGE value=\"teleport can move now fr\" />\r\n    <MESSAGE value=\"Végleges elvileg\" />\r\n    <MESSAGE value=\"asteroid step\" />\r\n    <MESSAGE value=\"idegbajtkapok\" />\r\n    <MESSAGE value=\"menu kinda kész\" />\r\n    <MESSAGE value=\"kitöröltem 1 aproságot\" />\r\n    <MESSAGE value=\"update\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"update\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <option name=\"time\" value=\"3\" />\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"editorHistoryManager\">\r\n    <entry file=\"file://$PROJECT_DIR$/src/Game_parts/Game.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"221\">\r\n          <caret line=\"13\" column=\"31\" selection-start-line=\"13\" selection-start-column=\"31\" selection-end-line=\"13\" selection-end-column=\"31\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Miners/Robot.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"34\">\r\n          <caret line=\"2\" column=\"20\" selection-start-line=\"2\" selection-start-column=\"20\" selection-end-line=\"2\" selection-end-column=\"20\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Coal.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"119\">\r\n          <caret line=\"8\" column=\"29\" selection-start-line=\"8\" selection-start-column=\"29\" selection-end-line=\"8\" selection-end-column=\"29\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Iron.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"85\">\r\n          <caret line=\"6\" column=\"29\" selection-start-line=\"6\" selection-start-column=\"29\" selection-end-line=\"6\" selection-end-column=\"29\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Uranium.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"85\">\r\n          <caret line=\"6\" column=\"32\" selection-start-line=\"6\" selection-start-column=\"32\" selection-end-line=\"6\" selection-end-column=\"32\" />\r\n          <folding>\r\n            <element signature=\"e#218#219#0\" expanded=\"true\" />\r\n            <element signature=\"e#294#295#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Water.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"85\">\r\n          <caret line=\"6\" column=\"30\" selection-start-line=\"6\" selection-start-column=\"30\" selection-end-line=\"6\" selection-end-column=\"30\" />\r\n          <folding>\r\n            <element signature=\"e#213#214#0\" expanded=\"true\" />\r\n            <element signature=\"e#290#291#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Objects/Teleport.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"34\">\r\n          <caret line=\"2\" column=\"13\" selection-start-line=\"2\" selection-start-column=\"13\" selection-end-line=\"2\" selection-end-column=\"13\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Objects/Spacething.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"272\">\r\n          <caret line=\"20\" column=\"21\" lean-forward=\"true\" selection-start-line=\"20\" selection-start-column=\"21\" selection-end-line=\"20\" selection-end-column=\"21\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Objects/Asteroid.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"323\">\r\n          <caret line=\"22\" column=\"29\" lean-forward=\"true\" selection-start-line=\"22\" selection-start-column=\"29\" selection-end-line=\"22\" selection-end-column=\"29\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n            <element signature=\"method#removeLayer#0;class#Asteroid#0\" />\r\n            <element signature=\"method#RemoveMaterial#0;class#Asteroid#0\" />\r\n            <element signature=\"method#removeMiner#0;class#Asteroid#0\" />\r\n            <element signature=\"method#Explode#0;class#Asteroid#0\" />\r\n            <element signature=\"method#CountDiffMat#0;class#Asteroid#0\" />\r\n            <element signature=\"e#3062#3063#0\" expanded=\"true\" />\r\n            <element signature=\"e#3119#3120#0\" expanded=\"true\" />\r\n            <element signature=\"e#3191#3192#0\" expanded=\"true\" />\r\n            <element signature=\"e#3248#3249#0\" expanded=\"true\" />\r\n            <element signature=\"e#3343#3344#0\" expanded=\"true\" />\r\n            <element signature=\"e#3394#3395#0\" expanded=\"true\" />\r\n            <element signature=\"e#3423#3424#0\" expanded=\"true\" />\r\n            <element signature=\"e#3451#3452#0\" expanded=\"true\" />\r\n            <element signature=\"e#3488#3489#0\" expanded=\"true\" />\r\n            <element signature=\"e#3519#3520#0\" expanded=\"true\" />\r\n            <element signature=\"e#3556#3557#0\" expanded=\"true\" />\r\n            <element signature=\"e#3589#3590#0\" expanded=\"true\" />\r\n            <element signature=\"e#3619#3620#0\" expanded=\"true\" />\r\n            <element signature=\"e#3649#3650#0\" expanded=\"true\" />\r\n            <element signature=\"e#3760#3761#0\" expanded=\"true\" />\r\n            <element signature=\"e#3789#3790#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Material.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"153\">\r\n          <caret line=\"13\" column=\"5\" selection-start-line=\"13\" selection-start-column=\"5\" selection-end-line=\"13\" selection-end-column=\"5\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Miners/Miner.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"442\">\r\n          <caret line=\"40\" column=\"23\" lean-forward=\"true\" selection-start-line=\"40\" selection-start-column=\"23\" selection-end-line=\"40\" selection-end-column=\"23\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n            <element signature=\"e#1006#1007#0\" expanded=\"true\" />\r\n            <element signature=\"e#1037#1038#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/main.java\" />\r\n    <entry file=\"file://$PROJECT_DIR$/src/demo.java\" />\r\n    <entry file=\"file://$PROJECT_DIR$/src/main.java\" />\r\n    <entry file=\"file://$PROJECT_DIR$/src/demo.java\" />\r\n    <entry file=\"file://$PROJECT_DIR$/src/main.java\" />\r\n    <entry file=\"file://$PROJECT_DIR$/src/main.java\" />\r\n    <entry file=\"file://$PROJECT_DIR$/src/demo.java\" />\r\n    <entry file=\"file://$PROJECT_DIR$/src/main.java\" />\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Water.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"221\">\r\n          <caret line=\"13\" column=\"64\" selection-start-line=\"13\" selection-start-column=\"64\" selection-end-line=\"13\" selection-end-column=\"64\" />\r\n          <folding>\r\n            <element signature=\"e#213#214#0\" expanded=\"true\" />\r\n            <element signature=\"e#290#291#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Uranium.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"204\">\r\n          <caret line=\"12\" column=\"35\" selection-start-line=\"12\" selection-start-column=\"35\" selection-end-line=\"12\" selection-end-column=\"35\" />\r\n          <folding>\r\n            <element signature=\"e#218#219#0\" expanded=\"true\" />\r\n            <element signature=\"e#294#295#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Miners/Robot.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"76\">\r\n          <caret line=\"11\" column=\"23\" lean-forward=\"true\" selection-start-line=\"11\" selection-start-column=\"23\" selection-end-line=\"11\" selection-end-column=\"23\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n            <element signature=\"e#263#264#0\" expanded=\"true\" />\r\n            <element signature=\"e#287#288#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Miners/Miner.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"68\">\r\n          <caret line=\"12\" column=\"40\" selection-start-line=\"12\" selection-start-column=\"40\" selection-end-line=\"12\" selection-end-column=\"40\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n            <element signature=\"e#1006#1007#0\" expanded=\"true\" />\r\n            <element signature=\"e#1037#1038#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Game_parts/Steppable.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"85\">\r\n          <caret line=\"5\" column=\"23\" selection-start-line=\"5\" selection-start-column=\"23\" selection-end-line=\"5\" selection-end-column=\"23\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Coal.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"136\">\r\n          <caret line=\"8\" column=\"24\" lean-forward=\"true\" selection-start-line=\"8\" selection-start-column=\"24\" selection-end-line=\"8\" selection-end-column=\"24\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Iron.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"102\">\r\n          <caret line=\"6\" column=\"28\" lean-forward=\"true\" selection-start-line=\"6\" selection-start-column=\"28\" selection-end-line=\"6\" selection-end-column=\"28\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Materials/Material.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"187\">\r\n          <caret line=\"13\" column=\"5\" selection-start-line=\"13\" selection-start-column=\"5\" selection-end-line=\"13\" selection-end-column=\"5\" />\r\n          <folding>\r\n            <element signature=\"e#293#294#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Objects/Teleport.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"102\">\r\n          <caret line=\"10\" column=\"26\" selection-start-line=\"10\" selection-start-column=\"26\" selection-end-line=\"10\" selection-end-column=\"26\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Miners/Settler.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"312\">\r\n          <caret line=\"101\" column=\"46\" lean-forward=\"true\" selection-start-line=\"101\" selection-start-column=\"46\" selection-end-line=\"101\" selection-end-column=\"46\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n            <element signature=\"method#Mine#0;class#Settler#0\" />\r\n            <element signature=\"method#PlaceTp#0;class#Settler#0\" />\r\n            <element signature=\"method#BuildRobot#0;class#Settler#0\" />\r\n            <element signature=\"method#AddMaterial#0;class#Settler#0\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Game_parts/Game.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"221\">\r\n          <caret line=\"13\" column=\"31\" selection-start-line=\"13\" selection-start-column=\"31\" selection-end-line=\"13\" selection-end-column=\"31\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Objects/Spacething.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"459\">\r\n          <caret line=\"31\" column=\"5\" selection-start-line=\"31\" selection-start-column=\"5\" selection-end-line=\"31\" selection-end-column=\"5\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Game_parts/Map.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"393\">\r\n          <caret line=\"57\" column=\"48\" selection-start-line=\"57\" selection-start-column=\"48\" selection-end-line=\"57\" selection-end-column=\"48\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Game_parts/ClickListener.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"34\">\r\n          <caret line=\"2\" selection-start-line=\"2\" selection-end-line=\"4\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Graphics/MainFrame.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"221\">\r\n          <caret line=\"15\" lean-forward=\"true\" selection-start-line=\"15\" selection-end-line=\"15\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Graphics/Menu.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"785\">\r\n          <caret line=\"75\" column=\"17\" lean-forward=\"true\" selection-start-line=\"75\" selection-start-column=\"17\" selection-end-line=\"75\" selection-end-column=\"17\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Objects/Asteroid.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"408\">\r\n          <caret line=\"40\" column=\"40\" lean-forward=\"true\" selection-start-line=\"40\" selection-start-column=\"40\" selection-end-line=\"40\" selection-end-column=\"40\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n            <element signature=\"method#RemoveMaterial#0;class#Asteroid#0\" />\r\n            <element signature=\"method#Explode#0;class#Asteroid#0\" />\r\n            <element signature=\"method#CountDiffMat#0;class#Asteroid#0\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Graphics/IDrawable.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"68\">\r\n          <caret line=\"4\" column=\"17\" selection-start-line=\"4\" selection-start-column=\"17\" selection-end-line=\"4\" selection-end-column=\"17\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/pictures/settler.png\">\r\n      <provider selected=\"true\" editor-type-id=\"images\" />\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Graphics/ImageResizer.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"340\">\r\n          <caret line=\"20\" column=\"22\" lean-forward=\"true\" selection-start-line=\"20\" selection-start-column=\"22\" selection-end-line=\"20\" selection-end-column=\"22\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GAsteroid.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"102\">\r\n          <caret line=\"6\" column=\"30\" selection-start-line=\"6\" selection-start-column=\"30\" selection-end-line=\"6\" selection-end-column=\"30\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Graphics/Controller.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"68\">\r\n          <caret line=\"4\" column=\"13\" selection-start-line=\"4\" selection-start-column=\"13\" selection-end-line=\"4\" selection-end-column=\"13\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GWater.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"153\">\r\n          <caret line=\"9\" column=\"5\" lean-forward=\"true\" selection-start-line=\"9\" selection-start-column=\"5\" selection-end-line=\"9\" selection-end-column=\"5\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GCoal.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"204\">\r\n          <caret line=\"12\" column=\"34\" selection-start-line=\"12\" selection-start-column=\"34\" selection-end-line=\"12\" selection-end-column=\"34\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/Graphics/GamePanel.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"32\">\r\n          <caret line=\"121\" column=\"52\" lean-forward=\"true\" selection-start-line=\"120\" selection-start-column=\"26\" selection-end-line=\"121\" selection-end-column=\"52\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GUranium.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"221\">\r\n          <caret line=\"13\" column=\"5\" lean-forward=\"true\" selection-start-line=\"13\" selection-start-column=\"5\" selection-end-line=\"13\" selection-end-column=\"5\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GUfo.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"85\">\r\n          <caret line=\"5\" column=\"4\" selection-start-line=\"5\" selection-start-column=\"4\" selection-end-line=\"13\" selection-end-column=\"5\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GTeleport.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"85\">\r\n          <caret line=\"5\" column=\"30\" selection-start-line=\"5\" selection-start-column=\"30\" selection-end-line=\"5\" selection-end-column=\"30\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GSettler.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"85\">\r\n          <caret line=\"5\" column=\"30\" selection-start-line=\"5\" selection-start-column=\"30\" selection-end-line=\"5\" selection-end-column=\"30\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GIron.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"204\">\r\n          <caret line=\"12\" column=\"33\" selection-start-line=\"12\" selection-start-column=\"33\" selection-end-line=\"12\" selection-end-column=\"33\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GObject.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"435\">\r\n          <caret line=\"32\" column=\"43\" lean-forward=\"true\" selection-start-line=\"32\" selection-start-column=\"43\" selection-end-line=\"32\" selection-end-column=\"43\" />\r\n          <folding>\r\n            <element signature=\"imports\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/src/GObjects/GRobot.java\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"136\">\r\n          <caret line=\"8\" column=\"34\" selection-start-line=\"8\" selection-start-column=\"34\" selection-end-line=\"8\" selection-end-column=\"34\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n  </component>\r\n  <component name=\"masterDetails\">\r\n    <states>\r\n      <state key=\"ProjectJDKs.UI\">\r\n        <settings>\r\n          <last-edited>15</last-edited>\r\n          <splitter-proportions>\r\n            <option name=\"proportions\">\r\n              <list>\r\n                <option value=\"0.2\" />\r\n              </list>\r\n            </option>\r\n          </splitter-proportions>\r\n        </settings>\r\n      </state>\r\n    </states>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0d74be979675b728963efa84019d9b7adf2b1e94)
++++ b/.idea/workspace.xml	(date 1620416411141)
+@@ -1,50 +1,40 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="BookmarkManager">
+-    <bookmark url="file://$PROJECT_DIR$/src/GObjects/GRobot.java" line="11" />
+-    <bookmark url="file://$PROJECT_DIR$/src/GObjects/GRobot.java" />
+-  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/Game_parts/ClickListener.java" afterDir="false" />
++    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="menu kinda kész">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_17__21_36__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_17__21_36__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__12_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__12_45__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__18_02__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__18_02__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__22_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__22_03__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_13__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_13__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_59__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__16__10_33__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__16__10_33__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_56__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_56__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_59__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__23_04__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__23_04__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_45__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_53__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_53__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_16__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_16__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_20__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_20__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_37__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_37__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_41__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_41__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__17_28__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__17_28__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__18_23__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__18_23__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_08__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_08__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_15__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_15__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_16__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_16__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__03__2_21__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__03__2_21__Default_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/ImageResizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/ImageResizer.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu$Clicklistener.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/OnPlayListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/OnPlayListener.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/exit másolata.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/exit3.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/help másolata.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/help3.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/play2.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/play3.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/proba.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/proba1200x900.png" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/settler.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/settler.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/tp.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/tp.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pictures/ufo.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/ufo.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GAsteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GAsteroid.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GCoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GCoal.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GIron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GIron.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GObject.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GRobot.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GSettler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GSettler.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GTeleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GTeleport.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GUfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GUfo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GUranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GUranium.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GObjects/GWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GWater.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Graphics/ImageResizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/ImageResizer.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Graphics/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/MainFrame.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Graphics/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Menu.java" afterDir="false" />
+     </list>
+-    <option name="TRACKING_ENABLED" value="true" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -63,120 +53,15 @@
+     </option>
+     <expand />
+     <select />
+-  </component>
+-  <component name="FileEditorManager">
+-    <leaf>
+-      <file leaf-file-name="GSettler.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="85">
+-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GUfo.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GUfo.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="85">
+-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GTeleport.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GTeleport.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="85">
+-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GCoal.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GCoal.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="204">
+-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/Graphics/GamePanel.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="32">
+-              <caret line="121" column="52" lean-forward="true" selection-start-line="120" selection-start-column="26" selection-end-line="121" selection-end-column="52" />
+-              <folding>
+-                <element signature="imports" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GUranium.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GUranium.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="221">
+-              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GWater.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GWater.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="153">
+-              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GIron.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GIron.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="204">
+-              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GObject.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GObject.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="435">
+-              <caret line="32" column="43" lean-forward="true" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+-              <folding>
+-                <element signature="imports" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="GRobot.java" pinned="false" current-in-tab="true">
+-        <entry file="file://$PROJECT_DIR$/src/GObjects/GRobot.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="136">
+-              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-    </leaf>
+   </component>
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
++        <option value="Class" />
+         <option value="Interface" />
+-        <option value="Class" />
+       </list>
+     </option>
+   </component>
+-  <component name="FindInProjectRecents">
+-    <findStrings>
+-      <find>GUFo</find>
+-    </findStrings>
+-  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+@@ -210,21 +95,6 @@
+         <option value="$PROJECT_DIR$/src/Miners/Settler.java" />
+         <option value="$PROJECT_DIR$/src/Game_parts/Game.java" />
+         <option value="$PROJECT_DIR$/src/Game_parts/Map.java" />
+-        <option value="$PROJECT_DIR$/src/Game_parts/ClickListener.java" />
+-        <option value="$PROJECT_DIR$/src/Graphics/MainFrame.java" />
+-        <option value="$PROJECT_DIR$/src/Graphics/Menu.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GObject.java" />
+-        <option value="$PROJECT_DIR$/src/Graphics/ImageResizer.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GUfo.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GTeleport.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GSettler.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GAsteroid.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GWater.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GCoal.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GIron.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GUranium.java" />
+-        <option value="$PROJECT_DIR$/src/Graphics/GamePanel.java" />
+-        <option value="$PROJECT_DIR$/src/GObjects/GRobot.java" />
+       </list>
+     </option>
+   </component>
+@@ -257,78 +127,49 @@
+       <foldersAlwaysOnTop value="true" />
+     </navigator>
+     <panes>
+-      <pane id="PackagesPane" />
+       <pane id="AndroidView" />
+-      <pane id="Scope" />
++      <pane id="PackagesPane" />
+       <pane id="ProjectPane">
+         <subPane>
+           <expand>
+             <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
++              <item name="ProjLab" type="b2602c69:ProjectViewProjectNode" />
++              <item name="ProjLab" type="462c0819:PsiDirectoryNode" />
+             </path>
+             <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
+-              <item name="pictures" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
++              <item name="ProjLab" type="b2602c69:ProjectViewProjectNode" />
++              <item name="ProjLab" type="462c0819:PsiDirectoryNode" />
+               <item name="src" type="462c0819:PsiDirectoryNode" />
+             </path>
+             <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
++              <item name="ProjLab" type="b2602c69:ProjectViewProjectNode" />
++              <item name="ProjLab" type="462c0819:PsiDirectoryNode" />
+               <item name="src" type="462c0819:PsiDirectoryNode" />
+               <item name="Game_parts" type="462c0819:PsiDirectoryNode" />
+             </path>
+             <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="GObjects" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="Graphics" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
++              <item name="ProjLab" type="b2602c69:ProjectViewProjectNode" />
++              <item name="ProjLab" type="462c0819:PsiDirectoryNode" />
+               <item name="src" type="462c0819:PsiDirectoryNode" />
+               <item name="Materials" type="462c0819:PsiDirectoryNode" />
+             </path>
+             <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
++              <item name="ProjLab" type="b2602c69:ProjectViewProjectNode" />
++              <item name="ProjLab" type="462c0819:PsiDirectoryNode" />
+               <item name="src" type="462c0819:PsiDirectoryNode" />
+               <item name="Miners" type="462c0819:PsiDirectoryNode" />
+             </path>
+             <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
++              <item name="ProjLab" type="b2602c69:ProjectViewProjectNode" />
++              <item name="ProjLab" type="462c0819:PsiDirectoryNode" />
+               <item name="src" type="462c0819:PsiDirectoryNode" />
+               <item name="Objects" type="462c0819:PsiDirectoryNode" />
+             </path>
+-            <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="Proto" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="pl2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="pl2" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+-            </path>
+           </expand>
+           <select />
+         </subPane>
+       </pane>
++      <pane id="Scope" />
+     </panes>
+   </component>
+   <component name="ProjectViewState">
+@@ -358,146 +199,6 @@
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="CHANGED_ON_SERVER" />
+         <FILE-GROUP>
+-          <option name="myUpdateName" value="Updated" />
+-          <option name="myStatusName" value="Changed" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" value="UPDATED" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" value="Created" />
+-          <option name="myStatusName" value="Created" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" value="CREATED" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" value="Deleted" />
+-          <option name="myStatusName" value="Deleted" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="true" />
+-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" value="Restored" />
+-          <option name="myStatusName" value="Will be restored" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" value="RESTORED" />
+-        </FILE-GROUP>
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Modified" />
+-        <option name="myStatusName" value="Modified" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MODIFIED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Skipped" />
+-        <option name="myStatusName" value="Skipped" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="SKIPPED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Merged with conflicts" />
+-        <option name="myStatusName" value="Will be merged with conflicts" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Merged with tree conflicts" />
+-        <option name="myStatusName" value="Merged with tree conflicts" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Merged with property conflicts" />
+-        <option name="myStatusName" value="Will be merged with property conflicts" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Merged" />
+-        <option name="myStatusName" value="Will be merged" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="MERGED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Not in repository" />
+-        <option name="myStatusName" value="Not in repository" />
+-        <option name="mySupportsDeletion" value="true" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="UNKNOWN" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Locally added" />
+-        <option name="myStatusName" value="Locally added" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="LOCALLY_ADDED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Locally removed" />
+-        <option name="myStatusName" value="Locally removed" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="LOCALLY_REMOVED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Switched" />
+-        <option name="myStatusName" value="Switched" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="SWITCHED" />
+-      </FILE-GROUP>
+-      <FILE-GROUP>
+-        <option name="myUpdateName" value="Updated from server" />
+-        <option name="myStatusName" value="Changed on server" />
+-        <option name="mySupportsDeletion" value="false" />
+-        <option name="myCanBeAbsent" value="false" />
+-        <option name="myId" value="CHANGED_ON_SERVER" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+           <option name="myUpdateName" value="Updated" />
+           <option name="myStatusName" value="Changed" />
+           <option name="mySupportsDeletion" value="false" />
+@@ -505,55 +206,6 @@
+           <option name="myId" value="UPDATED" />
+           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Game_parts/Map.java</PATH>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+         </FILE-GROUP>
+         <FILE-GROUP>
+           <option name="myUpdateName" value="Created" />
+@@ -561,41 +213,6 @@
+           <option name="mySupportsDeletion" value="false" />
+           <option name="myCanBeAbsent" value="false" />
+           <option name="myId" value="CREATED" />
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+         </FILE-GROUP>
+         <FILE-GROUP>
+           <option name="myUpdateName" value="Deleted" />
+@@ -603,41 +220,6 @@
+           <option name="mySupportsDeletion" value="false" />
+           <option name="myCanBeAbsent" value="true" />
+           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+         </FILE-GROUP>
+         <FILE-GROUP>
+           <option name="myUpdateName" value="Restored" />
+@@ -645,41 +227,6 @@
+           <option name="mySupportsDeletion" value="false" />
+           <option name="myCanBeAbsent" value="false" />
+           <option name="myId" value="RESTORED" />
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+-          <FILE-GROUP>
+-            <option name="myUpdateName" />
+-            <option name="myStatusName" />
+-            <option name="mySupportsDeletion" value="false" />
+-            <option name="myCanBeAbsent" value="false" />
+-            <option name="myId" />
+-          </FILE-GROUP>
+         </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+@@ -688,41 +235,6 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="MODIFIED" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Skipped" />
+@@ -730,41 +242,6 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="SKIPPED" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Merged with conflicts" />
+@@ -772,41 +249,6 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="MERGED_WITH_CONFLICTS" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Merged with tree conflicts" />
+@@ -814,41 +256,6 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Merged with property conflicts" />
+@@ -856,41 +263,6 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Merged" />
+@@ -898,41 +270,6 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="MERGED" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Not in repository" />
+@@ -940,41 +277,6 @@
+         <option name="mySupportsDeletion" value="true" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="UNKNOWN" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Locally added" />
+@@ -982,41 +284,6 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="LOCALLY_ADDED" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Locally removed" />
+@@ -1024,41 +291,6 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="LOCALLY_REMOVED" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+       <FILE-GROUP>
+         <option name="myUpdateName" value="Switched" />
+@@ -1066,100 +298,20 @@
+         <option name="mySupportsDeletion" value="false" />
+         <option name="myCanBeAbsent" value="false" />
+         <option name="myId" value="SWITCHED" />
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+-        <FILE-GROUP>
+-          <option name="myUpdateName" />
+-          <option name="myStatusName" />
+-          <option name="mySupportsDeletion" value="false" />
+-          <option name="myCanBeAbsent" value="false" />
+-          <option name="myId" />
+-        </FILE-GROUP>
+       </FILE-GROUP>
+     </UpdatedFiles>
+   </component>
+-  <component name="RunDashboard">
+-    <option name="ruleStates">
+-      <list>
+-        <RuleState>
+-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+-        </RuleState>
+-        <RuleState>
+-          <option name="name" value="StatusDashboardGroupingRule" />
+-        </RuleState>
+-      </list>
+-    </option>
+-  </component>
+   <component name="RunManager" selected="Application.Game">
+-    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="Game_parts.Game" />
+-      <module name="ProjLab" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="Game_parts.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-    </configuration>
+-    <configuration default="true" type="Application" factoryName="Application">
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <method>
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="main" />
+-      <module name="ProjLab" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-    </configuration>
+     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+       <option name="arquillianRunConfiguration">
+         <value>
+           <option name="containerStateName" value="" />
+         </value>
+       </option>
+-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+-      <option name="ALTERNATIVE_JRE_PATH" />
+-      <option name="PACKAGE_NAME" />
+-      <option name="MAIN_CLASS_NAME" />
+-      <option name="METHOD_NAME" />
+       <option name="TEST_OBJECT" value="class" />
+       <option name="VM_PARAMETERS" />
+-      <option name="PARAMETERS" />
+       <option name="WORKING_DIRECTORY" />
+-      <option name="PASS_PARENT_ENVS" value="true" />
+-      <option name="TEST_SEARCH_SCOPE">
+-        <value defaultName="singleModule" />
+-      </option>
+-      <patterns />
+-      <method>
++      <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+@@ -1169,71 +321,56 @@
+           <option name="containerStateName" value="" />
+         </value>
+       </option>
+-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+-      <option name="ALTERNATIVE_JRE_PATH" />
+-      <option name="SUITE_NAME" />
+-      <option name="PACKAGE_NAME" />
+-      <option name="MAIN_CLASS_NAME" />
+-      <option name="METHOD_NAME" />
+-      <option name="GROUP_NAME" />
+       <option name="TEST_OBJECT" value="CLASS" />
+-      <option name="VM_PARAMETERS" />
+-      <option name="PARAMETERS" />
+-      <option name="WORKING_DIRECTORY" />
+-      <option name="OUTPUT_DIRECTORY" />
+-      <option name="PASS_PARENT_ENVS" value="true" />
+-      <option name="TEST_SEARCH_SCOPE">
+-        <value defaultName="singleModule" />
+-      </option>
+-      <option name="USE_DEFAULT_REPORTERS" value="false" />
+-      <option name="PROPERTIES_FILE" />
+       <properties />
+       <listeners />
+-      <method>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Game_parts.Game" />
++      <module name="ProjLab" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="Game_parts.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="Application" factoryName="Application">
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="main" />
++      <module name="ProjLab" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <configuration default="true" type="JUnit" factoryName="JUnit">
+-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+-      <option name="ALTERNATIVE_JRE_PATH" />
+-      <option name="PACKAGE_NAME" />
+-      <option name="MAIN_CLASS_NAME" />
+-      <option name="METHOD_NAME" />
+       <option name="TEST_OBJECT" value="class" />
+       <option name="VM_PARAMETERS" />
+-      <option name="PARAMETERS" />
+       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+-      <option name="PASS_PARENT_ENVS" value="true" />
+-      <option name="TEST_SEARCH_SCOPE">
+-        <value defaultName="singleModule" />
+-      </option>
+-      <patterns />
+-      <method>
++      <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration default="true" type="TestNG" factoryName="TestNG">
+-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+-      <option name="ALTERNATIVE_JRE_PATH" />
+-      <option name="SUITE_NAME" />
+-      <option name="PACKAGE_NAME" />
+-      <option name="MAIN_CLASS_NAME" />
+-      <option name="METHOD_NAME" />
+-      <option name="GROUP_NAME" />
++    <configuration default="true" type="TestNG">
+       <option name="TEST_OBJECT" value="CLASS" />
+       <option name="VM_PARAMETERS" />
+-      <option name="PARAMETERS" />
+       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+-      <option name="OUTPUT_DIRECTORY" />
+-      <option name="PASS_PARENT_ENVS" value="true" />
+-      <option name="TEST_SEARCH_SCOPE">
+-        <value defaultName="singleModule" />
+-      </option>
+-      <option name="USE_DEFAULT_REPORTERS" value="false" />
+-      <option name="PROPERTIES_FILE" />
+       <properties />
+       <listeners />
+-      <method>
++      <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+@@ -1558,32 +695,11 @@
+       <option name="project" value="LOCAL" />
+       <updated>1620001390050</updated>
+     </task>
+-    <task id="LOCAL-00043" summary="kitöröltem 1 aproságot">
+-      <created>1620403800420</created>
+-      <option name="number" value="00043" />
+-      <option name="presentableId" value="LOCAL-00043" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1620403800420</updated>
+-    </task>
+-    <task id="LOCAL-00044" summary="update">
+-      <created>1620407376633</created>
+-      <option name="number" value="00044" />
+-      <option name="presentableId" value="LOCAL-00044" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1620407376633</updated>
+-    </task>
+-    <task id="LOCAL-00045" summary="update">
+-      <created>1620410314236</created>
+-      <option name="number" value="00045" />
+-      <option name="presentableId" value="LOCAL-00045" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1620410314236</updated>
+-    </task>
+-    <option name="localTasksCounter" value="46" />
++    <option name="localTasksCounter" value="43" />
+     <servers />
+   </component>
+   <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="19633000" />
++    <option name="totallyTimeSpent" value="13326000" />
+   </component>
+   <component name="ToolWindowManager">
+     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+@@ -1591,54 +707,32 @@
+     <layout>
+       <window_info anchor="right" id="Palette" order="3" />
+       <window_info anchor="bottom" id="TODO" order="6" />
+-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32897604" />
++      <window_info anchor="bottom" id="Messages" order="8" weight="0.32900432" />
+       <window_info anchor="right" id="Palette&#9;" order="3" />
+       <window_info id="Image Layers" order="2" />
+       <window_info anchor="right" id="Capture Analysis" order="3" />
+       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+       <window_info anchor="right" id="Maven Projects" order="3" />
+       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23965141" />
+-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32897604" />
++      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24025974" />
++      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32900432" />
+       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32900432" />
+       <window_info id="Capture Tool" order="2" />
+       <window_info id="Designer" order="2" />
+-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20842217" />
++      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20628998" />
+       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+       <window_info id="UI Designer" order="2" />
+       <window_info anchor="right" id="Theme Preview" order="3" />
+-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
++      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
+       <window_info id="Favorites" order="2" side_tool="true" />
+-      <window_info anchor="right" id="Palette" order="3" />
+-      <window_info id="Designer" order="2" />
+       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+-      <window_info anchor="right" id="Capture Analysis" order="3" />
+       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32900432" />
+-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+-      <window_info anchor="bottom" id="TODO" order="6" />
+-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32900432" />
+-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24025974" />
+-      <window_info id="Image Layers" order="2" />
+-      <window_info id="Capture Tool" order="2" />
+-      <window_info id="UI Designer" order="2" />
+-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
+-      <window_info anchor="right" id="Theme Preview" order="3" />
+-      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+-      <window_info anchor="right" id="Palette&#9;" order="3" />
+       <window_info anchor="bottom" id="Message" order="0" />
+-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+-      <window_info id="Favorites" order="2" side_tool="true" />
+       <window_info anchor="bottom" id="Find" order="1" />
+-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32900432" />
+-      <window_info anchor="right" id="Maven Projects" order="3" />
+-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20628998" />
+     </layout>
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -1649,23 +743,16 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="RECENTLY_FILTERED_USER_GROUPS">
+-                <collection />
+-              </option>
+-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+-                <collection />
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+     </option>
+-  </component>
+-  <component name="VcsContentAnnotationSettings">
+-    <option name="myLimit" value="2678400000" />
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
++    <MESSAGE value="mainban is teszt" />
++    <MESSAGE value="2 teszt" />
+     <MESSAGE value="sout-ok kiegészítése" />
+     <MESSAGE value="thx csizmy" />
+     <MESSAGE value="kéééész" />
+@@ -1689,26 +776,9 @@
+     <MESSAGE value="asteroid step" />
+     <MESSAGE value="idegbajtkapok" />
+     <MESSAGE value="menu kinda kész" />
+-    <MESSAGE value="kitöröltem 1 aproságot" />
+-    <MESSAGE value="update" />
+-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <option name="time" value="3" />
+-    </breakpoint-manager>
++    <option name="LAST_COMMIT_MESSAGE" value="menu kinda kész" />
+   </component>
+   <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/src/Game_parts/Game.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="221">
+-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+-          <folding>
+-            <element signature="imports" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/src/Miners/Robot.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="34">
+@@ -1905,6 +975,12 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="102">
+           <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
++          <folding>
++            <element signature="e#266#267#0" expanded="true" />
++            <element signature="e#286#287#0" expanded="true" />
++            <element signature="e#709#710#0" expanded="true" />
++            <element signature="e#736#737#0" expanded="true" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
+@@ -1922,171 +998,63 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Game_parts/Game.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="221">
+-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+-          <folding>
+-            <element signature="imports" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Objects/Spacething.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="459">
+-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Game_parts/Map.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="393">
+-          <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Game_parts/ClickListener.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="34">
+-          <caret line="2" selection-start-line="2" selection-end-line="4" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Graphics/MainFrame.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="221">
+-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Graphics/Menu.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="785">
+-          <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/src/Objects/Asteroid.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="408">
+-          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
++        <state relative-caret-position="365">
++          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+           <folding>
+             <element signature="imports" expanded="true" />
++            <element signature="method#removeLayer#0;class#Asteroid#0" />
+             <element signature="method#RemoveMaterial#0;class#Asteroid#0" />
++            <element signature="method#removeMiner#0;class#Asteroid#0" />
+             <element signature="method#Explode#0;class#Asteroid#0" />
+             <element signature="method#CountDiffMat#0;class#Asteroid#0" />
++            <element signature="e#3062#3063#0" expanded="true" />
++            <element signature="e#3119#3120#0" expanded="true" />
++            <element signature="e#3191#3192#0" expanded="true" />
++            <element signature="e#3248#3249#0" expanded="true" />
++            <element signature="e#3343#3344#0" expanded="true" />
++            <element signature="e#3394#3395#0" expanded="true" />
++            <element signature="e#3423#3424#0" expanded="true" />
++            <element signature="e#3451#3452#0" expanded="true" />
++            <element signature="e#3488#3489#0" expanded="true" />
++            <element signature="e#3519#3520#0" expanded="true" />
++            <element signature="e#3556#3557#0" expanded="true" />
++            <element signature="e#3589#3590#0" expanded="true" />
++            <element signature="e#3619#3620#0" expanded="true" />
++            <element signature="e#3649#3650#0" expanded="true" />
++            <element signature="e#3760#3761#0" expanded="true" />
++            <element signature="e#3789#3790#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Graphics/IDrawable.java">
++    <entry file="file://$PROJECT_DIR$/src/Game_parts/Game.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="68">
+-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/pictures/settler.png">
+-      <provider selected="true" editor-type-id="images" />
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Graphics/ImageResizer.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="340">
+-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
++        <state relative-caret-position="408">
++          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+           <folding>
+             <element signature="imports" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GAsteroid.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="102">
+-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Graphics/Controller.java">
++    <entry file="file://$PROJECT_DIR$/src/Objects/Spacething.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="68">
+-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GWater.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="153">
+-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GCoal.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="204">
+-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/Graphics/GamePanel.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="32">
+-          <caret line="121" column="52" lean-forward="true" selection-start-line="120" selection-start-column="26" selection-end-line="121" selection-end-column="52" />
+-          <folding>
+-            <element signature="imports" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GUranium.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="221">
+-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GUfo.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="85">
+-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GTeleport.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="85">
+-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="85">
+-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GIron.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="204">
+-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GObject.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="435">
+-          <caret line="32" column="43" lean-forward="true" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
++        <state relative-caret-position="459">
++          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+           <folding>
+-            <element signature="imports" expanded="true" />
++            <element signature="e#221#233#0" expanded="true" />
++            <element signature="e#316#317#0" expanded="true" />
++            <element signature="e#346#347#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/GObjects/GRobot.java">
++    <entry file="file://$PROJECT_DIR$/src/Game_parts/Map.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="136">
+-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
++        <state relative-caret-position="393">
++          <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+         </state>
+       </provider>
+     </entry>

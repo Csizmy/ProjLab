@@ -1,7 +1,10 @@
 package Graphics;
 
+import GObjects.*;
+import Game_parts.Game;
 import Materials.Material;
 import Miners.Settler;
+import Objects.Asteroid;
 import Proto.Proto;
 
 import javax.imageio.ImageIO;
@@ -18,12 +21,13 @@ public class GamePanel extends JPanel {
 
     private JButton tp,robot,dig,mine,move,zoomin, zoomout, skip;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
+    private JLabel a_teli_kozel, a_teli_tavol, a_ures_kozel, a_ures_tavol;    //A játékos táskája
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
     private Proto p;            //A játék lépéseit valositja meg
     private Settler currentPlayer;  // A jelenlegi játékos
-    private ArrayList<JButton> Buttons = new ArrayList<>();
-    private ArrayList<JButton> MaterialButtons = new ArrayList<>();
+    private ArrayList<JButton> Things = new ArrayList<>();
+    private ArrayList<JButton> gfxTest = new ArrayList<>();
 
     public void InitButton(JButton btn){
         btn.setOpaque(false);
@@ -36,14 +40,14 @@ public class GamePanel extends JPanel {
     public GamePanel(OnPlayListener act ) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
-        p.addToBackpack("Water",51);            //nem kell csak teszthez kellett
+        p.addToBackpack("Water",51);
         p.addToBackpack("Water",51);
         p.addToBackpack("Iron",51);
         p.addToBackpack("Water",51);
         p.addToBackpack("Water",51);
         p.addToBackpack("Iron",51);
         p.addToBackpack("Uranium",51);
-        p.addToBackpack("Coal",51);             //eddig.
+        p.addToBackpack("Coal",51);
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
         zoomout = new JButton("");
@@ -58,6 +62,11 @@ public class GamePanel extends JPanel {
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory191x386.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory210x63.png"));
 
+        a_teli_kozel = new JLabel(new ImageIcon("pictures\\a_teli_kozel.png"));
+        a_teli_tavol = new JLabel(new ImageIcon("pictures\\a_teli_tavol.png"));
+        a_ures_kozel = new JLabel(new ImageIcon("pictures\\a_ures_kozel.png"));
+        a_ures_tavol = new JLabel(new ImageIcon("pictures\\a_ures_tavol.png"));
+
         skip.setIcon(new ImageIcon("pictures\\skip200x53.png" ));
         zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png" ));
         zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png" ));
@@ -66,8 +75,6 @@ public class GamePanel extends JPanel {
         dig.setIcon(new ImageIcon("pictures\\dig200x53.png" ));
         mine.setIcon(new ImageIcon("pictures\\mine200x53.png" ));
         move.setIcon(new ImageIcon("pictures\\move200x53.png" ));
-
-
 
         zoomout.setBounds(770,20,54,54);
         zoomin.setBounds(700,20,54,54);
@@ -80,27 +87,40 @@ public class GamePanel extends JPanel {
         tpInventory.setBounds(40,420,210,63);
         skip.setBounds(550,570,200,53);
 
-        Buttons.add(zoomout);
-        Buttons.add(zoomin);
-        Buttons.add(tp);
-        Buttons.add(robot);
-        Buttons.add(dig);
-        Buttons.add(mine);
-        Buttons.add(move);
-        Buttons.add(skip);
+        a_teli_kozel.setBounds(350,180,300,300);
+        a_teli_tavol.setBounds(350,180,300,300);
+        a_ures_kozel.setBounds(350,180,300,300);
+        a_ures_tavol.setBounds(350,180,300,300);
 
-        for (JButton jb: Buttons) {
+        Things.add(zoomout);
+        Things.add(zoomin);
+        Things.add(tp);
+        Things.add(robot);
+        Things.add(dig);
+        Things.add(mine);
+        Things.add(move);
+        Things.add(skip);
+
+        for (JButton jb: Things) {
             InitButton(jb);
             this.add(jb);
         }
 
         resourceInventory.setOpaque(false);
         tpInventory.setOpaque(false);
+        a_teli_kozel.setOpaque(false);
+        a_teli_tavol.setOpaque(false);
+        a_ures_kozel.setOpaque(false);
+        a_ures_tavol.setOpaque(false);
 
         this.setLayout(null);
 
         this.add(resourceInventory);
         this.add(tpInventory);
+        this.add(a_teli_kozel);
+        this.add(a_teli_tavol);
+        this.add(a_ures_kozel);
+        this.add(a_ures_tavol);
 
         try {
             image = ImageIO.read(new File("pictures\\background.png"));
@@ -115,8 +135,28 @@ public class GamePanel extends JPanel {
 
         g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
 
+        a_teli_kozel.setVisible(false);
+        a_teli_tavol.setVisible(false);
+        a_ures_kozel.setVisible(false);
+        a_ures_tavol.setVisible(false);
 
-
+        Asteroid curr_a = (Asteroid) currentPlayer.getSpacething();
+        if(curr_a.getDigged()==curr_a.getLayer()){  // ha ki van ásva az aszteroida
+            if (curr_a.getPerihelion()) { // ha napközel
+                a_ures_kozel.setVisible(true);
+            }
+            else{ // ha naptávol
+                a_ures_tavol.setVisible(true);
+            }
+        }
+        else{
+            if (curr_a.getPerihelion()) { // ha napközel
+                a_teli_kozel.setVisible(true);
+            }
+            else{ // ha naptávol
+                a_teli_tavol.setVisible(true);
+            }
+        }
     }
 
     public void exit() {
@@ -136,7 +176,7 @@ public class GamePanel extends JPanel {
     }
 
     public void refreshBp(){
-        for(JButton b: MaterialButtons){
+        for(JButton b: gfxTest){
             this.remove(b);
         }
         int y = 0;
@@ -150,7 +190,7 @@ public class GamePanel extends JPanel {
             System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
             try {
                 JButton b=m.drawMaterial(x*90 + 70, y*75 + 30, this, m);
-                MaterialButtons.add(b);
+                gfxTest.add(b);
                 this.add(b);
             } catch (IOException e) {
                 e.printStackTrace();
