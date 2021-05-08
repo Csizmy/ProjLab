@@ -21,7 +21,8 @@ public class GamePanel extends JPanel {
 
     private JButton tp,robot,dig,mine,move,zoomin, zoomout, skip;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
-    private JLabel a_teli_kozel, a_teli_tavol, a_ures_kozel, a_ures_tavol;    //A játékos táskája
+    private JLabel a_teli_kozel, a_teli_tavol, a_ures_kozel, a_ures_tavol;    //Aszteroida fajták
+    private JLabel water, coal, iron, uranium;    //Aszteroidák anyagai, ha azok ki vannak fúrva
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
     private Proto p;            //A játék lépéseit valositja meg
@@ -67,6 +68,11 @@ public class GamePanel extends JPanel {
         a_ures_kozel = new JLabel(new ImageIcon("pictures\\a_ures_kozel.png"));
         a_ures_tavol = new JLabel(new ImageIcon("pictures\\a_ures_tavol.png"));
 
+        water = new JLabel(new ImageIcon("pictures\\water70x70.png"));
+        coal = new JLabel(new ImageIcon("pictures\\coal70x70.png"));
+        iron = new JLabel(new ImageIcon("pictures\\iron70x70.png"));
+        uranium = new JLabel(new ImageIcon("pictures\\uranium70x70.png"));
+
         skip.setIcon(new ImageIcon("pictures\\skip200x53.png" ));
         zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png" ));
         zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png" ));
@@ -92,6 +98,11 @@ public class GamePanel extends JPanel {
         a_ures_kozel.setBounds(350,180,300,300);
         a_ures_tavol.setBounds(350,180,300,300);
 
+        water.setBounds(465,300,70,70);
+        coal.setBounds(465,300,70,70);
+        iron.setBounds(465,300,70,70);
+        uranium.setBounds(465,300,70,70);
+
         Things.add(zoomout);
         Things.add(zoomin);
         Things.add(tp);
@@ -112,11 +123,19 @@ public class GamePanel extends JPanel {
         a_teli_tavol.setOpaque(false);
         a_ures_kozel.setOpaque(false);
         a_ures_tavol.setOpaque(false);
+        water.setOpaque(false);
+        coal.setOpaque(false);
+        iron.setOpaque(false);
+        uranium.setOpaque(false);
 
         this.setLayout(null);
 
         this.add(resourceInventory);
         this.add(tpInventory);
+        this.add(water);
+        this.add(coal);
+        this.add(iron);
+        this.add(uranium);
         this.add(a_teli_kozel);
         this.add(a_teli_tavol);
         this.add(a_ures_kozel);
@@ -140,6 +159,11 @@ public class GamePanel extends JPanel {
         a_ures_kozel.setVisible(false);
         a_ures_tavol.setVisible(false);
 
+        water.setVisible(false);
+        coal.setVisible(false);
+        iron.setVisible(false);
+        uranium.setVisible(false);
+
         Asteroid curr_a = (Asteroid) currentPlayer.getSpacething();
         if(curr_a.getDigged()==curr_a.getLayer()){  // ha ki van ásva az aszteroida
             if (curr_a.getPerihelion()) { // ha napközel
@@ -148,6 +172,11 @@ public class GamePanel extends JPanel {
             else{ // ha naptávol
                 a_ures_tavol.setVisible(true);
             }
+
+            if(curr_a.getMaterial()!=null && curr_a.getMaterial().getName()=="Water") water.setVisible(true);
+            if(curr_a.getMaterial()!=null && curr_a.getMaterial().getName()=="Iron") iron.setVisible(true);
+            if(curr_a.getMaterial()!=null && curr_a.getMaterial().getName()=="Coal") coal.setVisible(true);
+            if(curr_a.getMaterial()!=null && curr_a.getMaterial().getName()=="Uranium") uranium.setVisible(true);
         }
         else{
             if (curr_a.getPerihelion()) { // ha napközel

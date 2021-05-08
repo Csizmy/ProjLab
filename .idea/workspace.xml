@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="kommentek">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43__Default_.xml" afterDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="látszódik az aszteroida">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/a_teli_kozel.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/a_teli_kozel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/a_teli_tavol.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/a_teli_tavol.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/a_ures_kozel.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/a_ures_kozel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/a_ures_tavol.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/a_ures_tavol.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/resourceinventory207x420.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/resourceinventory289x586.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/tpinventory280x83.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -4963,13 +4961,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00007" summary="Kis hibák javítva">
-      <created>1616343289613</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1616343289613</updated>
-    </task>
     <task id="LOCAL-00008" summary="Kis hibák javítva">
       <created>1616343362327</created>
       <option name="number" value="00008" />
@@ -5306,7 +5297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620488186671</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="látszódik az aszteroida">
+      <created>1620495401058</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1620495401058</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5362,7 +5360,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Panku addToBackpack javítva" />
     <MESSAGE value="csizmy dolgai feltoltve" />
     <MESSAGE value="csizmy dolgai feltoltve+ javitgatva 1-2 dolog amit irtam-axel" />
     <MESSAGE value="a loadmap tobb infot ir ki" />
@@ -5387,7 +5384,8 @@
     <MESSAGE value="beraktamvmit" />
     <MESSAGE value="csizmy dolgait feltöltöm xd" />
     <MESSAGE value="csizmy dolgait feltöltöm xd2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="csizmy dolgait feltöltöm xd2.0" />
+    <MESSAGE value="látszódik az aszteroida" />
+    <option name="LAST_COMMIT_MESSAGE" value="látszódik az aszteroida" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">
