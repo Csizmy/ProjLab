@@ -1,7 +1,5 @@
 package Graphics;
 
-import GObjects.*;
-import Game_parts.Game;
 import Materials.Material;
 import Miners.Settler;
 import Proto.Proto;
@@ -24,8 +22,8 @@ public class GamePanel extends JPanel {
     private BufferedImage image;    //háttér
     private Proto p;            //A játék lépéseit valositja meg
     private Settler currentPlayer;  // A jelenlegi játékos
-    private ArrayList<JButton> Things = new ArrayList<>();
-    private ArrayList<JButton> gfxTest = new ArrayList<>();
+    private ArrayList<JButton> Buttons = new ArrayList<>();
+    private ArrayList<JButton> MaterialButtons = new ArrayList<>();
 
     public void InitButton(JButton btn){
         btn.setOpaque(false);
@@ -38,14 +36,14 @@ public class GamePanel extends JPanel {
     public GamePanel(OnPlayListener act ) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
-        p.addToBackpack("Water",51);
+        p.addToBackpack("Water",51);            //nem kell csak teszthez kellett
         p.addToBackpack("Water",51);
         p.addToBackpack("Iron",51);
         p.addToBackpack("Water",51);
         p.addToBackpack("Water",51);
         p.addToBackpack("Iron",51);
         p.addToBackpack("Uranium",51);
-        p.addToBackpack("Coal",51);
+        p.addToBackpack("Coal",51);             //eddig.
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
         zoomout = new JButton("");
@@ -82,16 +80,16 @@ public class GamePanel extends JPanel {
         tpInventory.setBounds(40,420,210,63);
         skip.setBounds(550,570,200,53);
 
-        Things.add(zoomout);
-        Things.add(zoomin);
-        Things.add(tp);
-        Things.add(robot);
-        Things.add(dig);
-        Things.add(mine);
-        Things.add(move);
-        Things.add(skip);
+        Buttons.add(zoomout);
+        Buttons.add(zoomin);
+        Buttons.add(tp);
+        Buttons.add(robot);
+        Buttons.add(dig);
+        Buttons.add(mine);
+        Buttons.add(move);
+        Buttons.add(skip);
 
-        for (JButton jb: Things) {
+        for (JButton jb: Buttons) {
             InitButton(jb);
             this.add(jb);
         }
@@ -138,7 +136,7 @@ public class GamePanel extends JPanel {
     }
 
     public void refreshBp(){
-        for(JButton b: gfxTest){
+        for(JButton b: MaterialButtons){
             this.remove(b);
         }
         int y = 0;
@@ -152,7 +150,7 @@ public class GamePanel extends JPanel {
             System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
             try {
                 JButton b=m.drawMaterial(x*90 + 70, y*75 + 30, this, m);
-                gfxTest.add(b);
+                MaterialButtons.add(b);
                 this.add(b);
             } catch (IOException e) {
                 e.printStackTrace();
