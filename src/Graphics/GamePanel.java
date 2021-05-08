@@ -22,7 +22,6 @@ public class GamePanel extends JPanel {
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
-    private BufferedImage texture;
     private Proto p;            //A játék lépéseit valositja meg
     private Settler currentPlayer;  // A jelenlegi játékos
     private ArrayList<JButton> gfxTest = new ArrayList<>();
@@ -31,6 +30,7 @@ public class GamePanel extends JPanel {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
         p.addToBackpack("Water",51);
+        p.addToBackpack("Iron",51);
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
         zoomout = new JButton("");
@@ -195,9 +195,23 @@ public class GamePanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        //g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
-        backPackDraw(g);
-        invalidate();
+        g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
+
+        int x = 0;
+        int y = 0;
+
+
+        for(Material m :currentPlayer.getBackpack()){  ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if(x==5){   ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                y=1;  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            }  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ok itt a backpacket akarom kirajzolni nem megy vkinek hajrá fent a konstruktorban az
+            System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
+            m.rajzoljkocsog(g,x*70 + 200, y*70 + 200, this);
+
+            x++;
+            invalidate();
+        }
+
 
     }
 
@@ -214,26 +228,7 @@ public class GamePanel extends JPanel {
     }
 
     public void backPackDraw(Graphics g){
-        int x = 0;
-        int y = 0;
 
-
-        for(Material m :currentPlayer.getBackpack()){
-            if(x==5){
-                y=1;
-            }
-            System.out.println("Beleptem"+m.getName());
-            g.drawImage( m.getGobject().getTexture(),x*70 + 20, y*70 + 20,this);
-
-            try {
-                texture=  ImageIO.read(new File("pictures\\uranium70x70.png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            g.drawImage(texture, 400, 400,this);
-
-            x++;
-        }
     }
 
     public void nextPlayer(){

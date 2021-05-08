@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="zoomin,outot ujraimplementáltam kekw">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="átirtam mindent is soz evvan">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GCoal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GCoal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GIron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GIron.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUranium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GWater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GWater.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GAsteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GAsteroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GCoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GCoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GIron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GIron.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GObjects/GObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GUranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GUranium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GWater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Coal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Coal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Iron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Iron.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Materials/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Uranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Uranium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Water.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4980,13 +4962,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00002" summary="Base">
-      <created>1615532120951</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1615532120951</updated>
-    </task>
     <task id="LOCAL-00003" summary="Base">
       <created>1615532249477</created>
       <option name="number" value="00003" />
@@ -5323,7 +5298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620473491455</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="átirtam mindent is soz evvan">
+      <created>1620476181397</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1620476181397</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5379,7 +5361,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="7.0 and 7.0.2 implementálva" />
     <MESSAGE value="Listázás implementálva, kellenek ufok meg ilyenek." />
     <MESSAGE value="Proto osztályok elkezdése, új konstruktorok" />
     <MESSAGE value="bence stipi" />
@@ -5404,7 +5385,8 @@
     <MESSAGE value="idk ezmi" />
     <MESSAGE value="kommentek" />
     <MESSAGE value="zoomin,outot ujraimplementáltam kekw" />
-    <option name="LAST_COMMIT_MESSAGE" value="zoomin,outot ujraimplementáltam kekw" />
+    <MESSAGE value="átirtam mindent is soz evvan" />
+    <option name="LAST_COMMIT_MESSAGE" value="átirtam mindent is soz evvan" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">

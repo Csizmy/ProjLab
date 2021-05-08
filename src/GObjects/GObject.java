@@ -3,6 +3,8 @@ package GObjects;
 import Graphics.IDrawable;
 import Graphics.ImageResizer;
 
+import Graphics.GamePanel;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -39,6 +41,12 @@ public class GObject implements IDrawable {
         return object;
     }
 
+
+    public void rajzolok(Graphics g, int x, int y, GamePanel panel){
+        g.drawImage(texture , 0, 0, panel); // see javadoc for more info on the parameters
+
+
+    }
     public BufferedImage getTexture(){
         return texture;
     }
