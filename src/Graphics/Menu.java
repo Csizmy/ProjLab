@@ -35,9 +35,9 @@ public class Menu extends JPanel { //axelfoglaltahihi
         exit.setOpaque(false);
         exit.setContentAreaFilled(false);
         this.setLayout(null);
-        play.setBounds(200,100,800,123);
-        help.setBounds(200,300,800,123);
-        exit.setBounds(200,500,800,123);
+        play.setBounds(28,50,800,123);
+        help.setBounds(28,250,800,123);
+        exit.setBounds(28,450,800,123);
         play.setFocusable(false);
         help.setFocusable(false);
         exit.setFocusable(false);

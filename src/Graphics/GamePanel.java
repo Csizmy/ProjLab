@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
-    private JButton tp,robot,dig,mine,move,zoomin,zoomout;    //gombok
+    private JButton tp,robot,dig,mine,move;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
@@ -35,39 +35,30 @@ public class GamePanel extends JPanel {
         dig = new JButton("");
         mine = new JButton("");
         move = new JButton("");
-        zoomin = new JButton("");
-        zoomout = new JButton("");
 
-        resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory289x586.png"));
-        tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory280x83.png"));
+        resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory191x386.png"));
+        tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory210x63.png"));
 
-        tp.setIcon(new ImageIcon("pictures\\tp248x65.png" ));
+        tp.setIcon(new ImageIcon("pictures\\tp200x53.png" ));
         tp.setOpaque(false);
         tp.setContentAreaFilled(false);
 
-        robot.setIcon(new ImageIcon("pictures\\robot248x65.png" ));
+        robot.setIcon(new ImageIcon("pictures\\robot200x53.png" ));
         robot.setOpaque(false);
         robot.setContentAreaFilled(false);
 
-        dig.setIcon(new ImageIcon("pictures\\dig248x65.png" ));
+        dig.setIcon(new ImageIcon("pictures\\dig200x53.png" ));
         dig.setOpaque(false);
         dig.setContentAreaFilled(false);
 
-        mine.setIcon(new ImageIcon("pictures\\mine248x65.png" ));
+        mine.setIcon(new ImageIcon("pictures\\mine200x53.png" ));
         mine.setOpaque(false);
         mine.setContentAreaFilled(false);
 
-        move.setIcon(new ImageIcon("pictures\\move248x65.png" ));
+        move.setIcon(new ImageIcon("pictures\\move200x53.png" ));
         move.setOpaque(false);
         move.setContentAreaFilled(false);
 
-        zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png" ));
-        zoomin.setOpaque(false);
-        zoomin.setContentAreaFilled(false);
-
-        zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png" ));
-        zoomout.setOpaque(false);
-        zoomout.setContentAreaFilled(false);
 
 
         resourceInventory.setOpaque(false);
@@ -76,23 +67,19 @@ public class GamePanel extends JPanel {
 
         this.setLayout(null);
 
-        tp.setBounds(62,740,248,65);
-        robot.setBounds(62,818,248,65);
-        dig.setBounds(333,818,248,65);
-        mine.setBounds(600,818,248,65);
-        move.setBounds(868,818,248,65);
-        zoomout.setBounds(1064,13,54,54);
-        zoomin.setBounds(1132,13,54,54);
-        resourceInventory.setBounds(41,22,289,586);
-        tpInventory.setBounds(45,639,280,83);
+        tp.setBounds(50,570,200,53);
+        robot.setBounds(300,570,200,53);
+        dig.setBounds(50,500,200,53);
+        mine.setBounds(300,500,200,53);
+        move.setBounds(550,500,200,53);
+        resourceInventory.setBounds(50,20,191,386);
+        tpInventory.setBounds(40,420,210,63);
 
         tp.setFocusable(false);
         robot.setFocusable(false);
         dig.setFocusable(false);
         mine.setFocusable(false);
         move.setFocusable(false);
-        zoomout.setFocusable(false);
-        zoomin.setFocusable(false);
         resourceInventory.setFocusable(false);
         tpInventory.setFocusable(false);
 
@@ -101,8 +88,6 @@ public class GamePanel extends JPanel {
         dig.addActionListener(click);
         mine.addActionListener(click);
         move.addActionListener(click);
-        zoomout.addActionListener(click);
-        zoomin.addActionListener(click);
 
         for(int i = 0; i < 2;i++){
             for(int j = 0; i < 5; i++){
@@ -175,8 +160,6 @@ public class GamePanel extends JPanel {
         this.add(dig);
         this.add(mine);
         this.add(move);
-        this.add(zoomout);
-        this.add(zoomin);
         this.add(resourceInventory);
         this.add(tpInventory);
 
@@ -252,12 +235,7 @@ public class GamePanel extends JPanel {
             else if (e.getSource() == move){  //mozogni probál itt át kéne váltani a map nézetre
                 System.out.println("move");
             }
-            else if (e.getSource() == zoomin){  //ezek nem igazán kellenek
-                System.out.println("zoomin");
-            }
-            else if (e.getSource() == zoomout){
-                System.out.println("zoomout");
-            }
+
         }
     }
 
