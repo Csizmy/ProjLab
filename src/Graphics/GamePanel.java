@@ -17,23 +17,19 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
-    private JButton tp,robot,dig,mine,move,zoomin,zoomout;
-    private JLabel resourceInventory, tpInventory;
-    private Clicklistener click;
-    private BufferedImage image;
-    private Proto p;
-    private Settler currentPlayer;  /// ezt még meg kéne vhogy kapnia.........
+    private JButton tp,robot,dig,mine,move,zoomin,zoomout;    //gombok
+    private JLabel resourceInventory, tpInventory;    //A játékos táskája
+    private Clicklistener click;  // A gombokat kezeli
+    private BufferedImage image;    //háttér
+    private Proto p;            //A játék lépéseit valositja meg
+    private Settler currentPlayer;  // A jelenlegi játékos
     private ArrayList<JButton> gfxTest = new ArrayList<>();
-
-    private Game game;
-    private Controller controller; //ez így van itt?
-
 
     public GamePanel(OnPlayListener act) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
         currentPlayer = p.getMap().getSettlers().get(0);
-        Clicklistener click = new Clicklistener();
+        click = new Clicklistener();
         tp = new JButton("");
         robot = new JButton("");
         dig = new JButton("");
@@ -229,34 +225,34 @@ public class GamePanel extends JPanel {
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
 
         public void actionPerformed(ActionEvent e){
-            if (e.getSource() == tp){
+            if (e.getSource() == tp){   //teleportot probál épiteni
                 System.out.println("tp");
                 if(p.buildTeleport(currentPlayer.getId())==true){
                     nextPlayer();
                 }
             }
-            else if (e.getSource() == robot){
+            else if (e.getSource() == robot){ //robotot probnál épiteni
                 System.out.println("robot");
                 if(p.buildRobot(currentPlayer.getId())==true){
                     nextPlayer();
                 }
             }
-            else if (e.getSource() == dig){
+            else if (e.getSource() == dig){  //furni probál
                 System.out.println("dig");
                 if(p.drillMiner(currentPlayer.getId())==true){
                     nextPlayer();
                 }
             }
-            else if (e.getSource() == mine){
+            else if (e.getSource() == mine){  //ásni probál
                 System.out.println("mine");
                 if(p.mineMiner(currentPlayer.getId())==true){
                     nextPlayer();
                 }
             }
-            else if (e.getSource() == move){
+            else if (e.getSource() == move){  //mozogni probál itt át kéne váltani a map nézetre
                 System.out.println("move");
             }
-            else if (e.getSource() == zoomin){
+            else if (e.getSource() == zoomin){  //ezek nem igazán kellenek
                 System.out.println("zoomin");
             }
             else if (e.getSource() == zoomout){
