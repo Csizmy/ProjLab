@@ -4,6 +4,7 @@ import GObjects.*;
 import Game_parts.Game;
 import Materials.Material;
 import Miners.Settler;
+import Objects.Asteroid;
 import Proto.Proto;
 
 import javax.imageio.ImageIO;
@@ -20,6 +21,7 @@ public class GamePanel extends JPanel {
 
     private JButton tp,robot,dig,mine,move,zoomin, zoomout, skip;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
+    private JLabel a_teli_kozel, a_teli_tavol, a_ures_kozel, a_ures_tavol;    //A játékos táskája
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
     private Proto p;            //A játék lépéseit valositja meg
@@ -60,6 +62,11 @@ public class GamePanel extends JPanel {
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory191x386.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory210x63.png"));
 
+        a_teli_kozel = new JLabel(new ImageIcon("pictures\\a_teli_kozel.png"));
+        a_teli_tavol = new JLabel(new ImageIcon("pictures\\a_teli_tavol.png"));
+        a_ures_kozel = new JLabel(new ImageIcon("pictures\\a_ures_kozel.png"));
+        a_ures_tavol = new JLabel(new ImageIcon("pictures\\a_ures_tavol.png"));
+
         skip.setIcon(new ImageIcon("pictures\\skip200x53.png" ));
         zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png" ));
         zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png" ));
@@ -68,8 +75,6 @@ public class GamePanel extends JPanel {
         dig.setIcon(new ImageIcon("pictures\\dig200x53.png" ));
         mine.setIcon(new ImageIcon("pictures\\mine200x53.png" ));
         move.setIcon(new ImageIcon("pictures\\move200x53.png" ));
-
-
 
         zoomout.setBounds(770,20,54,54);
         zoomin.setBounds(700,20,54,54);
@@ -81,6 +86,11 @@ public class GamePanel extends JPanel {
         resourceInventory.setBounds(50,20,191,386);
         tpInventory.setBounds(40,420,210,63);
         skip.setBounds(550,570,200,53);
+
+        a_teli_kozel.setBounds(350,180,300,300);
+        a_teli_tavol.setBounds(350,180,300,300);
+        a_ures_kozel.setBounds(350,180,300,300);
+        a_ures_tavol.setBounds(350,180,300,300);
 
         Things.add(zoomout);
         Things.add(zoomin);
@@ -98,11 +108,19 @@ public class GamePanel extends JPanel {
 
         resourceInventory.setOpaque(false);
         tpInventory.setOpaque(false);
+        a_teli_kozel.setOpaque(false);
+        a_teli_tavol.setOpaque(false);
+        a_ures_kozel.setOpaque(false);
+        a_ures_tavol.setOpaque(false);
 
         this.setLayout(null);
 
         this.add(resourceInventory);
         this.add(tpInventory);
+        this.add(a_teli_kozel);
+        this.add(a_teli_tavol);
+        this.add(a_ures_kozel);
+        this.add(a_ures_tavol);
 
         try {
             image = ImageIO.read(new File("pictures\\background.png"));
@@ -117,8 +135,28 @@ public class GamePanel extends JPanel {
 
         g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
 
+        a_teli_kozel.setVisible(false);
+        a_teli_tavol.setVisible(false);
+        a_ures_kozel.setVisible(false);
+        a_ures_tavol.setVisible(false);
 
-
+        Asteroid curr_a = (Asteroid) currentPlayer.getSpacething();
+        if(curr_a.getDigged()==curr_a.getLayer()){  // ha ki van ásva az aszteroida
+            if (curr_a.getPerihelion()) { // ha napközel
+                a_ures_kozel.setVisible(true);
+            }
+            else{ // ha naptávol
+                a_ures_tavol.setVisible(true);
+            }
+        }
+        else{
+            if (curr_a.getPerihelion()) { // ha napközel
+                a_teli_kozel.setVisible(true);
+            }
+            else{ // ha naptávol
+                a_teli_tavol.setVisible(true);
+            }
+        }
     }
 
     public void exit() {
