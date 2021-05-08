@@ -284,6 +284,11 @@ public class GamePanel extends JPanel {
                 }
             } else if (e.getSource() == move) {  //mozogni probál itt át kéne váltani a map nézetre
                 System.out.println("move");
+                try {
+                    toMapView.ChangeToGame(2);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             } else if (e.getSource() == zoomout) {
                 System.out.println("zoomout");
                 try {
