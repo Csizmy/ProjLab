@@ -14,6 +14,7 @@ import java.util.Scanner;
 
 public class Proto {
     private Map map = new Map();
+    private Settler currentPlayer;
 
     public void loadMap(String mapName){
         try{
@@ -122,6 +123,7 @@ public class Proto {
         catch (FileNotFoundException e){
             System.out.println("A pálya betöltése sikertelen");
         }
+        currentPlayer=map.getSettlers().get(0);
     }
 
     public void list(String item){
@@ -164,7 +166,8 @@ public class Proto {
         }
     }
 
-    public boolean drillMiner(int settler_id){
+    public boolean drillMiner(){
+        int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 if (map.getSettlers().get(i).Drill()) {
@@ -180,7 +183,8 @@ public class Proto {
         return false;
     }
 
-    public boolean mineMiner(int settler_id){
+    public boolean mineMiner(){
+        int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++){
             if (map.getSettlers().get(i).getId() == settler_id) {
                 return map.getSettlers().get(i).Mine();
@@ -189,7 +193,8 @@ public class Proto {
         return false;
     }
 
-    public boolean buildTeleport(int settler_id){
+    public boolean buildTeleport(){
+        int settler_id= currentPlayer.getId();
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId()+2;
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
@@ -212,7 +217,8 @@ public class Proto {
         return false;
     }
 
-    public void placeTeleport(int settler_id, int teleport_id){
+    public void placeTeleport( int teleport_id){
+        int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
                 for (int j = 0; j < map.getTeleports().size(); j++) {
@@ -298,8 +304,8 @@ public class Proto {
         }
     }
 
-    public void backPack(int settler_id){
-
+    public void backPack(){
+        int settler_id= currentPlayer.getId();
         for (Settler s: map.getSettlers()){
             if(s.getId()==settler_id){
                 s.listBackPack();
@@ -316,8 +322,8 @@ public class Proto {
         }
     }
 
-    public boolean buildRobot(int settler_id){
-
+    public boolean buildRobot(){
+        int settler_id= currentPlayer.getId();
         Settler settler = map.getSettlers().get(settler_id - 50);
 
         int new_id = 50;
@@ -504,5 +510,12 @@ public class Proto {
 
         System.out.println("A játéknak nincs vége");
         return false;
+    }
+
+    public Miner getCurrent() {
+        return currentPlayer;
+    }
+    public void setCurrent(Settler s) {
+        currentPlayer=s;
     }
 }

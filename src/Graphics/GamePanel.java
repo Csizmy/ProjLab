@@ -19,18 +19,17 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
-    private JButton tp,robot,dig,mine,move,zoomin, zoomout, skip;    //gombok
+    private JButton tp, robot, dig, mine, move, zoomin, zoomout, skip;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
     private JLabel a_teli_kozel, a_teli_tavol, a_ures_kozel, a_ures_tavol;    //Aszteroida fajták
     private JLabel water, coal, iron, uranium;    //Aszteroidák anyagai, ha azok ki vannak fúrva
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
     private Proto p;            //A játék lépéseit valositja meg
-    private Settler currentPlayer;  // A jelenlegi játékos
     private ArrayList<JButton> Things = new ArrayList<>();
     private ArrayList<JButton> gfxTest = new ArrayList<>();
 
-    public void InitButton(JButton btn){
+    public void InitButton(JButton btn) {
         btn.setOpaque(false);
         btn.setContentAreaFilled(false);
         btn.setBorderPainted(false);
@@ -38,21 +37,21 @@ public class GamePanel extends JPanel {
         btn.setFocusable(false);
     }
 
-    public GamePanel(OnPlayListener act ) throws IOException {
+    public GamePanel(OnPlayListener act) throws IOException {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
-        p.addToBackpack("Water",51);
-        p.addToBackpack("Water",51);
-        p.addToBackpack("Iron",51);
-        p.addToBackpack("Water",51);
-        p.addToBackpack("Water",51);
-        p.addToBackpack("Iron",51);
-        p.addToBackpack("Uranium",51);
-        p.addToBackpack("Coal",51);
-        currentPlayer = p.getMap().getSettlers().get(0);
+        p.addToBackpack("Water", 51);
+        p.addToBackpack("Water", 51);
+        p.addToBackpack("Iron", 51);
+        p.addToBackpack("Water", 51);
+        p.addToBackpack("Water", 51);
+        p.addToBackpack("Iron", 51);
+        p.addToBackpack("Uranium", 51);
+        p.addToBackpack("Coal", 51);
+
         click = new Clicklistener();
         zoomout = new JButton("");
-        skip= new JButton("");
+        skip = new JButton("");
         zoomin = new JButton("");
         tp = new JButton("");
         robot = new JButton("");
@@ -73,35 +72,35 @@ public class GamePanel extends JPanel {
         iron = new JLabel(new ImageIcon("pictures\\iron70x70.png"));
         uranium = new JLabel(new ImageIcon("pictures\\uranium70x70.png"));
 
-        skip.setIcon(new ImageIcon("pictures\\skip200x53.png" ));
-        zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png" ));
-        zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png" ));
-        tp.setIcon(new ImageIcon("pictures\\tp200x53.png" ));
-        robot.setIcon(new ImageIcon("pictures\\robot200x53.png" ));
-        dig.setIcon(new ImageIcon("pictures\\dig200x53.png" ));
-        mine.setIcon(new ImageIcon("pictures\\mine200x53.png" ));
-        move.setIcon(new ImageIcon("pictures\\move200x53.png" ));
+        skip.setIcon(new ImageIcon("pictures\\skip200x53.png"));
+        zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png"));
+        zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png"));
+        tp.setIcon(new ImageIcon("pictures\\tp200x53.png"));
+        robot.setIcon(new ImageIcon("pictures\\robot200x53.png"));
+        dig.setIcon(new ImageIcon("pictures\\dig200x53.png"));
+        mine.setIcon(new ImageIcon("pictures\\mine200x53.png"));
+        move.setIcon(new ImageIcon("pictures\\move200x53.png"));
 
-        zoomout.setBounds(770,20,54,54);
-        zoomin.setBounds(700,20,54,54);
-        tp.setBounds(50,570,200,53);
-        robot.setBounds(300,570,200,53);
-        dig.setBounds(50,500,200,53);
-        mine.setBounds(300,500,200,53);
-        move.setBounds(550,500,200,53);
-        resourceInventory.setBounds(50,20,191,386);
-        tpInventory.setBounds(40,420,210,63);
-        skip.setBounds(550,570,200,53);
+        zoomout.setBounds(770, 20, 54, 54);
+        zoomin.setBounds(700, 20, 54, 54);
+        tp.setBounds(50, 570, 200, 53);
+        robot.setBounds(300, 570, 200, 53);
+        dig.setBounds(50, 500, 200, 53);
+        mine.setBounds(300, 500, 200, 53);
+        move.setBounds(550, 500, 200, 53);
+        resourceInventory.setBounds(50, 20, 191, 386);
+        tpInventory.setBounds(40, 420, 210, 63);
+        skip.setBounds(550, 570, 200, 53);
 
-        a_teli_kozel.setBounds(350,180,300,300);
-        a_teli_tavol.setBounds(350,180,300,300);
-        a_ures_kozel.setBounds(350,180,300,300);
-        a_ures_tavol.setBounds(350,180,300,300);
+        a_teli_kozel.setBounds(350, 180, 300, 300);
+        a_teli_tavol.setBounds(350, 180, 300, 300);
+        a_ures_kozel.setBounds(350, 180, 300, 300);
+        a_ures_tavol.setBounds(350, 180, 300, 300);
 
-        water.setBounds(465,300,70,70);
-        coal.setBounds(465,300,70,70);
-        iron.setBounds(465,300,70,70);
-        uranium.setBounds(465,300,70,70);
+        water.setBounds(465, 300, 70, 70);
+        coal.setBounds(465, 300, 70, 70);
+        iron.setBounds(465, 300, 70, 70);
+        uranium.setBounds(465, 300, 70, 70);
 
         Things.add(zoomout);
         Things.add(zoomin);
@@ -112,7 +111,7 @@ public class GamePanel extends JPanel {
         Things.add(move);
         Things.add(skip);
 
-        for (JButton jb: Things) {
+        for (JButton jb : Things) {
             InitButton(jb);
             this.add(jb);
         }
@@ -152,7 +151,7 @@ public class GamePanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
+        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
 
         a_teli_kozel.setVisible(false);
         a_teli_tavol.setVisible(false);
@@ -164,25 +163,22 @@ public class GamePanel extends JPanel {
         iron.setVisible(false);
         uranium.setVisible(false);
 
-        Asteroid curr_a = (Asteroid) currentPlayer.getSpacething();
-        if(curr_a.getDigged()==curr_a.getLayer()){  // ha ki van ásva az aszteroida
+        Asteroid curr_a = (Asteroid) p.getCurrent().getSpacething();
+        if (curr_a.getDigged() == curr_a.getLayer()) {  // ha ki van ásva az aszteroida
             if (curr_a.getPerihelion()) { // ha napközel
                 a_ures_kozel.setVisible(true);
-            }
-            else{ // ha naptávol
+            } else { // ha naptávol
                 a_ures_tavol.setVisible(true);
             }
 
-            if(curr_a.getMaterial()!=null && curr_a.getMaterial().getName()=="Water") water.setVisible(true);
-            if(curr_a.getMaterial()!=null && curr_a.getMaterial().getName()=="Iron") iron.setVisible(true);
-            if(curr_a.getMaterial()!=null && curr_a.getMaterial().getName()=="Coal") coal.setVisible(true);
-            if(curr_a.getMaterial()!=null && curr_a.getMaterial().getName()=="Uranium") uranium.setVisible(true);
-        }
-        else{
+            if (curr_a.getMaterial() != null && curr_a.getMaterial().getName() == "Water") water.setVisible(true);
+            if (curr_a.getMaterial() != null && curr_a.getMaterial().getName() == "Iron") iron.setVisible(true);
+            if (curr_a.getMaterial() != null && curr_a.getMaterial().getName() == "Coal") coal.setVisible(true);
+            if (curr_a.getMaterial() != null && curr_a.getMaterial().getName() == "Uranium") uranium.setVisible(true);
+        } else {
             if (curr_a.getPerihelion()) { // ha napközel
                 a_teli_kozel.setVisible(true);
-            }
-            else{ // ha naptávol
+            } else { // ha naptávol
                 a_teli_tavol.setVisible(true);
             }
         }
@@ -200,25 +196,25 @@ public class GamePanel extends JPanel {
         //TODO
     }
 
-    public void backPackDraw(Graphics g){
+    public void backPackDraw(Graphics g) {
 
     }
 
-    public void refreshBp(){
-        for(JButton b: gfxTest){
+    public void refreshBp() {  //A hátitáskát refresheli a képernyőn, hogy a jelenlegi játékost lássuk mindig :3
+        for (JButton b : gfxTest) {
             this.remove(b);
         }
         int y = 0;
         int x = 0;
 
-        for(Material m :currentPlayer.getBackpack()){  ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            if(y==5){   ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                x=1;
-                y=0;
-            }  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ok itt a backpacket akarom kirajzolni nem megy vkinek hajrá fent a konstruktorban az
-            System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
+        for (Material m : p.getCurrent().getBackpack()) {
+            if (y == 5) {
+                x = 1;
+                y = 0;
+            }
+            // 51-es idhez adtam sok anyagot  a gamepanel konstruktorban
             try {
-                JButton b=m.drawMaterial(x*90 + 70, y*75 + 30, this, m);
+                JButton b = m.drawMaterial(x * 90 + 70, y * 75 + 30, this, m);
                 gfxTest.add(b);
                 this.add(b);
             } catch (IOException e) {
@@ -231,19 +227,19 @@ public class GamePanel extends JPanel {
         repaint();
     }
 
-    public void nextPlayer(){
-        if(p.EndGame()==true){  //ellenőrzi hogy nyertek e a telepesek.
+    public void nextPlayer() {
+        if (p.EndGame() == true) {  //ellenőrzi hogy nyertek e a telepesek.
             //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy
         }
         for (int i = 0; i < p.getMap().getSettlers().size(); i++) {
-            if(i== p.getMap().getSettlers().size()-1){
+            if (i == p.getMap().getSettlers().size() - 1) {
                 p.step(); // léptet mindenkit ha az utolso player lelépte a lépését
-                currentPlayer = p.getMap().getSettlers().get(0);
+                p.setCurrent(p.getMap().getSettlers().get(0)) ;
                 refreshBp();
                 return;
             }
-            if(p.getMap().getSettlers().get(i)==currentPlayer){
-                currentPlayer = p.getMap().getSettlers().get(i+1);
+            if (p.getMap().getSettlers().get(i) == p.getCurrent()) {
+                p.setCurrent(p.getMap().getSettlers().get(i+1)) ;
                 refreshBp();
                 return;
             }
@@ -252,49 +248,51 @@ public class GamePanel extends JPanel {
 
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
 
-        public void actionPerformed(ActionEvent e){
-            if (e.getSource() == tp){   //teleportot probál épiteni
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == tp) {   //teleportot probál épiteni
                 System.out.println("tp");
-                if(p.buildTeleport(currentPlayer.getId())){
+                if (p.buildTeleport()) {
                     nextPlayer();
                 }
-            }
-            else if (e.getSource() == robot){ //robotot probnál épiteni
+                else {
+                    new BadMovement();
+                }
+            } else if (e.getSource() == robot) { //robotot probnál épiteni
                 System.out.println("robot");
-                if(p.buildRobot(currentPlayer.getId())){
+                if (p.buildRobot()) {
                     nextPlayer();
+                } else {
+                    new BadMovement();
                 }
-            }
-            else if (e.getSource() == dig){  //furni probál
+            } else if (e.getSource() == dig) {  //furni probál
                 System.out.println("dig");
-                if(p.drillMiner(currentPlayer.getId())){
+                if (p.drillMiner()) {
                     nextPlayer();
                 }
-            }
-            else if (e.getSource() == mine){  //ásni probál
+                else {
+                    new BadMovement();
+                }
+            } else if (e.getSource() == mine) {  //ásni probál
                 System.out.println("mine");
-                if(p.mineMiner(currentPlayer.getId())){
+                if (p.mineMiner()) {
                     nextPlayer();
                 }
-            }
-            else if (e.getSource() == move){  //mozogni probál itt át kéne váltani a map nézetre
+                else {
+                    new BadMovement();
+                }
+            } else if (e.getSource() == move) {  //mozogni probál itt át kéne váltani a map nézetre
                 System.out.println("move");
-            }
-
-            else if (e.getSource() == zoomout){
+            } else if (e.getSource() == zoomout) {
                 System.out.println("zoomout");
-            }
-
-            else if (e.getSource() == zoomin){
+            } else if (e.getSource() == zoomin) {
                 System.out.println("zoomin");
-            }
-
-            else if (e.getSource() == skip){
+            } else if (e.getSource() == skip) {
                 System.out.println("skip");
                 nextPlayer();
             }
 
         }
     }
+
 
 }
