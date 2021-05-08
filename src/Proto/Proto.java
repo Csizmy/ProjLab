@@ -495,7 +495,6 @@ public class Proto {
 
     //lépésenként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.
     public boolean EndGame() {
-
         for(Asteroid a: map.getAsteroids()){
             if(a.checkWin()){
                 System.out.println("A játék vége, nyertek a Settlerek!");

@@ -39,7 +39,13 @@ public class GamePanel extends JPanel {
         p = new Proto();
         p.loadMap("test.txt");  // pálya betöltése
         p.addToBackpack("Water",51);
+        p.addToBackpack("Water",51);
         p.addToBackpack("Iron",51);
+        p.addToBackpack("Water",51);
+        p.addToBackpack("Water",51);
+        p.addToBackpack("Iron",51);
+        p.addToBackpack("Uranium",51);
+        p.addToBackpack("Coal",51);
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
         zoomout = new JButton("");
@@ -95,7 +101,7 @@ public class GamePanel extends JPanel {
 
         this.setLayout(null);
 
-        //this.add(resourceInventory);
+        this.add(resourceInventory);
         this.add(tpInventory);
 
         try {
@@ -111,31 +117,6 @@ public class GamePanel extends JPanel {
 
         g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
 
-        int x = 0;
-        int y = 0;
-
-        GIron iron = null;
-        try {
-            iron = new GIron(x, y);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        for(Material m :currentPlayer.getBackpack()){  ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            if(x==5){   ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                y=1;  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            }  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ok itt a backpacket akarom kirajzolni nem megy vkinek hajrá fent a konstruktorban az
-            System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
-            try {
-                this.add(m.drawMaterial(x*70 + 200, y*70 + 100, this, m));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            x++;
-
-        }
 
 
     }
@@ -156,6 +137,28 @@ public class GamePanel extends JPanel {
 
     }
 
+    public void refreshBp(){
+        int y = 0;
+        int x = 0;
+
+        for(Material m :currentPlayer.getBackpack()){  ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if(y==5){   ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                x=1;
+                y=0;
+            }  ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ok itt a backpacket akarom kirajzolni nem megy vkinek hajrá fent a konstruktorban az
+            System.out.println("Beleptem "+m.getName());  // 51-es idhez adtam 2 anyagot is amit itt ki is ir de a rajzolása már sehogy se megy gl hf
+            try {
+                this.add(m.drawMaterial(x*90 + 70, y*75 + 30, this, m));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            y++;
+
+        }
+        repaint();
+    }
+
     public void nextPlayer(){
         if(p.EndGame()==true){  //ellenőrzi hogy nyertek e a telepesek.
             //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy
@@ -164,10 +167,12 @@ public class GamePanel extends JPanel {
             if(i== p.getMap().getSettlers().size()-1){
                 p.step(); // léptet mindenkit ha az utolso player lelépte a lépését
                 currentPlayer = p.getMap().getSettlers().get(0);
+                refreshBp();
                 return;
             }
             if(p.getMap().getSettlers().get(i)==currentPlayer){
                 currentPlayer = p.getMap().getSettlers().get(i+1);
+                refreshBp();
                 return;
             }
         }
