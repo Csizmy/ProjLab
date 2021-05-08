@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
-    private JButton tp,robot,dig,mine,move,zoomin, zoomout;    //gombok
+    private JButton tp,robot,dig,mine,move,zoomin, zoomout,skip;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
     private Clicklistener click;  // A gombokat kezeli
     private BufferedImage image;    //háttér
@@ -33,6 +33,7 @@ public class GamePanel extends JPanel {
         p.addToBackpack("Iron",51);
         currentPlayer = p.getMap().getSettlers().get(0);
         click = new Clicklistener();
+        skip= new JButton("");
         zoomout = new JButton("");
         zoomin = new JButton("");
         tp = new JButton("");
@@ -43,6 +44,10 @@ public class GamePanel extends JPanel {
 
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory191x386.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory210x63.png"));
+
+        skip.setIcon(new ImageIcon("pictures\\skip200x53.png" ));
+        skip.setOpaque(false);
+        skip.setContentAreaFilled(false);
 
         zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png" ));
         zoomout.setOpaque(false);
@@ -84,12 +89,14 @@ public class GamePanel extends JPanel {
         zoomin.setBounds(700,20,54,54);
         tp.setBounds(50,570,200,53);
         robot.setBounds(300,570,200,53);
+        skip.setBounds(550,570,200,53);
         dig.setBounds(50,500,200,53);
         mine.setBounds(300,500,200,53);
         move.setBounds(550,500,200,53);
         resourceInventory.setBounds(50,20,191,386);
         tpInventory.setBounds(40,420,210,63);
 
+        skip.setFocusable(false);
         zoomout.setFocusable(false);
         zoomin.setFocusable(false);
         tp.setFocusable(false);
@@ -100,6 +107,7 @@ public class GamePanel extends JPanel {
         resourceInventory.setFocusable(false);
         tpInventory.setFocusable(false);
 
+        skip.addActionListener(click);
         zoomout.addActionListener(click);
         zoomin.addActionListener(click);
         tp.addActionListener(click);
@@ -174,6 +182,7 @@ public class GamePanel extends JPanel {
             this.add(jb);
         }
 
+        this.add(skip);
         this.add(zoomout);
         this.add(zoomin);
         this.add(tp);
@@ -284,6 +293,11 @@ public class GamePanel extends JPanel {
             }
             else if (e.getSource() == zoomin){
                 System.out.println("zoomin");
+            }
+
+            else if (e.getSource() == skip){
+                System.out.println("skip");
+                nextPlayer();
             }
 
         }
