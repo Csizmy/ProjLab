@@ -12,6 +12,7 @@ interface OnPlayListener {
 public class MainFrame extends JFrame implements OnPlayListener{
     private Menu menu;
     private GamePanel gamePanel;            //or game ?
+    private Menu map;
 
 
     public MainFrame() {
