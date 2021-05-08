@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="kommentek">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/a_teli_kozel.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/a_teli_kozel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/a_teli_tavol.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/a_teli_tavol.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/a_ures_kozel.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/a_ures_kozel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/a_ures_tavol.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/a_ures_tavol.png" afterDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="mapView alakul">
       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
