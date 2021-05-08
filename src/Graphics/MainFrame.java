@@ -18,7 +18,7 @@ public class MainFrame extends JFrame implements OnPlayListener{
     public MainFrame() {
         this.add(new Menu(this));
         this.setTitle("Asteroid Game");
-        this.setSize(new Dimension(1216,939));//kristof thing:igy lett 1200x900 a benne levo megjelenitett cucc mert ez beleszamolja a szurke savokat
+        this.setSize(new Dimension(840+16,630+39));//kristof thing:igy lett 1200x900 a benne levo megjelenitett cucc mert ez beleszamolja a szurke savokat
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -49,5 +49,4 @@ public class MainFrame extends JFrame implements OnPlayListener{
         }
         this.revalidate();
     }
-
 }
