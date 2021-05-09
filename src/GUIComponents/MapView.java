@@ -177,7 +177,7 @@ public class MapView extends JPanel {
             else if (e.getSource() == zoomin){
                 System.out.println("zoomin");
                 try {
-                    backToGameView.ChangeToGame(1);
+                    backToGameView.ChangeToGame(1,false);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -189,7 +189,7 @@ public class MapView extends JPanel {
                         if(p.moveSettler(currentPlayer.getId(), i)==true){
                             nextPlayer();
                             try {
-                                backToGameView.ChangeToGame(1);
+                                backToGameView.ChangeToGame(1,false);
                             } catch (IOException e1) {
                                 e1.printStackTrace();
                             }

@@ -100,7 +100,7 @@ public class Menu extends JPanel {  //Menu osztálya
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == play){  //ha a playre kattintanak elindul a játék
                 try {
-                    playListener.ChangeToGame(1);
+                    playListener.ChangeToGame(1,false);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }

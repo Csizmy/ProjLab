@@ -486,7 +486,7 @@ public class Proto {
         }
     }
 
-    public void step(){
+    public boolean step(){
         for (int i = 0; i < map.getRobots().size(); i++) {
             map.getRobots().get(i).Step("");
         }
@@ -523,8 +523,9 @@ public class Proto {
         map.Step("");
         if(map.getSettlers().isEmpty()==true){
             System.out.println("vesztettetek hahaxd");
-            System.exit(0);
+            return true;
         }
+        return false;
     }
 
     public Map getMap() {
