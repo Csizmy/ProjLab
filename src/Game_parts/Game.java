@@ -29,6 +29,8 @@ public class Game {
     public static void main(String[] args) throws FileNotFoundException {
 
         System.out.println("Indulhat a játék:");
+        MusicStuff musicObject = new MusicStuff();
+        //musicObject.playMusic("hansZimmer.wav");
         new MainFrame();
         Scanner input=new Scanner(System.in);
 

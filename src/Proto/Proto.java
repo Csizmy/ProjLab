@@ -22,7 +22,7 @@ public class Proto {
             Scanner sc = new Scanner(f);
             int space_id = 0;
             int miner_id = 50;
-            ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
+            ArrayList<Asteroid> asteroids = map.getAsteroids();
             ArrayList<Settler> settlers = new ArrayList<Settler>();
             ArrayList<Ufo> ufos = new ArrayList<Ufo>();
             ArrayList<Robot> robots = new ArrayList<Robot>();
@@ -37,12 +37,12 @@ public class Proto {
                 String array[] = line.split(" ");
 
                 switch(array[0]){
-                    case "*":
+                    /*case "*":
                         Asteroid a = new Asteroid(space_id, Integer.parseInt(array[1]), Integer.parseInt(array[2]), array[3]);
                         //System.out.println("Aszteroida: " + space_id);
                         space_id++;
                         asteroids.add(a);
-                        break;
+                        break;*/
                     case "+":
                         Teleport t1 = null, t2 = null;
                         for (int i = 0; i < asteroids.size(); i++) {
@@ -62,7 +62,7 @@ public class Proto {
                         teleports.add(t1);
                         teleports.add(t2);
                         break;
-                    case "=":
+                    /*case "=":
                         int egyik = -1, masik = -1;
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
@@ -75,7 +75,7 @@ public class Proto {
                         asteroids.get(egyik).AddNeighbor(asteroids.get(masik));
                         asteroids.get(masik).AddNeighbor(asteroids.get(egyik));
                         //System.out.println("Asteroid " + asteroids.get(masik).getId() + " es Asteroid " + asteroids.get(egyik).getId() + " szomszedok");
-                        break;
+                        break;*/
                     case "s":
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {

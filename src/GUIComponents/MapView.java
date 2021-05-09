@@ -7,6 +7,8 @@ import GObjects.GAsteroid;
 import Game_parts.Map;
 import Miners.Settler;
 import Objects.Asteroid;
+import Objects.Spacething;
+import Objects.Teleport;
 import Proto.Proto;
 
 import javax.imageio.ImageIO;
@@ -32,6 +34,8 @@ public class MapView extends JPanel {
     private OnPlayListener backToGameView;
     private Map map;
     private ArrayList<GAsteroid> asteroids = new ArrayList<GAsteroid>();
+    private ArrayList<JLabel> idlabels = new ArrayList<JLabel>();
+    private ArrayList<JButton> asteroidButtons = new ArrayList<JButton>();
 
 
     // A szomszédos aszteroidák/teleportok gombjai, amire kattintva oda mozog a telepes.
@@ -50,6 +54,7 @@ public class MapView extends JPanel {
         p = val;
         backToGameView=act;
         map =p.getMap();
+        currentPlayer = (Settler)p.getCurrent();
 
         click = new Clicklistener();
         back = new JButton("");             //hogy legyen???
@@ -71,7 +76,13 @@ public class MapView extends JPanel {
             } catch (IOException ex) { /*mindig jó, nincs error köszi.*/ }
 
             this.add(asteroids.get(i).getButton());
+            asteroids.get(i).getButton().addActionListener(click);
+            asteroidButtons.add(asteroids.get(i).getButton());
 
+            idlabels.add( new JLabel(String.valueOf(current.getId())));
+            idlabels.get(i).setBounds(current.getX(), current.getY()-20, 20, 20);
+            idlabels.get(i).setForeground(Color.yellow);
+            this.add(idlabels.get(i));
         }
 
 
@@ -98,15 +109,21 @@ public class MapView extends JPanel {
 
         g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
 
-        g.setColor(Color.BLUE);
+        //g.setColor(Color.BLUE);
 
         for (int i = 0; i < 50; i++){
             Asteroid current = map.getAsteroids().get(i);
 
             for (int j = 0; j < current.getNeighbours().size(); j++){
-                Asteroid neighbor = (Asteroid) current.getNeighbours().get(j);
+                g.setColor(Color.BLUE);
+                Spacething neighbor = current.getNeighbours().get(j);
+                if (!neighbor.isAsteroid()){
+                    g.setColor(Color.pink);
+                    neighbor = ((Teleport) neighbor).getPair();
+                    neighbor = neighbor.getNeighbours().get(0);
+                }
 
-                g2.drawLine(current.getX(), current.getY(), neighbor.getX(), neighbor.getY());
+                g2.drawLine(current.getX()+7, current.getY()+7, neighbor.getX()+7, neighbor.getY()+7);
             }
 
         }
@@ -139,8 +156,10 @@ public class MapView extends JPanel {
                     e1.printStackTrace();
                 }
             }
-
-
+            else{
+                int indx = asteroidButtons.indexOf( e.getSource() );
+                p.moveSettler(currentPlayer.getId(), indx);
+            }
         }
     }
 

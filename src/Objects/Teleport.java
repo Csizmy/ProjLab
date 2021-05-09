@@ -83,4 +83,14 @@ public class Teleport extends Spacething implements Moveable, Steppable {
         if (megkergult)
             Move(r.nextInt(neighbours.get(0).neighbours.size()));
     }
+
+    public int getX(){
+        Asteroid a = (Asteroid) neighbours.get(0);
+        return a.getX();
+    }
+    public int getY(){
+        Asteroid a = (Asteroid) neighbours.get(0);
+        return a.getY();
+    }
+
 }

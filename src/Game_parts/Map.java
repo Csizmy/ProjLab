@@ -249,7 +249,7 @@ public class Map implements Steppable {
         int digged = 0;
         if (rand.nextInt(10) < 1) digged = 1;
 
-        return new Asteroid(id, rand.nextInt(9), digged, mat, rand.nextInt(820)+10, rand.nextInt(610)+10);
+        return new Asteroid(id, rand.nextInt(9), digged, mat, rand.nextInt(820)+10, rand.nextInt(530)+90);
     }
 
     private Asteroid findClosest(Asteroid a, int n){

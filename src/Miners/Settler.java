@@ -253,13 +253,34 @@ public class Settler extends Miner{
     }
     @Override
     public void Move(int asteroidID){
-        if(spacething.isNeigbour(asteroidID)){
+        Teleport t;
+        boolean tpkapcsolat = false;
+        for (int i = 0; i < spacething.getNeighbours().size(); i++){
+            if (!spacething.getNeighbours().get(i).isAsteroid()) {
+                t = (Teleport) spacething.getNeighbours().get(i);
+                t = t.getPair();
+                if (t.getNeighbours().get(0).getId() == asteroidID)
+                    tpkapcsolat = true;
+            }
+        }
+        if(spacething.isNeigbour(asteroidID) || tpkapcsolat){
             Spacething to = null;
             for (Spacething s: spacething.getNeighbours()) {
                 if(s.getId() == asteroidID){
                     to = s;
                 }
             }
+            if(tpkapcsolat){
+                for (int i = 0; i < spacething.getNeighbours().size(); i++) {
+                    if (!spacething.getNeighbours().get(i).isAsteroid()) {
+                        t = (Teleport) spacething.getNeighbours().get(i);
+                        t = t.getPair();
+                        to = t.getNeighbours().get(0);
+                    }
+                }
+
+            }
+
             if(to.getId()!=-1){
                 spacething.removeMiner(this);
                 to.addMiner(this);
