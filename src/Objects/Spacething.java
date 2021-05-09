@@ -55,4 +55,11 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
     public abstract void  addMiner(Miner m);
     // asteroid gettere
     public boolean isAsteroid(){return false;}
+
+    public boolean isNeighborOf(Spacething s){
+        for (int i = 0; i < this.neighbours.size(); i++){
+            if (this.neighbours.get(i).getId() == s.getId()){
+                return true;}}
+        return false;
+    }
 }

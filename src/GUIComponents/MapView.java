@@ -52,7 +52,7 @@ public class MapView extends JPanel {
         backToGameView=act;
         map =p.getMap();
 
-                click = new Clicklistener();
+        click = new Clicklistener();
         back = new JButton("");             //hogy legyen???
         zoomin = new JButton("");
         zoomout = new JButton("");
@@ -144,7 +144,16 @@ public class MapView extends JPanel {
                     e1.printStackTrace();
                 }
             }
+            for (int i = 0; i < 50; i++){
+                if (e.getSource() == asteroids.get(i).getButton()){System.out.println("fasz");
+                    for (int j = 0; j < map.getAsteroids().get(currentPlayer.getAsteroid()).getNeighbours().size(); j++)
+                        if (map.getAsteroids().get(i).getId() == map.getAsteroids().get(currentPlayer.getAsteroid()).getNeighbours().get(j).getId()) {
+                            currentPlayer.Move(j);
 
+                        }
+
+                }
+            }
 
         }
     }
