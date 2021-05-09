@@ -1,4 +1,4 @@
-package Graphics;
+package GUIComponents;
 
 import java.awt.event.KeyListener;
 

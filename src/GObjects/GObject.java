@@ -1,9 +1,7 @@
 package GObjects;
 
-import Graphics.IDrawable;
-import Graphics.ImageResizer;
-
-import Graphics.GamePanel;
+import GUIComponents.IDrawable;
+import GUIComponents.ImageResizer;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

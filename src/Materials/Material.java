@@ -2,10 +2,8 @@ package Materials;
 
 import GObjects.*;
 import Objects.Asteroid;
-import Graphics.GamePanel;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 
 public abstract class Material {

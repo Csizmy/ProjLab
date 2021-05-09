@@ -2,15 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="elegem van">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_45__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_46__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_46__Default_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView$Clicklistener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/BadMovement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/IDrawable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/ImageResizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MainFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView$Clicklistener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/MapView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu$Clicklistener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/OnPlayListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/BadMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/BadMovement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/IDrawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/IDrawable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/ImageResizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/ImageResizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Materials/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Asteroid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4963,13 +4983,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00013" summary="mainban is teszt">
-      <created>1616356065914</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1616356065915</updated>
-    </task>
     <task id="LOCAL-00014" summary="2 teszt">
       <created>1616358431809</created>
       <option name="number" value="00014" />
@@ -5306,7 +5319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620553627929</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="elegem van">
+      <created>1620559917067</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1620559917068</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5362,7 +5382,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="steprobotot javitottam" />
     <MESSAGE value="steprobot/stepufo mukodik" />
     <MESSAGE value="teleport can move" />
     <MESSAGE value="teleport can move now fr" />
@@ -5387,16 +5406,21 @@
     <MESSAGE value="átváltamapra" />
     <MESSAGE value="csináltam pár dolgot" />
     <MESSAGE value="a git szerint a commit and push azt jelenti hogy letorol mindent amit tegnap csinaltam es semmit nem pushol a repoba :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="a git szerint a commit and push azt jelenti hogy letorol mindent amit tegnap csinaltam es semmit nem pushol a repoba :)" />
+    <MESSAGE value="elegem van" />
+    <option name="LAST_COMMIT_MESSAGE" value="elegem van" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GObjects/GObject.java</url>
-          <line>30</line>
+          <line>28</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

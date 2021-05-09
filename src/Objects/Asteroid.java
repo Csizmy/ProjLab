@@ -1,15 +1,9 @@
 package Objects;
 
-import GObjects.*;
-import Game_parts.Game;
 import Game_parts.Steppable;
-import Graphics.GamePanel;
-import Graphics.MapView;
 import Materials.*;
 import Miners.Miner;
 
-import javax.swing.*;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 

@@ -1,11 +1,10 @@
-package Graphics;
+package GUIComponents;
 
 
 import Proto.Proto;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Line2D;
 import java.io.IOException;
 
 interface OnPlayListener {

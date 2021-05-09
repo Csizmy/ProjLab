@@ -1,8 +1,6 @@
 package Game_parts;
 
-import Objects.*;
-import Graphics.*;
-import Tests.*;
+import GUIComponents.*;
 import  Proto.*;
 
 import java.io.FileNotFoundException;

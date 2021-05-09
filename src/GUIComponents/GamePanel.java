@@ -1,9 +1,6 @@
-package Graphics;
+package GUIComponents;
 
-import GObjects.*;
-import Game_parts.Game;
 import Materials.Material;
-import Miners.Settler;
 import Objects.Asteroid;
 import Proto.Proto;
 
