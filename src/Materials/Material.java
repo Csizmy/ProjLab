@@ -11,26 +11,33 @@ public abstract class Material {
     protected Asteroid asteroid;        //tárolja melyik aszteroidán van a nyersanyag
     protected GObject gObject;
 
-    // getterek és setterek a megfelelő értékekhez
+    // Getter for name
     public String getName(){
         return name;
     }
 
+    //Setter for name
     public void setName(String n){
         name = n;
     }
 
+    //Getter for asteroid
     Asteroid getAsteroid(){return asteroid;}
 
+    //Setter for asteroid
     public void setAsteroid(Asteroid a){asteroid = a;}
 
-    //Virtuális függvény, ami a víznél és az urániumnál fontos
+    //Virtual function !!Important at water and uranium!!
     public void PeriMining(){
     }
+
+    //Setter for GObject
     public GObject getGobject(){
         return gObject;
     }
 
+    //Draw the given material to a x,y point
+    //Returns with a Jbutton which can be drawn to panel
     public JButton drawMaterial(int x, int y,  Material mat) throws IOException {
 
         JButton toDraw = new JButton();

@@ -1,7 +1,8 @@
 package Game_parts;
 
+//Interface for moveable objects
 public interface Moveable {
 
-    //Minden mozgó objektum mozgásáért felel.
+    //Responsible for all moveable objects moving
     void Move(int asteroidID);
 }

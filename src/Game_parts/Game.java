@@ -9,9 +9,6 @@ import java.util.Scanner;
 
 public class Game {
 
-    public ImageResizer imgRes;
-
-    public Random rand = new Random();
     private static Map map;                //A játék pálya.
 
     // A protohoz tartozó osztály
