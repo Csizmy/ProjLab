@@ -30,7 +30,7 @@ public class Game {
 
         System.out.println("Indulhat a játék:");
         MusicStuff musicObject = new MusicStuff();
-        musicObject.playMusic("hansZimmer.wav");
+        //musicObject.playMusic("hansZimmer.wav");
         new MainFrame();
         Scanner input=new Scanner(System.in);
 

@@ -8,6 +8,7 @@ import Game_parts.Map;
 import Miners.Settler;
 import Objects.Asteroid;
 import Objects.Spacething;
+import Objects.Teleport;
 import Proto.Proto;
 
 import javax.imageio.ImageIO;
@@ -108,13 +109,19 @@ public class MapView extends JPanel {
 
         g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters
 
-        g.setColor(Color.BLUE);
+        //g.setColor(Color.BLUE);
 
         for (int i = 0; i < 50; i++){
             Asteroid current = map.getAsteroids().get(i);
 
             for (int j = 0; j < current.getNeighbours().size(); j++){
+                g.setColor(Color.BLUE);
                 Spacething neighbor = current.getNeighbours().get(j);
+                if (!neighbor.isAsteroid()){
+                    g.setColor(Color.pink);
+                    neighbor = ((Teleport) neighbor).getPair();
+                    neighbor = neighbor.getNeighbours().get(0);
+                }
 
                 g2.drawLine(current.getX()+7, current.getY()+7, neighbor.getX()+7, neighbor.getY()+7);
             }

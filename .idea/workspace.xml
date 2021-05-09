@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="barhol taroljuk az epp most lepo jatekost?">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_30__Default_.xml" beforeDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="lehet mozogni kattintasra">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView$Clicklistener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUIComponents/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MapView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Spacething.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Spacething.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Teleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Teleport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4963,13 +4961,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00018" summary="sout-ok kiegészítése">
-      <created>1616360095012</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1616360095012</updated>
-    </task>
     <task id="LOCAL-00019" summary="thx csizmy">
       <created>1616361802504</created>
       <option name="number" value="00019" />
@@ -5306,7 +5297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620567149573</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="lehet mozogni kattintasra">
+      <created>1620572105209</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1620572105210</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5362,7 +5360,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="asteroid step" />
     <MESSAGE value="idegbajtkapok" />
     <MESSAGE value="menu kinda kész" />
     <MESSAGE value="kitöröltem 1 aproságot" />
@@ -5387,7 +5384,8 @@
     <MESSAGE value="its a surprise" />
     <MESSAGE value="na" />
     <MESSAGE value="barhol taroljuk az epp most lepo jatekost?" />
-    <option name="LAST_COMMIT_MESSAGE" value="barhol taroljuk az epp most lepo jatekost?" />
+    <MESSAGE value="lehet mozogni kattintasra" />
+    <option name="LAST_COMMIT_MESSAGE" value="lehet mozogni kattintasra" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -5398,7 +5396,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUIComponents/MapView.java</url>
-          <line>152</line>
+          <line>159</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
