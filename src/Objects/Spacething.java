@@ -62,4 +62,7 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
                 return true;}}
         return false;
     }
+
+    public abstract int getX();
+    public abstract int getY();
 }

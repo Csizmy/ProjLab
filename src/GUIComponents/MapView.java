@@ -7,6 +7,7 @@ import GObjects.GAsteroid;
 import Game_parts.Map;
 import Miners.Settler;
 import Objects.Asteroid;
+import Objects.Spacething;
 import Proto.Proto;
 
 import javax.imageio.ImageIO;
@@ -52,6 +53,7 @@ public class MapView extends JPanel {
         p = val;
         backToGameView=act;
         map =p.getMap();
+        currentPlayer = (Settler)p.getCurrent();
 
         click = new Clicklistener();
         back = new JButton("");             //hogy legyen???
@@ -112,7 +114,7 @@ public class MapView extends JPanel {
             Asteroid current = map.getAsteroids().get(i);
 
             for (int j = 0; j < current.getNeighbours().size(); j++){
-                Asteroid neighbor = (Asteroid) current.getNeighbours().get(j);
+                Spacething neighbor = current.getNeighbours().get(j);
 
                 g2.drawLine(current.getX()+7, current.getY()+7, neighbor.getX()+7, neighbor.getY()+7);
             }
@@ -149,8 +151,7 @@ public class MapView extends JPanel {
             }
             else{
                 int indx = asteroidButtons.indexOf( e.getSource() );
-                for (int i = 0; i < map.getAsteroids().get(currentPlayer.getAsteroid()).getNeighbours().size(); i++)
-                    p.moveSettler(currentPlayer.getId(), indx);
+                p.moveSettler(currentPlayer.getId(), indx);
             }
         }
     }
