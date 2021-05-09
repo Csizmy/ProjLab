@@ -14,6 +14,8 @@ public class Asteroid extends Spacething implements Steppable {
     private boolean perihelion;     // napközelség
     private Material material;
     private ArrayList<Miner> miners;
+    private int x;
+    private int y;
 
     private Random rand = new Random();
 
@@ -47,6 +49,20 @@ public class Asteroid extends Spacething implements Steppable {
             case 4: material = null;
         }
 
+    }
+
+    public Asteroid(int asteroidID, int lay, int d, String mat, int x, int y){
+        super(asteroidID);
+        layer = lay;
+        digged = d;
+        miners = new ArrayList<Miner>();
+        if(mat.equals( "Coal")){material = new Coal(this);}
+        if(mat.equals("Iron")){material = new Iron(this);}
+        if(mat.equals("Water")){material = new Water(this);}
+        if(mat.equals("Uranium")){material = new Uranium(this);}
+        if(mat.equals("null")){material = null;}
+        this.x = x;
+        this.y = y;
     }
 
     // Asteroid konstruktor
@@ -214,4 +230,9 @@ public class Asteroid extends Spacething implements Steppable {
     public int getPlayerCount(){
         return miners.size();
     }
+
+    public int getX(){return x;}
+    public int getY(){return y;}
+    public void setX(int value){x=value;}
+    public void setY(int value){y=value;}
 }

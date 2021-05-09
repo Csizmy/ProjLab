@@ -1,5 +1,6 @@
 package Graphics;
 
+import Game_parts.Map;
 import Miners.Settler;
 import Proto.Proto;
 
@@ -21,6 +22,7 @@ public class MapView extends JPanel {
     private Proto p;                            //A játék lépéseit valositja meg
     private Settler currentPlayer;              // A jelenlegi játékos
     private OnPlayListener backToGameView;
+    private Map map;
 
     // A szomszédos aszteroidák/teleportok gombjai, amire kattintva oda mozog a telepes.
     private ArrayList<JButton> Neighbours = new ArrayList<>();
@@ -78,7 +80,7 @@ public class MapView extends JPanel {
     public void loadMaporWhat() {} // go wild Kristof
 
     public void nextPlayer(){} ////         HOW????
-
+    public void setMap(Map m){this.map = m;}
 
 
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
