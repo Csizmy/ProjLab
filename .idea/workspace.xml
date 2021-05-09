@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="átváltamapra">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="csináltam pár dolgot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel$Clicklistener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Graphics/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Asteroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4962,13 +4958,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00011" summary="Így jóóó hahaha">
-      <created>1616348947246</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1616348947246</updated>
-    </task>
     <task id="LOCAL-00012" summary="gettersetter">
       <created>1616350067591</created>
       <option name="number" value="00012" />
@@ -5305,7 +5294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620512339967</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="csináltam pár dolgot">
+      <created>1620517576121</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1620517576121</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5361,7 +5357,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="a loadmap tobb infot ir ki" />
     <MESSAGE value="semmi" />
     <MESSAGE value="steprobotot javitottam" />
     <MESSAGE value="steprobot/stepufo mukodik" />
@@ -5386,7 +5381,8 @@
     <MESSAGE value="kész a popup, átirtam a protoba acurrentplayert" />
     <MESSAGE value="kurvajovagyok ja am szerény vok hihi amugy megirtam az átváltást a mapra" />
     <MESSAGE value="átváltamapra" />
-    <option name="LAST_COMMIT_MESSAGE" value="átváltamapra" />
+    <MESSAGE value="csináltam pár dolgot" />
+    <option name="LAST_COMMIT_MESSAGE" value="csináltam pár dolgot" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GSettler.java">

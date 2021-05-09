@@ -165,7 +165,11 @@ public class GamePanel extends JPanel {
         g.drawString(String.valueOf(p.getPlayerCount()) , 790, 210);
         g.drawString(String.valueOf(p.getUfoCount()) , 790, 290);
         g.drawString(String.valueOf(p.getRobotCount()) , 790, 370);
-        g.drawString(String.valueOf(p.getCurrent().getId()) , 450, 160);
+        g.setColor(Color.YELLOW);
+        g.drawString(String.valueOf(p.getCurrent().getSpacething().getId()) , 470, 160);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+        g.setColor(Color.RED);
+        g.drawString("Current Player is Agent" + String.valueOf(p.getCurrent().getId()) , 270, 40);
 
         a_teli_kozel.setVisible(false);
         a_teli_tavol.setVisible(false);
