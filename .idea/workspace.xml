@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="jo a highlightod verjem">
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GCoal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GCoal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GIron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GIron.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GRobot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GSettler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GSettler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GTeleport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GTeleport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUranium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GWater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GWater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/BadMovement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/BadMovement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/IDrawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/IDrawable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/ImageResizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/ImageResizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/MusicStuff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/MusicStuff.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" afterDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GAsteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GAsteroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GCoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GCoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GIron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GIron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GRobot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GSettler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GSettler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GTeleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GTeleport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GUfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GUfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GUranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GUranium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/BadMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/BadMovement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/IDrawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/IDrawable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/ImageResizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/ImageResizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Moveable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Moveable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/MusicStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/MusicStuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Steppable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Steppable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Materials/Coal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Coal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Materials/Iron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Iron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Materials/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Materials/Uranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Uranium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Materials/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Water.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Robot.java" afterDir="false" />
     </list>
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +48,100 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Water.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Materials/Water.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Uranium.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Materials/Uranium.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Iron.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Materials/Iron.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Material.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Materials/Material.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="411">
+              <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Miner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Miners/Miner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="717">
+              <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Robot.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Miners/Robot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="632">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game_parts/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="700">
+              <caret line="325" column="36" selection-start-line="325" selection-start-column="36" selection-end-line="325" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Moveable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game_parts/Moveable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MusicStuff.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game_parts/MusicStuff.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Steppable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game_parts/Steppable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -28042,6 +28137,18 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Application.Game">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
@@ -28169,6 +28276,13 @@
       <workItem from="1615532041060" duration="310000" />
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
+    </task>
+    <task id="LOCAL-00020" summary="thx csizmy">
+      <created>1616361900989</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1616361900989</updated>
     </task>
     <task id="LOCAL-00021" summary="kéééész">
       <created>1616362014823</created>
@@ -28506,14 +28620,7 @@
       <option name="project" value="LOCAL" />
       <updated>1620573642663</updated>
     </task>
-    <task id="LOCAL-00069" summary="jo a highlightod verjem">
-      <created>1620583151243</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1620583151244</updated>
-    </task>
-    <option name="localTasksCounter" value="70" />
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -28582,14 +28689,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="menu kinda kész" />
     <MESSAGE value="kitöröltem 1 aproságot" />
     <MESSAGE value="update" />
     <MESSAGE value="Gombok grafika kész xddddd" />
@@ -28614,8 +28731,7 @@
     <MESSAGE value="barhol taroljuk az epp most lepo jatekost?" />
     <MESSAGE value="lehet mozogni kattintasra" />
     <MESSAGE value="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen" />
-    <MESSAGE value="jo a highlightod verjem" />
-    <option name="LAST_COMMIT_MESSAGE" value="jo a highlightod verjem" />
+    <option name="LAST_COMMIT_MESSAGE" value="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -28624,6 +28740,12 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="8" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUIComponents/MapView.java</url>
+          <line>159</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
