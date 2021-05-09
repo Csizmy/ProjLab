@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView$Clicklistener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MapView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4955,13 +4957,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00020" summary="thx csizmy">
-      <created>1616361900989</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1616361900989</updated>
-    </task>
     <task id="LOCAL-00021" summary="kéééész">
       <created>1616362014823</created>
       <option name="number" value="00021" />
@@ -5298,7 +5293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620573642663</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen">
+      <created>1620574355388</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1620574355388</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5390,7 +5392,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUIComponents/MapView.java</url>
-          <line>159</line>
+          <line>170</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
