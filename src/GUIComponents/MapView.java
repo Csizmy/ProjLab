@@ -36,6 +36,7 @@ public class MapView extends JPanel {
     private ArrayList<GAsteroid> asteroids = new ArrayList<GAsteroid>();
     private ArrayList<JLabel> idlabels = new ArrayList<JLabel>();
     private ArrayList<JButton> asteroidButtons = new ArrayList<JButton>();
+    private JLabel highLight;
 
 
     // A szomszédos aszteroidák/teleportok gombjai, amire kattintva oda mozog a telepes.
@@ -50,7 +51,8 @@ public class MapView extends JPanel {
         btn.setFocusable(false);
     }
 
-    public MapView(OnPlayListener act,Proto val) {
+    public MapView(OnPlayListener act,Proto val) throws IOException{
+        ImageResizer res = new ImageResizer();
         p = val;
         backToGameView=act;
         map =p.getMap();
@@ -60,6 +62,9 @@ public class MapView extends JPanel {
         back = new JButton("");             //hogy legyen???
         zoomin = new JButton("");
         zoomout = new JButton("");
+        BufferedImage im = ImageIO.read(new File("pictures\\feny.png"));
+        im = res.resize(im, 0.125);
+        highLight = new JLabel(new ImageIcon(im));
 
         //back.setIcon();
         zoomin.setIcon(new ImageIcon("pictures\\zoomin54x54.png"));
@@ -68,6 +73,10 @@ public class MapView extends JPanel {
         //back.setBounds();
         zoomin.setBounds(700, 20, 54, 54);
         zoomout.setBounds(770, 20, 54, 54);
+        highLight.setBounds(((Asteroid)currentPlayer.getSpacething()).getX()-12, ((Asteroid)currentPlayer.getSpacething()).getY()-12, 40, 40);
+
+        this.add(highLight);
+
         GAsteroid ga = null;
         for (int i = 0; i < 50; i++){
             Asteroid current = map.getAsteroids().get(i);
@@ -93,7 +102,9 @@ public class MapView extends JPanel {
         InitButton(zoomout);
         this.add(zoomout);
         InitButton(back);                       //hogy legyen???
-        this.add(back);                         //hogy legyen???
+        this.add(back);
+
+        this.add(highLight);
 
         this.setLayout(null);                 //?
 
