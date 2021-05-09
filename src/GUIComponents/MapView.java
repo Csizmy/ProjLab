@@ -32,6 +32,7 @@ public class MapView extends JPanel {
     private OnPlayListener backToGameView;
     private Map map;
     private ArrayList<GAsteroid> asteroids = new ArrayList<GAsteroid>();
+    private ArrayList<JLabel> idlabels = new ArrayList<JLabel>();
 
 
     // A szomszédos aszteroidák/teleportok gombjai, amire kattintva oda mozog a telepes.
@@ -51,7 +52,7 @@ public class MapView extends JPanel {
         backToGameView=act;
         map =p.getMap();
 
-        click = new Clicklistener();
+                click = new Clicklistener();
         back = new JButton("");             //hogy legyen???
         zoomin = new JButton("");
         zoomout = new JButton("");
@@ -72,6 +73,10 @@ public class MapView extends JPanel {
 
             this.add(asteroids.get(i).getButton());
 
+            idlabels.add( new JLabel(String.valueOf(current.getId())));
+            idlabels.get(i).setBounds(current.getX(), current.getY()-20, 20, 20);
+            idlabels.get(i).setForeground(Color.yellow);
+            this.add(idlabels.get(i));
         }
 
 
@@ -106,7 +111,7 @@ public class MapView extends JPanel {
             for (int j = 0; j < current.getNeighbours().size(); j++){
                 Asteroid neighbor = (Asteroid) current.getNeighbours().get(j);
 
-                g2.drawLine(current.getX(), current.getY(), neighbor.getX(), neighbor.getY());
+                g2.drawLine(current.getX()+7, current.getY()+7, neighbor.getX()+7, neighbor.getY()+7);
             }
 
         }
