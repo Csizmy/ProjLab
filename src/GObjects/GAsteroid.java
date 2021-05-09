@@ -26,6 +26,18 @@ public class GAsteroid extends GObject{
 
     //Constructor for asteroid graphical object with Asteroid and scale
     public GAsteroid(Asteroid a, double s) throws IOException{
-        loadImage("pictures\\a_teli_tavol.png", s, a.getX(), a.getY());
+        if(a.getLayer() == a.getDigged() && a.getMaterial() == null){
+            if(a.getPerihelion())
+                loadImage("pictures\\a_ures_kozel.png", s, a.getX(), a.getY());
+            else
+                loadImage("pictures\\a_ures_tavol.png", s, a.getX(), a.getY());
+        }
+        else{
+            if(a.getPerihelion())
+                loadImage("pictures\\a_teli_kozel.png", s, a.getX(), a.getY());
+            else
+                loadImage("pictures\\a_teli_tavol.png", s, a.getX(), a.getY());
+        }
+
     }
 }
