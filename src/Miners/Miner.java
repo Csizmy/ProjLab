@@ -10,6 +10,7 @@ public abstract class Miner implements Moveable {
 
     // Contains which asteroid contains player
     protected Spacething spacething;
+    boolean live = true;
 
     //Storage
     protected ArrayList<Material> backpack;
@@ -69,6 +70,7 @@ public abstract class Miner implements Moveable {
     //Miner Die
     public void Die(){
         spacething.removeMiner(this);
+        live = false;
     }
 
     //Miner drill
@@ -106,4 +108,5 @@ public abstract class Miner implements Moveable {
     //Getter of name
     public String getName(){return name;}
 
+    public boolean getLive(){return live;}
 }

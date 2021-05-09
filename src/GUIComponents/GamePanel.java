@@ -280,8 +280,16 @@ public class GamePanel extends JPanel {
                 refreshBp();
                 return;
             }
+
             if (p.getMap().getSettlers().get(i) == p.getCurrent()) {
-                p.setCurrent(p.getMap().getSettlers().get(i+1)) ;
+                while(true){
+                    if(p.getMap().getSettlers().get(i+1).getLive()){
+                        p.setCurrent(p.getMap().getSettlers().get(i+1)) ;
+                        break;
+                    }
+                    p.setCurrent(p.getMap().getSettlers().get(i+1)) ;
+
+                }
                 refreshBp();
                 return;
             }
