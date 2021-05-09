@@ -6,9 +6,7 @@ import Objects.Asteroid;
 import Objects.Spacething;
 import Objects.Teleport;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Map implements Steppable {
@@ -286,7 +284,18 @@ public class Map implements Steppable {
         int digged = 0;
         if (rand.nextInt(10) < 1) digged = 1;
 
-        return new Asteroid(id, rand.nextInt(9), digged, mat, rand.nextInt(820)+10, rand.nextInt(530)+90);
+        boolean kozel;
+        Asteroid a;
+        int cnt = 0;
+        do{
+            kozel = false;
+            a = new Asteroid(id, rand.nextInt(9), digged, mat, rand.nextInt(820)+10, rand.nextInt(530)+90);
+            for (int i = 0; i < id; i++)
+                if (aDistanceSq(asteroids.get(i), a) < 2500)
+                    kozel = true;
+            cnt++;
+        }while(kozel || cnt == 20);
+        return a;
     }
 
     //Find the closest asteroid to a asteroid
@@ -298,10 +307,10 @@ public class Map implements Steppable {
 
         for (int i = 0; i < 50; i++){
             if (a.getId() != asteroids.get(i).getId()){
-                if (aDistance(asteroids.get(i), a) < aDistance(a, fourth)){
-                    if (aDistance(asteroids.get(i), a) < aDistance(a, third)) {
-                        if (aDistance(asteroids.get(i), a) < aDistance(a, second)){
-                            if (aDistance(asteroids.get(i), a) < aDistance(a, first)){
+                if (aDistanceSq(asteroids.get(i), a) < aDistanceSq(a, fourth)){
+                    if (aDistanceSq(asteroids.get(i), a) < aDistanceSq(a, third)) {
+                        if (aDistanceSq(asteroids.get(i), a) < aDistanceSq(a, second)){
+                            if (aDistanceSq(asteroids.get(i), a) < aDistanceSq(a, first)){
                                 fourth = third;
                                 third = second;
                                 second = first;
@@ -333,7 +342,7 @@ public class Map implements Steppable {
     }
 
     //Distance between two asteroids
-    private double aDistance(Asteroid a, Asteroid b){
+    private double aDistanceSq(Asteroid a, Asteroid b){
         return (a.getX()-b.getX())*(a.getX()-b.getX()) + (a.getY()-b.getY())*(a.getY()-b.getY());
     }
 }
