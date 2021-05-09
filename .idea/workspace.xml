@@ -15,17 +15,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GCoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GCoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GIron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GIron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GUranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GUranium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GObjects/GWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GWater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Coal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Coal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Iron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Iron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Uranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Uranium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Water.java" afterDir="false" />
     </list>
     <ignored path="D:\University\pl2\.idea\shelf/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -73,8 +62,8 @@
       <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graphics/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
+            <state relative-caret-position="223">
+              <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -497,14 +486,7 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
       <workItem from="1620485158571" duration="470000" />
-      <workItem from="1620485667510" duration="2099000" />
-    </task>
-    <task id="LOCAL-00005" summary="vannak materialok + solarstorm">
-      <created>1616330324164</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1616330324164</updated>
+      <workItem from="1620485667510" duration="2177000" />
     </task>
     <task id="LOCAL-00006" summary="Kis hibák javítva">
       <created>1616343128590</created>
@@ -842,18 +824,33 @@
       <option name="project" value="LOCAL" />
       <updated>1620484951867</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Töccsé">
+      <created>1620487811384</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1620487811385</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23720000" />
+    <option name="totallyTimeSpent" value="23798000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32897604" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
@@ -861,13 +858,14 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32897604" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23965141" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23965141" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21481876" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21481876" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -879,7 +877,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -907,7 +904,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Listázás implementálva, kellenek ufok meg ilyenek." />
     <MESSAGE value="Proto osztályok elkezdése, új konstruktorok" />
     <MESSAGE value="bence stipi" />
     <MESSAGE value="Panku addToBackpack" />
@@ -932,7 +928,8 @@
     <MESSAGE value="kommentek" />
     <MESSAGE value="zoomin,outot ujraimplementáltam kekw" />
     <MESSAGE value="átirtam mindent is soz evvan" />
-    <option name="LAST_COMMIT_MESSAGE" value="átirtam mindent is soz evvan" />
+    <MESSAGE value="Töccsé" />
+    <option name="LAST_COMMIT_MESSAGE" value="Töccsé" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GObjects/GUfo.java">
@@ -1273,8 +1270,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphics/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
+        <state relative-caret-position="223">
+          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
