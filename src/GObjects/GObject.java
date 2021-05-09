@@ -1,9 +1,7 @@
 package GObjects;
 
-import Graphics.IDrawable;
-import Graphics.ImageResizer;
-
-import Graphics.GamePanel;
+import GUIComponents.IDrawable;
+import GUIComponents.ImageResizer;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -15,7 +13,7 @@ import java.io.IOException;
 public class GObject implements IDrawable {
 
     protected BufferedImage texture;
-    private int x, y;
+
     protected ImageResizer imgRes;
     protected JButton object;
 
@@ -35,6 +33,7 @@ public class GObject implements IDrawable {
         object.setContentAreaFilled(false);
         object.setBounds(x,y,image.getWidth(),image.getHeight());
         object.setBorderPainted(false);
+        //object.setVisible(true);
     }
 
     public JButton getButton(){

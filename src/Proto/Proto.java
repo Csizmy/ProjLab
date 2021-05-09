@@ -14,6 +14,7 @@ import java.util.Scanner;
 
 public class Proto {
     private Map map = new Map();
+    private Settler currentPlayer;
 
     public void loadMap(String mapName){
         try{
@@ -21,7 +22,7 @@ public class Proto {
             Scanner sc = new Scanner(f);
             int space_id = 0;
             int miner_id = 50;
-            ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
+            ArrayList<Asteroid> asteroids = map.getAsteroids();
             ArrayList<Settler> settlers = new ArrayList<Settler>();
             ArrayList<Ufo> ufos = new ArrayList<Ufo>();
             ArrayList<Robot> robots = new ArrayList<Robot>();
@@ -36,12 +37,12 @@ public class Proto {
                 String array[] = line.split(" ");
 
                 switch(array[0]){
-                    case "*":
+                    /*case "*":
                         Asteroid a = new Asteroid(space_id, Integer.parseInt(array[1]), Integer.parseInt(array[2]), array[3]);
                         //System.out.println("Aszteroida: " + space_id);
                         space_id++;
                         asteroids.add(a);
-                        break;
+                        break;*/
                     case "+":
                         Teleport t1 = null, t2 = null;
                         for (int i = 0; i < asteroids.size(); i++) {
@@ -61,7 +62,7 @@ public class Proto {
                         teleports.add(t1);
                         teleports.add(t2);
                         break;
-                    case "=":
+                    /*case "=":
                         int egyik = -1, masik = -1;
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
@@ -74,7 +75,7 @@ public class Proto {
                         asteroids.get(egyik).AddNeighbor(asteroids.get(masik));
                         asteroids.get(masik).AddNeighbor(asteroids.get(egyik));
                         //System.out.println("Asteroid " + asteroids.get(masik).getId() + " es Asteroid " + asteroids.get(egyik).getId() + " szomszedok");
-                        break;
+                        break;*/
                     case "s":
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
@@ -111,7 +112,7 @@ public class Proto {
                 }
             }
 
-            map.setAsteroids(asteroids);
+            //map.setAsteroids(asteroids);
             map.setTeleports(teleports);
             map.setSettlers(settlers);
             map.setRobots(robots);
@@ -122,6 +123,7 @@ public class Proto {
         catch (FileNotFoundException e){
             System.out.println("A pálya betöltése sikertelen");
         }
+        currentPlayer=map.getSettlers().get(0);
     }
 
     public void list(String item){
@@ -164,7 +166,8 @@ public class Proto {
         }
     }
 
-    public boolean drillMiner(int settler_id){
+    public boolean drillMiner(){
+        int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 if (map.getSettlers().get(i).Drill()) {
@@ -180,7 +183,8 @@ public class Proto {
         return false;
     }
 
-    public boolean mineMiner(int settler_id){
+    public boolean mineMiner(){
+        int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++){
             if (map.getSettlers().get(i).getId() == settler_id) {
                 return map.getSettlers().get(i).Mine();
@@ -189,7 +193,8 @@ public class Proto {
         return false;
     }
 
-    public boolean buildTeleport(int settler_id){
+    public boolean buildTeleport(){
+        int settler_id= currentPlayer.getId();
         int _id = map.getTeleports().get(map.getTeleports().size()-1).getId()+2;
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
@@ -212,7 +217,8 @@ public class Proto {
         return false;
     }
 
-    public void placeTeleport(int settler_id, int teleport_id){
+    public void placeTeleport( int teleport_id){
+        int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
                 for (int j = 0; j < map.getTeleports().size(); j++) {
@@ -298,8 +304,8 @@ public class Proto {
         }
     }
 
-    public void backPack(int settler_id){
-
+    public void backPack(){
+        int settler_id= currentPlayer.getId();
         for (Settler s: map.getSettlers()){
             if(s.getId()==settler_id){
                 s.listBackPack();
@@ -316,8 +322,8 @@ public class Proto {
         }
     }
 
-    public boolean buildRobot(int settler_id){
-
+    public boolean buildRobot(){
+        int settler_id= currentPlayer.getId();
         Settler settler = map.getSettlers().get(settler_id - 50);
 
         int new_id = 50;
@@ -495,7 +501,6 @@ public class Proto {
 
     //lépésenként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.
     public boolean EndGame() {
-
         for(Asteroid a: map.getAsteroids()){
             if(a.checkWin()){
                 System.out.println("A játék vége, nyertek a Settlerek!");
@@ -506,4 +511,45 @@ public class Proto {
         System.out.println("A játéknak nincs vége");
         return false;
     }
+
+    public Miner getCurrent() {
+        return currentPlayer;
+    }
+    public void setCurrent(Settler s) {
+        currentPlayer=s;
+    }
+
+    public int getPlayerCount(){  //visszaadja a current player aszteroidáján tartozkodo játékos számot
+        int count = 0;
+        for(Settler s: map.getSettlers()) {
+            if (s.getAsteroid()==currentPlayer.getAsteroid()){
+                count++;
+            }
+
+        }
+        return count;
+    }
+
+    public int getRobotCount(){  //visszaadja a current player aszteroidáján tartozkodo robot számot
+        int count = 0;
+        for(Robot r: map.getRobots()) {
+            if (r.getAsteroid()==currentPlayer.getAsteroid()){
+                count++;
+            }
+
+        }
+        return count;
+    }
+
+    public int getUfoCount(){  //visszaadja a current player aszteroidáján tartozkodo ufo számot
+        int count = 0;
+        for(Ufo u: map.getUfos()) {
+            if (u.getAsteroid()==currentPlayer.getAsteroid()){
+                count++;
+            }
+
+        }
+        return count;
+    }
+
 }

@@ -1,8 +1,6 @@
 package Game_parts;
 
-import Objects.*;
-import Graphics.*;
-import Tests.*;
+import GUIComponents.*;
 import  Proto.*;
 
 import java.io.FileNotFoundException;
@@ -31,6 +29,8 @@ public class Game {
     public static void main(String[] args) throws FileNotFoundException {
 
         System.out.println("Indulhat a játék:");
+        MusicStuff musicObject = new MusicStuff();
+        //musicObject.playMusic("hansZimmer.wav");
         new MainFrame();
         Scanner input=new Scanner(System.in);
 
@@ -70,45 +70,6 @@ public class Game {
                         p.stepUfo(Integer.parseInt(array[1]), array[2]);
                     break;
 
-                case "drillMiner":
-                    p.drillMiner(Integer.parseInt(array[1]));
-                    break;
-
-                case "mineMiner":
-                    p.mineMiner(Integer.parseInt(array[1]));
-                    break;
-
-                case "buildTeleport":
-                    p.buildTeleport(Integer.parseInt(array[1]));
-                    break;
-
-                case "placeTeleport":
-                    p.placeTeleport(Integer.parseInt(array[1]),Integer.parseInt(array[2]));
-                    break;
-
-                case "perihelion":
-                    p.perihelion(Integer.parseInt(array[1]));
-                    break;
-
-                case "sunStorm":
-                    p.sunStorm(array[1]);
-                    break;
-
-                case "addToBackpack":
-                    p.addToBackpack(array[1], Integer.parseInt(array[2]));
-                    break;
-
-                case "backPack":
-                    p.backPack(Integer.parseInt(array[1]));
-                    break;
-
-                case "neighbors":
-                    p.neighbors(Integer.parseInt(array[1]));
-                    break;
-
-                case "buildRobot":
-                    p.buildRobot(Integer.parseInt(array[1]));
-                    break;
 
                 case "addSettler":
                     p.addSettler(Integer.parseInt(array[1]));

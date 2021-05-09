@@ -29,6 +29,8 @@ public class Map implements Steppable {
         ufos = new ArrayList<Ufo>();
         robots = new ArrayList<Robot>();
         teleports = new ArrayList<Teleport>();
+
+        generateMap();
     };
     //Map konstruktor, felveszi a telepesek és az aszteroidák listáját.
     public Map(int noAsteroids, int noSettler) {
@@ -188,5 +190,111 @@ public class Map implements Steppable {
 
     public void setUfos(ArrayList<Ufo> ufos) {
         this.ufos = ufos;
+    }
+
+    public void generateMap(){
+        int id = 0;
+        for (int i = 0; i < 9; i++){
+            asteroids.add(randomAsteroid(id++, "Uranium"));
+            asteroids.add(randomAsteroid(id++, "Water"));
+            asteroids.add(randomAsteroid(id++, "Coal"));
+            asteroids.add(randomAsteroid(id++, "Iron"));
+        }//9*4=36 garantalt nyersanyag
+        for (int i = 0; i < 14; i++){
+            switch (rand.nextInt(5)){
+                case 0:
+                    asteroids.add(randomAsteroid(id++, "no"));
+                    break;
+                case 1:
+                    asteroids.add(randomAsteroid(id++, "Uranium"));
+                    break;
+                case 2:
+                    asteroids.add(randomAsteroid(id++, "Water"));
+                    break;
+                case 3:
+                    asteroids.add(randomAsteroid(id++, "Coal"));
+                    break;
+                case 4:
+                    asteroids.add(randomAsteroid(id++, "Iron"));
+                    break;
+            }
+        }//14 random
+        Asteroid n;
+        for(int i = 0; i < 50; i++){
+            if (asteroids.get(i).getNeighbours().size() == 0){
+                n = findClosest(asteroids.get(i), 1);
+                asteroids.get(i).AddNeighbor(n);
+                n.AddNeighbor(asteroids.get(i));
+            }
+            if (asteroids.get(i).getNeighbours().size() == 1 && rand.nextInt(10) < 9){
+                n = findClosest(asteroids.get(i), 2);
+                asteroids.get(i).AddNeighbor(n);
+                n.AddNeighbor(asteroids.get(i));
+            }
+            if (asteroids.get(i).getNeighbours().size() == 2 && rand.nextInt(10) < 7){
+                n = findClosest(asteroids.get(i), 3);
+                asteroids.get(i).AddNeighbor(n);
+                n.AddNeighbor(asteroids.get(i));
+            }
+            if (asteroids.get(i).getNeighbours().size() == 3 && rand.nextInt(10) < 5){
+                n = findClosest(asteroids.get(i), 4);
+                asteroids.get(i).AddNeighbor(n);
+                n.AddNeighbor(asteroids.get(i));
+            }
+        }
+    }
+
+    private Asteroid randomAsteroid(int id, String mat) {
+
+        int digged = 0;
+        if (rand.nextInt(10) < 1) digged = 1;
+
+        return new Asteroid(id, rand.nextInt(9), digged, mat, rand.nextInt(820)+10, rand.nextInt(530)+90);
+    }
+
+    private Asteroid findClosest(Asteroid a, int n){
+        Asteroid first = new Asteroid(1000, 0, 0, "", 10000, 10000);
+        Asteroid second = new Asteroid(1000, 0, 0, "", 10000, 10000);
+        Asteroid third = new Asteroid(1000, 0, 0, "", 10000, 10000);
+        Asteroid fourth = new Asteroid(1000, 0, 0, "", 10000, 10000);
+
+        for (int i = 0; i < 50; i++){
+            if (a.getId() != asteroids.get(i).getId()){
+                if (aDistance(asteroids.get(i), a) < aDistance(a, fourth)){
+                    if (aDistance(asteroids.get(i), a) < aDistance(a, third)) {
+                        if (aDistance(asteroids.get(i), a) < aDistance(a, second)){
+                            if (aDistance(asteroids.get(i), a) < aDistance(a, first)){
+                                fourth = third;
+                                third = second;
+                                second = first;
+                                first = asteroids.get(i);
+                            }
+                            else {
+                                fourth = third;
+                                third = second;
+                                second = asteroids.get(i);
+                            }
+                        }
+                        else {
+                            fourth = third;
+                            third = asteroids.get(i);
+                        }
+                    }
+                    else
+                        fourth = asteroids.get(i);
+                }
+            }
+        }
+        switch (n){
+            case 1: return first;
+            case 2: return second;
+            case 3: return third;
+            case 4: return fourth;
+            default: return null;
+        }
+    }
+
+    private double aDistance(Asteroid a, Asteroid b){
+        return (a.getX()-b.getX())*(a.getX()-b.getX()) + (a.getY()-b.getY())*(a.getY()-b.getY());
     }
 }

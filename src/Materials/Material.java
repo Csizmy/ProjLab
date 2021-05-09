@@ -2,10 +2,8 @@ package Materials;
 
 import GObjects.*;
 import Objects.Asteroid;
-import Graphics.GamePanel;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 
 public abstract class Material {
@@ -33,7 +31,7 @@ public abstract class Material {
         return gObject;
     }
 
-    public JButton drawMaterial(int x, int y, GamePanel panel, Material mat) throws IOException {
+    public JButton drawMaterial(int x, int y,  Material mat) throws IOException {
 
         JButton toDraw = new JButton();
 
