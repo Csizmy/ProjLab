@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="lehet mozogni kattintasra">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView$Clicklistener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUIComponents/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MapView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4961,13 +4955,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00019" summary="thx csizmy">
-      <created>1616361802504</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1616361802504</updated>
-    </task>
     <task id="LOCAL-00020" summary="thx csizmy">
       <created>1616361900989</created>
       <option name="number" value="00020" />
@@ -5304,7 +5291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620572105210</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen">
+      <created>1620573642663</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1620573642663</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -5360,7 +5354,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="idegbajtkapok" />
     <MESSAGE value="menu kinda kész" />
     <MESSAGE value="kitöröltem 1 aproságot" />
     <MESSAGE value="update" />
@@ -5385,7 +5378,8 @@
     <MESSAGE value="na" />
     <MESSAGE value="barhol taroljuk az epp most lepo jatekost?" />
     <MESSAGE value="lehet mozogni kattintasra" />
-    <option name="LAST_COMMIT_MESSAGE" value="lehet mozogni kattintasra" />
+    <MESSAGE value="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen" />
+    <option name="LAST_COMMIT_MESSAGE" value="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
