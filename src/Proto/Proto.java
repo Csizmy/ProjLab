@@ -487,6 +487,26 @@ public class Proto {
             map.getAsteroids().get(i).Step("");
         }
 
+        for(Asteroid a: map.getAsteroids()){
+            if (a.getPerihelion()==true){
+                if(a.getMaterial()!= null){
+                    a.getMaterial().PeriMining();
+                }
+
+            }
+        }
+        for(Settler s: map.getSettlers()){
+            Asteroid as = (Asteroid) s.getSpacething();
+            if(as.getPerihelion()==true){
+                for(Material m: s.getBackpack()){
+                    if(m.getName()=="Uranium"){
+                        m.PeriMining();
+                    }
+
+                }
+            }
+        }
+
         map.Step("");
     }
 
