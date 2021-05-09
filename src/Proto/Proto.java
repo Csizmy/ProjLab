@@ -515,6 +515,10 @@ public class Proto {
         }
 
         map.Step("");
+        if(map.getSettlers().isEmpty()==true){
+            System.out.println("vesztettetek hahaxd");
+            System.exit(0);
+        }
     }
 
     public Map getMap() {

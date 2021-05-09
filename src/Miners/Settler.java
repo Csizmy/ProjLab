@@ -40,11 +40,12 @@ public class Settler extends Miner{
                 if (asteroid.getPerihelion()) {  // napközelben van
                     asteroid.getMaterial().PeriMining();
                 }
-                else {
-                    AddMaterial(asteroid.getMaterial());
-                    asteroid.setMaterial(null);
-                }
-                System.out.println("helloooka");
+                AddMaterial(asteroid.getMaterial());
+                System.out.println("truevagyfalselol"+AddMaterial(asteroid.getMaterial()));
+                asteroid.setMaterial(null);
+
+                System.out.println("helloooka"+getBackpack().size());
+
                 System.out.println("Settler " + id + " A bányászat sikeres Asteroid " + getAsteroid() + " " + getBackpack().get(getBackpack().size()-1).getName());
                 return true;
             }

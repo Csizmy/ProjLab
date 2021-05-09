@@ -71,8 +71,8 @@ public class MapView extends JPanel {
         zoomout.setIcon(new ImageIcon("pictures\\zoomout54x54.png"));
 
         //back.setBounds();
-        zoomin.setBounds(700, 20, 54, 54);
-        zoomout.setBounds(770, 20, 54, 54);
+        zoomin.setBounds(770, 20, 54, 54);
+        //zoomout.setBounds(770, 20, 54, 54);
         highLight.setBounds(((Asteroid)currentPlayer.getSpacething()).getX()-12, ((Asteroid)currentPlayer.getSpacething()).getY()-12, 40, 40);
 
         this.add(highLight);
@@ -100,7 +100,7 @@ public class MapView extends JPanel {
         InitButton(zoomin);
         this.add(zoomin);
         InitButton(zoomout);
-        this.add(zoomout);
+        //this.add(zoomout);
         InitButton(back);                       //hogy legyen???
         this.add(back);
 

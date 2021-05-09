@@ -113,7 +113,7 @@ public class GamePanel extends JPanel {
         uranium.setBounds(465, 300, 70, 70);
 
         Things.add(zoomout);
-        Things.add(zoomin);
+        //Things.add(zoomin);
         Things.add(tp);
         Things.add(robot);
         Things.add(dig);
@@ -161,6 +161,7 @@ public class GamePanel extends JPanel {
         } catch (IOException ex) {
 
         }
+        refreshBp();
     }
 
     @Override
