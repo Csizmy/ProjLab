@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="a buildrobot jo már a build teleport vmiért szar">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="jó lépetés">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_02__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_02__Default_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel$Clicklistener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28150,13 +28150,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00023" summary="Készkészkész!!!!!">
-      <created>1616368879260</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1616368879260</updated>
-    </task>
     <task id="LOCAL-00024" summary="Listázás implementálva, kellenek ufok meg ilyenek.">
       <created>1618568089684</created>
       <option name="number" value="00024" />
@@ -28493,7 +28486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620589327821</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="jó lépetés">
+      <created>1620597307957</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1620597307957</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -28570,7 +28570,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update" />
     <MESSAGE value="Gombok grafika kész xddddd" />
     <MESSAGE value="fixálva az ablak mérete" />
     <MESSAGE value="idk ezmi" />
@@ -28595,7 +28594,8 @@
     <MESSAGE value="lehet teleporton atmozogni plusz a tp egy rozsaszin vonal a terkepen" />
     <MESSAGE value="Irtam még a stepet mert vmiért a halál még mindig fos :)(: de nem javitottam meg de legalább a perihelion mükszik" />
     <MESSAGE value="a buildrobot jo már a build teleport vmiért szar" />
-    <option name="LAST_COMMIT_MESSAGE" value="a buildrobot jo már a build teleport vmiért szar" />
+    <MESSAGE value="jó lépetés" />
+    <option name="LAST_COMMIT_MESSAGE" value="jó lépetés" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
