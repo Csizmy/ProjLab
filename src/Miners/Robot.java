@@ -7,45 +7,47 @@ import java.util.Random;
 
 public class Robot extends Miner implements Steppable {
 
-    // Robot konstuktor
+    // Robot constructor with id
     public Robot(Spacething s, int _id) {
         super(s,_id);
     }
 
-    // Robot konstuktor
+    // Robot constructor without id
     public Robot(Spacething s) {
         super(s);
         name = "robot";
     }
 
-    // ha felrobban az aszteroida (radioaktív anyag bányászásánál) a robot egy véletlenszerű szomszédos aszteroidásra kerül
+    // If asteroid explodes, robot moves to another asteroid wich is in the neighbourhood
     public void Explode() {
-        int i = (int) (Math.random()%(spacething.getNeighbours().size()));
+        int i = (int) (Math.random()%(spacething.getNeighbours().size()));      //get a random asteroid in the neighbourhood
         Spacething s = spacething.getNeighbours().get(i);
-        Move(s.getId());
+        Move(s.getId());                                    //Move robot to this asteroid
     }
 
     @Override
-    public void Step(String step) {  // a robot lépése, vagy lép, vagy fúr
+    public void Step(String step) {  //Robot moves (drill or move)
         Random r = new Random();
-        int randomNeighbor_id = spacething.getNeighbours().get(r.nextInt(spacething.getNeighbours().size())).getId();
+        int randomNeighbor_id = spacething.getNeighbours().get(r.nextInt(spacething.getNeighbours().size())).getId();      //Moves to random asteroid
         switch (step) {
+
+            //Robot moves
             case "Move":
                 Move(randomNeighbor_id);
                 System.out.println("Robot " + id + " A mozgás sikeres ide: Asteroid " + randomNeighbor_id + ".");
                 break;
 
-
+            //Robot drills
             case "Drill":
                 if (Drill()) {
-                    Asteroid a = (Asteroid) spacething;
-                    System.out.println("Robot " + id + " A fúrás sikeres " + (a.getLayer() - a.getDigged()) + " réteg maradt Asteroid " + a.getId());
+                    Asteroid a = (Asteroid) spacething;     //Get the asteroid
+                    System.out.println("Robot " + id + " A fúrás sikeres " + (a.getLayer() - a.getDigged()) + " réteg maradt Asteroid " + a.getId());       //Remove the layer of the asteroid
                 }
                 else
-                    System.out.println("Robot " + id + " A fúrás sikertelen Asteroid " + spacething.getId());
+                    System.out.println("Robot " + id + " A fúrás sikertelen Asteroid " + spacething.getId());       //Drill unsuccessfull
                 break;
 
-
+            //Without parameters the robot makes a random move
             case "":
                 if (r.nextInt(2) == 0){
                     Move(randomNeighbor_id);

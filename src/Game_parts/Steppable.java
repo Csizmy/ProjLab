@@ -1,7 +1,8 @@
 package Game_parts;
 
+//Steppable interface
 public interface Steppable {
 
-    //Kezeli a nem játékos által vezérelt dolgokat
-    public void Step(String step);
+    //Responsible for the player control
+    void Step(String step);
 }

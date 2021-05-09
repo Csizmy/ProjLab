@@ -6,18 +6,19 @@ import Objects.Asteroid;
 
 import java.io.IOException;
 
+//Class to represent uranium material
 public class Uranium extends Material{
-    //3ig számol, majd 3nál felrobban napközelben.
+    //Counting to 3 then explodes if the asteroid is near to sun
     private int charged;
 
-    //Konstuktor
+    //Constructor
     public Uranium(Asteroid a){
         setName("Uranium");
         setAsteroid(a);
         charged = 0;
     }
 
-    //uranium explodes perihelion at the 3rd time
+    //Uranium explodes perihelion at the 3rd time
     @Override
     public void PeriMining(){
         charged++;
