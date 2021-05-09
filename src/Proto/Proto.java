@@ -194,7 +194,13 @@ public class Proto {
 
     public boolean buildTeleport(){
         int settler_id= currentPlayer.getId();
-        int _id = map.getTeleports().get(map.getTeleports().size()-1).getId()+2;
+        int _id;
+        if(map.getTeleports().size()<2){
+            _id = 0;
+        }
+        else{
+            _id = map.getTeleports().get(map.getTeleports().size()-1).getId()+2;
+        }
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
                 if(map.getSettlers().get(i).BuildTp(_id, _id+1)){
