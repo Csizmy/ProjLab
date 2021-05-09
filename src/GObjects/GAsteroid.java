@@ -37,7 +37,7 @@ public class GAsteroid extends GObject{
                 loadImage("pictures\\a_teli_kozel.png", s, a.getX(), a.getY());
             else
                 loadImage("pictures\\a_teli_tavol.png", s, a.getX(), a.getY());
-        }
+        }//
 
     }
 }
