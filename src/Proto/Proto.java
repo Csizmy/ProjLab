@@ -319,7 +319,7 @@ public class Proto {
 
     public boolean buildRobot(){
         int settler_id= currentPlayer.getId();
-        Settler settler = map.getSettlers().get(settler_id - 50);
+        Settler settler = map.getSettlers().get(settler_id);
 
         int new_id = 50;
         for (int x = 0; x < map.getUfos().size();x++) {
