@@ -290,9 +290,12 @@ public class Settler extends Miner{
         }
 
     }
+
     public Teleport getTP () {
         return teleports.get(0);
     }
+
+    public ArrayList<Teleport> getTeleports(){return teleports;}
 
     public void listBackPack(){
         if(backpack.isEmpty()==true&& teleports.isEmpty()==true){

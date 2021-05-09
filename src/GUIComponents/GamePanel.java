@@ -1,6 +1,8 @@
 package GUIComponents;
 
 import Materials.Material;
+import Miners.Miner;
+import Miners.Settler;
 import Objects.Asteroid;
 import Proto.Proto;
 
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
 
-    private JButton tp, robot, dig, mine, move, zoomin, zoomout, skip;    //gombok
+    private JButton tp, robot, dig, mine, move, zoomin, zoomout, skip, tp1, tp2, tp3;    //gombok
     private JLabel resourceInventory, tpInventory;    //A játékos táskája
     private JLabel a_teli_kozel, a_teli_tavol, a_ures_kozel, a_ures_tavol;    //Aszteroida fajták
     private JLabel water, coal, iron, uranium;    //Aszteroidák anyagai, ha azok ki vannak fúrva
@@ -57,6 +59,9 @@ public class GamePanel extends JPanel {
         dig = new JButton("");
         mine = new JButton("");
         move = new JButton("");
+        tp1 = new JButton("");
+        tp2 = new JButton("");
+        tp3 = new JButton("");
 
         resourceInventory = new JLabel(new ImageIcon("pictures\\resourceinventory191x386.png"));
         tpInventory = new JLabel(new ImageIcon("pictures\\tpinventory210x63.png"));
@@ -79,6 +84,9 @@ public class GamePanel extends JPanel {
         dig.setIcon(new ImageIcon("pictures\\dig200x53.png"));
         mine.setIcon(new ImageIcon("pictures\\mine200x53.png"));
         move.setIcon(new ImageIcon("pictures\\move200x53.png"));
+        tp1.setIcon(new ImageIcon("pictures\\tp.png"));
+        tp2.setIcon(new ImageIcon("pictures\\tp.png"));
+        tp3.setIcon(new ImageIcon("pictures\\tp.png"));
 
         zoomout.setBounds(770, 20, 54, 54);
         zoomin.setBounds(700, 20, 54, 54);
@@ -90,6 +98,9 @@ public class GamePanel extends JPanel {
         resourceInventory.setBounds(50, 20, 191, 386);
         tpInventory.setBounds(40, 420, 210, 63);
         skip.setBounds(550, 570, 200, 53);
+        tp1.setBounds(65, 435, 30, 30);
+        tp2.setBounds(125, 435, 30, 30);
+        tp3.setBounds(195, 435, 30, 30);
 
         a_teli_kozel.setBounds(350, 180, 300, 300);
         a_teli_tavol.setBounds(350, 180, 300, 300);
@@ -109,6 +120,9 @@ public class GamePanel extends JPanel {
         Things.add(mine);
         Things.add(move);
         Things.add(skip);
+        Things.add(tp1);
+        Things.add(tp2);
+        Things.add(tp3);
 
         for (JButton jb : Things) {
             InitButton(jb);
@@ -152,7 +166,6 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
         g.drawImage(settlerImage, 710, 150, this);
         g.drawImage(ufoImage, 650, 230, this);
@@ -196,6 +209,20 @@ public class GamePanel extends JPanel {
             } else { // ha naptávol
                 a_teli_tavol.setVisible(true);
             }
+        }
+        Settler s = (Settler)p.getCurrent();
+        tp1.setVisible(false);
+        tp2.setVisible(false);
+        tp3.setVisible(false);
+
+        if(s.getTeleports().size()>2){
+            tp3.setVisible(true);
+        }
+        if(s.getTeleports().size()>1){
+            tp2.setVisible(true);
+        }
+        if(s.getTeleports().size()>0){
+            tp1.setVisible(true);
         }
     }
 
@@ -314,10 +341,22 @@ public class GamePanel extends JPanel {
             } else if (e.getSource() == skip) {
                 System.out.println("skip");
                 nextPlayer();
+            }else if (e.getSource() == tp1) {
+                Settler s = (Settler)p.getCurrent();
+                if (p.placeTeleport(s.getTeleports().get(0).getId())) {
+                    nextPlayer();
+                }
+            }else if (e.getSource() == tp2) {
+                Settler s = (Settler)p.getCurrent();
+                if (p.placeTeleport(s.getTeleports().get(1).getId())) {
+                    nextPlayer();
+                }
+            }else if (e.getSource() == tp3) {
+                Settler s = (Settler)p.getCurrent();
+                if (p.placeTeleport(s.getTeleports().get(2).getId())) {
+                    nextPlayer();
+                }
             }
-
         }
     }
-
-
 }

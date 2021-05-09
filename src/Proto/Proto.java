@@ -212,7 +212,7 @@ public class Proto {
         return false;
     }
 
-    public void placeTeleport( int teleport_id){
+    public boolean placeTeleport( int teleport_id){
         int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
@@ -220,13 +220,16 @@ public class Proto {
                     if(map.getTeleports().get(j).getId()==teleport_id){
                         if(map.getSettlers().get(i).PlaceTp(map.getTeleports().get(j), map.getSettlers().get(i).getAsteroid())){
                             System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikeres");
+                            return true;
                         }else{
                             System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikertelen");
+                            return false;
                         }
                     }
                 }
             }
         }
+        return false;
     }
 
     public void perihelion(int asteroid_id){
