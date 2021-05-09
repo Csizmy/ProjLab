@@ -125,16 +125,20 @@ public class Proto {
         map.list(item);
     }
 
-    public void moveSettler(int settler_id, int asteroid_id){
+    public boolean moveSettler(int settler_id, int asteroid_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 map.getSettlers().get(i).Move(asteroid_id);
-                if (asteroid_id == map.getSettlers().get(i).getAsteroid())
+                if (asteroid_id == map.getSettlers().get(i).getAsteroid()) {
                     System.out.println("Settler " + settler_id + " A mozgás sikeres ide: Asteroid " + asteroid_id + ".");
-                else
+                    return true;
+                }
+                else{
                     System.out.println("Settler " + settler_id + " A mozgás sikertelen.");
+                }
             }
         }
+        return false;
     }
 
     public void moveTp(int teleport_id, int asteroid_id){

@@ -143,9 +143,24 @@ public class MapView extends JPanel {
 
     public void loadMaporWhat() {} // go wild Kristof
 
-    public void nextPlayer(){} ////         HOW????
     public void setMap(Map m){this.map = m;}
 
+    public void nextPlayer() {
+        if (p.EndGame() == true) {  //ellenőrzi hogy nyertek e a telepesek.
+            //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy
+        }
+        for (int i = 0; i < p.getMap().getSettlers().size(); i++) {
+            if (i == p.getMap().getSettlers().size() - 1) {
+                p.step(); // léptet mindenkit ha az utolso player lelépte a lépését
+                p.setCurrent(p.getMap().getSettlers().get(0)) ;
+                return;
+            }
+            if (p.getMap().getSettlers().get(i) == p.getCurrent()) {
+                p.setCurrent(p.getMap().getSettlers().get(i+1)) ;
+                return;
+            }
+        }
+    }
 
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
 
@@ -168,8 +183,20 @@ public class MapView extends JPanel {
                 }
             }
             else{
-                int indx = asteroidButtons.indexOf( e.getSource() );
-                p.moveSettler(currentPlayer.getId(), indx);
+
+                for(int i=0; i<50; i++){
+                    if(e.getSource() == asteroidButtons.get(i)){
+                        if(p.moveSettler(currentPlayer.getId(), i)==true){
+                            nextPlayer();
+                            try {
+                                backToGameView.ChangeToGame(1);
+                            } catch (IOException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }
