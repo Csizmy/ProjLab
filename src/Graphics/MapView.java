@@ -1,5 +1,6 @@
 package Graphics;
 
+import GObjects.GAsteroid;
 import Game_parts.Map;
 import Miners.Settler;
 import Proto.Proto;
@@ -23,6 +24,7 @@ public class MapView extends JPanel {
     private Settler currentPlayer;              // A jelenlegi játékos
     private OnPlayListener backToGameView;
     private Map map;
+    private ArrayList<GAsteroid> asteroids = new ArrayList<GAsteroid>();
 
     // A szomszédos aszteroidák/teleportok gombjai, amire kattintva oda mozog a telepes.
     private ArrayList<JButton> Neighbours = new ArrayList<>();
@@ -39,6 +41,7 @@ public class MapView extends JPanel {
     public MapView(OnPlayListener act,Proto val) {
         p = val;
         backToGameView=act;
+        map =p.getMap();
 
         click = new Clicklistener();
         back = new JButton("");             //hogy legyen???
@@ -52,6 +55,16 @@ public class MapView extends JPanel {
         //back.setBounds();
         zoomin.setBounds(700, 20, 54, 54);
         zoomout.setBounds(770, 20, 54, 54);
+        GAsteroid ga = null;
+        for (int i = 0; i < 50; i++){
+            try {
+                asteroids.add(new GAsteroid(map.getAsteroids().get(i), 0.05));
+            } catch (IOException ex) { /*mindig jó, nincs error köszi.*/ }
+
+            this.add(asteroids.get(i).getButton());
+
+        }
+
 
         InitButton(zoomin);
         this.add(zoomin);

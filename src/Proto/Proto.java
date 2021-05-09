@@ -112,7 +112,7 @@ public class Proto {
                 }
             }
 
-            map.setAsteroids(asteroids);
+            //map.setAsteroids(asteroids);
             map.setTeleports(teleports);
             map.setSettlers(settlers);
             map.setRobots(robots);
