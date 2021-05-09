@@ -268,6 +268,15 @@ public class Map implements Steppable {
                 asteroids.get(i).AddNeighbor(n);
                 n.AddNeighbor(asteroids.get(i));
             }
+        }//szomszedkotogetos magic
+
+        for (int i = 0; i < 10; i++){
+
+            settlers.add(new Settler(asteroids.get(rand.nextInt(50)), i));
+        }//10 settler random helyen
+
+        for (int i = 0; i < 5; i++){
+            ufos.add(new Ufo(asteroids.get(rand.nextInt(50)), i));
         }
     }
 

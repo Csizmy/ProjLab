@@ -22,11 +22,6 @@ public class Proto {
             Scanner sc = new Scanner(f);
             int space_id = 0;
             int miner_id = 50;
-            ArrayList<Asteroid> asteroids = map.getAsteroids();
-            ArrayList<Settler> settlers = new ArrayList<Settler>();
-            ArrayList<Ufo> ufos = new ArrayList<Ufo>();
-            ArrayList<Robot> robots = new ArrayList<Robot>();
-            ArrayList<Teleport> teleports = new ArrayList<Teleport>();
 
             while (sc.hasNextLine()) {
 
@@ -43,7 +38,7 @@ public class Proto {
                         space_id++;
                         asteroids.add(a);
                         break;*/
-                    case "+":
+                    /*case "+":
                         Teleport t1 = null, t2 = null;
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
@@ -61,7 +56,7 @@ public class Proto {
                         t2.setPair(t1);
                         teleports.add(t1);
                         teleports.add(t2);
-                        break;
+                        break;*/
                     /*case "=":
                         int egyik = -1, masik = -1;
                         for (int i = 0; i < asteroids.size(); i++) {
@@ -76,7 +71,7 @@ public class Proto {
                         asteroids.get(masik).AddNeighbor(asteroids.get(egyik));
                         //System.out.println("Asteroid " + asteroids.get(masik).getId() + " es Asteroid " + asteroids.get(egyik).getId() + " szomszedok");
                         break;*/
-                    case "s":
+                    /*case "s":
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
                                 Settler s = new Settler(asteroids.get(i), miner_id);
@@ -86,8 +81,8 @@ public class Proto {
                                 break;
                             }
                         }
-                        break;
-                    case "r":
+                        break;*/
+                    /*case "r":
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
                                 Robot r = new Robot(asteroids.get(i), miner_id);
@@ -97,8 +92,8 @@ public class Proto {
                                 break;
                             }
                         }
-                        break;
-                    case "u":
+                        break;*/
+                    /*case "u":
                         for (int i = 0; i < asteroids.size(); i++) {
                             if (Integer.parseInt(array[1]) == asteroids.get(i).getId()) {
                                 Ufo u = new Ufo(asteroids.get(i), miner_id);
@@ -108,16 +103,16 @@ public class Proto {
                                 break;
                             }
                         }
-                        break;
+                        break;*/
                 }
             }
 
             //map.setAsteroids(asteroids);
-            map.setTeleports(teleports);
-            map.setSettlers(settlers);
-            map.setRobots(robots);
-            map.setUfos(ufos);
-            System.out.println("A pálya betöltése sikeres");
+            //map.setTeleports(teleports);
+            //map.setSettlers(settlers);
+            //map.setRobots(robots);
+            //map.setUfos(ufos);
+            //System.out.println("A pálya betöltése sikeres");
             sc.close();
         }
         catch (FileNotFoundException e){
