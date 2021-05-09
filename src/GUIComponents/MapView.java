@@ -33,6 +33,7 @@ public class MapView extends JPanel {
     private Map map;
     private ArrayList<GAsteroid> asteroids = new ArrayList<GAsteroid>();
     private ArrayList<JLabel> idlabels = new ArrayList<JLabel>();
+    private ArrayList<JButton> asteroidButtons = new ArrayList<JButton>();
 
 
     // A szomszédos aszteroidák/teleportok gombjai, amire kattintva oda mozog a telepes.
@@ -72,6 +73,8 @@ public class MapView extends JPanel {
             } catch (IOException ex) { /*mindig jó, nincs error köszi.*/ }
 
             this.add(asteroids.get(i).getButton());
+            asteroids.get(i).getButton().addActionListener(click);
+            asteroidButtons.add(asteroids.get(i).getButton());
 
             idlabels.add( new JLabel(String.valueOf(current.getId())));
             idlabels.get(i).setBounds(current.getX(), current.getY()-20, 20, 20);
@@ -144,17 +147,11 @@ public class MapView extends JPanel {
                     e1.printStackTrace();
                 }
             }
-            for (int i = 0; i < 50; i++){
-                if (e.getSource() == asteroids.get(i).getButton()){System.out.println("fasz");
-                    for (int j = 0; j < map.getAsteroids().get(currentPlayer.getAsteroid()).getNeighbours().size(); j++)
-                        if (map.getAsteroids().get(i).getId() == map.getAsteroids().get(currentPlayer.getAsteroid()).getNeighbours().get(j).getId()) {
-                            currentPlayer.Move(j);
-
-                        }
-
-                }
+            else{
+                int indx = asteroidButtons.indexOf( e.getSource() );
+                for (int i = 0; i < map.getAsteroids().get(currentPlayer.getAsteroid()).getNeighbours().size(); i++)
+                    p.moveSettler(currentPlayer.getId(), indx);
             }
-
         }
     }
 
