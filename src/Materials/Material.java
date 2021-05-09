@@ -33,7 +33,7 @@ public abstract class Material {
         return gObject;
     }
 
-    public JButton drawMaterial(int x, int y, GamePanel panel, Material mat) throws IOException {
+    public JButton drawMaterial(int x, int y,  Material mat) throws IOException {
 
         JButton toDraw = new JButton();
 

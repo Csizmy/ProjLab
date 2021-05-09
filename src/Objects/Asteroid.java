@@ -1,10 +1,15 @@
 package Objects;
 
+import GObjects.*;
 import Game_parts.Game;
 import Game_parts.Steppable;
+import Graphics.GamePanel;
+import Graphics.MapView;
 import Materials.*;
 import Miners.Miner;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -227,12 +232,11 @@ public class Asteroid extends Spacething implements Steppable {
         return true;
     }
 
-    public int getPlayerCount(){
-        return miners.size();
-    }
 
     public int getX(){return x;}
     public int getY(){return y;}
     public void setX(int value){x=value;}
     public void setY(int value){y=value;}
+
+
 }

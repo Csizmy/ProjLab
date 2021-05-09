@@ -2,7 +2,9 @@ package Graphics;
 
 import GObjects.GAsteroid;
 import Game_parts.Map;
+import Materials.Material;
 import Miners.Settler;
+import Objects.Asteroid;
 import Proto.Proto;
 
 import javax.imageio.ImageIO;
@@ -66,6 +68,7 @@ public class MapView extends JPanel {
         }
 
 
+
         InitButton(zoomin);
         this.add(zoomin);
         InitButton(zoomout);
@@ -73,7 +76,7 @@ public class MapView extends JPanel {
         InitButton(back);                       //hogy legyen???
         this.add(back);                         //hogy legyen???
 
-        //this.setLayout(null);                 //?
+        this.setLayout(null);                 //?
 
         try {
             image = ImageIO.read(new File("pictures\\background.png"));

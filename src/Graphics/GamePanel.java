@@ -232,7 +232,7 @@ public class GamePanel extends JPanel {
             }
             // 51-es idhez adtam sok anyagot  a gamepanel konstruktorban
             try {
-                JButton b = m.drawMaterial(x * 90 + 70, y * 75 + 30, this, m);
+                JButton b = m.drawMaterial(x * 90 + 70, y * 75 + 30,  m);
                 inventory.add(b);
                 this.add(b);
             } catch (IOException e) {
