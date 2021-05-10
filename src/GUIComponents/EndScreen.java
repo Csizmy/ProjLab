@@ -11,11 +11,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class EndScreen extends JPanel {
+public class EndScreen extends JPanel {  //A játék végén lévő képernyő ha nyertek/vesztettek a telepesek.
     private OnPlayListener backToMenu;
     private BufferedImage image;                //háttér
     private Clicklistener click;    //gomb figyelo
-    private boolean wine;
+    private boolean wine;  /// Jelzi, hogy a win vagy a loose képernyőt kell-e megjelenitenie
     private JButton back;
     private ImageResizer ir = new ImageResizer();
     public EndScreen(OnPlayListener act, Proto val,boolean win) throws IOException {

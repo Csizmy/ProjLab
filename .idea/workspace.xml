@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="Az endscreen elv jo">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_05_2021_02_10__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_05_2021_02_10__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_44__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_44__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_26__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_26__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_27__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_27__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_42__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_42__Default_.xml" afterDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="Elv fullosan kész">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/EndScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/EndScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel$Clicklistener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/Menu$Clicklistener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/Menu$Clicklistener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Tests/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Tests/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/Controller.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUIComponents/EndScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/EndScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUIComponents/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUIComponents/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_parts/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28170,20 +28151,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00025" summary="bence stipi">
-      <created>1618693202741</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1618693202742</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Panku addToBackpack">
-      <created>1618740904124</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1618740904124</updated>
-    </task>
     <task id="LOCAL-00027" summary="Panku addToBackpack javítva">
       <created>1618741097373</created>
       <option name="number" value="00027" />
@@ -28513,7 +28480,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620598934778</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Elv fullosan kész">
+      <created>1620608268754</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1620608268754</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Elv fullosan kész">
+      <created>1620608297221</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1620608297221</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -28590,7 +28571,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Gombok grafika kész xddddd" />
     <MESSAGE value="fixálva az ablak mérete" />
     <MESSAGE value="idk ezmi" />
     <MESSAGE value="kommentek" />
@@ -28615,7 +28595,8 @@
     <MESSAGE value="Irtam még a stepet mert vmiért a halál még mindig fos :)(: de nem javitottam meg de legalább a perihelion mükszik" />
     <MESSAGE value="a buildrobot jo már a build teleport vmiért szar" />
     <MESSAGE value="min tavolsag 50p" />
-    <option name="LAST_COMMIT_MESSAGE" value="min tavolsag 50p" />
+    <MESSAGE value="Elv fullosan kész" />
+    <option name="LAST_COMMIT_MESSAGE" value="Elv fullosan kész" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
