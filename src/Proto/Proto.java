@@ -12,13 +12,34 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * The Prototype class that we use for the visual game as well.
+ * @author Mzperx
+ */
 public class Proto {
+
+    /**
+     * A map witch contains all the objects that exists in the game.
+     */
     private Map map = new Map();
+
+    /**
+     * Marks the current player who needs to choose its next move.
+     */
     private Settler currentPlayer;
 
+    /**
+     * Default Constructor for a proto object that sets the current player to first
+     */
     public Proto(){
-        loadMap("");
+        currentPlayer=map.getSettlers().get(0);
+        //loadMap("");
     }
+
+    /**
+     * Reads from a file and loads it in to the map
+     * @param mapName   the map which gets the file
+     */
     public void loadMap(String mapName){
         try{
             File f = new File("maps\\" + mapName);
@@ -124,6 +145,10 @@ public class Proto {
         currentPlayer=map.getSettlers().get(0);
     }
 
+    /**
+     * Lists all the objects (or the chosen type) to the console.
+     * @param item  It can be empty, Settlers, Robots, Ufos, Asteroids
+     */
     public void list(String item){
         map.list(item);
     }
@@ -497,7 +522,7 @@ public class Proto {
         }
 
         for(Asteroid a: map.getAsteroids()){
-            if (a.getPerihelion()==true&&a!=null){
+            if (a.getPerihelion()==true && a!=null){
                 if(a.getMaterial()!= null && a.getDigged() == a.getLayer()){
                     if(a.getMaterial().PeriMining() == true) {
                         a.Explode();
