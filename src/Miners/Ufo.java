@@ -32,6 +32,7 @@ public class Ufo extends Miner implements Steppable {
 
     /**
      *  Az ufó nem tud fúrni, igy nála ez egy üres függvény.
+     *  @return false
      */
     public boolean Drill() {
         return false;
@@ -39,6 +40,7 @@ public class Ufo extends Miner implements Steppable {
 
     /**
      *  Az ufó ellopja a nyersanyagot a  kibányászatlan aszteroidáról, ha nincs felette köpeny.
+     *  @return if it did steal
      */
     public boolean Steal() {
         //remove material, ha felvesz valamit.

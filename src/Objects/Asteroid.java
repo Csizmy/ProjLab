@@ -7,17 +7,52 @@ import Miners.Miner;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ *  Object for Asteroid
+ * @author Mzperx
+ */
 public class Asteroid extends Spacething implements Steppable {
-    private int layer;              // Sziklaréteg
-    private int digged;             // Kiásott rétegek
-    private boolean perihelion;     // napközelség
+    /**
+     *  Sziklaréteg
+     */
+    private int layer;
+    /**
+     *  Kiásott rétegek
+     */
+    private int digged;
+    /**
+     *  napközelséget jelzi
+     */
+    private boolean perihelion;
+    /**
+     *  Material that is inside of the Asteroid
+     */
     private Material material;
+    /**
+     *  Contains the miners that are on the Asteroid
+     */
     private ArrayList<Miner> miners;
+    /**
+     *  x for graphics
+     */
     private int x;
+    /**
+     *  y for graphics
+     */
     private int y;
 
+    /**
+     *  random number
+     */
     private Random rand = new Random();
 
+    /**
+     *  Asteroid constructor with id
+     * @param asteroidID the id of the asteroid
+     * @param lay layer of the asteroid.
+     * @param d number of digged layers
+     * @param mat material of the asteroid
+     */
     public Asteroid(int asteroidID, int lay, int d, String mat){
         super(asteroidID);
         layer = lay;
@@ -29,7 +64,10 @@ public class Asteroid extends Spacething implements Steppable {
         if(mat.equals("Uranium")){material = new Uranium(this);}
         if(mat.equals("null")){material = null;}
     }
-    // Asteroid konstruktor
+    /**
+     *  Asteroid constructor with id
+     * @param asteroidID the id of the asteroid
+     */
     public Asteroid(int asteroidID) {
         super(asteroidID);
         layer = (int) rand.nextInt(7)+3;    //Min: 3, Max: 9
@@ -50,6 +88,15 @@ public class Asteroid extends Spacething implements Steppable {
 
     }
 
+    /**
+     *  Asteroid constructor with id
+     * @param asteroidID the id of the asteroid
+     * @param lay layer of the asteroid.
+     * @param d number of digged layers
+     * @param mat material of the asteroid
+     * @param x x for graphics
+     * @param y y for graphics
+     */
     public Asteroid(int asteroidID, int lay, int d, String mat, int x, int y){
         super(asteroidID);
         layer = lay;
@@ -65,6 +112,14 @@ public class Asteroid extends Spacething implements Steppable {
     }
 
     // Asteroid konstruktor
+
+    /**
+     *  Asteroid constructor with id
+     * @param asteroidID the id of the asteroid
+     * @param layer layer of the asteroid.
+     * @param perihelion sets the asteroid near sun or not
+     * @param material material of the asteroid
+     */
     public Asteroid(int asteroidID, int layer, boolean perihelion, Material material) {
         super(asteroidID);
 
@@ -76,126 +131,154 @@ public class Asteroid extends Spacething implements Steppable {
         this.perihelion = perihelion;
     }
 
-    //csökkenti a sziklarétegek számát az adott aszteroidán
+    /**
+     *  csökkenti a sziklarétegek számát az adott aszteroidán
+     */
     public void removeLayer(){
         digged++;
     }
 
-    // Ha nem üres az aszteroida (és a napközelség nem zavar bele a műveletbe), kiveszi belőle az adott nyersanyagot
+    /**
+     *  Ha nem üres az aszteroida (és a napközelség nem zavar bele a műveletbe), kiveszi belőle az adott nyersanyagot
+     */
     public void RemoveMaterial() {
         digged = layer;
         material = null;
     }
 
-    //Egy játékost "eltávolít" a rajta tartózkodók közül
+    /**
+     *  Egy játékost "eltávolít" a rajta tartózkodók közül
+     */
     public void removeMiner(Miner m){
         miners.remove(m);
     }
 
 
-    //Egy játékost "hozzáad" a rajta tartózkodókhoz
+    /**
+     *  Egy játékost "hozzáad" a rajta tartózkodókhoz
+     * @param m az aminer amit hozzáad
+     */
     public void addMiner(Miner m){
         miners.add(m);
     }
 
-    //Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat
+    /**
+     *  Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat
+     */
     public void Explode(){
         for (int i = 0; i < miners.size(); i++) {
             miners.get(i).Explode();
         }
     }
 
-    //Visszatér a bolygón lévő telepesek nyersanyag listájával.
-    public ArrayList<Material> CountDiffMat(){
-        ArrayList<Material> materials = new ArrayList<Material>();
-        for(int i = 0; i < miners.size(); i++) {
-            ArrayList<Material> backpack = miners.get(i).getBackpack();
-            for (int j = 0; j < backpack.size(); j++) {
-                materials.add(backpack.get(j));
-            }
-        }
-        return materials;
-    }
 
-    //A napközelséget vizsgálom és irom felül.
-    public void Step(){}
-
-    // a megadott teleportot az aszteroidához köti
+    /**
+     *  Sets up a teleport on the Asteroid
+     * @param t the teleport that is added
+     */
     public void SetUpTeleport(Teleport t){}
 
-    // getterek és setterek a megadott változókhoz
+    /**
+     *  Getter of the layers
+     *  @return layer
+     */
     public int getLayer() {
         return layer;
     }
 
+    /**
+     *  Getter of the material that is inside of the Asteroid
+     *  @return material
+     */
     public Material getMaterial() {
         return material;
     }
 
+    /**
+     *  Getter of perihelion
+     *  @return perihelion
+     */
     public boolean getPerihelion(){
         return perihelion;
     }
 
+    /**
+     *  Getter of digged layers
+     *  @return digged
+     */
     public int getDigged() {
         return digged;
     }
 
+    /**
+     *  Getter of id
+     *  @return id
+     */
     public int getId(){
         return id;
     }
 
+    /**
+     *  Getter of miners on asteroid
+     *  @return list of miners
+     */
     public ArrayList<Miner> getMiners(){
         return  miners;
     }
-
+    /**
+     *  Getter of layers
+     */
     public void setLayer(int layer) {
         this.layer = layer;
     }
-
+    /**
+     *  Setter of material
+     */
     public void setMaterial(Material m){
         this.material = m;
     }
-
+    /**
+     *  setter of perihelion
+     */
     public void setPerihelion(boolean b){
         this.perihelion = b;
     }
 
+    /**
+     * Adds a neighbour to its list
+     * @param s The Spacething that is added
+     */
     @Override
     public void AddNeighbor(Spacething s) {
         super.AddNeighbor(s);
     }
 
-    public void listNeighbors(){
-        if(neighbours.isEmpty()==true){
-            System.out.println("Hiba: nincs szomszed "+this.getId());
-        }
-        for(Spacething s: neighbours){
-            if(s.isAsteroid()==true)
-            System.out.println("Asteroid "+s.getId());
-            else{
-                System.out.println("Teleport "+s.getId());
-            }
-        }
-    }
-
+    /**
+     * Returns that it is an asteroid
+     * @return true because its an asteroid
+     */
     @Override
     public boolean isAsteroid(){return true;}
 
+    /**
+     * Makes the Asteroid perihelion or not
+     * @param step it is not used here.
+     */
     @Override
     public void Step(String step){
         Random r = new Random();
         if (r.nextInt(2) == 0) {
-            if (!perihelion)
-                System.out.println("Asteroid " + id + " napkozelbe kerult");
             perihelion = true;
         }
         else {
-            if (perihelion)
-                System.out.println("Asteroid " + id + " naptavolba kerult");
             perihelion = false;
         }
     }
 
+    /**
+     * Checks if the game is won or not
+     * @return the game is won or not
+     */
     public boolean checkWin(){
         ArrayList<Material> bolygon= new ArrayList<>();
         for(Miner m: miners){
@@ -227,9 +310,26 @@ public class Asteroid extends Spacething implements Steppable {
     }
 
 
+    /**
+     * getter of x
+     * @return y
+     */
     public int getX(){return x;}
+    /**
+     * getter of y
+     * @return x
+     */
     public int getY(){return y;}
+
+    /**
+     * setter of x
+     * @param value sets x
+     */
     public void setX(int value){x=value;}
+    /**
+     * setter of y
+     * @param value sets y
+     */
     public void setY(int value){y=value;}
 
 
