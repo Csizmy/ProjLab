@@ -1,24 +1,42 @@
 package Objects;
 
 import Miners.Miner;
-
 import java.util.ArrayList;
 
-public abstract class Spacething {   //Az égitesteket reprezentálja (a játékban aszteroidák és teleportkapuk).
+/**
+ * It represents the celestial bodies (asteroids and teleport gates in the game)
+ * @author mzperx
+ */
+public abstract class Spacething {
 
+    /**
+     * List of neighbors
+     */
     protected ArrayList<Spacething> neighbours = new ArrayList<Spacething>();
-    protected int id;                 //ID
+    /**
+     * ID of the spacething
+     */
+    protected int id;
 
 
-
-    // Spacething konstruktor
+    /**
+     * Spacething konstruktor
+     */
     public Spacething(){}
 
-    // Spacething konstruktor
+    /**
+     * Spacething konstruktor
+     * @param asteroidID id of asteroid
+     */
     public Spacething(int asteroidID){
         id = asteroidID;
     }
-    //ha a megadott égitest az adott égitest szomszédja, akkor igaz értéket vesz fel, ha nem, akkor hamis
+
+    /**
+     * If the Spacething is a neighbor of that celestial body, it assumes a true value, if not, it is false
+     * @param spacethingID id
+     * @return true or false
+     */
     public boolean isNeigbour(int spacethingID){
         for (Spacething n: neighbours) {
             if(n.getId() == spacethingID) return true;
@@ -26,15 +44,24 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
         return false;
     }
 
-    // neighbours gettere
+    /**
+     * Getter of neighbor
+     * @return list of neighbors
+     */
     public ArrayList<Spacething> getNeighbours() {
         return neighbours;
     }
 
-    // hozzáad egy új szomszédot
+    /**
+     * Add a new neighbor
+     * @param s the new neighbor
+     */
     public void AddNeighbor(Spacething s){neighbours.add(s);}
 
-    // eltávolít egy szomszédot
+    /**
+     * Remove a neighbor
+     * @param s the neighbor
+     */
     public void RemoveNeighbor(Spacething s){
 
         for (int i = 0; i < neighbours.size(); i++){
@@ -44,26 +71,40 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
         }
     }
 
-    // id gettere
+    /**
+     * Getter of ID
+     * @return id
+     */
     public int getId(){
         return id;
     }
-    // id settere
-    public void setId(int _id){id= _id;}
-    // eltávolít egy minert
+
+    /**
+     * Remove a miner from a spacething
+     * @param m miner
+     */
     public abstract void removeMiner(Miner m);
-    // hozzáad egy minert
+
+    /**
+     * Add a newa miner to the spacething
+     * @param m miner
+     */
     public abstract void  addMiner(Miner m);
-    // asteroid gettere
+
+    /**
+     * If the spacething is asteroid it's true, if it's not, false
+     * @return true or false
+     */
     public boolean isAsteroid(){return false;}
 
-    public boolean isNeighborOf(Spacething s){
-        for (int i = 0; i < this.neighbours.size(); i++){
-            if (this.neighbours.get(i).getId() == s.getId()){
-                return true;}}
-        return false;
-    }
-
+    /**
+     * Getter of x coordinate
+     * @return x coordinate
+     */
     public abstract int getX();
+    /**
+     * Getter of y coordinate
+     * @return y coordinate
+     */
     public abstract int getY();
 }
