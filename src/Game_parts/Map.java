@@ -117,8 +117,6 @@ public class Map implements Steppable {
                     }
                 }
             }
-            for (int i = 0; i < teleports.size(); i++)  // egy körig nem lehet használni semelyik kaput se
-                teleports.get(i).disable();
         }else{
         //Cal sunstorm on the target asteroid
             if (asteroids.get(target).getLayer() != asteroids.get(target).getDigged() && asteroids.get(target).getMaterial() != null) {     //Check if settler is hidden

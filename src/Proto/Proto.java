@@ -315,16 +315,6 @@ public class Proto {
         }
     }
 
-
-
-    public void neighbors(int asteroid_id){
-        for(Asteroid a: map.getAsteroids()){
-            if(a.getId()==asteroid_id){
-                a.listNeighbors();
-            }
-        }
-    }
-
     public boolean buildRobot(){
         int settler_id= currentPlayer.getId();
         Settler settler = map.getSettlers().get(settler_id);

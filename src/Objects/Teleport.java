@@ -1,28 +1,31 @@
 package Objects;
 
-import Game_parts.Moveable;
-import Game_parts.Steppable;
-import Miners.Miner;
-import Miners.Settler;
+import Game_parts.*;
+import Miners.*;
 
 import java.util.Random;
-
+/**
+ * It represents the teleports
+ * @author mzperx
+ */
 public class Teleport extends Spacething implements Moveable, Steppable {
-
-    private boolean enable;         //igaz, ha használható
-    private Teleport pair;          //a teleport párja
-    boolean megkergult;             //megkergult-e
+    /**
+     * the pair of the teleport
+     */
+    private Teleport pair;
+    /**
+     * if the sunstorm reaches the teleport, it goes crazy
+     */
+    boolean megkergult;
 
     // Teleport konstruktor
+
+    /**
+     * Constructor of the teleport
+     * @param teleportID id
+     */
     public Teleport(int teleportID){
         super(teleportID);
-    }
-
-    public Teleport(int teleportID, Asteroid a){
-        super(teleportID);
-        a.AddNeighbor(this);
-        this.AddNeighbor(a);
-        megkergult = true;
     }
 
     @Override
@@ -31,35 +34,29 @@ public class Teleport extends Spacething implements Moveable, Steppable {
     @Override
     public void addMiner(Miner m) {}
 
-    //Teleport továbbküldi az embert
-    public void MoveForward() {}
-
-    public void disable(){
-        enable = false;
-    }
-
-
-    //Felrobban a teleport 2 párja
-    public void OnExplode() {}
-
-    // egy telepes táskájához adja
-    public void AddToSettler(Settler s) {}
-
-    // pair settere
+    /**
+     * Set the pair of the teleport
+     * @param pair the teleport pair
+     */
     public void setPair(Teleport pair) {
         this.pair = pair;
     }
 
-    // pair gettere
+    /**
+     * Get the pair of the teleport
+     * @return pair
+     */
     public Teleport getPair() {
         return pair;
     }
 
-    //ha megkergült, meghívódik és random mozog.
+    /**
+     * If (megkergult) then it can move
+     * @param asteroidID id of asteroid
+     */
     @Override
     public void Move(int asteroidID) {
         if (asteroidID == neighbours.get(0).getId()){
-            System.out.println("Teleport " + id + " nem mozog");
             return;
         }
 
@@ -70,13 +67,14 @@ public class Teleport extends Spacething implements Moveable, Steppable {
 
                 neighbours.get(0).RemoveNeighbor(this);
                 this.RemoveNeighbor(neighbours.get(0));
-                System.out.println("Teleport " + id + " A mozgás sikeres ide: Asteroid " + asteroidID + ".");
                 return;
             }
-        System.out.println("Teleport " + id + " nem mozog");
     }
 
-    //ha megkergült, meghívódik és random mozog.
+    /**
+     * If (megkergult) then it can move
+     * @param step type of move
+     */
     @Override
     public void Step(String step) {
         Random r = new Random();
@@ -84,13 +82,20 @@ public class Teleport extends Spacething implements Moveable, Steppable {
             Move(r.nextInt(neighbours.get(0).neighbours.size()));
     }
 
+    /**
+     * Get x cooredinate of teleport
+     * @return x coordinate
+     */
     public int getX(){
         Asteroid a = (Asteroid) neighbours.get(0);
         return a.getX();
     }
+    /**
+     * Get y cooredinate of teleport
+     * @return y coordinate
+     */
     public int getY(){
         Asteroid a = (Asteroid) neighbours.get(0);
         return a.getY();
     }
-
 }
