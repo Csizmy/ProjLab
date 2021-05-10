@@ -1,0 +1,272 @@
+Index: src/Miners/Settler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Miners;\r\n\r\nimport Materials.*;\r\nimport Objects.*;\r\n\r\nimport java.util.ArrayList;\r\n\r\n/**\r\n *  Object for Settker\r\n * @author Mzperx\r\n */\r\npublic class Settler extends Miner{\r\n\r\n    /**\r\n     *  A telepesnél lévő telepotokat tárolja\r\n     */\r\n    private ArrayList<Teleport> teleports;\r\n\r\n    /**\r\n     *  Settler constructor with id\r\n     * @param a the Asteroid that the Settler is on.\r\n     * @param _id of the Settler.\r\n     */\r\n    public Settler(Asteroid a, int _id){\r\n        super(a, _id);\r\n        teleports = new ArrayList<Teleport>();\r\n        name = \"settler\";\r\n\r\n    }\r\n\r\n    /**\r\n     *  Settler konstruktor\r\n     * @param a the Asteroid that the Settler is on.\r\n     */\r\n    public Settler(Asteroid a){\r\n        super(a);\r\n        teleports = new ArrayList<Teleport>();\r\n    }\r\n\r\n    /**\r\n     *  If asteroid explodes, settler dies\r\n     */\r\n    @Override\r\n    public void Explode() {\r\n        Die();\r\n    }\r\n\r\n    /**\r\n     *  Settler mines on the Asteroid if its available\r\n     */\r\n    public boolean Mine(){\r\n        if(spacething.isAsteroid()) {\r\n            Asteroid asteroid = (Asteroid) spacething;\r\n\r\n            //ha nincs kibányászva és nem üres\r\n            if (asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial() != null) {\r\n\r\n                AddMaterial(asteroid.getMaterial());\r\n                asteroid.setMaterial(null);\r\n\r\n                return true;\r\n            }\r\n            return false;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     *  ellenőrzi a teleport építéséhez szükséges nyersanyagot, és ha tudja, megépíti\r\n     * @param id1 id of the first teleport\r\n     * @param id2 id of the pair\r\n     */\r\n    public boolean BuildTp(int id1, int id2){\r\n\r\n        if(teleports.size()<=1){  // csak akkor tud építeni, ha nulla vagy egy teleport van a táskájában\r\n            int iron = 0;\r\n            int water = 0;\r\n            int uranium = 0;\r\n\r\n            for(int i = 0; i < backpack.size(); i++){  //keresi\r\n\r\n                if(backpack.get(i).getName()==\"Uranium\"){\r\n                    uranium++;\r\n                }\r\n                else if(backpack.get(i).getName()==\"Water\"){\r\n                    water++;\r\n                }\r\n                if(backpack.get(i).getName()==\"Iron\"){\r\n                    iron++;\r\n                }\r\n            }\r\n\r\n            if(iron>=2 && water>=1 && uranium>=1){  // ha megvan az anyagmennyiség\r\n\r\n                for (int i = 0; i < backpack.size(); i++){ // kiveszi\r\n\r\n                    if(backpack.get(i).getName()==\"Uranium\"){\r\n                        backpack.remove(i);\r\n                        break;\r\n                    }\r\n                }\r\n\r\n                for (int i = 0; i < backpack.size(); i++){\r\n\r\n                    if(backpack.get(i).getName()==\"Uranium\"){\r\n                        backpack.remove(i);\r\n                        break;\r\n                    }\r\n                }\r\n\r\n                for (int i = 0; i < backpack.size(); i++){\r\n\r\n                    if(backpack.get(i).getName()==\"Water\"){\r\n                        backpack.remove(i);\r\n                        break;\r\n                    }\r\n                }\r\n\r\n                for (int i = 0; i < backpack.size(); i++){\r\n\r\n                    if(backpack.get(i).getName()==\"Iron\"){\r\n                        backpack.remove(i);\r\n                        break;\r\n                    }\r\n                }\r\n\r\n                Teleport t1 = new Teleport(id1);\r\n                Teleport t2 = new Teleport(id2);\r\n\r\n                t1.setPair(t2); // egymmás párjai lesznek\r\n                t2.setPair(t1);\r\n\r\n                teleports.add(t1); //bekerül a táskába\r\n                teleports.add(t2);\r\n\r\n                return true;\r\n            }\r\n            return false;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja\r\n    /**\r\n     *  ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja\r\n     * @param t the teleport that is going to be placed on the asteroid.\r\n     * @param asteroid_id  id of the Asteroid that the settler is on.\r\n     */\r\n    public boolean PlaceTp(Teleport t, int asteroid_id) {\r\n\r\n        if(spacething.isAsteroid()) {  // ha aszteroidán van\r\n            Asteroid a = (Asteroid) spacething;\r\n            if (t.getPair().getNeighbours().size()==0 || asteroid_id!=t.getPair().getNeighbours().get(0).getId()) {  // ha a párja nincs az adott aszteroidán\r\n                t.AddNeighbor(spacething);\r\n                spacething.AddNeighbor(t);\r\n                return true;\r\n            }\r\n            return false;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     *  ellenőzi a nyersanyagokat és megépíti a robotot\r\n     */\r\n    public boolean BuildRobot(){\r\n\r\n        int iron = 0;\r\n        int coal = 0;\r\n        int uranium = 0;\r\n\r\n        for(int i = 0; i < backpack.size(); i++){  //keresi\r\n\r\n            if(backpack.get(i).getName()==\"Uranium\"){\r\n                uranium++;\r\n            }\r\n            else if(backpack.get(i).getName()==\"Coal\"){\r\n                coal++;\r\n            }\r\n            if(backpack.get(i).getName()==\"Iron\"){\r\n                iron++;\r\n            }\r\n        }\r\n\r\n        if(iron>0 && coal>0 && uranium>0){\r\n\r\n            for (int i = 0; i < backpack.size(); i++){ // kiveszi\r\n\r\n                if(backpack.get(i).getName()==\"Uranium\"){\r\n                    backpack.remove(i);\r\n                    break;\r\n                }\r\n            }\r\n            for (int i = 0; i < backpack.size(); i++){\r\n\r\n                if(backpack.get(i).getName()==\"Coal\"){\r\n                    backpack.remove(i);\r\n                    break;\r\n                }\r\n            }\r\n            for (int i = 0; i < backpack.size(); i++){\r\n\r\n                if(backpack.get(i).getName()==\"Iron\"){\r\n                    backpack.remove(i);\r\n                    break;\r\n                }\r\n            }\r\n\r\n            Robot r = new Robot(spacething);\r\n            spacething.addMiner(r); // lerakja az adott aszteroidára a robotot\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     *  Ellenőzi a nyersanyagokat és megépíti a robotot megadott ID-val\r\n     * @param _id the id of the new robot.\r\n     */\r\n    public boolean BuildRobot(int _id){\r\n\r\n        int iron = 0;\r\n        int coal = 0;\r\n        int uranium = 0;\r\n\r\n        for(int i = 0; i < backpack.size(); i++){  //keresi\r\n\r\n            if(backpack.get(i).getName()==\"Uranium\"){\r\n                uranium++;\r\n            }\r\n            else if(backpack.get(i).getName()==\"Coal\"){\r\n                coal++;\r\n            }\r\n            if(backpack.get(i).getName()==\"Iron\"){\r\n                iron++;\r\n            }\r\n        }\r\n\r\n        if(iron>0 && coal>0 && uranium>0){\r\n\r\n            for (int i = 0; i < backpack.size(); i++){ // kiveszi\r\n\r\n                if(backpack.get(i).getName()==\"Uranium\"){\r\n                    backpack.remove(i);\r\n                    break;\r\n                }\r\n            }\r\n            for (int i = 0; i < backpack.size(); i++){\r\n\r\n                if(backpack.get(i).getName()==\"Coal\"){\r\n                    backpack.remove(i);\r\n                    break;\r\n                }\r\n            }\r\n            for (int i = 0; i < backpack.size(); i++){\r\n\r\n                if(backpack.get(i).getName()==\"Iron\"){\r\n                    backpack.remove(i);\r\n                    break;\r\n                }\r\n            }\r\n\r\n            Robot r = new Robot(spacething, _id);\r\n            spacething.addMiner(r); // lerakja az adott aszteroidára a robotot\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     *  ha kap be valódi anyagot, akkor hozzáadja a táskához\r\n     * @param m the Material that is added to the settler's backpack.\r\n     */\r\n    public boolean AddMaterial(Material m){\r\n\r\n        if(backpack.size()<10 && m != null) {  // csak akkor adja be, ha van hely még neki\r\n            backpack.add(m);\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n    /**\r\n     *  Move of the Settler\r\n     * @param asteroidID the ID of the Asteroid\r\n     */\r\n    @Override\r\n    public void Move(int asteroidID){\r\n        Teleport t;\r\n        boolean tpkapcsolat = false;\r\n        for (int i = 0; i < spacething.getNeighbours().size(); i++){\r\n            if (!spacething.getNeighbours().get(i).isAsteroid()) {\r\n                t = (Teleport) spacething.getNeighbours().get(i);\r\n                t = t.getPair();\r\n                if (t.getNeighbours().get(0).getId() == asteroidID)\r\n                    tpkapcsolat = true;\r\n            }\r\n        }\r\n        if(spacething.isNeigbour(asteroidID) || tpkapcsolat){\r\n            Spacething to = null;\r\n            for (Spacething s: spacething.getNeighbours()) {\r\n                if(s.getId() == asteroidID){\r\n                    to = s;\r\n                }\r\n            }\r\n            if(tpkapcsolat){\r\n                for (int i = 0; i < spacething.getNeighbours().size(); i++) {\r\n                    if (!spacething.getNeighbours().get(i).isAsteroid()) {\r\n                        t = (Teleport) spacething.getNeighbours().get(i);\r\n                        t = t.getPair();\r\n                        to = t.getNeighbours().get(0);\r\n                    }\r\n                }\r\n\r\n            }\r\n\r\n            if(to.getId()!=-1){\r\n                spacething.removeMiner(this);\r\n                to.addMiner(this);\r\n                spacething = to;\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    /**\r\n     *  Getter of the Teleport\r\n     */\r\n    public Teleport getTP () {\r\n        return teleports.get(0);\r\n    }\r\n\r\n    /**\r\n     *  Getter of the Teleports\r\n     */\r\n    public ArrayList<Teleport> getTeleports(){return teleports;}\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Miners/Settler.java b/src/Miners/Settler.java
+--- a/src/Miners/Settler.java	(revision cd358ebcc705f03a497f2bbd8143494624820a9d)
++++ b/src/Miners/Settler.java	(date 1620638800130)
+@@ -47,6 +47,7 @@
+ 
+     /**
+      *  Settler mines on the Asteroid if its available
++     *  @return boolean if the mine was successfull or not
+      */
+     public boolean Mine(){
+         if(spacething.isAsteroid()) {
+@@ -69,6 +70,7 @@
+      *  ellenőrzi a teleport építéséhez szükséges nyersanyagot, és ha tudja, megépíti
+      * @param id1 id of the first teleport
+      * @param id2 id of the pair
++     * @return if the teleport build was succsefull or not
+      */
+     public boolean BuildTp(int id1, int id2){
+ 
+@@ -144,7 +146,8 @@
+     /**
+      *  ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
+      * @param t the teleport that is going to be placed on the asteroid.
+-     * @param asteroid_id  id of the Asteroid that the settler is on.
++     * @param asteroid_id  id of the Asteroid that the settler is on.ű
++     * @return if the place was succesfull
+      */
+     public boolean PlaceTp(Teleport t, int asteroid_id) {
+ 
+@@ -162,6 +165,7 @@
+ 
+     /**
+      *  ellenőzi a nyersanyagokat és megépíti a robotot
++     *  @return if the build was succesfull
+      */
+     public boolean BuildRobot(){
+ 
+@@ -216,6 +220,7 @@
+     /**
+      *  Ellenőzi a nyersanyagokat és megépíti a robotot megadott ID-val
+      * @param _id the id of the new robot.
++     * @return if the build was successfull
+      */
+     public boolean BuildRobot(int _id){
+ 
+@@ -270,6 +275,7 @@
+     /**
+      *  ha kap be valódi anyagot, akkor hozzáadja a táskához
+      * @param m the Material that is added to the settler's backpack.
++     * @return returns if the add was successfull
+      */
+     public boolean AddMaterial(Material m){
+ 
+@@ -324,6 +330,7 @@
+ 
+     /**
+      *  Getter of the Teleport
++     *  @return returns tp
+      */
+     public Teleport getTP () {
+         return teleports.get(0);
+@@ -331,6 +338,7 @@
+ 
+     /**
+      *  Getter of the Teleports
++     *  @return returns teleports
+      */
+     public ArrayList<Teleport> getTeleports(){return teleports;}
+ 
+Index: src/Miners/Miner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Miners;\r\n\r\nimport Game_parts.Moveable;\r\nimport Materials.*;\r\nimport Objects.*;\r\n\r\nimport java.util.ArrayList;\r\n\r\n/**\r\n *  Abstract class for Miners\r\n * @author Mzperx\r\n */\r\npublic abstract class Miner implements Moveable {\r\n\r\n    /**\r\n     *  Contains which asteroid contains player\r\n     */\r\n    protected Spacething spacething;\r\n    /**\r\n     *  Storage of Materials\r\n     */\r\n    protected ArrayList<Material> backpack;\r\n\r\n    /**\r\n     *  Name of the object\r\n     */\r\n    protected int id;\r\n\r\n    /**\r\n     *  Name of the object\r\n     */\r\n    protected String name;\r\n\r\n\r\n    /**\r\n     *  Miner constructor with id\r\n     * @param s the Spacething that the miner is on.\r\n     * @parma _id the id of the miner.\r\n     */\r\n    public Miner(Spacething s, int _id){\r\n\r\n        //Sets the asteroid which contains the settler\r\n        spacething = s;\r\n\r\n        //Initialize storage\r\n        backpack = new ArrayList<>();\r\n\r\n        //Sets the miner to the asteroid\r\n        s.addMiner(this);\r\n\r\n        //Sets the id\r\n        id = _id;\r\n    }\r\n\r\n    /**\r\n     *  Miner constructor without id\r\n     * @param s the Spacething that the miner is on.\r\n     */\r\n    public Miner(Spacething s){\r\n        //Sets the asteroid which contains the settler\r\n        spacething = s;\r\n\r\n        //Initialize storage\r\n        backpack = new ArrayList<>();\r\n\r\n        //Sets the miner to the asteroid\r\n        s.addMiner(this);\r\n    }\r\n\r\n    /**\r\n     *  Miner moves to asteroid\r\n     * @param asteroidID the ID of the asteroid\r\n     */\r\n    @Override\r\n    public void Move(int asteroidID){\r\n        if(spacething.isNeigbour(asteroidID)){          //Check if asteroid is in the neighbourhood\r\n            Spacething to = null;\r\n            for (Spacething s: spacething.getNeighbours()) {\r\n                if(s.getId() == asteroidID){\r\n                    to = s;                             //Change the asteroid of settler\r\n                }\r\n            }\r\n            if(to.getId()!=-1){ /// ezmi? csak kivancsi vagyok-axel !!!!!!!!!\r\n                spacething.removeMiner(this);\r\n                to.addMiner(this);\r\n                spacething = to;\r\n            }\r\n        }\r\n    }\r\n\r\n    /**\r\n     *  Miner Die\r\n     */\r\n    public void Die(){\r\n        spacething.removeMiner(this);\r\n    }\r\n\r\n    /**\r\n     *  Miner drill\r\n     */\r\n    public boolean Drill(){\r\n        if(spacething.isAsteroid()){        //If miner is on asteroid\r\n            Asteroid a = (Asteroid) spacething;\r\n            if(a.getLayer()-a.getDigged()!= 0){     //If asteroids layer > 0\r\n                a.removeLayer();                    //Drill the asteroid\r\n                return true;           //Return true if successfull, return false if isn't successfull\r\n            }\r\n            return false;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     *  Miners have different behavior when asteroid explodes\r\n     */\r\n    public abstract void Explode();\r\n\r\n    /**\r\n     *  Getter of backpack\r\n     */\r\n    public ArrayList<Material> getBackpack() {\r\n        return backpack;\r\n    }\r\n\r\n    /**\r\n     *  Getter of spacething\r\n     */\r\n    public Spacething getSpacething(){\r\n        return spacething;\r\n    }\r\n\r\n    /**\r\n     *  Geter of miner id\r\n     */\r\n    public int getId(){return id;}\r\n\r\n    /**\r\n     *  Getter of miners steroid\r\n     */\r\n    public int getAsteroid(){return spacething.getId();}\r\n\r\n    /**\r\n     *  Getter of name\r\n     */\r\n    public String getName(){return name;}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Miners/Miner.java b/src/Miners/Miner.java
+--- a/src/Miners/Miner.java	(revision cd358ebcc705f03a497f2bbd8143494624820a9d)
++++ b/src/Miners/Miner.java	(date 1620638468690)
+@@ -97,6 +97,7 @@
+ 
+     /**
+      *  Miner drill
++     * @return boolean if the drill was succesfull or not
+      */
+     public boolean Drill(){
+         if(spacething.isAsteroid()){        //If miner is on asteroid
+@@ -117,6 +118,7 @@
+ 
+     /**
+      *  Getter of backpack
++     * @return backpack
+      */
+     public ArrayList<Material> getBackpack() {
+         return backpack;
+@@ -124,6 +126,7 @@
+ 
+     /**
+      *  Getter of spacething
++     * @return spacething
+      */
+     public Spacething getSpacething(){
+         return spacething;
+@@ -131,16 +134,19 @@
+ 
+     /**
+      *  Geter of miner id
++     *  @return id
+      */
+     public int getId(){return id;}
+ 
+     /**
+      *  Getter of miners steroid
++     *  @return asteroid id
+      */
+     public int getAsteroid(){return spacething.getId();}
+ 
+     /**
+      *  Getter of name
++     *  @return name
+      */
+     public String getName(){return name;}
+ }
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__10_55__Default_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__10_55__Default_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__10_55__Default_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__10_55__Default_.xml	(revision cd358ebcc705f03a497f2bbd8143494624820a9d)
++++ /dev/null	(revision cd358ebcc705f03a497f2bbd8143494624820a9d)
+@@ -1,9 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_2021__05__10__10_55_[Default]" date="1620636932576" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__10_55_[Default]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2021. 05. 10. 10:55 [Default]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="out/production/ProjLab/Objects/Asteroid.class" />
+-    <option name="AFTER_PATH" value="out/production/ProjLab/Objects/Asteroid.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__10_55_[Default]/Asteroid.class" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision cd358ebcc705f03a497f2bbd8143494624820a9d)
++++ b/.idea/workspace.xml	(date 1620638719684)
+@@ -2,11 +2,113 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="panku kommentek2">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_05_2021_02_10__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_05_2021_02_10__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_17__21_36__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_17__21_36__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__12_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__12_45__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__18_02__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__18_02__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__22_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__22_03__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_13__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_13__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_59__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_09__13_08__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_09__13_08__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__16__10_33__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__16__10_33__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_56__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_56__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_59__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__23_04__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__23_04__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_45__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_53__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_53__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_16__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_16__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_20__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_20__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_37__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_37__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_41__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_41__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__17_28__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__17_28__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__18_23__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__18_23__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_08__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_08__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_15__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_15__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_16__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_16__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__03__2_21__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__03__2_21__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__06__16_16__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__06__16_16__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__19_41__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__19_41__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_39__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_39__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_42__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_42__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__11_01__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__11_01__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_51__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_51__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_59__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_21__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_21__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_52__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_52__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_45__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_59__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__17_00__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__17_00__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_02__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_02__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_10__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_10__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__20_01__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__20_01__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__23_27__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__23_27__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_26__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_26__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_30__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_30__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_45__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_46__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_46__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_17__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_17__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_20__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_20__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_24__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_24__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_25__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_25__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_33__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_33__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_46__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_46__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_57__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_57__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__14_04__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__14_04__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__14_51__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__14_51__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__16_25__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__16_25__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__17_49__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__17_49__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__17_56__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__17_56__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__19_24__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__19_24__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_10__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_10__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_15__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_15__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_44__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_44__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_26__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_26__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_27__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_27__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_42__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_42__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_50__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__0_50__Default_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__10_55__Default_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__2_20__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__2_20__Default_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GAsteroid.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GCoal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GCoal.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GIron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GIron.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GObject.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GRobot.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GSettler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GSettler.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GTeleport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GTeleport.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUfo.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUranium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GUranium.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GWater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GObjects/GWater.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/BadMovement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/BadMovement.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel$Clicklistener.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/GamePanel.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/IDrawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/IDrawable.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/ImageResizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/ImageResizer.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MainFrame.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView$Clicklistener.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/MapView.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/Menu$Clicklistener.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/GUIComponents/Menu.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Coal.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Iron.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Uranium.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Water.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Ufo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Ufo.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Asteroid.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Spacething.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Objects/Spacething.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Spacething.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Objects/Teleport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Objects/Teleport.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Tests/Test.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />

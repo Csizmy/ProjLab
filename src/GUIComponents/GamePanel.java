@@ -256,29 +256,40 @@ public class GamePanel extends JPanel {
 
     public void nextPlayer() {
         if (p.EndGame() == true) {  //ellenőrzi hogy nyertek e a telepesek.
-            //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy
-        }
-        for (int i = 0; i < p.getMap().getSettlers().size(); i++) {
-            if (i == p.getMap().getSettlers().size() - 1) {
-                p.step(); // léptet mindenkit ha az utolso player lelépte a lépését
-                p.setCurrent(p.getMap().getSettlers().get(0)) ;
-                refreshBp();
+            try { //ha vesztettek akkor a vesztes képernyőre lép
+                toMapView.ChangeToGame(4,true);
                 return;
+            } catch (IOException e1) {
+                e1.printStackTrace();
             }
+        }
+        if(p.getCurrent()==p.getMap().getSettlers().get(p.getMap().getSettlers().size()-1)){
+            if(p.step()==true){ // léptet mindenkit ha az utolso player lelépte a lépését
+                try { //ha vesztettek akkor a vesztes képernyőre lép
+                    toMapView.ChangeToGame(4,false);
 
-            if (p.getMap().getSettlers().get(i) == p.getCurrent()) {
-                while(true){
-                    if(p.getMap().getSettlers().get(i+1).getLive()){
-                        p.setCurrent(p.getMap().getSettlers().get(i+1)) ;
-                        break;
-                    }
-                    p.setCurrent(p.getMap().getSettlers().get(i+1)) ;
-
+                } catch (IOException e1) {
+                    e1.printStackTrace();
                 }
-                refreshBp();
-                return;
+
             }
+            if(p.getMap().getSettlers().isEmpty()==false){
+                p.setCurrent(p.getMap().getSettlers().get(0)) ;
+            }
+
         }
+        else{
+            int kovetkezo=0;
+            for (int i = 0; i < p.getMap().getSettlers().size(); i++) {
+                if (p.getMap().getSettlers().get(i)==p.getCurrent()){
+                    kovetkezo=i+1;
+                }
+            }
+            p.setCurrent(p.getMap().getSettlers().get(kovetkezo)) ;
+        }
+        refreshBp();
+
+
     }
 
     private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
@@ -318,14 +329,14 @@ public class GamePanel extends JPanel {
             } else if (e.getSource() == move) {  //mozogni probál itt át kéne váltani a map nézetre
                 System.out.println("move");
                 try {
-                    toMapView.ChangeToGame(2);
+                    toMapView.ChangeToGame(2,false);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             } else if (e.getSource() == zoomout) {
                 System.out.println("zoomout");
                 try {
-                    toMapView.ChangeToGame(2);
+                    toMapView.ChangeToGame(2,false);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }

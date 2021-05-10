@@ -1,0 +1,159 @@
+<changelist name="Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]" date="1620638851942" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2021. 05. 10. 11:27 [Default]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/MapView$Clicklistener.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/GamePanel$Clicklistener.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GSettler.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GSettler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GSettler.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/BadMovement.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GUIComponents/BadMovement.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/BadMovement.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/GamePanel.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Materials/Water.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Proto/Proto.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/MainFrame.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GUranium.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GUranium.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GUranium.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/IDrawable.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GUIComponents/IDrawable.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/IDrawable.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/Menu.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GIron.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GIron.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GIron.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GObject.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GObject.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GObject.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Materials/Iron.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Materials/Uranium.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Materials/Coal.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/ImageResizer.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GUIComponents/ImageResizer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/ImageResizer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GCoal.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GCoal.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GCoal.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Miners/Miner.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Miners/Miner.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/Miner.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GTeleport.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GTeleport.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GTeleport.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/Menu$Clicklistener.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GWater.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GWater.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GWater.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Objects/Teleport.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Objects/Teleport.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/Teleport.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GAsteroid.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GAsteroid.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GAsteroid.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Objects/Spacething.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Objects/Spacething.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/Spacething.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Objects/Asteroid.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Objects/Asteroid.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/Asteroid.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GUfo.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GUfo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GUfo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GObjects/GRobot.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/GObjects/GRobot.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/GRobot.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/GUIComponents/MapView.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Miners/Ufo.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Miners/Ufo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__11_27_[Default]/Ufo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Tests/Test.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

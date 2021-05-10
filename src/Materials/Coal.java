@@ -1,14 +1,17 @@
 package Materials;
 
-import GObjects.GCoal;
 import Objects.Asteroid;
 
-import java.io.IOException;
-
-//Class to represent coal material
+/**
+ * Class to represent coal material
+ * @author mzperx
+ */
 public class Coal extends Material{
 
-    //Coal constructor
+    /**
+     * Coal constructor
+     * @param a the asteroid
+     */
     public Coal(Asteroid a)  {
         setName("Coal");
         setAsteroid(a);         //Containing asteroid

@@ -16,6 +16,9 @@ public class Proto {
     private Map map = new Map();
     private Settler currentPlayer;
 
+    public Proto(){
+        loadMap("");
+    }
     public void loadMap(String mapName){
         try{
             File f = new File("maps\\" + mapName);
@@ -312,24 +315,6 @@ public class Proto {
         }
     }
 
-    public void backPack(){
-        int settler_id= currentPlayer.getId();
-        for (Settler s: map.getSettlers()){
-            if(s.getId()==settler_id){
-                s.listBackPack();
-            }
-        }
-
-    }
-
-    public void neighbors(int asteroid_id){
-        for(Asteroid a: map.getAsteroids()){
-            if(a.getId()==asteroid_id){
-                a.listNeighbors();
-            }
-        }
-    }
-
     public boolean buildRobot(){
         int settler_id= currentPlayer.getId();
         Settler settler = map.getSettlers().get(settler_id);
@@ -486,7 +471,8 @@ public class Proto {
         }
     }
 
-    public void step(){
+    public boolean step(){
+
         for (int i = 0; i < map.getRobots().size(); i++) {
             map.getRobots().get(i).Step("");
         }
@@ -501,11 +487,20 @@ public class Proto {
         }
 
         for(Asteroid a: map.getAsteroids()){
-            if (a.getPerihelion()==true){
-                if(a.getMaterial()!= null){
-                    a.getMaterial().PeriMining();
+            if (a.getPerihelion()==true&&a!=null){
+                if(a.getMaterial()!= null && a.getDigged() == a.getLayer()){
+                    if(a.getMaterial().PeriMining() == true) {
+                        a.Explode();
+                        for (int i = 0; i < a.getNeighbours().size(); i++) {
+                            if (a.getNeighbours().get(i).isAsteroid() == false) {
+                                Teleport t = (Teleport) a.getNeighbours().get(i);
+                                map.getTeleports().remove(t.getPair());
+                                map.getTeleports().remove(t);
+                            }
+                        }
+                        map.getAsteroids().remove(a);
+                    }
                 }
-
             }
         }
         for(Settler s: map.getSettlers()){
@@ -523,8 +518,9 @@ public class Proto {
         map.Step("");
         if(map.getSettlers().isEmpty()==true){
             System.out.println("vesztettetek hahaxd");
-            System.exit(0);
+            return true;
         }
+        return false;
     }
 
     public Map getMap() {

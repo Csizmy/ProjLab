@@ -5,11 +5,22 @@ import Objects.*;
 
 import java.util.ArrayList;
 
+/**
+ *  Object for Settker
+ * @author Mzperx
+ */
 public class Settler extends Miner{
 
-    // a telepesnél lévő telepotokat tárolja
+    /**
+     *  A telepesnél lévő telepotokat tárolja
+     */
     private ArrayList<Teleport> teleports;
 
+    /**
+     *  Settler constructor with id
+     * @param a the Asteroid that the Settler is on.
+     * @param _id of the Settler.
+     */
     public Settler(Asteroid a, int _id){
         super(a, _id);
         teleports = new ArrayList<Teleport>();
@@ -17,19 +28,27 @@ public class Settler extends Miner{
 
     }
 
-    // Settler konstruktor
+    /**
+     *  Settler konstruktor
+     * @param a the Asteroid that the Settler is on.
+     */
     public Settler(Asteroid a){
         super(a);
         teleports = new ArrayList<Teleport>();
     }
 
-    // ha felrobban az aszteroida (radioaktív anyag bányászásánál) a telepes meghal
+    /**
+     *  If asteroid explodes, settler dies
+     */
     @Override
     public void Explode() {
         Die();
     }
 
-    // ha nincs még kiásva az aszteroida, akkor egy rétegnyit ás rajta
+    /**
+     *  Settler mines on the Asteroid if its available
+     *  @return boolean if the mine was successfull or not
+     */
     public boolean Mine(){
         if(spacething.isAsteroid()) {
             Asteroid asteroid = (Asteroid) spacething;
@@ -37,23 +56,22 @@ public class Settler extends Miner{
             //ha nincs kibányászva és nem üres
             if (asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial() != null) {
 
-                if (asteroid.getPerihelion()) {  // napközelben van
-                    asteroid.getMaterial().PeriMining();
-                }
                 AddMaterial(asteroid.getMaterial());
                 asteroid.setMaterial(null);
 
-                System.out.println("Settler " + id + " A bányászat sikeres Asteroid " + getAsteroid() + " " + getBackpack().get(getBackpack().size()-1).getName());
                 return true;
             }
-            System.out.println("Settler " + id + " A bányászat sikertelen Asteroid " + getAsteroid());
             return false;
         }
-        System.out.println("Settler " + id + " A bányászat sikertelen Asteroid " + getAsteroid());
         return false;
     }
 
-    //ellenőrzi a teleport építéséhez szükséges nyersanyagot, és ha tudja, megépíti
+    /**
+     *  ellenőrzi a teleport építéséhez szükséges nyersanyagot, és ha tudja, megépíti
+     * @param id1 id of the first teleport
+     * @param id2 id of the pair
+     * @return if the teleport build was succsefull or not
+     */
     public boolean BuildTp(int id1, int id2){
 
         if(teleports.size()<=1){  // csak akkor tud építeni, ha nulla vagy egy teleport van a táskájában
@@ -125,6 +143,12 @@ public class Settler extends Miner{
     }
 
     //ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
+    /**
+     *  ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
+     * @param t the teleport that is going to be placed on the asteroid.
+     * @param asteroid_id  id of the Asteroid that the settler is on.ű
+     * @return if the place was succesfull
+     */
     public boolean PlaceTp(Teleport t, int asteroid_id) {
 
         if(spacething.isAsteroid()) {  // ha aszteroidán van
@@ -139,7 +163,10 @@ public class Settler extends Miner{
         return false;
     }
 
-    //  ellenőzi a nyersanyagokat és megépíti a robotot
+    /**
+     *  ellenőzi a nyersanyagokat és megépíti a robotot
+     *  @return if the build was succesfull
+     */
     public boolean BuildRobot(){
 
         int iron = 0;
@@ -190,7 +217,11 @@ public class Settler extends Miner{
         return false;
     }
 
-    //  ellenőzi a nyersanyagokat és megépíti a robotot megadott ID-val
+    /**
+     *  Ellenőzi a nyersanyagokat és megépíti a robotot megadott ID-val
+     * @param _id the id of the new robot.
+     * @return if the build was successfull
+     */
     public boolean BuildRobot(int _id){
 
         int iron = 0;
@@ -241,7 +272,11 @@ public class Settler extends Miner{
         return false;
     }
 
-    // ha kap be valódi anyagot, akkor hozzáadja a táskához
+    /**
+     *  ha kap be valódi anyagot, akkor hozzáadja a táskához
+     * @param m the Material that is added to the settler's backpack.
+     * @return returns if the add was successfull
+     */
     public boolean AddMaterial(Material m){
 
         if(backpack.size()<10 && m != null) {  // csak akkor adja be, ha van hely még neki
@@ -250,6 +285,10 @@ public class Settler extends Miner{
         }
         return false;
     }
+    /**
+     *  Move of the Settler
+     * @param asteroidID the ID of the Asteroid
+     */
     @Override
     public void Move(int asteroidID){
         Teleport t;
@@ -289,24 +328,19 @@ public class Settler extends Miner{
 
     }
 
+    /**
+     *  Getter of the Teleport
+     *  @return returns tp
+     */
     public Teleport getTP () {
         return teleports.get(0);
     }
 
+    /**
+     *  Getter of the Teleports
+     *  @return returns teleports
+     */
     public ArrayList<Teleport> getTeleports(){return teleports;}
 
-    public void listBackPack(){
-        if(backpack.isEmpty()==true&& teleports.isEmpty()==true){
-            System.out.println("-");
-            return;
-        }
-        System.out.print(this.getId()+"Taska tartalma: ");
-        for(Material m: backpack){
-            System.out.print(m.getName()+" ");
-        }
 
-        for(Teleport t: teleports){
-            System.out.print("Teleport "+t.getId()+" ");
-        }
-    }
 }

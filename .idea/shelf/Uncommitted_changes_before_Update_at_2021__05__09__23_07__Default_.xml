@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_2021__05__09__23_07_[Default]" date="1620594481498" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07_[Default]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2021. 05. 09. 23:07 [Default]" />
+  <binary>
+    <option name="BEFORE_PATH" value="pictures/tp.png" />
+    <option name="AFTER_PATH" value="pictures/tp.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07_[Default]/tp.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Proto/Proto.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Proto/Proto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07_[Default]/Proto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Game_parts/Map.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Game_parts/Map.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07_[Default]/Map.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ProjLab/Miners/Settler.class" />
+    <option name="AFTER_PATH" value="out/production/ProjLab/Miners/Settler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__23_07_[Default]/Settler.class" />
+  </binary>
+</changelist>

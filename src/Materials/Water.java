@@ -1,24 +1,30 @@
 
 package Materials;
 
-import GObjects.GWater;
 import Objects.Asteroid;
 
-import java.io.IOException;
-
-//Class to represent water material
+/**
+ * Class to represent water material
+ * @author mzperx
+ */
 public class Water extends Material{
 
-    //Water constructor
+    /**
+     * Water constructor
+     * @param a the asteroid
+     */
     public Water(Asteroid a){
         setName("Water");
         setAsteroid(a);         //Containing asteroid
     }
 
-
-    //Water disapears if it is near sun
+    /**
+     * Water disapears if it is near sun
+     * @return false if there is sublimation
+     */
     @Override
-    public void PeriMining(){
+    public boolean PeriMining(){
         asteroid.RemoveMaterial();
+        return false;
     }
 }
