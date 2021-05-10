@@ -488,11 +488,6 @@ public class Proto {
 
     public void step(){
 
-        for(int i = 0; i < map.getAsteroids().size();i++){
-            if(map.getAsteroids().get(i).getBumm()){
-                map.deleteAst(i);
-            }
-        }
         for (int i = 0; i < map.getRobots().size(); i++) {
             map.getRobots().get(i).Step("");
         }

@@ -345,26 +345,4 @@ public class Map implements Steppable {
     private double aDistanceSq(Asteroid a, Asteroid b){
         return (a.getX()-b.getX())*(a.getX()-b.getX()) + (a.getY()-b.getY())*(a.getY()-b.getY());
     }
-
-    // a függvény kitörli a aszteroidát és a hozzá tartozó teleport kapukat
-    public void deleteAst(int id){
-        System.out.println("helóóóóó felrobban: "+id);
-        //kitörli a párt
-        for(int i = 0; i< teleports.size();i++){
-            if(teleports.get(i).getPair().isNeigbour(id)){
-                teleports.remove(i);
-            }
-        }
-
-        for(int i = 0; i< teleports.size();i++){
-            if(teleports.get(i).isNeigbour(id)){
-                teleports.remove(i);
-            }
-        }
-        for(int i = 0; i< asteroids.size();i++){
-            if(asteroids.get(i).getId()==id){
-                asteroids.remove(i);
-            }
-        }
-    }
 }

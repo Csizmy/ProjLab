@@ -103,7 +103,6 @@ public class Asteroid extends Spacething implements Steppable {
         for (int i = 0; i < miners.size();i++) {
             miners.get(i).Explode();
         }
-        bumm = true;
     }
 
     //Visszatér a bolygón lévő telepesek nyersanyag listájával.
