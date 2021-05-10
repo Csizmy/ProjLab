@@ -310,7 +310,7 @@ public class Proto {
     }
 
     /**
-     * Creates a sunstorm to the target range
+     * Creates a sunstorm to the target range (can be All, or and Asteroid id)
      * @param target    The targeted Asteroid's _id
      */
     public void sunStorm(String target){
@@ -364,15 +364,8 @@ public class Proto {
         int settler_id= currentPlayer.getId();
         Settler settler = map.getSettlers().get(settler_id);
 
-        int new_id = 50;
-        for (int x = 0; x < map.getUfos().size();x++) {
-            int temp = map.getUfos().get(x).getId();
-            if(temp >new_id) new_id = temp;
-        }
-        for (int y = 0; y < map.getSettlers().size();y++) {
-            int temp = map.getSettlers().get(y).getId();
-            if(temp >new_id) new_id = temp;
-        }
+        //Calculates the highest _id in the game and adds one to it
+        int new_id = 0;
         for (int z = 0; z < map.getRobots().size();z++) {
             int temp = map.getRobots().get(z).getId();
             if(temp > new_id) new_id = temp;
@@ -394,17 +387,10 @@ public class Proto {
      */
     public void addSettler(int asteroid_id){
 
-        int new_id = 50;
-        for (int i = 0; i < map.getUfos().size();i++) {
-            int temp = map.getUfos().get(i).getId();
-            if(temp >new_id) new_id = temp;
-        }
+        //Calculates the highest _id in the game and adds one to it
+        int new_id = 0;
         for (int i = 0; i < map.getSettlers().size();i++) {
             int temp = map.getSettlers().get(i).getId();
-            if(temp >new_id) new_id = temp;
-        }
-        for (int i = 0; i < map.getRobots().size();i++) {
-            int temp = map.getRobots().get(i).getId();
             if(temp >new_id) new_id = temp;
         }
         new_id += 1;
@@ -419,17 +405,10 @@ public class Proto {
      */
     public void addUfo(int asteroid_id){
 
-        int new_id = 50;
+        //Calculates the highest _id in the game and adds one to it
+        int new_id = 0;
         for (int i = 0; i < map.getUfos().size();i++) {
             int temp = map.getUfos().get(i).getId();
-            if(temp >new_id) new_id = temp;
-        }
-        for (int i = 0; i < map.getSettlers().size();i++) {
-            int temp = map.getSettlers().get(i).getId();
-            if(temp >new_id) new_id = temp;
-        }
-        for (int i = 0; i < map.getRobots().size();i++) {
-            int temp = map.getRobots().get(i).getId();
             if(temp >new_id) new_id = temp;
         }
         new_id += 1;
@@ -444,15 +423,8 @@ public class Proto {
      */
     public void addRobot(int asteroid_id){
 
-        int new_id = 50;
-        for (int i = 0; i < map.getUfos().size();i++) {
-            int temp = map.getUfos().get(i).getId();
-            if(temp >new_id) new_id = temp;
-        }
-        for (int i = 0; i < map.getSettlers().size();i++) {
-            int temp = map.getSettlers().get(i).getId();
-            if(temp >new_id) new_id = temp;
-        }
+        //Calculates the highest _id in the game and adds one to it
+        int new_id = 0;
         for (int i = 0; i < map.getRobots().size();i++) {
             int temp = map.getRobots().get(i).getId();
             if(temp >new_id) new_id = temp;
@@ -571,61 +543,79 @@ public class Proto {
 
     /**
      * Getter for getting the map from the proto
-     * @return
+     * @return  The whole map
      */
     public Map getMap() {
         return map;
     }
 
-    //lépésenként ellenőrzi a win/lose események bekövetkezését, és befejezi a játékok.
+    /**
+     * Checks the win condition events, if there is one ends the game.
+     * @return      Returns with true if the players win.
+     */
     public boolean EndGame() {
         for(Asteroid a: map.getAsteroids()){
             if(a.checkWin()){
-                System.out.println("A játék vége, nyertek a Settlerek!");
                 return true;
             }
         }
-
-        System.out.println("A játéknak nincs vége");
         return false;
     }
 
+    /**
+     * Getter for the current player
+     * @return  With the current player param.
+     */
     public Miner getCurrent() {
         return currentPlayer;
     }
+
+    /**
+     * Sets the current player to the chosen player
+     * @param s     Sets currentPlayer to this.
+     */
     public void setCurrent(Settler s) {
         currentPlayer=s;
     }
 
-    public int getPlayerCount(){  //visszaadja a current player aszteroidáján tartozkodo játékos számot
+    /**
+     * Counts the players alive
+     * @return  With the number of players (integer)
+     */
+    public int getPlayerCount(){
         int count = 0;
         for(Settler s: map.getSettlers()) {
             if (s.getAsteroid()==currentPlayer.getAsteroid()){
                 count++;
             }
-
         }
         return count;
     }
 
-    public int getRobotCount(){  //visszaadja a current player aszteroidáján tartozkodo robot számot
+    /**
+     * Counts the robots alive
+     * @return  With the number of robots (integer)
+     */
+    public int getRobotCount(){
         int count = 0;
         for(Robot r: map.getRobots()) {
             if (r.getAsteroid()==currentPlayer.getAsteroid()){
                 count++;
             }
-
         }
         return count;
     }
 
-    public int getUfoCount(){  //visszaadja a current player aszteroidáján tartozkodo ufo számot
+    /**
+     * Counts the ufos alive
+     * @return  With the number of ufos (integer)
+     */
+    public int getUfoCount(){
         int count = 0;
         for(Ufo u: map.getUfos()) {
             if (u.getAsteroid()==currentPlayer.getAsteroid()){
                 count++;
             }
-
         }
         return count;
     }
