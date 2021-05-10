@@ -5,6 +5,10 @@ import Objects.*;
 
 import java.util.ArrayList;
 
+/**
+ *  Object for Settker
+ * @author Mzperx
+ */
 public class Settler extends Miner{
 
     /**
@@ -54,13 +58,10 @@ public class Settler extends Miner{
                 AddMaterial(asteroid.getMaterial());
                 asteroid.setMaterial(null);
 
-                System.out.println("Settler " + id + " A bányászat sikeres Asteroid " + getAsteroid() + " " + getBackpack().get(getBackpack().size()-1).getName());
                 return true;
             }
-            System.out.println("Settler " + id + " A bányászat sikertelen Asteroid " + getAsteroid());
             return false;
         }
-        System.out.println("Settler " + id + " A bányászat sikertelen Asteroid " + getAsteroid());
         return false;
     }
 
@@ -333,21 +334,5 @@ public class Settler extends Miner{
      */
     public ArrayList<Teleport> getTeleports(){return teleports;}
 
-    /**
-     *  This function lists the materials of the Settler's backpack
-     */
-    public void listBackPack(){
-        if(backpack.isEmpty()==true&& teleports.isEmpty()==true){
-            System.out.println("-");
-            return;
-        }
-        System.out.print(this.getId()+"Taska tartalma: ");
-        for(Material m: backpack){
-            System.out.print(m.getName()+" ");
-        }
 
-        for(Teleport t: teleports){
-            System.out.print("Teleport "+t.getId()+" ");
-        }
-    }
 }

@@ -5,6 +5,10 @@ import Objects.Asteroid;
 import Objects.Spacething;
 
 import java.util.Random;
+/**
+ *  Object for Ufo
+ * @author Mzperx
+ */
 
 public class Ufo extends Miner implements Steppable {
 
@@ -70,34 +74,27 @@ public class Ufo extends Miner implements Steppable {
         switch (step) {
             case "Move":
                 Move(randomNeighbor_id);
-                System.out.println("Ufo " + id + " A mozgás sikeres ide: Asteroid " + randomNeighbor_id + ".");
                 break;
 
             case "Steal":
                 if (Steal()) {
                     Asteroid a = (Asteroid) spacething;
-                    System.out.println("Ufo " + id + " A lopás sikeres Asteroid " + a.getId());
                 }
-                else
-                    System.out.println("Ufo " + id + " A lopás sikertelen Asteroid " + spacething.getId());
+
                 break;
 
 
             case "":
                 if (r.nextInt(2) == 0){
                     Move(randomNeighbor_id);
-                    System.out.println("Ufo " + id + " A mozgás sikeres ide: Asteroid " + randomNeighbor_id + ".");
                 }
                 else{
                     if (Steal()) {
                         Asteroid a = (Asteroid) spacething;
-                        System.out.println("Ufo " + id + " A lopás sikeres Asteroid " + a.getId());
                     }
-                    else
-                        System.out.println("Ufo " + id + " A lopás sikertelen Asteroid " + spacething.getId());
+
                 }
                 break;
-
 
             default: System.out.println("Helytelen parancs! Formatum: ehh nem tudom hol a parancsbeolvasos resz"); break;
         }

@@ -6,6 +6,10 @@ import Objects.*;
 
 import java.util.ArrayList;
 
+/**
+ *  Abstract class for Miners
+ * @author Mzperx
+ */
 public abstract class Miner implements Moveable {
 
     /**

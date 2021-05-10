@@ -315,15 +315,7 @@ public class Proto {
         }
     }
 
-    public void backPack(){
-        int settler_id= currentPlayer.getId();
-        for (Settler s: map.getSettlers()){
-            if(s.getId()==settler_id){
-                s.listBackPack();
-            }
-        }
 
-    }
 
     public void neighbors(int asteroid_id){
         for(Asteroid a: map.getAsteroids()){

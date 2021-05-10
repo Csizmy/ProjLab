@@ -5,6 +5,10 @@ import Objects.*;
 
 import java.util.Random;
 
+/**
+ *  Object for Robot
+ * @author Mzperx
+ */
 public class Robot extends Miner implements Steppable {
 
     /**
@@ -46,35 +50,25 @@ public class Robot extends Miner implements Steppable {
             //Robot moves
             case "Move":
                 Move(randomNeighbor_id);
-                System.out.println("Robot " + id + " A mozgás sikeres ide: Asteroid " + randomNeighbor_id + ".");
                 break;
 
             //Robot drills
             case "Drill":
-                if (Drill()) {
-                    Asteroid a = (Asteroid) spacething;     //Get the asteroid
-                    System.out.println("Robot " + id + " A fúrás sikeres " + (a.getLayer() - a.getDigged()) + " réteg maradt Asteroid " + a.getId());       //Remove the layer of the asteroid
-                }
-                else
-                    System.out.println("Robot " + id + " A fúrás sikertelen Asteroid " + spacething.getId());       //Drill unsuccessfull
+                 Drill() ;
+                   //Remove the layer of the asteroid
+
+
                 break;
 
             //Without parameters the robot makes a random move
             case "":
                 if (r.nextInt(2) == 0){
                     Move(randomNeighbor_id);
-                    System.out.println("Robot " + id + " A mozgás sikeres ide: Asteroid " + randomNeighbor_id + ".");
                 }
                 else{
-                    if (Drill()) {
-                        Asteroid a = (Asteroid) spacething;
-                        System.out.println("Robot " + id + " A fúrás sikeres " + (a.getLayer() - a.getDigged()) + " réteg maradt Asteroid " + a.getId());
-                    }
-                    else
-                        System.out.println("Robot " + id + " A fúrás sikertelen Asteroid " + spacething.getId());
+                    Drill();
                 }
                 break;
-
 
             default: System.out.println("Helytelen parancs! Formatum: ehh nem tudom hol a parancsbeolvasos resz"); break;
         }
