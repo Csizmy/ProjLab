@@ -47,6 +47,7 @@ public class Settler extends Miner{
 
     /**
      *  Settler mines on the Asteroid if its available
+     *  @return boolean if the mine was successfull or not
      */
     public boolean Mine(){
         if(spacething.isAsteroid()) {
@@ -69,6 +70,7 @@ public class Settler extends Miner{
      *  ellenőrzi a teleport építéséhez szükséges nyersanyagot, és ha tudja, megépíti
      * @param id1 id of the first teleport
      * @param id2 id of the pair
+     * @return if the teleport build was succsefull or not
      */
     public boolean BuildTp(int id1, int id2){
 
@@ -144,7 +146,8 @@ public class Settler extends Miner{
     /**
      *  ellenőrzi, hogy az adott aszteroidán van-e a lerakni kívánt telepotkapu párja, ha nem, akkor lerakja
      * @param t the teleport that is going to be placed on the asteroid.
-     * @param asteroid_id  id of the Asteroid that the settler is on.
+     * @param asteroid_id  id of the Asteroid that the settler is on.ű
+     * @return if the place was succesfull
      */
     public boolean PlaceTp(Teleport t, int asteroid_id) {
 
@@ -162,6 +165,7 @@ public class Settler extends Miner{
 
     /**
      *  ellenőzi a nyersanyagokat és megépíti a robotot
+     *  @return if the build was succesfull
      */
     public boolean BuildRobot(){
 
@@ -216,6 +220,7 @@ public class Settler extends Miner{
     /**
      *  Ellenőzi a nyersanyagokat és megépíti a robotot megadott ID-val
      * @param _id the id of the new robot.
+     * @return if the build was successfull
      */
     public boolean BuildRobot(int _id){
 
@@ -270,6 +275,7 @@ public class Settler extends Miner{
     /**
      *  ha kap be valódi anyagot, akkor hozzáadja a táskához
      * @param m the Material that is added to the settler's backpack.
+     * @return returns if the add was successfull
      */
     public boolean AddMaterial(Material m){
 
@@ -324,6 +330,7 @@ public class Settler extends Miner{
 
     /**
      *  Getter of the Teleport
+     *  @return returns tp
      */
     public Teleport getTP () {
         return teleports.get(0);
@@ -331,6 +338,7 @@ public class Settler extends Miner{
 
     /**
      *  Getter of the Teleports
+     *  @return returns teleports
      */
     public ArrayList<Teleport> getTeleports(){return teleports;}
 

@@ -97,6 +97,7 @@ public abstract class Miner implements Moveable {
 
     /**
      *  Miner drill
+     * @return boolean if the drill was succesfull or not
      */
     public boolean Drill(){
         if(spacething.isAsteroid()){        //If miner is on asteroid
@@ -117,6 +118,7 @@ public abstract class Miner implements Moveable {
 
     /**
      *  Getter of backpack
+     * @return backpack
      */
     public ArrayList<Material> getBackpack() {
         return backpack;
@@ -124,6 +126,7 @@ public abstract class Miner implements Moveable {
 
     /**
      *  Getter of spacething
+     * @return spacething
      */
     public Spacething getSpacething(){
         return spacething;
@@ -131,16 +134,19 @@ public abstract class Miner implements Moveable {
 
     /**
      *  Geter of miner id
+     *  @return id
      */
     public int getId(){return id;}
 
     /**
      *  Getter of miners steroid
+     *  @return asteroid id
      */
     public int getAsteroid(){return spacething.getId();}
 
     /**
      *  Getter of name
+     *  @return name
      */
     public String getName(){return name;}
 }
