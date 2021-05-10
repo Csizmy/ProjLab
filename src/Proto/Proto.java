@@ -147,28 +147,35 @@ public class Proto {
 
     /**
      * Lists all the objects (or the chosen type) to the console.
-     * @param item  It can be empty, Settlers, Robots, Ufos, Asteroids
+     * @param item  It can be *empty*, Settlers, Robots, Ufos, Asteroids
      */
     public void list(String item){
         map.list(item);
     }
 
+    /**
+     * Moves a Settler to the chosen (adjacent) Asteroid
+     * @param settler_id        The moving settler
+     * @param asteroid_id       The destination is this asteroid
+     * @return (true or false)  If the move was successful return true else return false
+     */
     public boolean moveSettler(int settler_id, int asteroid_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 map.getSettlers().get(i).Move(asteroid_id);
                 if (asteroid_id == map.getSettlers().get(i).getAsteroid()) {
-                    System.out.println("Settler " + settler_id + " A mozgás sikeres ide: Asteroid " + asteroid_id + ".");
                     return true;
-                }
-                else{
-                    System.out.println("Settler " + settler_id + " A mozgás sikertelen.");
                 }
             }
         }
         return false;
     }
 
+    /**
+     * Manually moving a teleport to a chosen (adjacent) Asteroid
+     * @param teleport_id       The moving teleport
+     * @param asteroid_id       The destination is this asteroid
+     */
     public void moveTp(int teleport_id, int asteroid_id){
         for (int i = 0; i < map.getTeleports().size(); i++) {
             if (map.getTeleports().get(i).getId() == teleport_id) {
@@ -177,6 +184,11 @@ public class Proto {
         }
     }
 
+    /**
+     * Maunally stepping a robot
+     * @param robot_id  The current robot
+     * @param step      A text to chose its move (dig or move or *nothing*)
+     */
     public void stepRobot(int robot_id, String step){
         for (int i = 0; i < map.getRobots().size(); i++) {
             if (map.getRobots().get(i).getId() == robot_id) {
@@ -185,6 +197,11 @@ public class Proto {
         }
     }
 
+    /**
+     * Maunally stepping an Ufo
+     * @param ufo_id    The current ufo
+     * @param step      A text to chose its move (steal or move or *nothing*)
+     */
     public void stepUfo(int ufo_id, String step){
         for (int i = 0; i < map.getUfos().size(); i++) {
             if (map.getUfos().get(i).getId() == ufo_id) {
@@ -193,16 +210,18 @@ public class Proto {
         }
     }
 
+    /**
+     * A miner drills off a layer on the Asteroid
+     * @return  (true or false)  If the move was successful return true else return false
+     */
     public boolean drillMiner(){
         int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if (map.getSettlers().get(i).getId() == settler_id) {
                 if (map.getSettlers().get(i).Drill()) {
-                    System.out.println("Settler " + settler_id + " A fúrás sikeres " + (map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getLayer() - map.getAsteroids().get(map.getSettlers().get(i).getAsteroid()).getDigged()) + " réteg maradt Asteroid " + map.getSettlers().get(i).getAsteroid());
                     return true;
                 }
                 else {
-                    System.out.println("Settler " + settler_id + " A fúrás sikertelen Asteroid " + map.getSettlers().get(i).getAsteroid());
                     return false;
                 }
             }
@@ -210,6 +229,10 @@ public class Proto {
         return false;
     }
 
+    /**
+     * A miner mines the material from the Asteroid
+     * @return  (true or false)  If the move was successful return true else return false
+     */
     public boolean mineMiner(){
         int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++){
@@ -220,6 +243,10 @@ public class Proto {
         return false;
     }
 
+    /**
+     * A settler build a pair of teleports and adds it to its backpack
+     * @return  (true or false)  If the move was successful return true else return false
+     */
     public boolean buildTeleport(){
         int settler_id= currentPlayer.getId();
         int _id;
@@ -238,18 +265,20 @@ public class Proto {
                     t2.setPair(t);
                     map.AddTeleport(t);
                     map.AddTeleport(t2);
-                    System.out.println("Settler "+ map.getSettlers().get(i).getId() + " Az építés sikeres");
                     return true;
                 }else{
-                    System.out.println("Settler "+ map.getSettlers().get(i).getId() + " Az építés sikertelen");
                     return false;
                 }
             }
         }
-        System.out.println("Itt nem kéne lennem buildtp proto btw."); //ezt majd kiszedni
         return false;
     }
 
+    /**
+     * A settler places a teleport at the Asteroid
+     * @param teleport_id   The chosen teleport
+     * @return      (true or false)  If the move was successful return true else return false
+     */
     public boolean placeTeleport( int teleport_id){
         int settler_id= currentPlayer.getId();
         for (int i = 0; i < map.getSettlers().size(); i++) {
@@ -257,10 +286,8 @@ public class Proto {
                 for (int j = 0; j < map.getTeleports().size(); j++) {
                     if(map.getTeleports().get(j).getId()==teleport_id){
                         if(map.getSettlers().get(i).PlaceTp(map.getTeleports().get(j), map.getSettlers().get(i).getAsteroid())){
-                            System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikeres");
                             return true;
                         }else{
-                            System.out.println("Settler "+settler_id+" "+teleport_id +" Teleport lerakása sikertelen");
                             return false;
                         }
                     }
@@ -270,16 +297,22 @@ public class Proto {
         return false;
     }
 
+    /**
+     * Sets an Asteroid to near the Sun or far from it
+     * @param asteroid_id   The actual asteroid
+     */
     public void perihelion(int asteroid_id){
         if(map.getAsteroids().get(asteroid_id).getPerihelion()) {
             map.getAsteroids().get(asteroid_id).setPerihelion(false);
-            System.out.println(asteroid_id + " Napközelből elvétel sikeres");
         }else{
             map.getAsteroids().get(asteroid_id).setPerihelion(true);
-            System.out.println(asteroid_id + " Napközel sikeres");
         }
     }
 
+    /**
+     * Creates a sunstorm to the target range
+     * @param target    The targeted Asteroid's _id
+     */
     public void sunStorm(String target){
 
         if(!target.equals("All")){
@@ -287,69 +320,46 @@ public class Proto {
                 int t = Integer.parseInt(target);
                 map.SolarStorm(t);
             }catch(NumberFormatException ex){
-                System.out.println("Not set");
-
             }
-            System.out.println(target + " Napvihar sikeres");
         }else if(target.equals("All")){
             map.SolarStorm(-1);
-            System.out.println(target + " Napvihar sikeres");
-        }else{
-            System.out.println(target + " Napvihar sikertelen");
         }
     }
 
+    /**
+     * Adds a material to the current settler if there is space for it
+     * @param material      The material which will be added to backpack
+     * @param settler_id    The active settler
+     */
     public void addToBackpack(String material, int settler_id){
         for (int i = 0; i < map.getSettlers().size(); i++) {
             if(map.getSettlers().get(i).getId()==settler_id){
                 switch (material){
                     case "Water":
                         Water w = new Water(null);
-                        if(map.getSettlers().get(i).AddMaterial(w)){
-                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikeres");
-                        }else{
-                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
-                        }
+                        map.getSettlers().get(i).AddMaterial(w);
                         break;
                     case "Iron":
                         Iron ir = new Iron(null);
-                        if(map.getSettlers().get(i).AddMaterial(ir)){
-                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikeres");
-                        }else{
-                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
-                        }
+                        map.getSettlers().get(i).AddMaterial(ir);
                         break;
                     case "Coal":
                         Coal c = new Coal(null);
-                        if(map.getSettlers().get(i).AddMaterial(c)){
-                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikeres");
-                        }else{
-                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
-                        }
+                        map.getSettlers().get(i).AddMaterial(c);
                         break;
                     case "Uranium":
                         Uranium u = new Uranium(null);
-                        if(map.getSettlers().get(i).AddMaterial(u)){
-                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikeres");
-                        }else{
-                            System.out.println(map.getSettlers().get(i).getId()+" "+material+" Hozzáadás sikertelen");
-                        }
+                        map.getSettlers().get(i).AddMaterial(u);
                         break;
                 }
             }
         }
     }
 
-
-
-    public void neighbors(int asteroid_id){
-        for(Asteroid a: map.getAsteroids()){
-            if(a.getId()==asteroid_id){
-                a.listNeighbors();
-            }
-        }
-    }
-
+    /**
+     * A settler build a robot and let it live
+     * @return  (true or false)  If the move was successful return true else return false
+     */
     public boolean buildRobot(){
         int settler_id= currentPlayer.getId();
         Settler settler = map.getSettlers().get(settler_id);
@@ -373,13 +383,15 @@ public class Proto {
             Miner robot = map.getAsteroids().get(settler.getAsteroid()).getMiners().get(map.getAsteroids().get(settler.getAsteroid()).getMiners().size() - 1);
             map.getRobots().add((Robot) robot);
 
-            System.out.println("Settler " + settler.getId() + " " + map.getRobots().get(map.getRobots().size() - 1).getId() + " robot megépítve.");
             return true;
         }
-        else {System.out.println("Hiba, nincs elég anyag."); return false;}
-
+        else {return false;}
     }
 
+    /**
+     * Adds a Settler to an Asteroid
+     * @param asteroid_id   The chosen Asteroid
+     */
     public void addSettler(int asteroid_id){
 
         int new_id = 50;
@@ -399,13 +411,12 @@ public class Proto {
 
         Settler settler = new Settler(map.getAsteroids().get(asteroid_id), new_id);
         map.getSettlers().add(settler);
-
-        if (map.getAsteroids().get(asteroid_id).getMiners().contains(settler)){
-        System.out.println("Settler " + settler.getId() + " sikeresen létrejött Asteroid " + map.getAsteroids().get(asteroid_id).getId());}
-        else{
-        System.out.println("A Settler ezen az aszteroidán nem tudott létrejönni.");}
     }
 
+    /**
+     * Adds an Ufo to an Asteroid
+     * @param asteroid_id   The chosen Asteroid
+     */
     public void addUfo(int asteroid_id){
 
         int new_id = 50;
@@ -425,14 +436,12 @@ public class Proto {
 
         Ufo ufo = new Ufo(map.getAsteroids().get(asteroid_id), new_id);
         map.getUfos().add(ufo);
-
-        //if the settler is on the asteroid it was successful!
-        if (map.getAsteroids().get(asteroid_id).getMiners().contains(ufo)){
-            System.out.println("Ufo " + ufo.getId() + " sikeresen létrejött Asteroid " + map.getAsteroids().get(asteroid_id).getId());}
-        else{
-            System.out.println("Az Ufo ezen az aszteroidán nem tudott létrejönni.");}
     }
 
+    /**
+     * Adds a Robot to an Asteroid
+     * @param asteroid_id   The chosen Asteroid
+     */
     public void addRobot(int asteroid_id){
 
         int new_id = 50;
@@ -452,13 +461,12 @@ public class Proto {
 
         Robot robot = new Robot(map.getAsteroids().get(asteroid_id), new_id);
         map.getRobots().add(robot);
-
-        if (map.getAsteroids().get(asteroid_id).getMiners().contains(robot)){
-            System.out.println("Robot " + robot.getId() + " sikeresen létrejött Asteroid " + map.getAsteroids().get(asteroid_id).getId());}
-        else{
-            System.out.println("A Robot ezen az aszteroidán nem tudott létrejönni.");}
     }
 
+    /**
+     * Save the map param to a (new or existing) file
+     * @param saveName      The file name
+     */
     public void save(String saveName){
         File f = new File("maps\\" + saveName + ".txt");
         try {
@@ -499,13 +507,17 @@ public class Proto {
             }
 
             fWriter.close();
-            System.out.println("Mentés sikeres");
+            //System.out.println("Mentés sikeres");
         } catch (IOException e) {
-            System.out.println("Sikertelen mentés");
+            //System.out.println("Sikertelen mentés");
             e.printStackTrace();
         }
     }
 
+    /**
+     * At the end of every turn moves with all the Moveable objects (Robots Ufos and Teleports)
+     * @return      Only returns with true if no settlers left on the map (the players lose)
+     */
     public boolean step(){
 
         for (int i = 0; i < map.getRobots().size(); i++) {
@@ -552,12 +564,15 @@ public class Proto {
 
         map.Step("");
         if(map.getSettlers().isEmpty()==true){
-            System.out.println("vesztettetek hahaxd");
             return true;
         }
         return false;
     }
 
+    /**
+     * Getter for getting the map from the proto
+     * @return
+     */
     public Map getMap() {
         return map;
     }
