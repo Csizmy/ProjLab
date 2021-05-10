@@ -100,9 +100,10 @@ public class Asteroid extends Spacething implements Steppable {
 
     //Az aszteroida felrobban ha uránt napközelben bányásznak, ekkor a rajta levő Miner-ekre különbözően hat
     public void Explode(){
-        for (Miner m: miners) {
-            m.Explode();
+        for (int i = 0; i < miners.size();i++) {
+            miners.get(i).Explode();
         }
+        bumm = true;
     }
 
     //Visszatér a bolygón lévő telepesek nyersanyag listájával.

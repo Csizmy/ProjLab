@@ -8,6 +8,7 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
 
     protected ArrayList<Spacething> neighbours = new ArrayList<Spacething>();
     protected int id;                 //ID
+    protected boolean bumm = false;
 
 
     // Spacething konstruktor
@@ -65,4 +66,5 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
 
     public abstract int getX();
     public abstract int getY();
+    public boolean getBumm(){return bumm;}
 }
