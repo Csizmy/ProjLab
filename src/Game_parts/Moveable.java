@@ -6,7 +6,6 @@ package Game_parts;
  */
 public interface Moveable {
 
-    //
     /**
      * Responsible for all moveable objects moving
      * @param asteroidID id of asteroid

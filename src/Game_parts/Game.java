@@ -10,12 +10,12 @@ import java.io.FileNotFoundException;
 * @author mzperx
  */
 
-
-public class Game {  //Ez a főosztályunk itt inditjuk el a játékot, itt hozzuk létre a játék ablakját.
+public class Game {
 
     /**
      * This is our main function
      * @exception FileNotFoundException if there is no music
+     * @param args
      */
     public static void main(String[] args) throws FileNotFoundException {
         MusicStuff musicObject = new MusicStuff();

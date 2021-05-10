@@ -93,17 +93,6 @@ public class Map implements Steppable {
             }
         }
 
-        //Write neighbours
-        System.out.println("Szomszédok:");
-        for (Asteroid a: asteroids) {
-            System.out.print("\t");
-            System.out.print(a.getId() + ". aszteroida szomszédjai: ");
-            for (Spacething n: a.getNeighbours()){
-                System.out.print(n.getId() + ", ");
-            }
-            System.out.println();
-        }
-
         diffMat = 4;
     }
 
