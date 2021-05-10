@@ -9,12 +9,10 @@ import java.io.IOException;
 
 interface OnPlayListener {
 
-    void ChangeToGame(int i) throws IOException;
+    void ChangeToGame(int i,boolean wine) throws IOException;
 }
 public class MainFrame extends JFrame implements OnPlayListener{
-    private Menu menu;
-    private GamePanel gamePanel;            //or game ?
-    private MapView map;
+
     private Proto p;
 
 
@@ -34,14 +32,14 @@ public class MainFrame extends JFrame implements OnPlayListener{
 
 
     @Override
-    public void ChangeToGame(int x) throws IOException { changePanel(x); }
+    public void ChangeToGame(int x,boolean wine) throws IOException { changePanel(x,wine); }
 
 
     public void runGame() {
         //TODO
     }
 
-    public void changePanel(int x) throws IOException {
+    public void changePanel(int x,boolean wine) throws IOException {
         this.getContentPane().removeAll();
         if(x==1){
             this.getContentPane().add(new GamePanel(this,p));
@@ -51,6 +49,9 @@ public class MainFrame extends JFrame implements OnPlayListener{
         }
         else if(x==3){
             this.getContentPane().add(new Menu(this));
+        }
+        else if(x==4){
+            this.getContentPane().add(new EndScreen(this, p,wine));
         }
         this.revalidate();
     }

@@ -487,6 +487,7 @@ public class Proto {
     }
 
     public void step(){
+
         for (int i = 0; i < map.getRobots().size(); i++) {
             map.getRobots().get(i).Step("");
         }

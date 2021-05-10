@@ -10,6 +10,7 @@ public abstract class Spacething {   //Az égitesteket reprezentálja (a játék
     protected int id;                 //ID
 
 
+
     // Spacething konstruktor
     public Spacething(){}
 

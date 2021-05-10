@@ -1,0 +1,348 @@
+Index: src/GUIComponents/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GUIComponents;\r\n\r\nimport javax.imageio.ImageIO;\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.awt.image.BufferedImage;\r\nimport java.io.File;\r\nimport java.io.IOException;\r\n\r\npublic class Menu extends JPanel {  //Menu osztálya\r\n    private JButton play,help,exit, back;  //gombok\r\n    private Clicklistener click;    //gomb figyelo\r\n    private BufferedImage image;    // háttér\r\n    private BufferedImage help_img;    // háttér\r\n    private OnPlayListener playListener;  // azért kell hogy a mainframeben váltson a gamepanelre\r\n    private boolean help_bool = false;\r\n    private ImageResizer ir = new ImageResizer();\r\n\r\n    public Menu(OnPlayListener act){\r\n        playListener=act;\r\n        click= new Clicklistener();\r\n        play= new JButton(\"\");\r\n        help= new JButton(\"\");\r\n        exit= new JButton(\"\");\r\n        back= new JButton(\"\");\r\n\r\n        play.setIcon(new ImageIcon(\"pictures\\\\playcropped.png\" ));\r\n        play.setOpaque(false);\r\n        play.setContentAreaFilled(false);\r\n        //play.setBorderPainted(false);\r\n\r\n        help.setIcon(new ImageIcon(\"pictures\\\\helpcropped.png\" ));\r\n        help.setOpaque(false);\r\n        help.setContentAreaFilled(false);\r\n\r\n        exit.setIcon(new ImageIcon(\"pictures\\\\exitcropped.png\" ));\r\n        exit.setOpaque(false);\r\n        exit.setContentAreaFilled(false);\r\n\r\n        try {\r\n            BufferedImage bi = ImageIO.read(new File(\"pictures\\\\back.png\"));\r\n            bi = ir.resize(bi, 0.082);\r\n            back.setIcon(new ImageIcon(bi));\r\n            back.setOpaque(false);\r\n            back.setContentAreaFilled(false);\r\n\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        this.setLayout(null);\r\n\r\n        play.setBounds(28,50,800,123);\r\n        help.setBounds(28,250,800,123);\r\n        exit.setBounds(28,450,800,123);\r\n        back.setBounds(300,550,267,41);\r\n\r\n        play.setFocusable(false);\r\n        help.setFocusable(false);\r\n        exit.setFocusable(false);\r\n        back.setFocusable(false);\r\n\r\n        play.addActionListener(click);\r\n        help.addActionListener(click);\r\n        exit.addActionListener(click);\r\n        back.addActionListener(click);\r\n\r\n        play.setBorderPainted(false);\r\n        help.setBorderPainted(false);\r\n        exit.setBorderPainted(false);\r\n        back.setBorderPainted(false);\r\n\r\n        back.setVisible(false);\r\n\r\n        this.add(play);\r\n        this.add(help);\r\n        this.add(exit);\r\n        this.add(back);\r\n        try {\r\n            image = ImageIO.read(new File(\"pictures\\\\background.png\"));\r\n        } catch (IOException ex) {}\r\n        try {\r\n            help_img = ImageIO.read(new File(\"pictures\\\\help_szoveg.png\"));\r\n            help_img = ir.resize(help_img, 0.2);\r\n        } catch (IOException ex) {}\r\n    }\r\n\r\n    @Override\r\n    protected void paintComponent(Graphics g) {\r\n        super.paintComponent(g);\r\n        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters\r\n        if(help_bool) g.drawImage(help_img, 20, 20, this);\r\n    }\r\n\r\n\r\n    private class Clicklistener implements ActionListener { //gombok megnyomását kezeli\r\n\r\n        public void actionPerformed(ActionEvent e){\r\n            if (e.getSource() == play){  //ha a playre kattintanak elindul a játék\r\n                try {\r\n                    playListener.ChangeToGame(1);\r\n                } catch (IOException e1) {\r\n                    e1.printStackTrace();\r\n                }\r\n            }\r\n            else if (e.getSource() == help){ //ha a helpre kattintanak akkor kiir pár dolgot a játékrol\r\n\r\n                help_bool=true;\r\n                play.setVisible(false);\r\n                help.setVisible(false);\r\n                exit.setVisible(false);\r\n                back.setVisible(true);\r\n\r\n\r\n                System.out.println(\"help\");\r\n            }\r\n            else if (e.getSource() == exit){ //ha az exitre kattintanak akkor bezárul az ablak\r\n                System.out.println(\"exit\");\r\n                //close the window\r\n                System.exit(0);\r\n\r\n            }\r\n\r\n            else if (e.getSource() == back){ //ha a backre kattintanak akkor bezárul az ablak\r\n                System.out.println(\"back\");\r\n                help_bool=false;\r\n\r\n                play.setVisible(true);\r\n                help.setVisible(true);\r\n                exit.setVisible(true);\r\n                back.setVisible(false);\r\n\r\n            }\r\n        }\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUIComponents/Menu.java b/src/GUIComponents/Menu.java
+--- a/src/GUIComponents/Menu.java	(revision 495ff72cbefe39169f902dfb98c7bcb90e023332)
++++ b/src/GUIComponents/Menu.java	(date 1620600251775)
+@@ -100,7 +100,7 @@
+         public void actionPerformed(ActionEvent e){
+             if (e.getSource() == play){  //ha a playre kattintanak elindul a játék
+                 try {
+-                    playListener.ChangeToGame(1);
++                    playListener.ChangeToGame(1,false);
+                 } catch (IOException e1) {
+                     e1.printStackTrace();
+                 }
+Index: src/GUIComponents/MapView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GUIComponents;\r\n\r\nimport java.awt.Graphics;\r\nimport java.awt.Graphics2D;\r\n\r\nimport GObjects.GAsteroid;\r\nimport Game_parts.Map;\r\nimport Miners.Settler;\r\nimport Objects.Asteroid;\r\nimport Objects.Spacething;\r\nimport Objects.Teleport;\r\nimport Proto.Proto;\r\n\r\nimport javax.imageio.ImageIO;\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.awt.geom.Line2D;\r\nimport java.awt.image.BufferedImage;\r\nimport java.awt.image.ImageObserver;\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.text.AttributedCharacterIterator;\r\nimport java.util.ArrayList;\r\n\r\npublic class MapView extends JPanel {\r\n\r\n    private JButton back, zoomin, zoomout;      // gombok\r\n    private Clicklistener click;                // A gombokat kezeli\r\n    private BufferedImage image;                //háttér\r\n    private Proto p;                            //A játék lépéseit valositja meg\r\n    private Settler currentPlayer;              // A jelenlegi játékos\r\n    private OnPlayListener backToGameView;\r\n    private Map map;\r\n    private ArrayList<GAsteroid> asteroids = new ArrayList<GAsteroid>();\r\n    private ArrayList<JLabel> idlabels = new ArrayList<JLabel>();\r\n    private ArrayList<JButton> asteroidButtons = new ArrayList<JButton>();\r\n    private JLabel highLight;\r\n\r\n\r\n    // A szomszédos aszteroidák/teleportok gombjai, amire kattintva oda mozog a telepes.\r\n    private ArrayList<JButton> Neighbours = new ArrayList<>();\r\n\r\n\r\n    public void InitButton(JButton btn){\r\n        btn.setOpaque(false);\r\n        btn.setContentAreaFilled(false);\r\n        btn.setBorderPainted(false);\r\n        btn.addActionListener(click);\r\n        btn.setFocusable(false);\r\n    }\r\n\r\n    public MapView(OnPlayListener act,Proto val) throws IOException{\r\n        ImageResizer res = new ImageResizer();\r\n        p = val;\r\n        backToGameView=act;\r\n        map =p.getMap();\r\n        currentPlayer = (Settler)p.getCurrent();\r\n\r\n        click = new Clicklistener();\r\n        back = new JButton(\"\");             //hogy legyen???\r\n        zoomin = new JButton(\"\");\r\n        zoomout = new JButton(\"\");\r\n        BufferedImage im = ImageIO.read(new File(\"pictures\\\\feny.png\"));\r\n        im = res.resize(im, 0.125);\r\n        highLight = new JLabel(new ImageIcon(im));\r\n\r\n        //back.setIcon();\r\n        zoomin.setIcon(new ImageIcon(\"pictures\\\\zoomin54x54.png\"));\r\n        zoomout.setIcon(new ImageIcon(\"pictures\\\\zoomout54x54.png\"));\r\n\r\n        //back.setBounds();\r\n        zoomin.setBounds(770, 20, 54, 54);\r\n        //zoomout.setBounds(770, 20, 54, 54);\r\n        highLight.setBounds(((Asteroid)currentPlayer.getSpacething()).getX()-12, ((Asteroid)currentPlayer.getSpacething()).getY()-12, 40, 40);\r\n\r\n        this.add(highLight);\r\n\r\n        GAsteroid ga = null;\r\n        for (int i = 0; i < 50; i++){\r\n            Asteroid current = map.getAsteroids().get(i);\r\n            try {\r\n                asteroids.add(new GAsteroid(current, 0.05));\r\n            } catch (IOException ex) { /*mindig jó, nincs error köszi.*/ }\r\n\r\n            this.add(asteroids.get(i).getButton());\r\n            asteroids.get(i).getButton().addActionListener(click);\r\n            asteroidButtons.add(asteroids.get(i).getButton());\r\n\r\n            idlabels.add( new JLabel(String.valueOf(current.getId())));\r\n            idlabels.get(i).setBounds(current.getX(), current.getY()-20, 20, 20);\r\n            idlabels.get(i).setForeground(Color.yellow);\r\n            this.add(idlabels.get(i));\r\n        }\r\n\r\n\r\n\r\n\r\n        InitButton(zoomin);\r\n        this.add(zoomin);\r\n        InitButton(zoomout);\r\n        //this.add(zoomout);\r\n        InitButton(back);                       //hogy legyen???\r\n        this.add(back);\r\n\r\n        this.add(highLight);\r\n\r\n        this.setLayout(null);                 //?\r\n\r\n        try {\r\n            image = ImageIO.read(new File(\"pictures\\\\background.png\"));\r\n        } catch (IOException ex) { /*mindig jó, nincs error köszi.*/ }\r\n    }\r\n\r\n    @Override\r\n    protected void paintComponent(Graphics g) {\r\n        super.paintComponent(g);\r\n        Graphics2D g2 = (Graphics2D) g;\r\n\r\n        g.drawImage(image , 0, 0, this); // see javadoc for more info on the parameters\r\n\r\n        //g.setColor(Color.BLUE);\r\n\r\n        for (int i = 0; i < 50; i++){\r\n            Asteroid current = map.getAsteroids().get(i);\r\n\r\n            for (int j = 0; j < current.getNeighbours().size(); j++){\r\n                g.setColor(Color.BLUE);\r\n                Spacething neighbor = current.getNeighbours().get(j);\r\n                if (!neighbor.isAsteroid()){\r\n                    g.setColor(Color.pink);\r\n                    neighbor = ((Teleport) neighbor).getPair();\r\n                    neighbor = neighbor.getNeighbours().get(0);\r\n                }\r\n\r\n                g2.drawLine(current.getX()+7, current.getY()+7, neighbor.getX()+7, neighbor.getY()+7);\r\n            }\r\n\r\n        }\r\n\r\n    }\r\n\r\n    public void loadMaporWhat() {} // go wild Kristof\r\n\r\n    public void setMap(Map m){this.map = m;}\r\n\r\n    public void nextPlayer() {\r\n        if (p.EndGame() == true) {  //ellenőrzi hogy nyertek e a telepesek.\r\n            //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy\r\n        }\r\n        for (int i = 0; i < p.getMap().getSettlers().size(); i++) {\r\n            if (i == p.getMap().getSettlers().size() - 1) {\r\n                p.step(); // léptet mindenkit ha az utolso player lelépte a lépését\r\n                p.setCurrent(p.getMap().getSettlers().get(0)) ;\r\n                return;\r\n            }\r\n            if (p.getMap().getSettlers().get(i) == p.getCurrent()) {\r\n                p.setCurrent(p.getMap().getSettlers().get(i+1)) ;\r\n                return;\r\n            }\r\n        }\r\n    }\r\n\r\n    private class Clicklistener implements ActionListener { //gombok megnyomását kezeli\r\n\r\n        public void actionPerformed(ActionEvent e){\r\n\r\n            if (e.getSource() == back){  //mozogni probál itt át kéne váltani a map nézetre\r\n                System.out.println(\"move\");\r\n            }\r\n\r\n            else if (e.getSource() == zoomout){\r\n                System.out.println(\"zoomout\");\r\n            }\r\n\r\n            else if (e.getSource() == zoomin){\r\n                System.out.println(\"zoomin\");\r\n                try {\r\n                    backToGameView.ChangeToGame(1);\r\n                } catch (IOException e1) {\r\n                    e1.printStackTrace();\r\n                }\r\n            }\r\n            else{\r\n\r\n                for(int i=0; i<50; i++){\r\n                    if(e.getSource() == asteroidButtons.get(i)){\r\n                        if(p.moveSettler(currentPlayer.getId(), i)==true){\r\n                            nextPlayer();\r\n                            try {\r\n                                backToGameView.ChangeToGame(1);\r\n                            } catch (IOException e1) {\r\n                                e1.printStackTrace();\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n\r\n            }\r\n        }\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUIComponents/MapView.java b/src/GUIComponents/MapView.java
+--- a/src/GUIComponents/MapView.java	(revision 495ff72cbefe39169f902dfb98c7bcb90e023332)
++++ b/src/GUIComponents/MapView.java	(date 1620600243555)
+@@ -177,7 +177,7 @@
+             else if (e.getSource() == zoomin){
+                 System.out.println("zoomin");
+                 try {
+-                    backToGameView.ChangeToGame(1);
++                    backToGameView.ChangeToGame(1,false);
+                 } catch (IOException e1) {
+                     e1.printStackTrace();
+                 }
+@@ -189,7 +189,7 @@
+                         if(p.moveSettler(currentPlayer.getId(), i)==true){
+                             nextPlayer();
+                             try {
+-                                backToGameView.ChangeToGame(1);
++                                backToGameView.ChangeToGame(1,false);
+                             } catch (IOException e1) {
+                                 e1.printStackTrace();
+                             }
+Index: src/GUIComponents/GamePanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GUIComponents;\r\n\r\nimport Materials.Material;\r\nimport Miners.Miner;\r\nimport Miners.Settler;\r\nimport Objects.Asteroid;\r\nimport Proto.Proto;\r\n\r\nimport javax.imageio.ImageIO;\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.awt.image.BufferedImage;\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.util.ArrayList;\r\n\r\npublic class GamePanel extends JPanel {\r\n\r\n    private JButton tp, robot, dig, mine, move, zoomin, zoomout, skip, tp1, tp2, tp3;    //gombok\r\n    private JLabel resourceInventory, tpInventory;    //A játékos táskája\r\n    private JLabel a_teli_kozel, a_teli_tavol, a_ures_kozel, a_ures_tavol;    //Aszteroida fajták\r\n    private JLabel water, coal, iron, uranium;    //Aszteroidák anyagai, ha azok ki vannak fúrva\r\n    private Clicklistener click;  // A gombokat kezeli\r\n    private BufferedImage image,robotImage,settlerImage,ufoImage;    //háttér\r\n    private Proto p;            //A játék lépéseit valositja meg\r\n    private ArrayList<JButton> Things = new ArrayList<>();\r\n    private ArrayList<JButton> inventory = new ArrayList<>();\r\n    private OnPlayListener toMapView;\r\n\r\n    public void InitButton(JButton btn) {\r\n        btn.setOpaque(false);\r\n        btn.setContentAreaFilled(false);\r\n        btn.setBorderPainted(false);\r\n        btn.addActionListener(click);\r\n        btn.setFocusable(false);\r\n    }\r\n\r\n    public GamePanel(OnPlayListener act,Proto val) throws IOException {\r\n        p=val;\r\n        toMapView=act;\r\n\r\n        p.addToBackpack(\"Water\", 51);\r\n        p.addToBackpack(\"Water\", 51);\r\n        p.addToBackpack(\"Iron\", 51);\r\n        p.addToBackpack(\"Water\", 51);\r\n        p.addToBackpack(\"Water\", 51);\r\n        p.addToBackpack(\"Iron\", 51);\r\n        p.addToBackpack(\"Uranium\", 51);\r\n        p.addToBackpack(\"Coal\", 51);\r\n\r\n        click = new Clicklistener();\r\n        zoomout = new JButton(\"\");\r\n        skip = new JButton(\"\");\r\n        zoomin = new JButton(\"\");\r\n        tp = new JButton(\"\");\r\n        robot = new JButton(\"\");\r\n        dig = new JButton(\"\");\r\n        mine = new JButton(\"\");\r\n        move = new JButton(\"\");\r\n        tp1 = new JButton(\"\");\r\n        tp2 = new JButton(\"\");\r\n        tp3 = new JButton(\"\");\r\n\r\n        resourceInventory = new JLabel(new ImageIcon(\"pictures\\\\resourceinventory191x386.png\"));\r\n        tpInventory = new JLabel(new ImageIcon(\"pictures\\\\tpinventory210x63.png\"));\r\n\r\n        a_teli_kozel = new JLabel(new ImageIcon(\"pictures\\\\a_teli_kozel.png\"));\r\n        a_teli_tavol = new JLabel(new ImageIcon(\"pictures\\\\a_teli_tavol.png\"));\r\n        a_ures_kozel = new JLabel(new ImageIcon(\"pictures\\\\a_ures_kozel.png\"));\r\n        a_ures_tavol = new JLabel(new ImageIcon(\"pictures\\\\a_ures_tavol.png\"));\r\n\r\n        water = new JLabel(new ImageIcon(\"pictures\\\\water70x70.png\"));\r\n        coal = new JLabel(new ImageIcon(\"pictures\\\\coal70x70.png\"));\r\n        iron = new JLabel(new ImageIcon(\"pictures\\\\iron70x70.png\"));\r\n        uranium = new JLabel(new ImageIcon(\"pictures\\\\uranium70x70.png\"));\r\n\r\n        skip.setIcon(new ImageIcon(\"pictures\\\\skip200x53.png\"));\r\n        zoomout.setIcon(new ImageIcon(\"pictures\\\\zoomout54x54.png\"));\r\n        zoomin.setIcon(new ImageIcon(\"pictures\\\\zoomin54x54.png\"));\r\n        tp.setIcon(new ImageIcon(\"pictures\\\\tp200x53.png\"));\r\n        robot.setIcon(new ImageIcon(\"pictures\\\\robot200x53.png\"));\r\n        dig.setIcon(new ImageIcon(\"pictures\\\\dig200x53.png\"));\r\n        mine.setIcon(new ImageIcon(\"pictures\\\\mine200x53.png\"));\r\n        move.setIcon(new ImageIcon(\"pictures\\\\move200x53.png\"));\r\n        tp1.setIcon(new ImageIcon(\"pictures\\\\tp.png\"));\r\n        tp2.setIcon(new ImageIcon(\"pictures\\\\tp.png\"));\r\n        tp3.setIcon(new ImageIcon(\"pictures\\\\tp.png\"));\r\n\r\n        zoomout.setBounds(770, 20, 54, 54);\r\n        zoomin.setBounds(700, 20, 54, 54);\r\n        tp.setBounds(50, 570, 200, 53);\r\n        robot.setBounds(300, 570, 200, 53);\r\n        dig.setBounds(50, 500, 200, 53);\r\n        mine.setBounds(300, 500, 200, 53);\r\n        move.setBounds(550, 500, 200, 53);\r\n        resourceInventory.setBounds(50, 20, 191, 386);\r\n        tpInventory.setBounds(40, 420, 210, 63);\r\n        skip.setBounds(550, 570, 200, 53);\r\n        tp1.setBounds(65, 435, 30, 30);\r\n        tp2.setBounds(125, 435, 30, 30);\r\n        tp3.setBounds(195, 435, 30, 30);\r\n\r\n        a_teli_kozel.setBounds(350, 180, 300, 300);\r\n        a_teli_tavol.setBounds(350, 180, 300, 300);\r\n        a_ures_kozel.setBounds(350, 180, 300, 300);\r\n        a_ures_tavol.setBounds(350, 180, 300, 300);\r\n\r\n        water.setBounds(465, 300, 70, 70);\r\n        coal.setBounds(465, 300, 70, 70);\r\n        iron.setBounds(465, 300, 70, 70);\r\n        uranium.setBounds(465, 300, 70, 70);\r\n\r\n        Things.add(zoomout);\r\n        //Things.add(zoomin);\r\n        Things.add(tp);\r\n        Things.add(robot);\r\n        Things.add(dig);\r\n        Things.add(mine);\r\n        Things.add(move);\r\n        Things.add(skip);\r\n        Things.add(tp1);\r\n        Things.add(tp2);\r\n        Things.add(tp3);\r\n\r\n        for (JButton jb : Things) {\r\n            InitButton(jb);\r\n            this.add(jb);\r\n        }\r\n\r\n        resourceInventory.setOpaque(false);\r\n        tpInventory.setOpaque(false);\r\n        a_teli_kozel.setOpaque(false);\r\n        a_teli_tavol.setOpaque(false);\r\n        a_ures_kozel.setOpaque(false);\r\n        a_ures_tavol.setOpaque(false);\r\n        water.setOpaque(false);\r\n        coal.setOpaque(false);\r\n        iron.setOpaque(false);\r\n        uranium.setOpaque(false);\r\n\r\n        this.setLayout(null);\r\n\r\n        this.add(resourceInventory);\r\n        this.add(tpInventory);\r\n        this.add(water);\r\n        this.add(coal);\r\n        this.add(iron);\r\n        this.add(uranium);\r\n        this.add(a_teli_kozel);\r\n        this.add(a_teli_tavol);\r\n        this.add(a_ures_kozel);\r\n        this.add(a_ures_tavol);\r\n\r\n        try {\r\n            image = ImageIO.read(new File(\"pictures\\\\background.png\"));\r\n            settlerImage = ImageIO.read(new File(\"pictures\\\\settler45x75.png\"));\r\n            ufoImage = ImageIO.read(new File(\"pictures\\\\ufo139x75.png\"));\r\n            robotImage = ImageIO.read(new File(\"pictures\\\\robot112x75.png\"));\r\n        } catch (IOException ex) {\r\n\r\n        }\r\n        refreshBp();\r\n    }\r\n\r\n    @Override\r\n    protected void paintComponent(Graphics g) {\r\n        super.paintComponent(g);\r\n        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters\r\n        g.drawImage(settlerImage, 710, 150, this);\r\n        g.drawImage(ufoImage, 650, 230, this);\r\n        g.drawImage(robotImage, 660, 310, this);\r\n        g.setFont(new Font(\"TimesRoman\", Font.PLAIN, 60));\r\n        g.setColor(Color.BLUE);\r\n        g.drawString(String.valueOf(p.getPlayerCount()) , 790, 210);\r\n        g.drawString(String.valueOf(p.getUfoCount()) , 790, 290);\r\n        g.drawString(String.valueOf(p.getRobotCount()) , 790, 370);\r\n        g.setColor(Color.YELLOW);\r\n        g.drawString(String.valueOf(p.getCurrent().getSpacething().getId()) , 470, 160);\r\n        g.setFont(new Font(\"TimesRoman\", Font.PLAIN, 20));\r\n        g.setColor(Color.RED);\r\n        g.drawString(\"Current Player is Agent\" + String.valueOf(p.getCurrent().getId()) , 270, 40);\r\n\r\n        a_teli_kozel.setVisible(false);\r\n        a_teli_tavol.setVisible(false);\r\n        a_ures_kozel.setVisible(false);\r\n        a_ures_tavol.setVisible(false);\r\n\r\n        water.setVisible(false);\r\n        coal.setVisible(false);\r\n        iron.setVisible(false);\r\n        uranium.setVisible(false);\r\n\r\n        Asteroid curr_a = (Asteroid) p.getCurrent().getSpacething();\r\n        if (curr_a.getDigged() == curr_a.getLayer()) {  // ha ki van ásva az aszteroida\r\n            if (curr_a.getPerihelion()) { // ha napközel\r\n                a_ures_kozel.setVisible(true);\r\n            } else { // ha naptávol\r\n                a_ures_tavol.setVisible(true);\r\n            }\r\n\r\n            if (curr_a.getMaterial() != null && curr_a.getMaterial().getName() == \"Water\") water.setVisible(true);\r\n            if (curr_a.getMaterial() != null && curr_a.getMaterial().getName() == \"Iron\") iron.setVisible(true);\r\n            if (curr_a.getMaterial() != null && curr_a.getMaterial().getName() == \"Coal\") coal.setVisible(true);\r\n            if (curr_a.getMaterial() != null && curr_a.getMaterial().getName() == \"Uranium\") uranium.setVisible(true);\r\n        } else {\r\n            if (curr_a.getPerihelion()) { // ha napközel\r\n                a_teli_kozel.setVisible(true);\r\n            } else { // ha naptávol\r\n                a_teli_tavol.setVisible(true);\r\n            }\r\n        }\r\n        Settler s = (Settler)p.getCurrent();\r\n        tp1.setVisible(false);\r\n        tp2.setVisible(false);\r\n        tp3.setVisible(false);\r\n\r\n        if(s.getTeleports().size()>2){\r\n            tp3.setVisible(true);\r\n        }\r\n        if(s.getTeleports().size()>1){\r\n            tp2.setVisible(true);\r\n        }\r\n        if(s.getTeleports().size()>0){\r\n            tp1.setVisible(true);\r\n        }\r\n    }\r\n\r\n    public void exit() {\r\n        //TODO\r\n    }\r\n\r\n    public void start() {\r\n        //TODO\r\n    }\r\n\r\n    public void drawAll() {\r\n        //TODO\r\n    }\r\n\r\n    public void backPackDraw(Graphics g) {\r\n\r\n    }\r\n\r\n    public void refreshBp() {  //A hátitáskát refresheli a képernyőn, hogy a jelenlegi játékost lássuk mindig :3\r\n        for (JButton b : inventory) {\r\n            this.remove(b);\r\n        }\r\n        int y = 0;\r\n        int x = 0;\r\n\r\n        for (Material m : p.getCurrent().getBackpack()) {\r\n            if (y == 5) {\r\n                x = 1;\r\n                y = 0;\r\n            }\r\n            // 51-es idhez adtam sok anyagot  a gamepanel konstruktorban\r\n            try {\r\n                JButton b = m.drawMaterial(x * 90 + 70, y * 75 + 30,  m);\r\n                inventory.add(b);\r\n                this.add(b);\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n\r\n            y++;\r\n\r\n        }\r\n        repaint();\r\n    }\r\n\r\n    public void nextPlayer() {\r\n        if (p.EndGame() == true) {  //ellenőrzi hogy nyertek e a telepesek.\r\n            //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy\r\n        }\r\n        for (int i = 0; i < p.getMap().getSettlers().size(); i++) {\r\n            if (i == p.getMap().getSettlers().size() - 1) {\r\n                p.step(); // léptet mindenkit ha az utolso player lelépte a lépését\r\n                p.setCurrent(p.getMap().getSettlers().get(0)) ;\r\n                refreshBp();\r\n                return;\r\n            }\r\n\r\n            if (p.getMap().getSettlers().get(i) == p.getCurrent()) {\r\n                while(true){\r\n                    if(p.getMap().getSettlers().get(i+1).getLive()){\r\n                        p.setCurrent(p.getMap().getSettlers().get(i+1)) ;\r\n                        break;\r\n                    }\r\n                    p.setCurrent(p.getMap().getSettlers().get(i+1)) ;\r\n\r\n                }\r\n                refreshBp();\r\n                return;\r\n            }\r\n        }\r\n    }\r\n\r\n    private class Clicklistener implements ActionListener { //gombok megnyomását kezeli\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            if (e.getSource() == tp) {   //teleportot probál épiteni\r\n                System.out.println(\"tp\");\r\n                if (p.buildTeleport()) {\r\n                    nextPlayer();\r\n                }\r\n                else {\r\n                    new BadMovement();\r\n                }\r\n            } else if (e.getSource() == robot) { //robotot probnál épiteni\r\n                System.out.println(\"robot\");\r\n                if (p.buildRobot()) {\r\n                    nextPlayer();\r\n                } else {\r\n                    new BadMovement();\r\n                }\r\n            } else if (e.getSource() == dig) {  //furni probál\r\n                System.out.println(\"dig\");\r\n                if (p.drillMiner()) {\r\n                    nextPlayer();\r\n                }\r\n                else {\r\n                    new BadMovement();\r\n                }\r\n            } else if (e.getSource() == mine) {  //ásni probál\r\n                System.out.println(\"mine\");\r\n                if (p.mineMiner()) {\r\n                    nextPlayer();\r\n                }\r\n                else {\r\n                    new BadMovement();\r\n                }\r\n            } else if (e.getSource() == move) {  //mozogni probál itt át kéne váltani a map nézetre\r\n                System.out.println(\"move\");\r\n                try {\r\n                    toMapView.ChangeToGame(2);\r\n                } catch (IOException e1) {\r\n                    e1.printStackTrace();\r\n                }\r\n            } else if (e.getSource() == zoomout) {\r\n                System.out.println(\"zoomout\");\r\n                try {\r\n                    toMapView.ChangeToGame(2);\r\n                } catch (IOException e1) {\r\n                    e1.printStackTrace();\r\n                }\r\n            } else if (e.getSource() == zoomin) {\r\n                System.out.println(\"zoomin\");\r\n            } else if (e.getSource() == skip) {\r\n                System.out.println(\"skip\");\r\n                nextPlayer();\r\n            }else if (e.getSource() == tp1) {\r\n                Settler s = (Settler)p.getCurrent();\r\n                if (p.placeTeleport(s.getTeleports().get(0).getId())) {\r\n                    nextPlayer();\r\n                }\r\n            }else if (e.getSource() == tp2) {\r\n                Settler s = (Settler)p.getCurrent();\r\n                if (p.placeTeleport(s.getTeleports().get(1).getId())) {\r\n                    nextPlayer();\r\n                }\r\n            }else if (e.getSource() == tp3) {\r\n                Settler s = (Settler)p.getCurrent();\r\n                if (p.placeTeleport(s.getTeleports().get(2).getId())) {\r\n                    nextPlayer();\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUIComponents/GamePanel.java b/src/GUIComponents/GamePanel.java
+--- a/src/GUIComponents/GamePanel.java	(revision 495ff72cbefe39169f902dfb98c7bcb90e023332)
++++ b/src/GUIComponents/GamePanel.java	(date 1620600261322)
+@@ -334,14 +334,14 @@
+             } else if (e.getSource() == move) {  //mozogni probál itt át kéne váltani a map nézetre
+                 System.out.println("move");
+                 try {
+-                    toMapView.ChangeToGame(2);
++                    toMapView.ChangeToGame(2,false);
+                 } catch (IOException e1) {
+                     e1.printStackTrace();
+                 }
+             } else if (e.getSource() == zoomout) {
+                 System.out.println("zoomout");
+                 try {
+-                    toMapView.ChangeToGame(2);
++                    toMapView.ChangeToGame(2,false);
+                 } catch (IOException e1) {
+                     e1.printStackTrace();
+                 }
+Index: src/GUIComponents/MainFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GUIComponents;\r\n\r\n\r\nimport Proto.Proto;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.io.IOException;\r\n\r\ninterface OnPlayListener {\r\n\r\n    void ChangeToGame(int i) throws IOException;\r\n}\r\npublic class MainFrame extends JFrame implements OnPlayListener{\r\n    private Menu menu;\r\n    private GamePanel gamePanel;            //or game ?\r\n    private MapView map;\r\n    private Proto p;\r\n\r\n\r\n    public MainFrame() {\r\n        this.add(new Menu(this));\r\n        this.setTitle(\"Asteroid Game\");\r\n        this.setSize(new Dimension(840+16,630+39));//kristof thing:igy lett 1200x900 a benne levo megjelenitett cucc mert ez beleszamolja a szurke savokat\r\n        this.setVisible(true);\r\n        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        this.setResizable(false);\r\n        this.setLocationRelativeTo(null);\r\n        p = new Proto();\r\n        p.loadMap(\"test.txt\");  // pálya betöltése\r\n    }\r\n\r\n\r\n\r\n\r\n    @Override\r\n    public void ChangeToGame(int x) throws IOException { changePanel(x); }\r\n\r\n\r\n    public void runGame() {\r\n        //TODO\r\n    }\r\n\r\n    public void changePanel(int x) throws IOException {\r\n        this.getContentPane().removeAll();\r\n        if(x==1){\r\n            this.getContentPane().add(new GamePanel(this,p));\r\n        }\r\n        else if(x==2){\r\n            this.getContentPane().add(new MapView(this,p));\r\n        }\r\n        else if(x==3){\r\n            this.getContentPane().add(new Menu(this));\r\n        }\r\n        this.revalidate();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUIComponents/MainFrame.java b/src/GUIComponents/MainFrame.java
+--- a/src/GUIComponents/MainFrame.java	(revision 495ff72cbefe39169f902dfb98c7bcb90e023332)
++++ b/src/GUIComponents/MainFrame.java	(date 1620600276926)
+@@ -9,12 +9,10 @@
+ 
+ interface OnPlayListener {
+ 
+-    void ChangeToGame(int i) throws IOException;
++    void ChangeToGame(int i,boolean wine) throws IOException;
+ }
+ public class MainFrame extends JFrame implements OnPlayListener{
+-    private Menu menu;
+-    private GamePanel gamePanel;            //or game ?
+-    private MapView map;
++
+     private Proto p;
+ 
+ 
+@@ -34,14 +32,14 @@
+ 
+ 
+     @Override
+-    public void ChangeToGame(int x) throws IOException { changePanel(x); }
++    public void ChangeToGame(int x,boolean wine) throws IOException { changePanel(x,wine); }
+ 
+ 
+     public void runGame() {
+         //TODO
+     }
+ 
+-    public void changePanel(int x) throws IOException {
++    public void changePanel(int x,boolean wine) throws IOException {
+         this.getContentPane().removeAll();
+         if(x==1){
+             this.getContentPane().add(new GamePanel(this,p));
+@@ -52,6 +50,9 @@
+         else if(x==3){
+             this.getContentPane().add(new Menu(this));
+         }
++        else if(x==4){
++            this.getContentPane().add(new EndScreen(this, p,wine));
++        }
+         this.revalidate();
+     }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 495ff72cbefe39169f902dfb98c7bcb90e023332)
++++ b/.idea/workspace.xml	(date 1620600257936)
+@@ -1,73 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="min tavolsag 50p">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_03_21__13_03__Default_1.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_17__21_36__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_17__21_36__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__12_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__12_45__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__18_02__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__18_02__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__22_03__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_04_18__22_03__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_13__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_13__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_04__15_59__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_09__13_08__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_05_09__13_08__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__03__21__17_00__Default_1.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__16__10_33__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__16__10_33__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_56__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_56__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__17_59__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__23_04__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__17__23_04__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_45__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_53__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__11_53__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_16__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_16__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_20__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_20__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_37__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_37__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_41__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__12_41__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__17_28__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__17_28__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__18_23__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__18_23__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_08__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_08__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_15__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_15__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_16__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_16__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__04__18__21_40__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__03__2_21__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__03__2_21__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__06__16_16__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__06__16_16__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__19_41__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__19_41__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_39__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_39__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_42__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__07__21_42__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__11_01__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__11_01__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_51__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_51__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__12_59__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_21__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_21__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_52__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__13_52__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__15_43__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_45__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_59__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__16_59__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__17_00__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__17_00__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_02__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_02__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_10__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__18_10__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__20_01__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__20_01__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__23_27__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__08__23_27__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_26__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_26__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_30__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_30__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_45__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_45__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_46__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__12_46__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_17__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_17__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_20__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_20__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_24__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_24__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_25__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_25__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_33__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_33__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_46__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_46__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_57__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__13_57__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__14_04__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__14_04__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__14_51__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__14_51__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__16_25__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__16_25__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__17_49__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__17_49__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__17_56__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__17_56__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__19_24__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__19_24__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_10__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_10__Default_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_15__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__09__20_15__Default_.xml" afterDir="false" />
++    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="mostcsak1x">
++      <change afterPath="$PROJECT_DIR$/src/GUIComponents/EndScreen.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUIComponents/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MainFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUIComponents/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MapView.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUIComponents/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/Menu.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -28209,13 +28150,6 @@
+       <workItem from="1615532041060" duration="310000" />
+       <workItem from="1616181877716" duration="240000" />
+       <workItem from="1616345058520" duration="7574000" />
+-    </task>
+-    <task id="LOCAL-00024" summary="Listázás implementálva, kellenek ufok meg ilyenek.">
+-      <created>1618568089684</created>
+-      <option name="number" value="00024" />
+-      <option name="presentableId" value="LOCAL-00024" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1618568089684</updated>
+     </task>
+     <task id="LOCAL-00025" summary="bence stipi">
+       <created>1618693202741</created>
+@@ -28553,7 +28487,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1620598824783</updated>
+     </task>
+-    <option name="localTasksCounter" value="73" />
++    <task id="LOCAL-00073" summary="mostcsak1x">
++      <created>1620599518986</created>
++      <option name="number" value="00073" />
++      <option name="presentableId" value="LOCAL-00073" />
++      <option name="project" value="LOCAL" />
++      <updated>1620599518986</updated>
++    </task>
++    <option name="localTasksCounter" value="74" />
+     <servers />
+   </component>
+   <component name="TimeTrackingManager">
+@@ -28630,7 +28571,6 @@
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+-    <MESSAGE value="Gombok grafika kész xddddd" />
+     <MESSAGE value="fixálva az ablak mérete" />
+     <MESSAGE value="idk ezmi" />
+     <MESSAGE value="kommentek" />
+@@ -28655,7 +28595,8 @@
+     <MESSAGE value="Irtam még a stepet mert vmiért a halál még mindig fos :)(: de nem javitottam meg de legalább a perihelion mükszik" />
+     <MESSAGE value="a buildrobot jo már a build teleport vmiért szar" />
+     <MESSAGE value="min tavolsag 50p" />
+-    <option name="LAST_COMMIT_MESSAGE" value="min tavolsag 50p" />
++    <MESSAGE value="mostcsak1x" />
++    <option name="LAST_COMMIT_MESSAGE" value="mostcsak1x" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: src/GUIComponents/EndScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUIComponents/EndScreen.java b/src/GUIComponents/EndScreen.java
+new file mode 100644
+--- /dev/null	(date 1620600606774)
++++ b/src/GUIComponents/EndScreen.java	(date 1620600606774)
+@@ -0,0 +1,75 @@
++package GUIComponents;
++
++import Proto.Proto;
++
++import javax.imageio.ImageIO;
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.awt.image.BufferedImage;
++import java.io.File;
++import java.io.IOException;
++
++public class EndScreen extends JPanel {
++    private OnPlayListener backToMenu;
++    private BufferedImage image;                //háttér
++    private Clicklistener click;    //gomb figyelo
++    private boolean wine;
++    private JButton back;
++    private ImageResizer ir = new ImageResizer();
++    public EndScreen(OnPlayListener act, Proto val,boolean win) throws IOException {
++        backToMenu=act;
++        wine=win;
++
++
++        try {
++            BufferedImage bi = ImageIO.read(new File("pictures\\back.png"));
++            bi = ir.resize(bi, 0.082);
++            back.setIcon(new ImageIcon(bi));
++            back.setOpaque(false);
++            back.setContentAreaFilled(false);
++
++        } catch (IOException e) {
++            e.printStackTrace();
++        }
++        back.setBounds(300,550,267,41);
++        back.addActionListener(click);
++        back.setBorderPainted(false);
++        this.add(back);
++            try {
++                image = ImageIO.read(new File("pictures\\background.png"));
++            } catch (IOException ex) { /*mindig jó, nincs error köszi.*/ }
++
++    }
++
++    @Override
++    protected void paintComponent(Graphics g) {
++        super.paintComponent(g);
++        g.drawImage(image, 0, 0, this); // kirajzolja a képet
++        g.setFont(new Font("TimesRoman", Font.PLAIN, 60));
++        g.setColor(Color.BLUE);
++        if(wine){
++            g.drawString("Gratulálunk nyertél." , 300, 300);
++        }
++        else{
++            g.drawString("Vesztettél." , 300, 300);
++        }
++    }
++
++    private class Clicklistener implements ActionListener { //gombok megnyomását kezeli
++
++        public void actionPerformed(ActionEvent e){
++            if (e.getSource() == back){ //ha a backre kattintanak akkor a menü megnyilik
++                try {
++                    backToMenu.ChangeToGame(1,false);
++                } catch (IOException e1) {
++                    e1.printStackTrace();
++                }
++
++            }
++        }
++    }
++
++
++}

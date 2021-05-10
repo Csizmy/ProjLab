@@ -272,14 +272,26 @@ public class GamePanel extends JPanel {
 
     public void nextPlayer() {
         if (p.EndGame() == true) {  //ellenőrzi hogy nyertek e a telepesek.
-            //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy
+            try { //ha vesztettek akkor a vesztes képernyőre lép
+                toMapView.ChangeToGame(4,true);
+                return;
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         }
         for (int i = 0; i < p.getMap().getSettlers().size(); i++) {
             if (i == p.getMap().getSettlers().size() - 1) {
-                p.step(); // léptet mindenkit ha az utolso player lelépte a lépését
+                if(p.step()==true){ // léptet mindenkit ha az utolso player lelépte a lépését
+                    try { //ha vesztettek akkor a vesztes képernyőre lép
+                        toMapView.ChangeToGame(4,false);
+
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+
+                }
                 p.setCurrent(p.getMap().getSettlers().get(0)) ;
                 refreshBp();
-                return;
             }
 
             if (p.getMap().getSettlers().get(i) == p.getCurrent()) {
@@ -292,7 +304,6 @@ public class GamePanel extends JPanel {
 
                 }
                 refreshBp();
-                return;
             }
         }
     }
@@ -334,14 +345,14 @@ public class GamePanel extends JPanel {
             } else if (e.getSource() == move) {  //mozogni probál itt át kéne váltani a map nézetre
                 System.out.println("move");
                 try {
-                    toMapView.ChangeToGame(2);
+                    toMapView.ChangeToGame(2,false);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             } else if (e.getSource() == zoomout) {
                 System.out.println("zoomout");
                 try {
-                    toMapView.ChangeToGame(2);
+                    toMapView.ChangeToGame(2,false);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
