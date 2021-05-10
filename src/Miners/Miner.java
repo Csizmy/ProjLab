@@ -6,22 +6,37 @@ import Objects.*;
 
 import java.util.ArrayList;
 
+/**
+ *  Abstract class for Miners
+ * @author Mzperx
+ */
 public abstract class Miner implements Moveable {
 
-    // Contains which asteroid contains player
+    /**
+     *  Contains which asteroid contains player
+     */
     protected Spacething spacething;
-    boolean live = true;
-
-    //Storage
+    /**
+     *  Storage of Materials
+     */
     protected ArrayList<Material> backpack;
 
-    //Unique id for all things on map
+    /**
+     *  Name of the object
+     */
     protected int id;
 
-    //Name of the object
+    /**
+     *  Name of the object
+     */
     protected String name;
 
-    //Miner constructor with id
+
+    /**
+     *  Miner constructor with id
+     * @param s the Spacething that the miner is on.
+     * @parma _id the id of the miner.
+     */
     public Miner(Spacething s, int _id){
 
         //Sets the asteroid which contains the settler
@@ -37,7 +52,10 @@ public abstract class Miner implements Moveable {
         id = _id;
     }
 
-    //Miner constructor without id
+    /**
+     *  Miner constructor without id
+     * @param s the Spacething that the miner is on.
+     */
     public Miner(Spacething s){
         //Sets the asteroid which contains the settler
         spacething = s;
@@ -49,7 +67,10 @@ public abstract class Miner implements Moveable {
         s.addMiner(this);
     }
 
-    //Miner moves to asteroid
+    /**
+     *  Miner moves to asteroid
+     * @param asteroidID the ID of the asteroid
+     */
     @Override
     public void Move(int asteroidID){
         if(spacething.isNeigbour(asteroidID)){          //Check if asteroid is in the neighbourhood
@@ -67,13 +88,16 @@ public abstract class Miner implements Moveable {
         }
     }
 
-    //Miner Die
+    /**
+     *  Miner Die
+     */
     public void Die(){
         spacething.removeMiner(this);
-        live = false;
     }
 
-    //Miner drill
+    /**
+     *  Miner drill
+     */
     public boolean Drill(){
         if(spacething.isAsteroid()){        //If miner is on asteroid
             Asteroid a = (Asteroid) spacething;
@@ -86,27 +110,37 @@ public abstract class Miner implements Moveable {
         return false;
     }
 
-    // Miners have different behavior when asteroid explodes
+    /**
+     *  Miners have different behavior when asteroid explodes
+     */
     public abstract void Explode();
 
-    // Getter of backpack
+    /**
+     *  Getter of backpack
+     */
     public ArrayList<Material> getBackpack() {
         return backpack;
     }
 
-    // Getter of spacething
+    /**
+     *  Getter of spacething
+     */
     public Spacething getSpacething(){
         return spacething;
     }
 
-    //Geter of miner id
+    /**
+     *  Geter of miner id
+     */
     public int getId(){return id;}
 
-    //Getter of miners steroid
+    /**
+     *  Getter of miners steroid
+     */
     public int getAsteroid(){return spacething.getId();}
 
-    //Getter of name
+    /**
+     *  Getter of name
+     */
     public String getName(){return name;}
-
-    public boolean getLive(){return live;}
 }

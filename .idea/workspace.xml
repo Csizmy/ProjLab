@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="Elv fullosan kész">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_05_2021_02_10__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_05_2021_02_10__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__2_20__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021__05__10__2_20__Default_.xml" afterDir="false" />
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="komments of miners">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Moveable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Moveable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/MusicStuff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/MusicStuff.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Steppable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Game_parts/Steppable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Materials/Material.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Moveable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Moveable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/MusicStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/MusicStuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_parts/Steppable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_parts/Steppable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Coal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Coal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Iron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Iron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Uranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Uranium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Materials/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Water.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Miner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Ufo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Ufo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Proto/Proto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Miner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Settler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Settler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miners/Ufo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miners/Ufo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proto/Proto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proto/Proto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28163,20 +28155,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00027" summary="Panku addToBackpack javítva">
-      <created>1618741097373</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1618741097373</updated>
-    </task>
-    <task id="LOCAL-00028" summary="csizmy dolgai feltoltve+ javitgatva 1-2 dolog amit irtam-axel">
-      <created>1618761106455</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1618761106455</updated>
-    </task>
     <task id="LOCAL-00029" summary="a loadmap tobb infot ir ki">
       <created>1618762718503</created>
       <option name="number" value="00029" />
@@ -28506,7 +28484,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620608297221</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="töröltem pár dolgot">
+      <created>1620608831126</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1620608831126</updated>
+    </task>
+    <task id="LOCAL-00077" summary="komments of miners">
+      <created>1620635066507</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1620635066507</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -28583,8 +28575,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixálva az ablak mérete" />
-    <MESSAGE value="idk ezmi" />
     <MESSAGE value="kommentek" />
     <MESSAGE value="zoomin,outot ujraimplementáltam kekw" />
     <MESSAGE value="átirtam mindent is soz evvan" />
@@ -28608,7 +28598,9 @@
     <MESSAGE value="a buildrobot jo már a build teleport vmiért szar" />
     <MESSAGE value="min tavolsag 50p" />
     <MESSAGE value="Elv fullosan kész" />
-    <option name="LAST_COMMIT_MESSAGE" value="Elv fullosan kész" />
+    <MESSAGE value="töröltem pár dolgot" />
+    <MESSAGE value="komments of miners" />
+    <option name="LAST_COMMIT_MESSAGE" value="komments of miners" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
