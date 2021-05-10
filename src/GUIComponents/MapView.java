@@ -141,10 +141,6 @@ public class MapView extends JPanel {
 
     }
 
-    public void loadMaporWhat() {} // go wild Kristof
-
-    public void setMap(Map m){this.map = m;}
-
     public void nextPlayer() {
         if (p.EndGame() == true) {  //ellenőrzi hogy nyertek e a telepesek.
             //TODO kilép vagy kirajzol valami képet hogy win ugyi vagy
@@ -200,5 +196,4 @@ public class MapView extends JPanel {
             }
         }
     }
-
 }

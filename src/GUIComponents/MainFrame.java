@@ -36,11 +36,6 @@ public class MainFrame extends JFrame implements OnPlayListener{
     @Override
     public void ChangeToGame(int x) throws IOException { changePanel(x); }
 
-
-    public void runGame() {
-        //TODO
-    }
-
     public void changePanel(int x) throws IOException {
         this.getContentPane().removeAll();
         if(x==1){

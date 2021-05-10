@@ -1,16 +1,14 @@
 package GObjects;
 
-import GUIComponents.IDrawable;
 import GUIComponents.ImageResizer;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class GObject implements IDrawable {
+public class GObject {
 
     protected BufferedImage texture;
 
@@ -23,10 +21,6 @@ public class GObject implements IDrawable {
     public GObject(){
         //Initialize ImageResizer
         imgRes = new ImageResizer();
-    }
-
-    public void Draw(Graphics2D g, int x, int y) {
-        //TODO
     }
 
     //Function to load an image from filepath and make a button with init
@@ -50,10 +44,4 @@ public class GObject implements IDrawable {
     public JButton getButton(){
         return object;
     }
-
-    //Get texture
-    public BufferedImage getTexture(){
-        return texture;
-    }
-
 }

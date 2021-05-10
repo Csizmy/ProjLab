@@ -15,11 +15,4 @@ public class GIron extends GObject{
         loadImage("pictures\\iron70x70.png", scale, x, y);
 
     }
-
-    //Constructor for iron graphical object with scale
-    public GIron(int x, int y, int s) throws IOException {
-        loadImage("pictures\\iron70x70.png", s, x, y);
-    }
-
-
 }

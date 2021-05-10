@@ -117,12 +117,6 @@ public class Asteroid extends Spacething implements Steppable {
         return materials;
     }
 
-    //A napközelséget vizsgálom és irom felül.
-    public void Step(){}
-
-    // a megadott teleportot az aszteroidához köti
-    public void SetUpTeleport(Teleport t){}
-
     // getterek és setterek a megadott változókhoz
     public int getLayer() {
         return layer;
@@ -229,8 +223,4 @@ public class Asteroid extends Spacething implements Steppable {
 
     public int getX(){return x;}
     public int getY(){return y;}
-    public void setX(int value){x=value;}
-    public void setY(int value){y=value;}
-
-
 }

@@ -13,9 +13,4 @@ public class GWater extends GObject{
     public GWater(int x, int y) throws IOException {
         loadImage("pictures\\water70x70.png", scale, x, y);
     }
-
-    //Constructor for water graphical object with scale
-    public GWater(int x, int y, int s) throws IOException {
-        loadImage("pictures\\water70x70.png", s, x, y);
-    }
 }

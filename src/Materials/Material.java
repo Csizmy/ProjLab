@@ -21,19 +21,11 @@ public abstract class Material {
         name = n;
     }
 
-    //Getter for asteroid
-    Asteroid getAsteroid(){return asteroid;}
-
     //Setter for asteroid
     public void setAsteroid(Asteroid a){asteroid = a;}
 
     //Virtual function !!Important at water and uranium!!
     public void PeriMining(){
-    }
-
-    //Setter for GObject
-    public GObject getGobject(){
-        return gObject;
     }
 
     //Draw the given material to a x,y point

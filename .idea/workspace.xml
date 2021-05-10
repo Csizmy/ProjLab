@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="min tavolsag 50p">
+    <list default="true" id="703bf8a6-3cfe-4d07-aea6-c46f48fd5021" name="Default" comment="map clarity go brr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjLab/Miners/Settler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GObjects/GAsteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GAsteroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GCoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GCoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GIron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GIron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GRobot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GSettler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GTeleport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GUfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GUranium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GUranium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GObjects/GWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GObjects/GWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/IDrawable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIComponents/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIComponents/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Materials/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Materials/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Asteroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Spacething.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Spacething.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Teleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Teleport.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28146,20 +28165,6 @@
       <workItem from="1616181877716" duration="240000" />
       <workItem from="1616345058520" duration="7574000" />
     </task>
-    <task id="LOCAL-00025" summary="bence stipi">
-      <created>1618693202741</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1618693202742</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Panku addToBackpack">
-      <created>1618740904124</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1618740904124</updated>
-    </task>
     <task id="LOCAL-00027" summary="Panku addToBackpack javítva">
       <created>1618741097373</created>
       <option name="number" value="00027" />
@@ -28489,7 +28494,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620598934778</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="map clarity go brr">
+      <created>1620599834466</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1620599834466</updated>
+    </task>
+    <task id="LOCAL-00075" summary="map clarity go brr">
+      <created>1620599882387</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1620599882388</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -28566,7 +28585,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Gombok grafika kész xddddd" />
     <MESSAGE value="fixálva az ablak mérete" />
     <MESSAGE value="idk ezmi" />
     <MESSAGE value="kommentek" />
@@ -28591,7 +28609,8 @@
     <MESSAGE value="Irtam még a stepet mert vmiért a halál még mindig fos :)(: de nem javitottam meg de legalább a perihelion mükszik" />
     <MESSAGE value="a buildrobot jo már a build teleport vmiért szar" />
     <MESSAGE value="min tavolsag 50p" />
-    <option name="LAST_COMMIT_MESSAGE" value="min tavolsag 50p" />
+    <MESSAGE value="map clarity go brr" />
+    <option name="LAST_COMMIT_MESSAGE" value="map clarity go brr" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

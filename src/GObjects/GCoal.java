@@ -14,9 +14,4 @@ public class GCoal extends GObject{
         loadImage("pictures\\coal70x70.png", scale, x, y);
 
     }
-
-    //Constructor for coal graphical object with scale
-    public GCoal(int x, int y, int s) throws IOException {
-        loadImage("pictures\\coal70x70.png", s, x, y);
-    }
 }

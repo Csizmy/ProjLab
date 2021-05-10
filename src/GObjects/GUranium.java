@@ -13,9 +13,4 @@ public class GUranium extends GObject{
     public GUranium(int x, int y) throws IOException {
         loadImage("pictures\\uranium70x70.png", scale, x, y);
     }
-
-    //Constructor for uranium graphical object with scale
-    public GUranium(int x, int y, int s) throws IOException {
-        loadImage("pictures\\uranium70x70.png", s, x, y);
-    }
 }

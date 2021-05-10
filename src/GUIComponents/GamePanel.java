@@ -227,22 +227,6 @@ public class GamePanel extends JPanel {
         }
     }
 
-    public void exit() {
-        //TODO
-    }
-
-    public void start() {
-        //TODO
-    }
-
-    public void drawAll() {
-        //TODO
-    }
-
-    public void backPackDraw(Graphics g) {
-
-    }
-
     public void refreshBp() {  //A hátitáskát refresheli a képernyőn, hogy a jelenlegi játékost lássuk mindig :3
         for (JButton b : inventory) {
             this.remove(b);

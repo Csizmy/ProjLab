@@ -18,32 +18,15 @@ public class Teleport extends Spacething implements Moveable, Steppable {
         super(teleportID);
     }
 
-    public Teleport(int teleportID, Asteroid a){
-        super(teleportID);
-        a.AddNeighbor(this);
-        this.AddNeighbor(a);
-        megkergult = true;
-    }
-
     @Override
     public void removeMiner(Miner m) {}
 
     @Override
     public void addMiner(Miner m) {}
 
-    //Teleport továbbküldi az embert
-    public void MoveForward() {}
-
     public void disable(){
         enable = false;
     }
-
-
-    //Felrobban a teleport 2 párja
-    public void OnExplode() {}
-
-    // egy telepes táskájához adja
-    public void AddToSettler(Settler s) {}
 
     // pair settere
     public void setPair(Teleport pair) {
