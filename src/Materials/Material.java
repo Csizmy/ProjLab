@@ -9,7 +9,7 @@ import java.io.IOException;
 public abstract class Material {
     protected String name;              // a nyersanyag neve
     protected Asteroid asteroid;        //tárolja melyik aszteroidán van a nyersanyag
-    protected GObject gObject;
+
 
     // Getter for name
     public String getName(){
@@ -25,7 +25,8 @@ public abstract class Material {
     public void setAsteroid(Asteroid a){asteroid = a;}
 
     //Virtual function !!Important at water and uranium!!
-    public void PeriMining(){
+    public boolean PeriMining(){
+        return false;
     }
 
     //Draw the given material to a x,y point
