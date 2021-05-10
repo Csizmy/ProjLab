@@ -8,22 +8,34 @@ import java.util.Random;
 
 public class Ufo extends Miner implements Steppable {
 
-
+    /**
+     *  Constructor of the Ufo with id
+     * @param _id the id of the new Ufo.
+     * @param s the spacething that the Ufo is on.
+     */
     public Ufo(Spacething s, int _id) {
         super(s, _id);
         name = "ufo";
     }
 
+    /**
+     *  Constructor of the Ufo without id
+     * @param s the spacething that the Ufo is on.
+     */
     public Ufo(Spacething s) {
         super(s);
     }
 
-    //Az ufó nem tud fúrni, igy nála ez egy üres függvény.
+    /**
+     *  Az ufó nem tud fúrni, igy nála ez egy üres függvény.
+     */
     public boolean Drill() {
         return false;
     }
 
-    //Az ufó ellopja a nyersanyagot a  kibányászatlan aszteroidáról, ha nincs felette köpeny.
+    /**
+     *  Az ufó ellopja a nyersanyagot a  kibányászatlan aszteroidáról, ha nincs felette köpeny.
+     */
     public boolean Steal() {
         //remove material, ha felvesz valamit.
         if(spacething.isAsteroid()) {
@@ -39,13 +51,18 @@ public class Ufo extends Miner implements Steppable {
         return false;
     }
 
-    //Aszteroida felrobbanásánál ...
+    /**
+     *  Aszteroida felrobbanásánál
+     */
     @Override
     public void Explode() {
-        //TODO
+        Die();
     }
 
-    //Az ufó mozog/helyben marad/nyersanyagot lop.
+    /**
+     *  Ufo moves or stays on the same Asteroid that it is currently on or steals the material from the asteroid if it can.
+     * @param step it is a word for which action he should do
+     */
     @Override
     public void Step(String step) {
         Random r = new Random();
