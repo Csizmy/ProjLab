@@ -20,12 +20,12 @@ public class Uranium extends Material{
 
     //Uranium explodes perihelion at the 3rd time
     @Override
-    public void PeriMining(){
+    public boolean PeriMining(){
         charged++;
 
         if (charged == 3) {
-            asteroid.Explode();
+            return true;
         }
-
+        return false;
     }
 }

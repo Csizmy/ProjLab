@@ -502,10 +502,19 @@ public class Proto {
 
         for(Asteroid a: map.getAsteroids()){
             if (a.getPerihelion()==true){
-                if(a.getMaterial()!= null){
-                    a.getMaterial().PeriMining();
+                if(a.getMaterial()!= null && a.getDigged() == a.getLayer()){
+                    if(a.getMaterial().PeriMining() == true) {
+                        a.Explode();
+                        for (int i = 0; i < a.getNeighbours().size(); i++) {
+                            if (a.getNeighbours().get(i).isAsteroid() == false) {
+                                Teleport t = (Teleport) a.getNeighbours().get(i);
+                                map.getTeleports().remove(t.getPair());
+                                map.getTeleports().remove(t);
+                            }
+                        }
+                        map.getAsteroids().remove(a);
+                    }
                 }
-
             }
         }
         for(Settler s: map.getSettlers()){

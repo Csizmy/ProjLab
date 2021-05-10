@@ -37,9 +37,6 @@ public class Settler extends Miner{
             //ha nincs kibányászva és nem üres
             if (asteroid.getLayer() == asteroid.getDigged() && asteroid.getMaterial() != null) {
 
-                if (asteroid.getPerihelion()) {  // napközelben van
-                    asteroid.getMaterial().PeriMining();
-                }
                 AddMaterial(asteroid.getMaterial());
                 asteroid.setMaterial(null);
 

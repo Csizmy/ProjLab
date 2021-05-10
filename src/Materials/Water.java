@@ -18,7 +18,8 @@ public class Water extends Material{
 
     //Water disapears if it is near sun
     @Override
-    public void PeriMining(){
+    public boolean PeriMining(){
         asteroid.RemoveMaterial();
+        return false;
     }
 }
