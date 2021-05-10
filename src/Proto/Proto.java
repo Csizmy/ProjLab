@@ -16,6 +16,9 @@ public class Proto {
     private Map map = new Map();
     private Settler currentPlayer;
 
+    public Proto(){
+        loadMap("");
+    }
     public void loadMap(String mapName){
         try{
             File f = new File("maps\\" + mapName);
@@ -486,7 +489,7 @@ public class Proto {
         }
     }
 
-    public void step(){
+    public boolean step(){
 
         for (int i = 0; i < map.getRobots().size(); i++) {
             map.getRobots().get(i).Step("");
@@ -502,7 +505,7 @@ public class Proto {
         }
 
         for(Asteroid a: map.getAsteroids()){
-            if (a.getPerihelion()==true){
+            if (a.getPerihelion()==true&&a!=null){
                 if(a.getMaterial()!= null && a.getDigged() == a.getLayer()){
                     if(a.getMaterial().PeriMining() == true) {
                         a.Explode();
@@ -533,8 +536,9 @@ public class Proto {
         map.Step("");
         if(map.getSettlers().isEmpty()==true){
             System.out.println("vesztettetek hahaxd");
-            System.exit(0);
+            return true;
         }
+        return false;
     }
 
     public Map getMap() {

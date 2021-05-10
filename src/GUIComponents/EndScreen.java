@@ -21,8 +21,9 @@ public class EndScreen extends JPanel {
     public EndScreen(OnPlayListener act, Proto val,boolean win) throws IOException {
         backToMenu=act;
         wine=win;
+        click= new Clicklistener();
         back = new JButton("");
-        val= new Proto();
+        
 
 
         try {
@@ -35,10 +36,13 @@ public class EndScreen extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        this.setLayout(null);
         back.setBounds(300,550,267,41);
+        back.setFocusable(false);
         back.addActionListener(click);
         back.setBorderPainted(false);
         this.add(back);
+
             try {
                 image = ImageIO.read(new File("pictures\\background.png"));
             } catch (IOException ex) { /*mindig jó, nincs error köszi.*/ }
@@ -64,7 +68,7 @@ public class EndScreen extends JPanel {
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == back){ //ha a backre kattintanak akkor a menü megnyilik
                 try {
-                    backToMenu.ChangeToGame(1,false);
+                    backToMenu.ChangeToGame(3,false);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }

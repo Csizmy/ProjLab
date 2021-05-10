@@ -25,7 +25,7 @@ public class MainFrame extends JFrame implements OnPlayListener{
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         p = new Proto();
-        p.loadMap("test.txt");  // pálya betöltése
+
     }
 
 
@@ -51,6 +51,7 @@ public class MainFrame extends JFrame implements OnPlayListener{
             this.getContentPane().add(new Menu(this));
         }
         else if(x==4){
+            p = new Proto();
             this.getContentPane().add(new EndScreen(this, p,wine));
         }
         this.revalidate();
