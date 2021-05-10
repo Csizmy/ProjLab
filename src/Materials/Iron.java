@@ -1,16 +1,18 @@
 
 package Materials;
 
-import GObjects.GCoal;
-import GObjects.GIron;
 import Objects.Asteroid;
 
-import java.io.IOException;
-
-//Class to represent iron material
+/**
+ * Class to represent iron material
+ * @author mzperx
+ */
 public class Iron extends Material{
 
-    //Iron constructor
+    /**
+     * Iron constructor
+     * @param a the asteroid
+     */
     public Iron(Asteroid a){
         setName("Iron");
         setAsteroid(a);         //Containing asteroid
